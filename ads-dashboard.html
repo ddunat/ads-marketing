@@ -1,0 +1,749 @@
+<title>Scale or Hold</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+/* Layout: verdict first, then the arithmetic that produced it, then live pacing,
+   then the levers. Single column on a phone, two tracks from 720px.
+   Palette: surveyor's blueprint — cool blue-biased neutrals, one cyan accent
+   for data marks, semantics (gate pass/hold/fail) kept separate from it. */
+:root {
+  --bg:        #eef1f5;
+  --surface:   #ffffff;
+  --surface-2: #e4e9f0;
+  --line:      #c9d2de;
+  --line-soft: #dde4ed;
+  --fg:        #16202c;
+  --fg-mid:    #4a5a6e;
+  --fg-dim:    #71818f;
+  --accent:    #0a6e8a;
+  --accent-sl: #d3e6ed;
+  --pass:      #1d7a4c;
+  --pass-bg:   #d6ecdf;
+  --hold:      #9a6410;
+  --hold-bg:   #f7e6c8;
+  --fail:      #a62f2f;
+  --fail-bg:   #f5dada;
+  --shadow:    0 1px 2px rgba(22,32,44,.07), 0 4px 14px rgba(22,32,44,.05);
+  --sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:        #0e141b;
+    --surface:   #171f29;
+    --surface-2: #1f2935;
+    --line:      #31404f;
+    --line-soft: #232f3c;
+    --fg:        #e6edf5;
+    --fg-mid:    #a9b8c8;
+    --fg-dim:    #7c8c9c;
+    --accent:    #4cc3e0;
+    --accent-sl: #16323c;
+    --pass:      #5bd392;
+    --pass-bg:   #15301f;
+    --hold:      #e0b05a;
+    --hold-bg:   #332508;
+    --fail:      #f08b8b;
+    --fail-bg:   #351818;
+    --shadow:    0 1px 2px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.3);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:        #0e141b;
+  --surface:   #171f29;
+  --surface-2: #1f2935;
+  --line:      #31404f;
+  --line-soft: #232f3c;
+  --fg:        #e6edf5;
+  --fg-mid:    #a9b8c8;
+  --fg-dim:    #7c8c9c;
+  --accent:    #4cc3e0;
+  --accent-sl: #16323c;
+  --pass:      #5bd392;
+  --pass-bg:   #15301f;
+  --hold:      #e0b05a;
+  --hold-bg:   #332508;
+  --fail:      #f08b8b;
+  --fail-bg:   #351818;
+  --shadow:    0 1px 2px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.3);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: var(--sans); font-size: 15px; line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 56px; }
+
+/* ---- masthead ---- */
+.mast { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 20px; }
+.mast h1 {
+  font-size: clamp(22px, 5vw, 29px); font-weight: 600; letter-spacing: -.015em;
+  margin: 0; text-wrap: balance;
+}
+.mast .sub { color: var(--fg-dim); font-size: 13px; font-family: var(--mono); }
+.freshness {
+  margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--fg-dim);
+  display: flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--fg-dim); flex: none; }
+.dot.live { background: var(--pass); }
+.dot.stale { background: var(--hold); }
+.dot.off { background: var(--fail); }
+
+/* ---- verdict ---- */
+.verdict {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 4px;
+  box-shadow: var(--shadow); overflow: hidden; margin-bottom: 20px;
+}
+.verdict-stripe { height: 4px; background: var(--hold); }
+.verdict-body { padding: 22px 20px 20px; }
+.verdict-tag {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--fg-dim); margin-bottom: 10px;
+}
+.verdict-call {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; margin-bottom: 14px;
+}
+.verdict-word {
+  font-size: clamp(34px, 9vw, 54px); font-weight: 700; letter-spacing: -.03em;
+  line-height: 1; color: var(--hold);
+}
+.verdict-ratio {
+  font-family: var(--mono); font-size: clamp(15px, 3.4vw, 19px); font-weight: 500;
+  color: var(--fg-mid); font-variant-numeric: tabular-nums;
+}
+.verdict-why { max-width: 62ch; color: var(--fg-mid); margin: 0; }
+.verdict-why strong { color: var(--fg); font-weight: 600; }
+
+/* ---- gate scale ---- */
+.gate { margin: 20px 0 4px; }
+.gate-track {
+  position: relative; height: 34px; border-radius: 3px; overflow: hidden;
+  border: 1px solid var(--line); display: flex;
+}
+.gate-zone { height: 100%; }
+.gate-zone.z1 { background: var(--fail-bg); }
+.gate-zone.z2 { background: var(--hold-bg); }
+.gate-zone.z3 { background: var(--pass-bg); }
+.gate-marks { position: relative; height: 46px; margin-top: 2px; }
+.gate-mark { position: absolute; top: 0; transform: translateX(-50%); text-align: center; width: 92px; }
+.gate-mark .pin { width: 1px; height: 11px; background: var(--fg); margin: 0 auto 3px; }
+.gate-mark .pin.soft { background: var(--fg-dim); }
+.gate-mark .mv {
+  font-family: var(--mono); font-size: 13px; font-weight: 600;
+  font-variant-numeric: tabular-nums; line-height: 1.2;
+}
+.gate-mark .ml { font-size: 10px; color: var(--fg-dim); line-height: 1.25; }
+.gate-axis {
+  display: flex; justify-content: space-between; font-family: var(--mono);
+  font-size: 10px; color: var(--fg-dim); margin-top: 2px;
+}
+.gate-ceiling {
+  position: absolute; top: 0; bottom: 0; left: 72.25%; width: 0;
+  border-left: 2px dashed var(--fg-mid);
+}
+.gate-foot {
+  font-size: 12.5px; color: var(--fg-mid); margin: 12px 0 0; max-width: 68ch;
+}
+.gate-foot strong { color: var(--fg); font-family: var(--mono); font-weight: 600; }
+
+/* ---- sections ---- */
+section { margin-top: 32px; }
+h2 {
+  font-size: 12px; font-family: var(--mono); font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--fg-dim); margin: 0 0 4px;
+  padding-bottom: 7px; border-bottom: 1px solid var(--line);
+}
+.sec-note { color: var(--fg-dim); font-size: 12.5px; margin: 8px 0 14px; max-width: 70ch; }
+
+/* ---- tiles ---- */
+.tiles { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(146px, 1fr)); }
+.tile {
+  background: var(--surface); border: 1px solid var(--line-soft); border-radius: 3px;
+  padding: 12px 13px; min-width: 0;
+}
+.tile .k {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .055em; text-transform: uppercase;
+  color: var(--fg-dim); margin-bottom: 6px; line-height: 1.3;
+}
+.tile .v {
+  font-family: var(--mono); font-size: 21px; font-weight: 600; letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums; line-height: 1.1;
+}
+.tile .n { font-size: 11.5px; color: var(--fg-dim); margin-top: 4px; line-height: 1.35; }
+.tile.hero { background: var(--surface-2); border-color: var(--line); }
+.v.pass { color: var(--pass); } .v.hold { color: var(--hold); } .v.fail { color: var(--fail); }
+
+/* ---- pacing bar ---- */
+.pace { margin-top: 12px; }
+.pace-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.pace-bar {
+  flex: 1 1 180px; min-width: 0; height: 9px; background: var(--surface-2);
+  border: 1px solid var(--line-soft); border-radius: 5px; overflow: hidden; position: relative;
+}
+.pace-fill { height: 100%; background: var(--accent); width: 0; transition: width .4s ease; }
+.pace-cap { position: absolute; top: -3px; bottom: -3px; width: 1px; background: var(--fail); }
+.pace-lbl { font-family: var(--mono); font-size: 11.5px; color: var(--fg-mid); font-variant-numeric: tabular-nums; }
+
+/* ---- funnel ---- */
+.funnel { display: grid; gap: 8px; }
+.frow { display: grid; grid-template-columns: 94px 1fr auto; gap: 10px; align-items: center; }
+.frow .fl { font-family: var(--mono); font-size: 11.5px; color: var(--fg-mid); }
+.fbar { height: 20px; border-radius: 2px; min-width: 2px; }
+.fbar.won { background: var(--pass); }
+.fbar.open { background: var(--hold); }
+.fbar.lost { background: var(--fail); }
+.frow .fv { font-family: var(--mono); font-size: 12.5px; font-variant-numeric: tabular-nums; color: var(--fg); }
+
+/* ---- levers table ---- */
+.tablewrap { overflow-x: auto; border: 1px solid var(--line-soft); border-radius: 3px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line-soft); white-space: nowrap; }
+th {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .055em; text-transform: uppercase;
+  color: var(--fg-dim); font-weight: 600; background: var(--surface-2);
+}
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+tr:last-child td { border-bottom: 0; }
+td.lever { white-space: normal; min-width: 190px; }
+
+/* ---- notes / callout ---- */
+.callout {
+  background: var(--accent-sl); border-left: 2px solid var(--accent);
+  padding: 13px 15px; border-radius: 0 3px 3px 0; margin-top: 14px;
+}
+.callout p { margin: 0 0 8px; font-size: 13.5px; color: var(--fg-mid); max-width: 68ch; }
+.callout p:last-child { margin-bottom: 0; }
+.callout strong { color: var(--fg); }
+.status {
+  font-family: var(--mono); font-size: 11.5px; padding: 9px 12px; border-radius: 3px;
+  margin-top: 12px; border: 1px solid var(--line-soft); background: var(--surface-2); color: var(--fg-mid);
+}
+.status.warn { background: var(--hold-bg); border-color: var(--hold); color: var(--hold); }
+.status.err  { background: var(--fail-bg); border-color: var(--fail); color: var(--fail); }
+footer {
+  margin-top: 38px; padding-top: 14px; border-top: 1px solid var(--line);
+  font-family: var(--mono); font-size: 11px; color: var(--fg-dim); line-height: 1.6;
+}
+@media (max-width: 420px) {
+  .gate-mark { width: 74px; }
+  .frow { grid-template-columns: 74px 1fr auto; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+
+  <div class="mast">
+    <h1>Scale or Hold</h1>
+    <span class="sub">Google&nbsp;Ads · DC Building Inspectors</span>
+    <span class="freshness"><span class="dot" id="dot"></span><span id="fresh">connecting…</span></span>
+  </div>
+
+  <!-- ============ VERDICT ============ -->
+  <div class="verdict">
+    <div class="verdict-stripe" id="stripe"></div>
+    <div class="verdict-body">
+      <div class="verdict-tag">Hormozi scaling gate — lifetime gross profit ÷ cost to acquire</div>
+      <div class="verdict-call">
+        <span class="verdict-word" id="verdictWord">HOLD</span>
+        <span class="verdict-ratio" id="verdictRatio">1.61 : 1 all-in &nbsp;·&nbsp; gate is 3.00 : 1</span>
+      </div>
+      <p class="verdict-why" id="verdictWhy">
+        Counting everything in your favour — the 20 leads still open, and the 18 phone calls the
+        CRM never attributes — a customer is worth <strong>$405</strong> in lifetime gross profit
+        and costs <strong>$252</strong> to buy. Still under the 3:1 floor, so more budget buys
+        more loss. The binding constraint is not lead volume — it is how little gross profit
+        each customer carries.
+      </p>
+
+      <div class="gate">
+        <div class="gate-track">
+          <div class="gate-zone z1" style="width:25%"></div>
+          <div class="gate-zone z2" style="width:50%"></div>
+          <div class="gate-zone z3" style="width:25%"></div>
+          <div class="gate-ceiling" title="Perfect-world ceiling: 3.18 : 1"></div>
+        </div>
+        <div class="gate-marks">
+          <div class="gate-mark" style="left:17.5%">
+            <div class="pin soft"></div>
+            <div class="mv" style="color:var(--fail)">0.70</div>
+            <div class="ml">won so far</div>
+          </div>
+          <div class="gate-mark" style="left:40.25%">
+            <div class="pin"></div>
+            <div class="mv" style="color:var(--hold)">1.61</div>
+            <div class="ml">all-in, with calls</div>
+          </div>
+          <div class="gate-mark" style="left:75%">
+            <div class="pin soft"></div>
+            <div class="mv" style="color:var(--pass)">3.00</div>
+            <div class="ml">scale gate</div>
+          </div>
+        </div>
+        <div class="gate-axis"><span>0</span><span>1 : 1 break-even</span><span>4 : 1</span></div>
+        <p class="gate-foot">
+          The dashed line at <strong>3.18</strong> is the perfect-world ceiling: every open lead
+          closing and every ad call and number tap becoming paid work. It clears the gate only
+          because it assumes 100% of everything Google counted turns into a job. The real cohort
+          wins <strong>27.9%</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LIVE ============ -->
+  <section>
+    <h2>This month so far — live</h2>
+    <p class="sec-note">
+      Spend and conversions refresh every hour from Google Ads. Won jobs lag spend by two to
+      four weeks, so treat this block as pacing and early warning, not as a verdict.
+    </p>
+    <div class="tiles">
+      <div class="tile hero">
+        <div class="k">Spend today</div>
+        <div class="v" id="lvToday">—</div>
+        <div class="n" id="lvTodayN">against a $250 daily budget</div>
+      </div>
+      <div class="tile">
+        <div class="k">Spend this month</div>
+        <div class="v" id="lvSpend">—</div>
+        <div class="n" id="lvSpendN">&nbsp;</div>
+      </div>
+      <div class="tile">
+        <div class="k">Conversions</div>
+        <div class="v" id="lvConv">—</div>
+        <div class="n" id="lvConvN">forms, ad calls and number taps</div>
+      </div>
+      <div class="tile">
+        <div class="k">Cost / conversion</div>
+        <div class="v" id="lvCpa">—</div>
+        <div class="n" id="lvCpaN">target $70</div>
+      </div>
+      <div class="tile">
+        <div class="k">Jobs won this month</div>
+        <div class="v" id="lvWon">—</div>
+        <div class="n" id="lvWonN">ads-attributed in the CRM</div>
+      </div>
+      <div class="tile">
+        <div class="k">Revenue won</div>
+        <div class="v" id="lvRev">—</div>
+        <div class="n" id="lvRevN">&nbsp;</div>
+      </div>
+    </div>
+
+    <div class="pace">
+      <div class="pace-row">
+        <span class="pace-lbl" id="paceLbl">Daily pace —</span>
+        <div class="pace-bar">
+          <div class="pace-fill" id="paceFill"></div>
+          <div class="pace-cap" style="left:100%" title="2× daily budget ceiling"></div>
+        </div>
+        <span class="pace-lbl">$500 cap</span>
+      </div>
+    </div>
+
+    <div class="status" id="liveStatus">Waiting for the first refresh…</div>
+  </section>
+
+  <!-- ============ SEPTEMBER COHORT ============ -->
+  <section>
+    <h2>September — the cohort the verdict is built on</h2>
+    <p class="sec-note">
+      A closed month whose leads have had time to buy or go quiet. This is the only window where
+      cost-per-customer means anything, which is why the gate above reads from it.
+    </p>
+    <div class="tiles">
+      <div class="tile"><div class="k">Ad spend</div><div class="v">$6,919</div><div class="n">72 conversions · $96.10 each</div></div>
+      <div class="tile"><div class="k">Jobs won</div><div class="v">12</div><div class="n">$7,436 revenue</div></div>
+      <div class="tile"><div class="k">Avg job value</div><div class="v">$620</div><div class="n">pre-purchase inspections</div></div>
+      <div class="tile"><div class="k">Gross margin</div><div class="v">62.8%</div><div class="n">subcontractors 37.2% of income</div></div>
+      <div class="tile"><div class="k">Gross profit / job</div><div class="v">$389</div><div class="n">$405 with 4% repeat</div></div>
+      <div class="tile hero"><div class="k">Cost per job won</div><div class="v fail">$577</div><div class="n">$308 once open leads close</div></div>
+    </div>
+
+    <div class="callout">
+      <p>
+        <strong>The month lost money on first purchase.</strong> 12 won jobs produced
+        $4,669 of gross profit against $6,919 of ad spend — a <strong>$2,250 shortfall</strong>.
+        It only reaches break-even if the 20 leads still open close at the rate the resolved ones did.
+      </p>
+      <p>
+        Of the 72 conversions Google counted, 40 were form submissions, 18 were calls placed from
+        the ad and 14 were taps on the phone number on your site. The CRM holds <strong>43</strong>
+        ads opportunities from the month — more than the forms Google counted.
+        Cost per enquiry you can actually work: <strong>$161</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ FUNNEL ============ -->
+  <section>
+    <h2>Where the 43 ads leads went</h2>
+    <p class="sec-note">
+      Close rate on resolved leads is 52.2% against a 55% gate — respectable. The leak is not
+      losing deals, it is the 47% that never resolve at all.
+    </p>
+    <div class="funnel">
+      <div class="frow"><span class="fl">Won</span><div class="fbar won" style="width:27.9%"></div><span class="fv">12 · $7,436</span></div>
+      <div class="frow"><span class="fl">Still open</span><div class="fbar open" style="width:46.5%"></div><span class="fv">20 · $12,137</span></div>
+      <div class="frow"><span class="fl">Lost</span><div class="fbar lost" style="width:25.6%"></div><span class="fv">11</span></div>
+    </div>
+    <div class="callout">
+      <p>
+        <strong>$12,137 is sitting in 20 open leads.</strong> At the 52.2% close rate that is
+        about 10 more jobs and roughly $3,900 of gross profit — which is what turns September
+        from a $2,250 loss into a modest gain. Nothing on this page matters more than working
+        that list.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ CALLS ============ -->
+  <section>
+    <h2>Does counting the phone calls change the answer?</h2>
+    <p class="sec-note">
+      Google counted 18 calls placed straight from the ad in September. A call creates no web
+      session, so the CRM cannot attribute it — none of those calls appear in the 12 won jobs.
+      Every scenario below still charges ads the full $6,919 and uses the same $405 LTGP.
+    </p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Scenario</th><th>Jobs won</th><th>Cost per job</th><th>LTGP : CAC</th><th>Call</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="lever">Won jobs only — what the CRM can prove</td>
+            <td class="num">12</td><td class="num">$577</td><td class="num">0.70 : 1</td>
+            <td style="color:var(--fail)">Pull back</td>
+          </tr>
+          <tr>
+            <td class="lever">+ 18 ad calls at the cohort win rate (27.9%)</td>
+            <td class="num">17.0</td><td class="num">$406</td><td class="num">1.00 : 1</td>
+            <td style="color:var(--fail)">Break-even</td>
+          </tr>
+          <tr>
+            <td class="lever">+ open leads close at 52.2%</td>
+            <td class="num">22.4</td><td class="num">$308</td><td class="num">1.31 : 1</td>
+            <td style="color:var(--hold)">Hold</td>
+          </tr>
+          <tr style="background:var(--surface-2)">
+            <td class="lever"><strong>Open leads close AND calls convert — all-in</strong></td>
+            <td class="num"><strong>27.5</strong></td><td class="num"><strong>$252</strong></td>
+            <td class="num"><strong>1.61 : 1</strong></td>
+            <td style="color:var(--hold)"><strong>Hold</strong></td>
+          </tr>
+          <tr>
+            <td class="lever">Every single ad call becomes a paid job</td>
+            <td class="num">30</td><td class="num">$231</td><td class="num">1.75 : 1</td>
+            <td style="color:var(--hold)">Hold</td>
+          </tr>
+          <tr>
+            <td class="lever">Perfect world — open closes, every call <em>and</em> every number tap wins</td>
+            <td class="num">54.4</td><td class="num">$127</td><td class="num">3.18 : 1</td>
+            <td style="color:var(--pass)">Clears, but see below</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <p>
+        <strong>The calls make it less bad, not good enough.</strong> They move the gate from
+        0.70 to about 1.61 — real, and worth having. They do not get you to scale.
+      </p>
+      <p>
+        Clearing 3:1 on September's spend takes <strong>51 won jobs</strong>. Google counted 72
+        conversions, number taps included, so you would need <strong>71%</strong> of everything
+        it recorded to become paid work. The cohort's actual win rate is <strong>27.9%</strong>.
+        That last row clears the gate only by assuming a conversion rate two and a half times
+        what the month delivered.
+      </p>
+      <p>
+        The counting runs the other way too: the CRM holds <strong>43</strong> ads opportunities
+        against the <strong>40</strong> form submissions Google recorded, so Google is
+        under-counting forms, not inflating them. Cost per enquiry you can actually work is
+        <strong>$161</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ LEVERS ============ -->
+  <section>
+    <h2>What would clear the 3:1 gate</h2>
+    <p class="sec-note">
+      Each row is what that single lever would have to reach on its own. No one lever gets there,
+      which is the real finding — the gap is 2.3×, so it takes two moving together.
+    </p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Lever</th><th>Now</th><th>Needed for 3:1</th><th>Move</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="lever">Cost per job won</td>
+            <td class="num">$308</td><td class="num">$135</td><td class="num">−56%</td>
+          </tr>
+          <tr>
+            <td class="lever">Jobs won from the same $6,919</td>
+            <td class="num">22</td><td class="num">51</td><td class="num">2.3×</td>
+          </tr>
+          <tr>
+            <td class="lever">Average job value</td>
+            <td class="num">$620</td><td class="num">$1,417</td><td class="num">2.3×</td>
+          </tr>
+          <tr>
+            <td class="lever">Repeat rate (lifts LTGP, not CAC)</td>
+            <td class="num">4%</td><td class="num">—</td><td class="num">see below</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tablewrap" style="margin-top:10px">
+      <table>
+        <thead><tr><th>If repeat rate were</th><th>LTGP</th><th>LTGP : CAC</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr><td class="num">4% (today)</td><td class="num">$405</td><td class="num">1.31 : 1</td><td style="color:var(--hold)">Hold</td></tr>
+          <tr><td class="num">25%</td><td class="num">$486</td><td class="num">1.58 : 1</td><td style="color:var(--hold)">Hold</td></tr>
+          <tr><td class="num">50%</td><td class="num">$584</td><td class="num">1.89 : 1</td><td style="color:var(--hold)">Hold</td></tr>
+          <tr><td class="num">100%</td><td class="num">$778</td><td class="num">2.52 : 1</td><td style="color:var(--hold)">Still hold</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <p>
+        <strong>Better before More.</strong> Volume is not the constraint — you are already
+        buying 43 leads a month. The constraint is that a $620 inspection carries $389 of gross
+        profit, and no amount of ad optimisation changes that arithmetic.
+      </p>
+      <p>
+        The one lever with 2.3× in it is <strong>average job value</strong>. A construction-stage
+        package sells at $3,095 against $620 for a pre-purchase inspection. Converting even a
+        small share of ads leads into packages moves the gate in a way that cutting cost per
+        click never will.
+      </p>
+    </div>
+  </section>
+
+  <footer id="foot">
+    Ad spend and conversions from Google Ads via Windsor.ai · won jobs from GoHighLevel ·
+    margin from Xero cash-basis September · campaign 22176911422, account 538-044-4374.<br>
+    LTGP = average job value × gross margin × (1 + repeat rate). CAC = ad spend ÷ jobs won.
+    Pipeline-adjusted figures assume open leads close at the rate resolved ones did.
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var AUD0 = new Intl.NumberFormat("en-AU", { style: "currency", currency: "AUD", maximumFractionDigits: 0 });
+  var AUD2 = new Intl.NumberFormat("en-AU", { style: "currency", currency: "AUD", minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  var DAILY_BUDGET = 250, TARGET_CPA = 70, MARGIN = 0.628, REPEAT = 0.04, GATE = 3;
+
+  function $(id) { return document.getElementById(id); }
+  function setText(id, s) { var el = $(id); if (el) el.textContent = s; }
+
+  function status(kind, msg) {
+    var el = $("liveStatus");
+    if (!el) return;
+    el.className = "status" + (kind ? " " + kind : "");
+    el.textContent = msg;
+  }
+  function fresh(cls, msg) {
+    var d = $("dot"); if (d) d.className = "dot" + (cls ? " " + cls : "");
+    setText("fresh", msg);
+  }
+
+  /* Windsor returns {result:[...]} for google_ads and
+     {status,job_id,data:[...],total_rows} for gohighlevel. */
+  function rows(payload) {
+    if (!payload) return null;
+    if (Array.isArray(payload)) return payload;
+    if (Array.isArray(payload.result)) return payload.result;
+    if (Array.isArray(payload.data)) return payload.data;
+    return null;
+  }
+  function num(v) { var n = typeof v === "number" ? v : parseFloat(v); return isFinite(n) ? n : 0; }
+
+  /* Error copy keyed on code — each state names the fix that applies to it. */
+  function explain(err) {
+    var c = (err && err.code) || "upstream_error";
+    var s = (err && err.server) || "the connector";
+    switch (c) {
+      case "needs_reauth":
+        return ["err", "Reconnect " + s + " in claude.ai Settings → Connectors. Figures below are the verified September snapshot."];
+      case "server_not_connected":
+        return ["err", "Add " + s + " in claude.ai Settings → Connectors to turn live refresh on."];
+      case "selection_required":
+        return ["warn", "You have more than one " + s + " connector. Pick one when Claude asks, and this block fills in."];
+      case "not_in_manifest":
+        return ["warn", "Live refresh is switched off for this page. The September figures below are unaffected."];
+      case "blocked_by_policy":
+      case "approval_required":
+        return ["warn", "Your organisation's policy blocks this connector call, so live refresh is unavailable."];
+      case "not_granted":
+      case "capability_disabled":
+      case "capability_removed":
+        return ["", "Live refresh isn't available in this view. Showing the verified September snapshot."];
+      case "server_unavailable":
+        return ["warn", "Windsor didn't answer just now — retrying shortly. Last good figures stay on screen."];
+      case "rate_limited":
+        return ["warn", "Too many refreshes in a row. Pausing briefly."];
+      case "tool_error":
+        return ["err", "Windsor rejected the query: " + ((err && err.message) || "no detail given") + "."];
+      case "consent_required":
+        return ["warn", "Allow this page to use " + s + ", then reload to switch live refresh on."];
+      default:
+        return ["warn", "Live refresh failed (" + c + "). Showing the last figures that loaded."];
+    }
+  }
+
+  var adsOK = false, crmOK = false, lastStamp = 0;
+  function stamp(result) {
+    var t = (result && result.cache && result.cache.storedAt) || Date.now();
+    if (t > lastStamp) lastStamp = t;
+    if (!adsOK) return;
+    var d = new Date(lastStamp);
+    fresh("live", "updated " + d.toLocaleTimeString("en-AU", { hour: "numeric", minute: "2-digit" }));
+  }
+
+  /* ---------- ads ---------- */
+  function renderAds(rs) {
+    var spend = 0, conv = 0, days = 0, todaySpend = null;
+    var todayKey = new Date().toLocaleDateString("en-CA"); // YYYY-MM-DD, local
+    var latest = null;
+    rs.forEach(function (r) {
+      var s = num(r.spend); spend += s; conv += num(r.conversions);
+      if (s > 0) days++;
+      var dk = String(r.date || "").slice(0, 10);
+      if (dk === todayKey) todaySpend = s;
+      if (!latest || dk > latest.k) latest = { k: dk, s: s };
+    });
+
+    var shownToday = todaySpend, todayNote = "against a $250 daily budget";
+    if (shownToday === null && latest) {
+      shownToday = latest.s;
+      todayNote = "latest full day (" + latest.k.slice(8) + "/" + latest.k.slice(5, 7) + ") · budget $250";
+    }
+    setText("lvToday", shownToday === null ? "—" : AUD0.format(shownToday));
+    setText("lvTodayN", todayNote);
+
+    setText("lvSpend", AUD0.format(spend));
+    setText("lvSpendN", days + (days === 1 ? " active day" : " active days") + " this month");
+    setText("lvConv", String(Math.round(conv * 10) / 10));
+
+    var cpaEl = $("lvCpa");
+    if (conv > 0) {
+      var cpa = spend / conv;
+      cpaEl.textContent = AUD2.format(cpa);
+      cpaEl.className = "v " + (cpa <= TARGET_CPA ? "pass" : cpa <= TARGET_CPA * 1.5 ? "hold" : "fail");
+      setText("lvCpaN", "target $70 · " + (cpa > TARGET_CPA ? "+" : "") + Math.round((cpa / TARGET_CPA - 1) * 100) + "% vs target");
+    } else {
+      cpaEl.textContent = "—"; cpaEl.className = "v";
+      setText("lvCpaN", "target $70 · no conversions yet");
+    }
+
+    var pace = days ? spend / days : 0;
+    var pct = Math.max(0, Math.min(100, (pace / (DAILY_BUDGET * 2)) * 100));
+    var pf = $("paceFill"); if (pf) pf.style.width = pct + "%";
+    setText("paceLbl", "Daily pace " + (days ? AUD0.format(pace) : "—"));
+
+    adsOK = true;
+    if (crmOK) status("", "Live. Ad figures refresh hourly; won jobs update as the CRM does.");
+    else status("", "Ad spend is live. Waiting on CRM won-job figures…");
+  }
+
+  /* ---------- crm ---------- */
+  function renderCrm(rs) {
+    var n = 0, val = 0;
+    rs.forEach(function (r) {
+      var src = String(r.opportunity_source || "").toLowerCase();
+      var att = String(r.opportunity_last_attribution_session_source || "").toLowerCase();
+      if (src.indexOf("google ads") === -1 && att.indexOf("paid search") === -1) return;
+      n++; val += num(r.opportunity_monetary_value);
+    });
+    setText("lvWon", String(n));
+    setText("lvRev", AUD0.format(val));
+    setText("lvWonN", n ? "ads-attributed in the CRM" : "none closed yet this month");
+    setText("lvRevN", n ? "avg " + AUD0.format(val / n) + " per job" : " ");
+    crmOK = true;
+    if (adsOK) status("", "Live. Ad figures refresh hourly; won jobs update as the CRM does.");
+  }
+
+  /* ---------- wire up ---------- */
+  var ADS_INPUT = {
+    connector: "google_ads",
+    accounts: ["5380444374"],
+    fields: ["date", "spend", "clicks", "conversions"],
+    date_preset: "this_monthT",
+    filters: [["campaign_id", "eq", "22176911422"]]
+  };
+  var CRM_INPUT = {
+    connector: "gohighlevel",
+    accounts: ["YGgCKbEtY4u8fRX0Zvfo"],
+    fields: ["opportunity_status", "opportunity_monetary_value", "opportunity_source",
+             "opportunity_created_at", "opportunity_last_attribution_session_source"],
+    date_preset: "this_monthT",
+    filters: [["opportunity_status", "eq", "won"]]
+  };
+  var HOUR = 3600000;
+
+  function start(mcp) {
+    var failures = 0;
+    function watch(input, render, label) {
+      try {
+        mcp.watchTool("Windsor_ai", "get_data", input, function (ev) {
+          if (ev.type === "data") {
+            var rs = rows(ev.result && ev.result.payload);
+            if (!rs) { status("warn", "Windsor returned no " + label + " rows for this month yet."); return; }
+            try { render(rs); stamp(ev.result); }
+            catch (e) { status("err", "Could not read the " + label + " figures."); }
+          } else {
+            failures++;
+            var ex = explain(ev.error);
+            var hard = ["needs_reauth", "server_not_connected", "not_in_manifest",
+                        "blocked_by_policy", "approval_required", "not_granted",
+                        "capability_disabled", "capability_removed"];
+            if (hard.indexOf(ev.error && ev.error.code) !== -1) {
+              fresh("off", "live refresh off");
+              if (label === "ads") { adsOK = false; }
+            } else {
+              fresh("stale", "last good figures");
+            }
+            status(ex[0], ex[1]);
+          }
+        }, { refetchInterval: HOUR, cache: { staleTime: HOUR } });
+      } catch (e) {
+        fresh("off", "live refresh off");
+        status("", "Live refresh isn't available in this view. Showing the verified September snapshot.");
+      }
+    }
+    watch(ADS_INPUT, renderAds, "ads");
+    watch(CRM_INPUT, renderCrm, "CRM");
+  }
+
+  if (window.claude && typeof window.claude.use === "function") {
+    window.claude.use("mcp").then(function (mcp) {
+      if (!mcp) {
+        fresh("off", "September snapshot");
+        status("", "Live refresh isn't available in this view. Every figure below is the verified September snapshot.");
+        return;
+      }
+      start(mcp);
+    }).catch(function () {
+      fresh("off", "September snapshot");
+      status("", "Live refresh could not start. Showing the verified September snapshot.");
+    });
+  } else {
+    fresh("off", "September snapshot");
+    status("", "Opened outside Claude, so there is no live refresh here. Figures below are the verified September snapshot.");
+  }
+})();
+</script>
