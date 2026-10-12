@@ -184,3 +184,47 @@ Book's one-line summary: *promise a result, make it fast, likely and easy; curio
 ## 8. Claims status (David, 2026-10-12)
 - **Flood test:** "generally yes for construction stage inspections, usually included **if requested**". So ads may only say **"flood test available on request"**, never "we flood-test every…". B3 keeps the soft line.
 - **"Every defect referenced to the Australian Standard":** still unconfirmed. A3 stays on hold with "photographed and itemised".
+
+## 9. Jeremy's plan after the full read (2026-10-12)
+**Challengers.** One per control, launched one at a time **after** the controls have had 72 hours, so each comparison stays clean.
+
+**vs A2 (auction): No-BS selfie.**
+- Under 15 seconds, filmed raw by David, so it also tests rough footage against the HeyGen polish.
+- Line: "If you're bidding Saturday and haven't inspected, you're bidding blind."
+- A real Melbourne review screenshot in frame.
+- Sells only the next step.
+
+**vs B2 (pre-plaster): Why you'll never.**
+- One warning sign per beat, landing on "pre-plaster is your last look".
+- No price mention.
+
+**vs A1 (same-day): Show don't tell.**
+- Silent B-roll: torch under the subfloor, moisture meter on the wall, the report landing in an inbox.
+- Captions carry the guarantee.
+- Non-verbal CTA showing the booking screen.
+
+**On hold:**
+- Emotional testimonial, until a real client agrees to film. Never a HeyGen testimonial: "trust killer".
+- Prop comedy, until there's a winner to remix (highest production effort).
+
+**Mechanism name** (David to choose):
+
+| Name | Jeremy's score | Note |
+|---|---|---|
+| "Report Before Dark" | 8.5 | |
+| "The Sunset Rule" | 8 | |
+| "The Same-Day Standard" | 7.5 | |
+| "Same-Day Guarantee" | 5 | Generic |
+
+Whichever wins, the ad must earn the name with one line on how it works: the inspector writes the report on site, the same day.
+
+**HR lead framework: Show don't tell.**
+- Thermal or moisture-meter reveal of a hidden leak.
+- Open on the meter already spiking, with a Croatian text overlay in the first second.
+- 3-second end card: booking screen plus phone number.
+- Never imply every leak is findable: "what the camera shows us", not "what we promise you".
+- Local Croatian proof.
+
+**Claims:**
+- Flood test available on request is a footnote, not an ad claim. B3 keeps "we check every wet area".
+- The Australian Standard claim stays on hold.
