@@ -1,7 +1,7 @@
 // DC Building Inspectors landing pages. Leads go to GHL (inbound webhook) and Meta CAPI.
 const http = require('http'), fs = require('fs'), path = require('path'), crypto = require('crypto');
 const PUB = path.join(__dirname, 'public');
-const { PORT = 3000, GHL_WEBHOOK_URL, LEAD_EMAIL_WEBHOOK_URL, META_PIXEL_ID, META_CAPI_TOKEN, GHL_BOOKING_URL, META_TEST_EVENT_CODE } = process.env;
+const { PORT = 3000, GHL_WEBHOOK_URL, LEAD_EMAIL_WEBHOOK_URL, META_PIXEL_ID, META_CAPI_TOKEN, GHL_BOOKING_URL, BOOKING_LINK = 'https://dcinspect.com.au/online-bookings', META_TEST_EVENT_CODE } = process.env;
 // One entry per ad landing page. key = GHL tag + Meta content name; hot = stage answers routed to /thankyou-book.
 const LANDERS = {
   '/auction': { file: 'auction.html', key: 'lp-a2-auction', ad: 'A2 auction', service: 'pre-purchase', hot: /Auction|Signed/ },
@@ -13,7 +13,9 @@ const TYPES = { '.webp': 'image/webp', '.mp4': 'video/mp4', '.png': 'image/png',
 const pixel = META_PIXEL_ID ? `<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${META_PIXEL_ID}');fbq('track','PageView');</script>` : '';
 // Lead fires on both thank-you pages (Jeremy), with the same event_id as CAPI so Meta de-duplicates.
 const leadJs = META_PIXEL_ID ? `<script>(function(){var e=new URLSearchParams(location.search).get('e');if(e&&window.fbq)fbq('track','Lead',{},{eventID:e});})();</script>` : '';
-const booking = GHL_BOOKING_URL ? `<iframe src="${GHL_BOOKING_URL}" title="Book your inspection" loading="lazy"></iframe>` : `<a class="go" href="tel:+61483936872">Call 0483 936 872 to book</a>`;
+// Embedded GHL calendar if set, otherwise a button to the website's online booking page.
+const booking = GHL_BOOKING_URL ? `<iframe src="${GHL_BOOKING_URL}" title="Book your inspection" loading="lazy"></iframe>`
+  : `<a class="go" href="${BOOKING_LINK}?utm_source=meta&utm_medium=lp&utm_campaign=thankyou-book">Book online now →</a>`;
 
 const cache = {};
 function page(file) {
