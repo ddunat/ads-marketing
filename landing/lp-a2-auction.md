@@ -66,7 +66,7 @@ Order: hero → form → Google proof card → how it works (defect photo at ste
 - **Hero (Jeremy option D, est. +0.2–0.3):** David portrait card (`img/david-hero.webp`, 11 KB, HeyGen photo look `389a1d384e5f425b87feed5f055b1fb4`, smiling, black shirt, flipped so the logo reads correctly). Mobile: 112×136 rounded card under the sub, with "David Dunat, Director" (never "your inspector": he subcontracts the inspections), ★ 4.9 · 529 and BPC beside it, and the form's first option at ~590px. Desktop (≥900px): 300×367 card in the right column beside the headline. Never a big full-width hero photo (it pushes the form off-screen, -0.3 to -0.5) and never a house/defect photo as the hero (it breaks congruency with the ad). Only one avatar still.
 - **Baseline to beat:** current Google Ads landing conversion is 5%.
 - **Under the form:** Google proof card, 4.9 · 529 reviews + BPC DBU-66182 chip (pure CSS, no image).
-- **Step 2:** defect photo (`img/defect.webp`, from the Drive crack footage). **Swap for 2–3 real report page screenshots with annotated defects, address blurred**, once David supplies them.
+- **Step 2:** two real defect photos from one of our reports, side by side (`img/report-level.webp`: brickwork out of level; `img/report-gap.webp`: brickwork gap measured). Photos only, cropped from the report: no page header, client or address. Caption: "From one of our reports. Defects are photographed, measured and itemised."
 - **Step 3:** report-ready notification (`img/notif.webp`).
 - **Never:** stock photos, house clipart, smiling families.
 - **Speed:** WebP, `loading="lazy"` below the fold, width/height set. Test on a real phone on 4G before launch.
