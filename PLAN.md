@@ -22,7 +22,10 @@ The two accounts never share a desk, a card, an ad set or a publish call.
 - Construction stages: Slab, Frame, Lock-up, Pre-plaster, Fixing (incl. waterproofing) at $600 each. PCI/Practical Completion $726. Premium PCI $1,490.
 - Pre-purchase building & pest, priced by size: $550 (1–3 bed apt), $605 (2 bed), $605 (3 bed), $649 (4 bed), $715 (house on stumps), $847 (5 bed), Premium $1,375.
 - Main differentiator: **same-day report, or you don't pay.**
-- 529 Google reviews, 4.9★. VBA registered.
+  - Condition (David, 2026-10-12): whatever day the inspection happens, the report is sent that same day, or the client gets their money back.
+  - Ad wording: "Your report the same day we inspect, or your money back."
+  - Still to confirm with David: full refund or partial, and any exclusions (e.g. no access to the property).
+- 529 Google reviews, 4.9★. BPC registered building inspector, DBU-66182 (never say "VBA registered").
 - Tagline: "Inspect Confidently, Build Fearlessly"
 
 ## Offer & proof (HR)
@@ -53,7 +56,7 @@ The "40–50%" dream target needs a named stage (see open questions).
 
 ## Open dependencies
 - Jeremy AI (jeremy.utari.ai) can't be reached from this cloud environment (DNS doesn't resolve). Until it can be, use a paste loop or a browser bridge.
-- HeyGen has no connector here yet.
+- HeyGen: connected (2026-10-12). Avatar and voice ids are in CLAUDE.md.
 - Pixel/CAPI and GHL → Meta booked-job passback still need verifying.
 
 ## Decisions (2026-10-12)
@@ -78,3 +81,25 @@ The "40–50%" dream target needs a named stage (see open questions).
 - AU landing pages: David leans toward no prices. Put this to Jeremy, then A/B test.
 - Epoxy campaign stays off.
 - Placements: Facebook and Instagram feeds, stories and reels only. Exclude Audience Network (92% accidental clicks on Epoxy).
+
+## Ad Desk (built 2026-10-12)
+- AU: https://claude.ai/artifact/5H47w3oGCLjeMoXJv1HiNJ (Meta 449816980394949)
+- HR: https://claude.ai/artifact/J8BNLzkpTd6GRcSiw8ng2Z (Meta 1386746812476820)
+- Source: `desks/desk-template.html`, built into `ad-desk-au.html` / `ad-desk-hr.html` with sed.
+- How it works:
+  1. Claude creates each ad **paused** in that account's test ad set (Windsor `create_ad_video` → `create_ad`).
+  2. Claude writes a card to the desk's db collection `cards` (one doc per ad).
+  3. David approves → the page calls Windsor `execute_action` `enable_ad` as David → card status becomes `live`.
+- Approve is disabled unless:
+  - `account` matches the desk;
+  - `ad_id` is set;
+  - `jeremy_score` ≥ 8;
+  - every gate passes: `brief`, `self_score`, `jeremy`, `compliance`, `video_qa`, `landing`.
+- Card fields:
+  - Ad and creative: `title`, `service`, `angle`, `format`, `hook`, `primary_text`, `headline`, `description`, `cta` (Meta enum, e.g. LEARN_MORE), `landing_url`.
+  - Placement: `account`, `adset_name`, `ad_id`.
+  - Media: `video_url`, `thumb_url` (upload to the desk's asset store).
+  - Review: `jeremy_score`, `jeremy_notes`, `gates.{key}.{pass,note}`.
+  - Tracking: `status` (review|live|paused|held|rejected|check), `created_at`.
+- Hold/Reject write `decision.note`. Claude reads held and rejected cards and revises.
+- `check` means the approval got no answer from Windsor, so verify the ad in Ads Manager.

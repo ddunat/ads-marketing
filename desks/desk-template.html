@@ -1,0 +1,236 @@
+<title>Ad Desk __MKT__</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: one phone-width column of ad cards, a sticky account header, status tabs. */
+:root{
+  --blue:#3483FA; --cyan:#22C3FF; --ink:#1E1E24; --paper:#FAFBFF;
+  --bg:#F2F5FB; --surface:#FFFFFF; --fg:#1E1E24; --muted:#5D6578; --line:#DDE3EE;
+  --good:#11845B; --good-bg:#E3F5EC; --warn:#A35B00; --warn-bg:#FFF1DC; --bad:#C2352B; --bad-bg:#FDE7E5;
+  --accent:var(--blue); --accent-fg:#FFFFFF; --chip:#E8EFFC;
+  --f-ui:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#15161B; --surface:#1E1E24; --fg:#EEF1F8; --muted:#9AA3B6; --line:#30323C;
+  --good:#4CD39A; --good-bg:#14322A; --warn:#FFB65C; --warn-bg:#3A2A14; --bad:#FF7A6E; --bad-bg:#3D1C1A;
+  --accent:#4C95FF; --accent-fg:#0B1220; --chip:#24324A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#15161B; --surface:#1E1E24; --fg:#EEF1F8; --muted:#9AA3B6; --line:#30323C;
+  --good:#4CD39A; --good-bg:#14322A; --warn:#FFB65C; --warn-bg:#3A2A14; --bad:#FF7A6E; --bad-bg:#3D1C1A;
+  --accent:#4C95FF; --accent-fg:#0B1220; --chip:#24324A; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);font-size:15px;line-height:1.5}
+.wrap{max-width:560px;margin:0 auto;padding-inline:16px;padding-block:0 48px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:14px 10px;border-bottom:1px solid var(--line)}
+.hrow{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h1{font-size:22px;font-weight:800;letter-spacing:-.01em;margin:0}
+.acct{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.mkt{display:inline-block;background:var(--ink);color:#fff;font-weight:800;font-size:12px;letter-spacing:.08em;padding:2px 8px;border-radius:4px;margin-right:6px;vertical-align:2px}
+:root:not([data-theme="light"]) .mkt{background:var(--cyan);color:var(--ink)}
+.tabs{display:flex;gap:6px;margin-top:12px;overflow-x:auto}
+.tab{font:inherit;font-weight:700;font-size:13px;border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:6px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.tab .n{font-variant-numeric:tabular-nums;opacity:.8;margin-left:4px}
+.banner{margin-top:12px;padding:10px 12px;border-radius:8px;font-size:13px;background:var(--warn-bg);color:var(--warn)}
+main{display:grid;gap:16px;margin-top:16px}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:20px;color:var(--muted)}
+.empty h2{color:var(--fg);font-size:17px;margin:0 0 6px}
+.empty ol{padding-left:20px;margin:8px 0 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.media{background:#000;display:flex;justify-content:center}
+.media video,.media img{display:block;max-width:100%;max-height:70vh;aspect-ratio:9/16;object-fit:contain;background:#000}
+.nomedia{padding:28px 16px;color:#9AA3B6;font-size:13px;text-align:center}
+.body{padding:14px 16px 16px;display:grid;gap:12px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.top h3{margin:0;font-size:16px;font-weight:800;text-wrap:balance;min-width:0}
+.score{flex:none;text-align:center;border-radius:10px;padding:4px 10px;font-weight:800;font-variant-numeric:tabular-nums}
+.score small{display:block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.score.ok{background:var(--good-bg);color:var(--good)} .score.no{background:var(--bad-bg);color:var(--bad)} .score.na{background:var(--chip);color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;font-weight:700;background:var(--chip);color:var(--fg);padding:2px 8px;border-radius:999px}
+.st{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:4px}
+.st.review{background:var(--chip);color:var(--accent)} .st.live{background:var(--good-bg);color:var(--good)}
+.st.held,.st.check{background:var(--warn-bg);color:var(--warn)} .st.rejected,.st.paused{background:var(--bad-bg);color:var(--bad)}
+.lbl{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 2px}
+.copy{white-space:pre-wrap;margin:0;min-width:0;overflow-wrap:anywhere}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.kv dt{color:var(--muted);font-weight:600} .kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.kv a{color:var(--accent)}
+details{border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-weight:700;font-size:13px}
+.gates{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:6px;font-size:13px}
+.gates li{display:grid;grid-template-columns:22px 1fr;gap:6px}
+.gates .p{color:var(--good);font-weight:800} .gates .f{color:var(--bad);font-weight:800}
+.notes{font-size:13px;white-space:pre-wrap;color:var(--fg);margin:8px 0 0}
+.actions{display:grid;gap:8px}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+button.b{font:inherit;font-weight:800;font-size:14px;border-radius:8px;padding:11px 14px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--fg);flex:1 1 auto}
+button.b.go{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+button.b.confirm{background:var(--good);color:#fff;border-color:var(--good)}
+button.b.danger{color:var(--bad)}
+button.b:disabled{opacity:.45;cursor:not-allowed}
+button.b:focus-visible,.tab:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+textarea{width:100%;font:inherit;font-size:14px;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:var(--bg);color:var(--fg);min-height:64px}
+.why{font-size:12px;color:var(--muted)}
+.err{font-size:13px;background:var(--bad-bg);color:var(--bad);padding:8px 10px;border-radius:8px}
+.okmsg{font-size:13px;background:var(--good-bg);color:var(--good);padding:8px 10px;border-radius:8px}
+footer{margin-top:24px;font-size:12px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="hrow">
+    <h1><span class="mkt">__MKT__</span>Ad Desk</h1>
+    <span class="acct">Meta __ACCT__ · __CUR__</span>
+  </div>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="t-review" data-tab="review" aria-selected="true">To review<span class="n" id="n-review">0</span></button>
+    <button class="tab" role="tab" id="t-live" data-tab="live" aria-selected="false">Live<span class="n" id="n-live">0</span></button>
+    <button class="tab" role="tab" id="t-other" data-tab="other" aria-selected="false">Held / rejected<span class="n" id="n-other">0</span></button>
+  </div>
+  <div class="banner" id="banner" hidden></div>
+</header>
+<main id="list">
+  <div class="empty"><h2>Loading the desk…</h2></div>
+</main>
+<footer>__MKT__ ads only. Approving switches the paused ad on in the __MKT__ test ad set straight away. Ads appear here only after passing every gate, including Jeremy at 8/10 or higher.</footer>
+</div>
+
+<script>
+const ACCOUNT="__ACCT__", MARKET="__MKT__", SERVER="Windsor.ai", MIN_SCORE=8;
+const GATE_NAMES={brief:"Brief and approved claims",self_score:"Draft self-score",jeremy:"Jeremy AI critique",compliance:"Compliance (ACL, Meta policy"+(MARKET==="HR"?", native Croatian check":"")+")",video_qa:"Video QA (lip sync, captions, logo rule, hook in 2s)",landing:"Landing page reviewed by Jeremy"};
+let db=null, mcp=null, cards=[], tab="review", ui={};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmtDate=t=>{try{return new Date(t).toLocaleString("en-AU",{day:"numeric",month:"short",hour:"numeric",minute:"2-digit"})}catch{return ""}};
+
+function blockers(c){
+  const r=[];
+  if(c.account!==ACCOUNT) r.push("This card belongs to a different ad account.");
+  if(!c.ad_id) r.push("No paused Meta ad is attached yet.");
+  if(typeof c.jeremy_score!=="number"||c.jeremy_score<MIN_SCORE) r.push("Jeremy score is below "+MIN_SCORE+"/10.");
+  const g=c.gates||{}; for(const k of Object.keys(GATE_NAMES)) if(!(g[k]&&g[k].pass)) r.push(GATE_NAMES[k]+" has not passed.");
+  return r;
+}
+function bucket(c){const s=c.data.status;return s==="live"||s==="paused"||s==="check"?"live":(s==="review"||!s?"review":"other")}
+
+function render(){
+  const counts={review:0,live:0,other:0};
+  cards.forEach(c=>counts[bucket(c)]++);
+  for(const k in counts) $("#n-"+k).textContent=counts[k];
+  document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected",t.dataset.tab===tab?"true":"false"));
+  const shown=cards.filter(c=>bucket(c)===tab).sort((a,b)=>String(b.data.created_at||"").localeCompare(String(a.data.created_at||"")));
+  const list=$("#list");
+  if(!shown.length){
+    list.innerHTML = tab==="review"
+      ? `<div class="empty"><h2>No ads waiting for you</h2><p>New ${MARKET} ads land here once they've passed every gate. Each card shows:</p><ol><li>the video, primary text, headline and button</li><li>Jeremy's score and notes</li><li>the gate log and the test ad set it goes into</li></ol><p>Tap <b>Approve</b> and confirm, and the ad goes live straight away. Use <b>Hold</b> or <b>Reject</b> with a note to send it back for changes.</p></div>`
+      : `<div class="empty"><h2>${tab==="live"?"Nothing live from this desk yet":"Nothing held or rejected"}</h2><p>${tab==="live"?"Approved ads show here with a Pause button.":"Ads you hold or reject show here with your note."}</p></div>`;
+    return;
+  }
+  list.innerHTML=shown.map(cardHTML).join("");
+}
+
+function cardHTML(c){
+  const d=c.data, s=ui[c.id]||{}, sc=d.jeremy_score;
+  const scCls=typeof sc!=="number"?"na":sc>=MIN_SCORE?"ok":"no";
+  const media=d.video_url?`<video src="${esc(d.video_url)}" ${d.thumb_url?`poster="${esc(d.thumb_url)}"`:""} controls playsinline preload="metadata"></video>`
+    : d.thumb_url?`<img src="${esc(d.thumb_url)}" alt="">`:`<div class="nomedia">No video attached</div>`;
+  const g=d.gates||{};
+  const gates=Object.keys(GATE_NAMES).map(k=>{const x=g[k]||{};return `<li><span class="${x.pass?"p":"f"}">${x.pass?"✓":"✕"}</span><span><b>${esc(GATE_NAMES[k])}</b>${x.note?" · "+esc(x.note):""}</span></li>`}).join("");
+  const st=d.status||"review";
+  const stLabel={review:"To review",live:"Live",paused:"Paused",held:"Held",rejected:"Rejected",check:"Check in Ads Manager"}[st]||st;
+  let actions="";
+  if(bucket(c)==="review"){
+    const bl=blockers(d), can=bl.length===0&&mcp;
+    if(s.mode==="confirm") actions=`<div class="actions"><div class="why">This switches on ad ${esc(d.ad_id)} in “${esc(d.adset_name||"test ad set")}”. It starts spending now.</div><div class="btns"><button class="b confirm" data-act="enable" data-id="${c.id}" ${s.busy?"disabled":""}>${s.busy?"Going live…":"Confirm: go live"}</button><button class="b" data-act="cancel" data-id="${c.id}" ${s.busy?"disabled":""}>Cancel</button></div></div>`;
+    else if(s.mode==="hold"||s.mode==="reject") actions=`<div class="actions"><label class="lbl" for="note-${c.id}">${s.mode==="hold"?"What should change?":"Why reject it?"}</label><textarea id="note-${c.id}" placeholder="${s.mode==="hold"?"e.g. Hook is too slow, open on the crack":"e.g. Off-brand, don't revisit this angle"}"></textarea><div class="btns"><button class="b ${s.mode==="reject"?"danger":"go"}" data-act="save-${s.mode}" data-id="${c.id}" ${s.busy?"disabled":""}>${s.mode==="hold"?"Send back with note":"Reject"}</button><button class="b" data-act="cancel" data-id="${c.id}">Cancel</button></div></div>`;
+    else actions=`<div class="actions"><div class="btns"><button class="b go" data-act="approve" data-id="${c.id}" ${can?"":"disabled"}>Approve</button><button class="b" data-act="hold" data-id="${c.id}">Hold</button><button class="b danger" data-act="reject" data-id="${c.id}">Reject</button></div>${bl.length?`<div class="why">Can't approve yet: ${esc(bl.join(" "))}</div>`:!mcp?`<div class="why">Approving needs the Windsor.ai connector. Open this desk in the Claude app or claude.ai while signed in.</div>`:""}</div>`;
+  } else if(st==="live"||st==="check"){
+    actions=`<div class="actions"><div class="btns"><button class="b danger" data-act="pause" data-id="${c.id}" ${s.busy||!mcp?"disabled":""}>${s.busy?"Pausing…":"Pause this ad"}</button></div></div>`;
+  } else if(st==="paused"){
+    actions=`<div class="actions"><div class="btns"><button class="b go" data-act="resume" data-id="${c.id}" ${s.busy||!mcp?"disabled":""}>${s.busy?"Switching on…":"Switch back on"}</button></div></div>`;
+  }
+  const dec=d.decision&&d.decision.note?`<div><p class="lbl">Your note</p><p class="copy">${esc(d.decision.note)}</p></div>`:"";
+  return `<article class="card" id="card-${c.id}">
+    <div class="media">${media}</div>
+    <div class="body">
+      <div class="top"><h3>${esc(d.title||"Untitled ad")}</h3><div class="score ${scCls}">${typeof sc==="number"?sc.toFixed(1).replace(/\.0$/,""):"–"}<small>Jeremy</small></div></div>
+      <div class="chips"><span class="st ${esc(st)}">${esc(stLabel)}</span>${[d.service,d.angle,d.format].filter(Boolean).map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div>
+      ${d.hook?`<div><p class="lbl">Hook (first 2s)</p><p class="copy">${esc(d.hook)}</p></div>`:""}
+      <div><p class="lbl">Primary text</p><p class="copy">${esc(d.primary_text||"")}</p></div>
+      <dl class="kv">
+        <dt>Headline</dt><dd>${esc(d.headline||"–")}</dd>
+        ${d.description?`<dt>Description</dt><dd>${esc(d.description)}</dd>`:""}
+        <dt>Button</dt><dd>${esc((d.cta||"–").replace(/_/g," ").toLowerCase())}</dd>
+        <dt>Landing page</dt><dd>${d.landing_url?`<a href="${esc(d.landing_url)}" target="_blank" rel="noopener">${esc(d.landing_url.replace(/^https?:\/\//,""))}</a>`:"–"}</dd>
+        <dt>Ad set</dt><dd>${esc(d.adset_name||"–")}</dd>
+        <dt>Meta ad</dt><dd style="font-family:var(--f-mono);font-size:12px">${esc(d.ad_id||"not created yet")}</dd>
+        ${d.live_at?`<dt>Went live</dt><dd>${esc(fmtDate(d.live_at))}</dd>`:""}
+      </dl>
+      ${dec}
+      <details><summary>Jeremy's notes and gate log</summary>${d.jeremy_notes?`<p class="notes">${esc(d.jeremy_notes)}</p>`:""}<ul class="gates">${gates}</ul></details>
+      ${s.err?`<div class="err">${esc(s.err)}</div>`:""}${s.ok?`<div class="okmsg">${esc(s.ok)}</div>`:""}
+      ${actions}
+    </div></article>`;
+}
+
+function explain(e,verb){
+  const c=e&&e.code;
+  if(c==="needs_reauth") return "Windsor.ai needs reconnecting. Go to claude.ai Settings → Connectors, reconnect it, then try again.";
+  if(c==="server_not_connected"||c==="selection_required") return "Windsor.ai isn't connected for this desk. Add it in claude.ai Settings → Connectors, then try again.";
+  if(c==="not_in_manifest"||c==="approval_required"||c==="consent_required") return "The desk wasn't allowed to use Windsor.ai. Allow it when asked, then tap the button again.";
+  if(c==="tool_error") return "Meta refused to "+verb+" the ad: "+(e.message||"no reason given")+".";
+  if(c==="server_unavailable"||c==="upstream_error"||c==="cancelled") return "No answer from Windsor.ai, so the ad may or may not have changed. Check it in Ads Manager before trying again.";
+  return "Couldn't "+verb+" the ad ("+(c||"unknown error")+"). "+(e&&e.message||"");
+}
+function setUI(id,patch){ui[id]=Object.assign({},ui[id]||{},patch);render()}
+
+async function act(action,id){
+  const c=cards.find(x=>x.id===id); if(!c) return; const d=c.data, ref=db.doc("cards/"+id);
+  if(action==="approve") return setUI(id,{mode:"confirm",err:null,ok:null});
+  if(action==="hold"||action==="reject") return setUI(id,{mode:action,err:null,ok:null});
+  if(action==="cancel") return setUI(id,{mode:null,err:null});
+  if(action==="save-hold"||action==="save-reject"){
+    const note=(document.getElementById("note-"+id)||{}).value||"";
+    setUI(id,{busy:true});
+    try{await ref.update({status:action==="save-hold"?"held":"rejected",decision:{action:action.slice(5),note,at:new Date().toISOString()}});ui[id]={};render()}
+    catch(e){setUI(id,{busy:false,err:"Couldn't save your note ("+(e.code||"error")+"). Try again."})}
+    return;
+  }
+  const map={enable:["enable_ad","switch on"],resume:["enable_ad","switch on"],pause:["pause_ad","pause"]};
+  if(!map[action]) return;
+  if(d.account!==ACCOUNT) return setUI(id,{err:"This card is for another ad account. Nothing was changed."});
+  if(action==="enable"&&blockers(d).length) return setUI(id,{mode:null,err:"This ad hasn't passed every gate."});
+  setUI(id,{busy:true,err:null,ok:null});
+  try{
+    await mcp.callTool(SERVER,"execute_action",{connector:"facebook",account:ACCOUNT,action:map[action][0],params:{ad_id:d.ad_id}},{cache:false});
+    const now=new Date().toISOString();
+    const upd=action==="pause"?{status:"paused",paused_at:now}:{status:"live",live_at:d.live_at||now,decision:{action:"approve",note:"",at:now}};
+    try{await ref.update(upd)}catch(e){}
+    ui[id]={ok:action==="pause"?"Paused in Meta.":"Live in Meta. It's in the "+(d.adset_name||"test ad set")+"."};render();
+  }catch(e){
+    const amb=e&&(e.code==="server_unavailable"||e.code==="upstream_error"||e.code==="cancelled");
+    if(amb&&action!=="pause"){try{await ref.update({status:"check",check_note:"Approve sent "+new Date().toISOString()+", no answer from Windsor"})}catch(_){}}
+    setUI(id,{busy:false,mode:null,err:explain(e,map[action][1])});
+  }
+}
+
+document.addEventListener("click",ev=>{
+  const t=ev.target.closest(".tab"); if(t){tab=t.dataset.tab;try{localStorage.setItem("desk-tab",tab)}catch{}render();return}
+  const b=ev.target.closest("button[data-act]"); if(b&&db) act(b.dataset.act,b.dataset.id);
+});
+
+(async()=>{
+  try{const s=localStorage.getItem("desk-tab");if(s)tab=s}catch{}
+  const [dbx,mcpx]=await Promise.all([window.claude.use("db"),window.claude.use("mcp")]);
+  db=dbx; mcp=mcpx;
+  if(!db){$("#list").innerHTML=`<div class="empty"><h2>Sign in to use the desk</h2><p>Open this page in the Claude app or on claude.ai while signed in to see ads waiting for approval.</p></div>`;return}
+  if(!mcp){const b=$("#banner");b.hidden=false;b.textContent="Read-only here: approving and pausing need the Windsor.ai connector, which this view can't reach."}
+  db.collection("cards").onSnapshot(snap=>{
+    cards=snap.docs.filter(x=>x.exists).map(x=>({id:x.id,data:x.data(),get account(){return this.data.account}}));
+    render();
+  },e=>{$("#list").innerHTML=`<div class="empty"><h2>The desk lost its connection</h2><p>Reload the page to reconnect (${esc(e.code)}).</p></div>`});
+})();
+</script>
