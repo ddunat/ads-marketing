@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "jeremy": {
+      "type": "http",
+      "url": "https://persona-mcp.utari.ai/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${JEREMY_TOKEN}"
+      }
+    }
+  }
+}
