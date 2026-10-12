@@ -1,0 +1,57 @@
+# DC Building Inspectors — Meta Ads Engine (AU + HR)
+
+Status: planning · started 2026-10-12
+
+## Goal
+Run a steady flow of Meta video ads for two separate accounts. Each ad is produced, checked by gates, critiqued by Jeremy AI, then approved by David on mobile. Once approved, it publishes automatically.
+
+| | AU | HR |
+|---|---|---|
+| Meta ad account | 449816980394949 | 1386746812476820 |
+| GHL sub-account | YGgCKbEtY4u8fRX0Zvfo | fSPTLOI7MAzy9VUHFa2k |
+| Market | Melbourne + metro | All of Croatia |
+| Language / voice | English, Australian accent | Croatian, native |
+| Budget | A$100/day (new) | €250/day (keep) |
+| Baseline | No Meta data. Google leads close at ~10% | CPL €15–20, ~15% lead→booking, ~€350/job |
+| Competitor research | Yes (AU only; never copy) | **None.** Original angles only |
+| Ad desk | Ad Desk AU (new) | Ad Desk HR (new) |
+
+The two accounts never share a desk, a card, an ad set or a publish call.
+
+## Offer & proof (AU)
+- Construction stages: Slab, Frame, Lock-up, Pre-plaster, Fixing (incl. waterproofing) at $600 each. PCI/Practical Completion $726. Premium PCI $1,490.
+- Pre-purchase building & pest, priced by size: $550 (1–3 bed apt), $605 (2 bed), $605 (3 bed), $649 (4 bed), $715 (house on stumps), $847 (5 bed), Premium $1,375.
+- Main differentiator: **same-day report, or you don't pay.**
+- 529 Google reviews, 4.9★. VBA registered.
+- Tagline: "Inspect Confidently, Build Fearlessly"
+
+## Offer & proof (HR)
+- Leak detection, damp, and waterproofing. Topics: burst pipes, rising damp, balcony/terrace waterproofing, shower leaks, drainage leaks.
+- Same-day report guarantee. 5★ on Google from 13 reviews.
+
+## Brand rules for creative
+- Logo only on hi-vis jackets and hard hats. Small and minimal. **No logo overlays on video.**
+- Colours: #3483FA blue, #22C3FF cyan, #1E1E24 ink, #FAFBFF white. Font: Manrope.
+- Voice: friendly, authoritative, reassuring, a touch of humour. Don't trash builders. Don't copy competitors.
+
+## Pipeline: every ad passes 6 gates before David sees it
+1. **Brief:** service × persona × angle × hook. Facts come only from the approved claims list above.
+2. **Draft + self-score:** copy is scored against the Jeremy rubric (once captured). Below threshold, it gets rewritten.
+3. **Jeremy AI critique:** score and line notes. Revise until it passes the threshold.
+4. **Compliance:** ACL claims (no unprovable "best", "guaranteed", fear claims), Meta ad policy, no builder trashing, no competitor lines. A native-language check for HR.
+5. **Production + video QA:** HeyGen talking heads / Arcads UGC and B-roll, 15–30s, 9:16 and 4:5. Checks: lip sync, accent, artefacts, caption spelling, logo rule, hook within the first 2s.
+6. **Ad Desk:** a mobile card with the video, primary text, headline, CTA, landing URL, target ad set, Jeremy score and gate log. Approve → publishes to that account's test ad set. Reject or hold with a note → revise.
+
+## Round-one matrix (3–5 angles × 3 hooks per service)
+- AU pre-purchase B&P (FHB, home owners)
+- AU construction stages (volume-builder FHB): Slab, Frame, Lock-up, Pre-plaster, Fixing/Waterproofing, PCI
+- HR leak detection and waterproofing: burst pipes, rising damp, balcony, shower, drainage
+
+## KPIs tracked per ad
+Hook rate (3s views / impressions), hold rate, CTR, landing page view → lead, CPL, lead → booking, cost per booked job.
+The "40–50%" dream target needs a named stage (see open questions).
+
+## Open dependencies
+- Jeremy AI (jeremy.utari.ai) can't be reached from this cloud environment (DNS doesn't resolve). Until it can be, use a paste loop or a browser bridge.
+- HeyGen has no connector here yet.
+- Pixel/CAPI and GHL → Meta booked-job passback still need verifying.
