@@ -21,6 +21,7 @@ Hard rules:
 - Avoid clicking anything that raises a browser confirm dialog without warning David first.
 
 Do this in order, and tick each step off as you go:
+0. **First: build the A2 control landing page** exactly as specified in `landing/lp-a2-auction.md` (clone `/home-869758` to `/auction`). Use `landing/lp-a2-auction.html` as the visual reference. Then run its pre-launch checks.
 1. **AU surveys:** apply the question tables in `au-lead-forms.md`, with custom fields created and mapped:
    - one question per screen, progress bar on
    - partial submits on
