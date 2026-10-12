@@ -1,0 +1,21 @@
+{
+ "title": "AU-A2 VSL - auction landing page (50s)",
+ "caption": true,
+ "dimension": {
+  "width": 1080,
+  "height": 1920
+ },
+ "video_inputs": [
+  {
+   "character": {
+    "type": "talking_photo",
+    "talking_photo_id": "b6820f0449eb4e3aab591fc44c75fcce"
+   },
+   "voice": {
+    "type": "text",
+    "voice_id": "fe2230b3ddee436fb50c6ebc9b44f1e5",
+    "input_text": "Bidding at auction this week? Here's what you need to know before you bid. There's no cooling-off at a Victorian auction. Once the hammer falls, every hidden defect is yours. And one missed defect can cost far more than the inspection. I'm David, director of DC Building Inspectors. Our team are B.P.C. registered building inspectors and qualified trades, rated four point nine stars from five hundred and twenty-nine Google reviews. We check the building for defects and timber pests, photograph what we find, and itemise it all in a clear report. So you know exactly what you're bidding on. You get your report the same day we inspect, or your money back. It takes two minutes. Answer the questions above, and we'll send you this week's times."
+   }
+  }
+ ]
+}

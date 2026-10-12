@@ -43,6 +43,7 @@ figure{margin:10px 0 0 44px}figure img{width:100%;max-width:230px;height:auto;bo
 @media (min-width:900px){.hero{display:grid;grid-template-columns:1fr 300px;grid-template-areas:"e p" "h p" "s p" "w p";column-gap:40px;text-align:left;padding:48px max(24px,calc((100% - 1040px)/2))}
 .hero>.eyebrow{grid-area:e;justify-self:start;align-self:start}.hero h1{grid-area:h;margin-left:0;font-size:44px}.hero .sub{grid-area:s;margin-left:0}
 .who{display:contents}.pic{grid-area:p;width:300px;height:367px;align-self:center}.cred{grid-area:w;margin-top:16px}}
+.vsl video{display:block;width:100%;max-width:320px;height:auto;margin:0 auto;border-radius:16px;background:#1E1E24}
 footer{margin:30px 0;color:var(--muted);font-size:13px;text-align:center}
 </style>
 <div class="note">Design preview for the GHL build. The form here is a mock and sends nothing.</div>
@@ -51,11 +52,16 @@ footer{margin:30px 0;color:var(--muted);font-size:13px;text-align:center}
   <h1>Your report the same day we inspect, or your money back.</h1>
   <p class="sub">No cooling-off at a Victorian auction. Inspect first, then bid knowing exactly what you're buying.</p>
   <div class="who"><div class="pic"><img src="img/david-hero.webp" width="600" height="734" fetchpriority="high" alt="David Dunat, Director of DC Building Inspectors"></div>
-    <div class="cred"><b>David Dunat, Director</b><span><span class="stars">★</span> 4.9 · 529 Google reviews</span><span>BPC registered building inspector (DBU-66182)</span></div></div>
+    <div class="cred"><b>David Dunat, Director</b><span><span class="stars">★</span> 4.9 · 529 Google reviews</span><span>BPC registered inspectors &amp; qualified trades</span></div></div>
 </header>
 <div class="wrap">
   <div class="form" id="form" aria-live="polite"></div>
-  <div class="gcard"><b>4.9</b><div><span class="st">★★★★★</span><small>529 Google reviews · Melbourne</small><span class="chip">BPC REGISTERED INSPECTOR · DBU-66182</span></div></div>
+  <div class="gcard"><b>4.9</b><div><span class="st">★★★★★</span><small>529 Google reviews · Melbourne</small><span class="chip">BPC REGISTERED INSPECTORS</span></div></div>
+  <section class="vsl">
+    <h2>Before you bid: 48 seconds</h2>
+    <video controls playsinline preload="none" poster="img/vsl-thumb.webp" width="720" height="1280" aria-label="David Dunat, director, explains what to check before you bid at auction"><source src="img/a2-vsl.mp4" type="video/mp4"></video>
+    <p class="small">Captions on. Tap to play.</p>
+  </section>
   <section>
     <h2>How it works</h2>
     <div class="steps">
@@ -82,7 +88,7 @@ footer{margin:30px 0;color:var(--muted);font-size:13px;text-align:center}
     <details><summary>Is pest included?</summary><p>Yes. Building and timber pest in one inspection and one report.</p></details>
   </section>
   <a class="go" href="#form" style="text-align:center;text-decoration:none">Inspect first: check this week's times</a>
-  <footer>DC Building Inspectors · BPC registered building inspector (DBU-66182)</footer>
+  <footer>DC Building Inspectors · Inspections by BPC registered building inspectors and qualified trades · Director David Dunat, BPC registered building inspector (DBU-66182)</footer>
 </div>
 <div class="sticky hide" id="sticky"><span>Same-day report or your money back</span><a href="#form">Check times</a></div>
 <script>

@@ -86,3 +86,17 @@ Order: hero → form → Google proof card → how it works (defect photo at ste
 - **Test:** current page vs page + VSL, same traffic, 72h minimum. Judge on cost per booked inspection, not only conversion rate.
 - **Thumbnail check:** if play rate among people who reach the section is under ~20%, fix the thumbnail or placement.
 - **Later:** test a real talking-head version shot on site against the avatar cut.
+
+### VSL v1 built (2026-10-12)
+- **Source:** HeyGen `d5053f324c0e4b419e9225b43cee47ed`. Request is in `creative/au-round1/build/a2-vsl-heygen-request.json`; captions in `a2-vsl.ass`. Render `creative/au-round1/renders/A2-VSL-v1.mp4` (48s; gitignored).
+- **Edit:**
+  - Hook boxes "BIDDING AT AUCTION / THIS WEEK?"
+  - House push-in, 4.2–7.0s.
+  - Brickwork B-roll, 7.0–11.8s.
+  - Proof card with "BPC REGISTERED INSPECTORS" chip, 17.1–25.5s.
+  - Rotted timber verandah post, 26.1–30.9s.
+  - Report-ready notification + guarantee punch, 35.2–38.7s.
+  - Live form recording end card.
+- **Script:** Jeremy's line fixes applied. "Our team" / "We check", never "your inspector". "BPC registered building inspectors and qualified trades". The guarantee keeps the mandated wording.
+- **Web copy:** 720p, 4.5 MB, `preload="none"`, poster = smiling photo look + "BEFORE YOU BID / Watch: 48 seconds". In GHL, host the video and paste its URL. Never autoplay.
+- **To do:** cut in report photos when available; check the end card text "PICK YOUR PROPERTY. LOCK YOUR TIME." against the page form.
