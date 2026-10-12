@@ -1,0 +1,12 @@
+<html><head><style>
+@font-face{font-family:M;src:url(fonts/Manrope-800.ttf)}@font-face{font-family:S;src:url(fonts/Manrope-600.ttf)}
+body{margin:0;width:390px;height:844px;background:linear-gradient(160deg,#2b3a55,#1E1E24 60%);font-family:S,sans-serif;color:#fff;overflow:hidden}
+.time{text-align:center;margin-top:70px;font:64px M;letter-spacing:-1px}.date{text-align:center;font-size:17px;opacity:.85}
+.n{position:absolute;left:12px;right:12px;top:360px;background:rgba(245,245,247,.92);color:#1E1E24;border-radius:22px;padding:14px 16px;transform:translateY(40px);opacity:0;transition:all .45s cubic-bezier(.2,.8,.2,1)}
+.n.in{transform:none;opacity:1}.h{display:flex;justify-content:space-between;font-size:13px;color:#555}.app{display:flex;gap:8px;align-items:center}
+.ic{width:22px;height:22px;border-radius:6px;background:#3483FA;color:#fff;font:12px M;display:flex;align-items:center;justify-content:center}
+.t{font:16px M;margin-top:6px}.b{font-size:14.5px;margin-top:2px;line-height:1.35}.pdf{display:inline-block;margin-top:8px;background:#fff;border:1px solid #ddd;border-radius:10px;padding:6px 10px;font-size:13px}
+</style></head><body><div class="time">4:12</div><div class="date">Inspection day</div>
+<div class="n" id="n"><div class="h"><div class="app"><div class="ic">DC</div>Mail</div><div>now</div></div>
+<div class="t">Your inspection report is ready</div><div class="b">Building &amp; pest report for your property, inspected this morning.</div><div class="pdf">📄 Inspection-Report.pdf</div></div>
+<script>setTimeout(()=>document.getElementById('n').classList.add('in'),500)</script></body></html>
