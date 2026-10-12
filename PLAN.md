@@ -55,3 +55,17 @@ The "40–50%" dream target needs a named stage (see open questions).
 - Jeremy AI (jeremy.utari.ai) can't be reached from this cloud environment (DNS doesn't resolve). Until it can be, use a paste loop or a browser bridge.
 - HeyGen has no connector here yet.
 - Pixel/CAPI and GHL → Meta booked-job passback still need verifying.
+
+## Decisions (2026-10-12)
+- Jeremy AI pass mark: **8/10 or higher**. Every hook, script, ad copy, landing page, campaign structure and HR tone gets Jeremy's input.
+- The 40–50% target applies to **lead → booked job**.
+- Talking heads: HeyGen with David's custom avatar "David in a black shirt". Everything else: Arcads.
+- Each ad gets its own Meta landing page. Base the layout on the existing GHL landing pages. Jeremy reviews each page before it goes to David.
+- On approval, the ad goes live **immediately** in that account's test ad set.
+- Structure: one testing campaign per account (budget set at campaign level), then winners move to a scaling campaign. Confirm with Jeremy.
+- Real footage comes from the Google Drive social folders already used for the Draft Desks.
+- Deadline: as soon as possible (today if we can). Blocked until Jeremy AI and HeyGen are connected.
+
+## Connection setup (needed)
+- Network allowed domains: jeremy.utari.ai, utari.ai, api.heygen.com, upload.heygen.com, dcinspect.com.au, inspection.dcinspect.com.au, dcinspect.eu, www.facebook.com
+- Environment secret: HEYGEN_API_KEY (and JEREMY_API_KEY if Utari provides an API)
