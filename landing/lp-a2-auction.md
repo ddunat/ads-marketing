@@ -63,7 +63,7 @@ Visual reference: `lp-a2-auction.html` (also published as a claude.ai artifact).
 
 ## Photos (Jeremy follow-up: 8.5 → est. 9.0–9.5 if mobile load stays under ~2.3s)
 Order: hero → form → Google proof card → how it works (defect photo at step 2, report-ready phone at step 3) → price → FAQ → final CTA.
-- **Hero (Jeremy option D, est. +0.2–0.3):** David portrait card (`img/david-hero.webp`, 11 KB, a calm frame from the A2 HeyGen video, black shirt, mirrored to match the ad). Mobile: 112×136 rounded card under the sub, with name, ★ 4.9 · 529 and BPC beside it, and the form's first option at ~590px. Desktop (≥900px): 300×367 card in the right column beside the headline. Never a big full-width hero photo (it pushes the form off-screen, -0.3 to -0.5) and never a house/defect photo as the hero (it breaks congruency with the ad). Only one avatar still.
+- **Hero (Jeremy option D, est. +0.2–0.3):** David portrait card (`img/david-hero.webp`, 11 KB, HeyGen photo look `389a1d384e5f425b87feed5f055b1fb4`, smiling, black shirt, flipped so the logo reads correctly). Mobile: 112×136 rounded card under the sub, with name, ★ 4.9 · 529 and BPC beside it, and the form's first option at ~590px. Desktop (≥900px): 300×367 card in the right column beside the headline. Never a big full-width hero photo (it pushes the form off-screen, -0.3 to -0.5) and never a house/defect photo as the hero (it breaks congruency with the ad). Only one avatar still.
 - **Baseline to beat:** current Google Ads landing conversion is 5%.
 - **Under the form:** Google proof card, 4.9 · 529 reviews + BPC DBU-66182 chip (pure CSS, no image).
 - **Step 2:** defect photo (`img/defect.webp`, from the Drive crack footage). **Swap for 2–3 real report page screenshots with annotated defects, address blurred**, once David supplies them.
@@ -71,3 +71,18 @@ Order: hero → form → Google proof card → how it works (defect photo at ste
 - **Never:** stock photos, house clipart, smiling families.
 - **Speed:** WebP, `loading="lazy"` below the fold, width/height set. Test on a real phone on 4G before launch.
 - **Measure:** snapshot the conversion rate by source before the photos go live so the lift can be proved.
+
+## VSL (Jeremy: option 3, est. +0.2–0.4 if speed holds)
+- **Placement:** below the form, before "How it works". Never at the top (est. -0.3 or worse: cold mobile traffic doesn't press play, and it pushes the form down).
+- **Length and format:** 45–60s, 9:16. HeyGen David as the talking-head spine, cut with real footage (property walk, brickwork crack, report pages, phone notification). Captions burned in.
+- **Playback:** tap-to-play only, never autoplay. Thumbnail shows David's face plus a caption. Use a host with play-rate analytics.
+- **Beats (~50s):**
+  1. Callout (5s): "Bidding at auction this week in Melbourne? Here's what you need to know before you bid."
+  2. Stake (8s): a hidden defect vs a $550 inspection.
+  3. Who (8s): BPC registered, 4.9 from 529 reviews, with the proof card on screen.
+  4. What you get (12s): the report photos.
+  5. Guarantee (8s): same-day report or your money back, with the notification graphic.
+  6. CTA (5s): "Takes two minutes, book below."
+- **Test:** current page vs page + VSL, same traffic, 72h minimum. Judge on cost per booked inspection, not only conversion rate.
+- **Thumbnail check:** if play rate among people who reach the section is under ~20%, fix the thumbnail or placement.
+- **Later:** test a real talking-head version shot on site against the avatar cut.
