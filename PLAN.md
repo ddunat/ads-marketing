@@ -55,7 +55,7 @@ Hook rate (3s views / impressions), hold rate, CTR, landing page view → lead, 
 The "40–50%" dream target needs a named stage (see open questions).
 
 ## Open dependencies
-- Jeremy AI (jeremy.utari.ai) can't be reached from this cloud environment (DNS doesn't resolve). Until it can be, use a paste loop or a browser bridge.
+- Jeremy AI: connected via MCP (2026-10-12). Rubric in `research/jeremy-rubric.md`.
 - HeyGen: connected (2026-10-12). Avatar and voice ids are in CLAUDE.md.
 - Pixel/CAPI and GHL → Meta booked-job passback still need verifying.
 
