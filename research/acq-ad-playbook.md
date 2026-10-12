@@ -228,3 +228,13 @@ Whichever wins, the ad must earn the name with one line on how it works: the ins
 **Claims:**
 - Flood test available on request is a footnote, not an ad claim. B3 keeps "we check every wet area".
 - The Australian Standard claim stays on hold.
+
+## 10. David's decisions (2026-10-12, later)
+- **Mechanism name: "Report Before Dark."** Use it in challengers and new ads. The A2, B2 and A1 controls stay as scored, so the first test stays clean.
+- **Australian Standard claim:** construction stage inspection reports DO reference the Australian Standard for each defect; pre-purchase building & pest reports do NOT.
+  - Allowed in construction ads (B1/B2/B3 and the "why you'll never" challenger).
+  - Never in pre-purchase ads: A3 stays "photographed and itemised".
+- **No self-filmed footage. All presenter content is HeyGen** ("it looks real").
+  - The "No-BS selfie" challenger becomes a HeyGen selfie-framed version.
+  - Raw-footage tests are dropped.
+  - A client testimonial still needs a real client. Never a HeyGen testimonial.
