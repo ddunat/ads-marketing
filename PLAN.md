@@ -69,3 +69,12 @@ The "40–50%" dream target needs a named stage (see open questions).
 ## Connection setup (needed)
 - Network allowed domains: jeremy.utari.ai, utari.ai, api.heygen.com, upload.heygen.com, dcinspect.com.au, inspection.dcinspect.com.au, dcinspect.eu, www.facebook.com
 - Environment secret: HEYGEN_API_KEY (and JEREMY_API_KEY if Utari provides an API)
+
+## Decisions (2026-10-12, round 2)
+- HR leads: the team calls instantly or same day. The CRM still needs a "Booked" stage and no-answer stages that are actually used, or the booking rate can't be measured.
+- **Must do:** send booked jobs from GHL back to Meta via the Conversions API, for both accounts. Use a GHL workflow per sub-account (trigger: opportunity enters Booked / Won), with Schedule as the booking event and Purchase plus job value as the paid event.
+  - AU: pixel 821976388791436
+  - HR: pixel 608006939071812, plus the HR lead-form page 658374350686787
+- AU landing pages: David leans toward no prices. Put this to Jeremy, then A/B test.
+- Epoxy campaign stays off.
+- Placements: Facebook and Instagram feeds, stories and reels only. Exclude Audience Network (92% accidental clicks on Epoxy).
