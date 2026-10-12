@@ -1,0 +1,28 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Manrope ExtraBold,96,&H00FFFFFF,&H00FFFFFF,&H00241E1E,&H96000000,0,0,0,0,100,100,0,0,1,6,4,2,70,70,600,1
+Style: HookBox,Manrope ExtraBold,90,&H00FFFFFF,&H00FFFFFF,&H00FA8334,&H00FA8334,0,0,0,0,100,100,0,0,3,30,0,8,60,60,230,1
+Style: HookSub,Manrope ExtraBold,84,&H00FFFFFF,&H00FFFFFF,&H00241E1E,&H00241E1E,0,0,0,0,100,100,1,0,3,24,0,8,60,60,385,1
+Style: Punch,Manrope ExtraBold,108,&H00FFFFFF,&H00FFFFFF,&H00241E1E,&H00241E1E,0,0,0,0,100,100,1,0,3,34,0,2,50,50,560,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:01.70,HookBox,,0,0,0,,{\fscx106\fscy106\t(0,120,\fscx100\fscy100)}AUCTION THIS SATURDAY?
+Dialogue: 1,0:00:00.12,0:00:01.70,HookSub,,0,0,0,,{\fad(80,0)}INSPECT FIRST.
+Dialogue: 0,0:00:01.76,0:00:02.74,Cap,,0,0,0,,{\fscx108\fscy108\t(0,100,\fscx100\fscy100)}We'll get you the report
+Dialogue: 1,0:00:02.76,0:00:05.40,Punch,,0,0,0,,{\fscx108\fscy108\t(0,120,\fscx100\fscy100)}SAME-DAY REPORT\N{\c&H00FFC322&}OR YOUR MONEY BACK
+Dialogue: 0,0:00:05.78,0:00:06.95,Cap,,0,0,0,,{\fscx108\fscy108\t(0,100,\fscx100\fscy100)}There's {\c&H00FFC322&}no cooling-off
+Dialogue: 0,0:00:07.00,0:00:08.30,Cap,,0,0,0,,{\fscx108\fscy108\t(0,100,\fscx100\fscy100)}at a Victorian auction.
+Dialogue: 0,0:00:08.74,0:00:10.05,Cap,,0,0,0,,{\fscx108\fscy108\t(0,100,\fscx100\fscy100)}Once the hammer falls,
+Dialogue: 0,0:00:10.18,0:00:11.05,Cap,,0,0,0,,{\fscx108\fscy108\t(0,100,\fscx100\fscy100)}it's yours,
+Dialogue: 0,0:00:11.10,0:00:12.30,Cap,,0,0,0,,{\fscx108\fscy108\t(0,100,\fscx100\fscy100)}{\c&H00FFC322&}cracks{\c&H00FFFFFF&} and all.
+Dialogue: 0,0:00:16.30,0:00:17.60,Cap,,0,0,0,,{\fscx108\fscy108\t(0,100,\fscx100\fscy100)}Book before {\c&H00FFC322&}Thursday
+Dialogue: 0,0:00:17.65,0:00:18.50,Cap,,0,0,0,,{\fscx108\fscy108\t(0,100,\fscx100\fscy100)}and you'll bid knowing
+Dialogue: 0,0:00:18.54,0:00:19.95,Cap,,0,0,0,,{\fscx108\fscy108\t(0,100,\fscx100\fscy100)}exactly what you're buying.
+Dialogue: 0,0:00:20.06,0:00:20.76,Cap,,0,0,0,,{\fscx108\fscy108\t(0,100,\fscx100\fscy100)}Tap below.
