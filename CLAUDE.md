@@ -1,6 +1,6 @@
 # DC Building Inspectors: Meta Ads engine
 
-Start here: read `PLAN.md` (decisions, pipeline, gates), then `research/`.
+Start here: read `PLAN.md` (decisions, pipeline, gates), then `research/`. Every ad is built to `research/acq-ad-playbook.md` (ACQ handbook checklist) and then scored by Jeremy (`research/jeremy-rubric.md`).
 
 - Two Meta ad accounts, never mixed: AU `449816980394949`, HR `1386746812476820`. Access is through the Windsor.ai `facebook` connector.
 - GHL sub-accounts: AU `YGgCKbEtY4u8fRX0Zvfo`, HR `fSPTLOI7MAzy9VUHFa2k`.
