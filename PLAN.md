@@ -106,3 +106,13 @@ The "40–50%" dream target needs a named stage (see open questions).
   - Tracking: `status` (review|live|paused|held|rejected|check), `created_at`.
 - Hold/Reject write `decision.note`. Claude reads held and rejected cards and revises.
 - `check` means the approval got no answer from Windsor, so verify the ad in Ads Manager.
+
+## Decisions (2026-10-12, round 3)
+- **Standing rule:** trust Jeremy. Adopt his recommendations unless David overrides one. David still approves every ad on the Ad Desk.
+- AU optimises for **Lead**. Switch to Schedule only at a sustained 30–50 bookings/week per ad set.
+- Structure (Jeremy): **one campaign, one ad set, broad targeting** per account at current budgets. This replaces the separate test and scaling campaigns. New ads go into that ad set (the Ad Desk "test ad set" = this ad set).
+- Copy goes broad (majority hook): guarantee in the first 3s, 529 reviews mid-ad, fixed price by size. The form does the qualifying.
+- Booked-job CAPI feed: build now as pixel conditioning. Spec: `build/booked-job-capi-feed.md`.
+- AU form qualifying questions, contact details required: `build/au-lead-forms.md`.
+  - Hot buckets get the online-booking link on the thank-you page.
+- Jeremy: lead follow-up speed is the biggest lever. Hot leads get a call within 5 minutes.
