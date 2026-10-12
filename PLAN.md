@@ -24,7 +24,7 @@ The two accounts never share a desk, a card, an ad set or a publish call.
 - Main differentiator: **same-day report, or you don't pay.**
   - Condition (David, 2026-10-12): whatever day the inspection happens, the report is sent that same day, or the client gets their money back.
   - Ad wording: "Your report the same day we inspect, or your money back."
-  - Still to confirm with David: full refund or partial, and any exclusions (e.g. no access to the property).
+  - Full refund, no exclusions (David, 2026-10-12).
 - 529 Google reviews, 4.9★. BPC registered building inspector, DBU-66182 (never say "VBA registered").
 - Tagline: "Inspect Confidently, Build Fearlessly"
 
@@ -81,6 +81,9 @@ The "40–50%" dream target needs a named stage (see open questions).
 - AU landing pages: David leans toward no prices. Put this to Jeremy, then A/B test.
 - Epoxy campaign stays off.
 - Placements: Facebook and Instagram feeds, stories and reels only. Exclude Audience Network (92% accidental clicks on Epoxy).
+
+## CRM caretaker
+- HR 546 'New Leads – Facebook' sweep: on hold until David says go (2026-10-12).
 
 ## Ad Desk (built 2026-10-12)
 - AU: https://claude.ai/artifact/5H47w3oGCLjeMoXJv1HiNJ (Meta 449816980394949)

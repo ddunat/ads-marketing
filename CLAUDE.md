@@ -11,4 +11,4 @@ Start here: read `PLAN.md` (decisions, pipeline, gates), then `research/`.
 - Ad Desks (claude.ai artifacts, source in `desks/`): AU https://claude.ai/artifact/5H47w3oGCLjeMoXJv1HiNJ · HR https://claude.ai/artifact/J8BNLzkpTd6GRcSiw8ng2Z. See "Ad Desk" in PLAN.md for the card format.
 - Jeremy AI (jeremy.utari.ai): not reachable from the cloud. Use Claude in Chrome on David's computer, or a paste loop. Pass mark is 8/10.
 - Never publish without David's approval on the Ad Desk for that account. On approval, the ad goes live immediately in the test ad set.
-- Compliance: never "VBA registered". Use "BPC registered building inspector, DBU-66182" (Building and Plumbing Commission, Victoria). No builder names or signage. Guarantee wording: "Your report the same day we inspect, or your money back." (conditions in PLAN.md). No Meta personal-attribute framing.
+- Compliance: never "VBA registered". Use "BPC registered building inspector, DBU-66182" (Building and Plumbing Commission, Victoria). No builder names or signage. Guarantee wording: "Your report the same day we inspect, or your money back." Full refund, no exclusions. No Meta personal-attribute framing.
