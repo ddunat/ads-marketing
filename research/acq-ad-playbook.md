@@ -2,11 +2,7 @@
 
 Source: *ACQ Advertising Handbook: My 20 Best Ad Frameworks of All Time*, Hormozi / Acquisition.com, read 2026-10-12. These are my own working notes, applied to DC.
 The book is marked "not for distribution", so nothing is quoted at length and the scans stay in Drive ("ACQ Advertising Handbook - Claude").
-**Gap:** book pages 26–66 haven't been read yet. They are in `1.pdf`, the 2:48 pm scan (52 MB, not yet split). That block covers:
-- Gym Launch frameworks 2–5 (Prop comedy, Emotional avatar testimonial, Show don't tell, Long-term result)
-- all five ALAN frameworks (Looking for 5 avatars, New vs old, Why you will never, North Star, No-BS selfie)
-
-Everything else (pages 1–25 and 67–115) has been read page by page.
+**Read status:** all 115 pages read, page by page, on 2026-10-12. That covers all 20 frameworks, the Ad Kaleidoscope and both checklists. Pages 37–38 are partly blurred in the scan, but the material around them is captured.
 
 ## How this fits with Jeremy
 - **Jeremy scores, the handbook builds.** Every draft is written to the handbook checklist below, then scored by Jeremy (pass mark 8/10).
@@ -118,10 +114,19 @@ Book's one-line summary: *promise a result, make it fast, likely and easy; curio
 11. **Recycle proven hooks across industries.** Model the structure, never copy competitors' words.
 12. **Big visuals. Big offer. Small words. Short sentences.**
 
-## 4. The frameworks most usable for DC (read so far)
+## 4. All 20 frameworks, mapped to DC
 | Framework | Core move | DC version (draft idea) |
 |---|---|---|
-| Gym #1 Open-loop selfie (p23) | Wild result up front, show "wrong" circumstances one after another, pay off with proof at the end | Walk a perfect-looking display home: "looks flawless, right?" → reveal hidden defects one by one → "same-day report, money back if not" |
+| Gym #1 Open-loop selfie (p23) | Wild result up front, show "wrong" circumstances one after another, pay off with proof at the end, soft CTA tied to their limiting belief | Walk a perfect-looking display home: "looks flawless, right?" → reveal hidden defects one by one → "same-day report, money back if not" |
+| Gym #2 Prop comedy (p27) | 3–4 one-line "yes" questions (outcome, speed, likelihood), each 3–5s with its own prop or scene. Whip-cuts, upbeat music, huge captions, freeze the CTA card for 1s | "Buying in Melbourne?" → "Report the same day?" → "Fixed price?" → "Money back if it's late?" Quick cuts between sites, each prop matching its line (torch, ladder, meter) |
+| Gym #3 Emotional avatar testimonial (p31) | A real client like the buyer, filmed where they live or build. Personal stakes → pains → turning point → work → professional and personal good → an honest "not easy" → reason why → CTA. Sad music, then upbeat at the turning point | Needs a real client willing to film (e.g. a first-home buyer whose report saved them money). **Needs David to find a willing client and get written consent** |
+| Gym #4 Show don't tell (p35) | No narration. Proof so clear it needs no words; frame it with the fewest words and numbers; non-verbal CTA | Silent clip of the thermal camera revealing a hidden leak, a moisture meter spiking, a flood test filling a shower base. Caption: "Found in 4 minutes." Strong for HR leak detection |
+| Gym #5 Long-term result (p39) | Bigger results on longer timelines attract the best customers. Industry-specific before/after stat, a fast win plus a big win, then soft benefits. Optimise for LTV:CAC, not cheap leads | Construction: "We inspected all 6 stages of this build. What we caught at frame saved them at handover." Attracts full-package buyers (higher value) |
+| ALAN #1 Looking for 5 (p45) | "I'm looking for N [avatar] who want [outcome] without [pain] so I can [reason why]." Educational setting; a believable reason for limited spots; risk-split; "my team will call to confirm" | "We're taking 5 more new-build clients in [growth corridor] this month for our full stage package." **Only if the capacity limit is true** |
+| ALAN #2 New vs Old (p49) | Whiteboard. Call out the exact avatar in ≤5s, big claim, pin the pain on the old model, reveal the new way anchored to one simple metric, hypothetical maths, one proof line, a CTA that previews the next step | "Old way: a report days later, after you've signed. New way: a report the same day, before the cooling-off ends." Metric: days to report |
+| ALAN #3 Why you'll never (p53) | List very specific warning signs that explain why THEY haven't got the outcome. Each one builds pressure; name the solution something non-obvious | "4 signs your new build is heading for a defect list at handover": no independent stage checks, wet-area waterproofing unchecked before tiling, frame not checked before plaster, signing off at PCI alone |
+| ALAN #4 North Star (p57) | One predictive metric, a ladder of outcomes by level, specific pains at each level ("think moments"), one-sentence solution, CTA to a lead magnet | Metric: **how many stages were independently inspected**. 0 = you find out at handover; 3 = most structural issues caught; all 6 = full record for warranty claims. Lead magnet: stage checklist |
+| ALAN #5 No-BS selfie (p61) | Very short. If-then pain line, solution named in one sentence, proof that someone worse off got a better result, swipe-up. Sells the next step only | David walking out of a site: "If you're buying at auction this Saturday and haven't inspected, you're bidding blind. Same-day report. Link below." Easy to make in volume |
 | Skool #1 Trending format (p67) | Organic-looking podcast clip; lead with a recent surprising finding | "Last week we found…" podcast-style clip of David |
 | Skool #2 Value anchor (p71) | "Would you pay $X? $Y? What about…" then the real anchor | "What would you pay to know about a $40k problem *before* you sign?" (only with a verified repair figure) |
 | Skool #3 Bribe (p75) | Pattern-interrupt ask, then what they get | "Real quick, what's your address? I'll tell you what to check before you bid." Lead magnet idea: free pre-auction checklist |
@@ -158,3 +163,24 @@ Book's one-line summary: *promise a result, make it fast, likely and easy; curio
   - A2, B2 and fixed A1 stay as the **control**. Don't rebuild ads that haven't spent; build handbook-style variants to test against them.
   - Launch, collect 72h of signal, then run the Kaleidoscope: 80% variants of the winner, 20% new handbook concepts.
   - **Variants need genuinely different messaging angles.** Near-identical clones get punished by Meta ranking and pile up rejections, which hurts account trust.
+
+## 7. Extra rules from Gym and ALAN (pp26–66)
+- **Show the buyer their own world in the first frame**, e.g. a gym owner in a gym. "So simple, yet few do it." For DC: an open home, an auction crowd, a slab or frame stage in a new estate.
+- **Proof the viewer can relate to their own situation beats proof from far away.** Use Melbourne suburbs and local estates, never generic stock.
+- **Many people moving at once (in unison) stops the scroll.**
+- **Specificity proves expertise:** "think moments". Name problems so precise the viewer thinks "he's an insider". Example: the tiler's waterproofing membrane not dry before the tiles go on.
+- **Speak to the advanced customer too.** The handbook says to optimise for LTV:CAC, not cheap leads. For DC that means full-stage-package buyers and repeat investors. This **matches Jeremy's booked-job conditioning plan**.
+- **Name your mechanism something non-obvious** ("reverse royalty", not "pay per show"). DC idea, needs Jeremy's input: name the same-day process.
+- **Preview the next step in the CTA** ("Fill the form → we call within 5 minutes → you get a fixed price and a time"). Detailing the next steps removes friction.
+- **Peer endorsement beats self-endorsement for advanced buyers.** Have a real client issue the invite.
+- **Testimonial brief** (from Gym #3), six points to ask a client to cover:
+  1. personal life before
+  2. professional life before
+  3. scepticism
+  4. why they acted anyway
+  5. personal life after
+  6. professional life after
+
+## 8. Claims status (David, 2026-10-12)
+- **Flood test:** "generally yes for construction stage inspections, usually included **if requested**". So ads may only say **"flood test available on request"**, never "we flood-test every…". B3 keeps the soft line.
+- **"Every defect referenced to the Australian Standard":** still unconfirmed. A3 stays on hold with "photographed and itemised".
