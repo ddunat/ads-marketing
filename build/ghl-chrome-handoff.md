@@ -21,7 +21,11 @@ Hard rules:
 - Avoid clicking anything that raises a browser confirm dialog without warning David first.
 
 Do this in order, and tick each step off as you go:
-0. **First: build the A2 control landing page** exactly as specified in `landing/lp-a2-auction.md` (clone `/home-869758` to `/auction`). Use `landing/lp-a2-auction.html` as the visual reference. Then run its pre-launch checks.
+0. **First: lead plumbing for the Railway landing pages.** The pages now live on Railway, not GHL, so do NOT build `/auction` in GHL. Instead, follow `build/ghl-nurture.md`:
+   - Create the "Meta Leads AU" pipeline and its lost reasons.
+   - Build Workflow 1 with an **Inbound Webhook** trigger, plus the hot and warm sequences and the stop rules. Save them as **draft**.
+   - Create (or pick) the booking calendar for pre-purchase inspections.
+   - Report back to David: the **webhook URL**, the **calendar's embed/share URL**, and who receives the 5-minute call notification. Claude sets these on Railway, then sends one test lead before publishing the workflow.
 1. **AU surveys:** apply the question tables in `au-lead-forms.md`, with custom fields created and mapped:
    - one question per screen, progress bar on
    - partial submits on

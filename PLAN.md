@@ -63,7 +63,19 @@ The "40–50%" dream target needs a named stage (see open questions).
 - Jeremy AI pass mark: **8/10 or higher**. Every hook, script, ad copy, landing page, campaign structure and HR tone gets Jeremy's input.
 - The 40–50% target applies to **lead → booked job**.
 - Talking heads: HeyGen with David's custom avatar "David in a black shirt". Everything else: Arcads.
-- Each ad gets its own Meta landing page. Base the layout on the existing GHL landing pages. Jeremy reviews each page before it goes to David.
+- Each ad gets its own landing page, built at the same time as the ad, on Railway (`sites/`, project `dc-landing-pages`, service `landing-au`). Not in GHL. Use the A2 auction page as the template:
+  - headline matches the ad's promise word for word
+  - David's portrait card in the hero, labelled "Director"
+  - 5-step survey high on the page, with hot routing to `/thankyou-book`
+  - Google proof card under the form
+  - tap-to-play VSL below the form
+  - how it works, with real report photos
+  - price table with the anchor line
+  - FAQ
+  - sticky bar hidden while the form is on screen
+  - mobile load under ~2.3s
+  Jeremy scores each page before David sees it.
+- Every page form posts to `/api/lead`. That sends the lead to the GHL Inbound Webhook (creates the opportunity, starts Jeremy's nurture: `build/ghl-nurture.md`) and sends Lead to Meta via Pixel + CAPI with a shared event_id. To add a page: drop the HTML in `sites/public/`, add one `LANDERS` entry in `sites/server.js`, and push. Railway deploys on push to master.
 - On approval, the ad goes live **immediately** in that account's test ad set.
 - Structure: one testing campaign per account (budget set at campaign level), then winners move to a scaling campaign. Confirm with Jeremy.
 - Real footage comes from the Google Drive social folders already used for the Draft Desks.

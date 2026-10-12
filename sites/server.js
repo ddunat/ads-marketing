@@ -2,9 +2,13 @@
 const http = require('http'), fs = require('fs'), path = require('path'), crypto = require('crypto');
 const PUB = path.join(__dirname, 'public');
 const { PORT = 3000, GHL_WEBHOOK_URL, LEAD_EMAIL_WEBHOOK_URL, META_PIXEL_ID, META_CAPI_TOKEN, GHL_BOOKING_URL, META_TEST_EVENT_CODE } = process.env;
-const PAGES = { '/auction': 'auction.html', '/thankyou': 'thankyou.html', '/thankyou-book': 'thankyou-book.html' };
+// One entry per ad landing page. key = GHL tag + Meta content name; hot = stage answers routed to /thankyou-book.
+const LANDERS = {
+  '/auction': { file: 'auction.html', key: 'lp-a2-auction', ad: 'A2 auction', service: 'pre-purchase', hot: /Auction|Signed/ },
+};
+const PAGES = { '/thankyou': 'thankyou.html', '/thankyou-book': 'thankyou-book.html' };
+for (const [p, l] of Object.entries(LANDERS)) PAGES[p] = l.file;
 const TYPES = { '.webp': 'image/webp', '.mp4': 'video/mp4', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
-const HOT = /Auction|Signed/;
 
 const pixel = META_PIXEL_ID ? `<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${META_PIXEL_ID}');fbq('track','PageView');</script>` : '';
 // Lead fires on both thank-you pages (Jeremy), with the same event_id as CAPI so Meta de-duplicates.
@@ -31,12 +35,15 @@ async function handleLead(req, res) {
   let d; try { d = JSON.parse(raw); } catch { return send(res, 400, { ok: false }); }
   const mobile = clean(d.mobile).replace(/[\s()-]/g, ''), email = clean(d.email), first_name = clean(d.first_name);
   if (!first_name || !/^(\+?61|0)4\d{8}$/.test(mobile) || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return send(res, 422, { ok: false });
-  const hot = HOT.test(clean(d.stage));
+  const lander = LANDERS[clean(d.page)];
+  if (!lander) return send(res, 400, { ok: false });
+  const hot = lander.hot.test(clean(d.stage));
   const lead = {
     first_name, phone: mobile.replace(/^0/, '+61'), email,
     property_type: clean(d.property_type), bedrooms: clean(d.bedrooms), stage: clean(d.stage), suburb: clean(d.suburb),
-    lead_temp: hot ? 'hot' : 'warm', tags: ['meta-lead', 'lp-a2-auction', hot ? 'hot' : 'warm'],
-    source: 'Meta ad: A2 auction', page: clean(d.page), event_id: clean(d.event_id),
+    lead_temp: hot ? 'hot' : 'warm', service: lander.service, landing_page: lander.key,
+    tags: ['meta-lead', lander.key, lander.service, hot ? 'hot' : 'warm'],
+    source: `Meta ad: ${lander.ad}`, page: clean(d.page), event_id: clean(d.event_id),
     utm_source: clean(d.utm_source), utm_medium: clean(d.utm_medium), utm_campaign: clean(d.utm_campaign), utm_content: clean(d.utm_content), fbclid: clean(d.fbclid),
     submitted_at: new Date().toISOString(),
   };
@@ -53,7 +60,7 @@ async function handleLead(req, res) {
       event_source_url: `https://${req.headers.host}${lead.page}`,
       user_data: { em: [sha(email)], ph: [sha(lead.phone.replace('+', ''))], fn: [sha(first_name)], ct: [sha(lead.suburb.replace(/\s/g, ''))], country: [sha('au')],
         client_ip_address: ip, client_user_agent: req.headers['user-agent'], fbp: clean(d.fbp) || undefined, fbc: clean(d.fbc) || undefined },
-      custom_data: { lead_temp: lead.lead_temp } }] };
+      custom_data: { lead_temp: lead.lead_temp, content_name: lander.key } }] };
     if (META_TEST_EVENT_CODE) ev.test_event_code = META_TEST_EVENT_CODE;
     post(`https://graph.facebook.com/v21.0/${META_PIXEL_ID}/events?access_token=${META_CAPI_TOKEN}`, ev).catch(e => console.error('CAPI failed:', e.message.replace(META_CAPI_TOKEN, '***')));
   }
