@@ -27,10 +27,13 @@ Applies to every video ad. Example: `creative/au-round1/build/a2-v3.ass`.
 - About 2.5s, timed to the spoken line. **No gold badge style.**
 - Upgrade later: a real review snippet with first name and suburb, with consent.
 
-## End card (3s)
-- "PICK YOUR PROPERTY." in white, "LOCK YOUR TIME." in cyan.
-- A phone mockup of the actual form, with a tap ring on the first option.
-- The mockup must not show page claims that contradict the ad, e.g. the page's "400+ reviews". Frame below that line.
+## End card (about 4s): a live recording, never a static screenshot
+- "PICK YOUR PROPERTY." in white, "LOCK YOUR TIME." in cyan, above a phone mockup.
+- Inside the phone, a **screen recording of the real landing-page form** made with `record-form.py` (Playwright, 390x760 mobile):
+  - visible touch dots on each tap: property type → inspection type → timing
+  - **never submitted**, so no test leads reach the CRM
+- Crop the recording to 390x760 (the page renders at that size inside the 780x1520 video), speed 1.2x, mask with rounded corners.
+- Start the recording at the form, so the page's out-of-date "400+ reviews" line is never shown.
 
 ## Kaleidoscope
 - Keep the template consistent across a batch, but make **one deliberate break per batch** (caption colour or hook treatment) so there's something to test.
