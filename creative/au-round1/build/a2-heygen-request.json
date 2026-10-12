@@ -1,0 +1,10 @@
+{
+  "title": "AU-A2 Auction Saturday - control v1 (talking head)",
+  "caption": true,
+  "dimension": {"width": 1080, "height": 1920},
+  "video_inputs": [{
+    "character": {"type": "talking_photo", "talking_photo_id": "b6820f0449eb4e3aab591fc44c75fcce"},
+    "voice": {"type": "text", "voice_id": "fe2230b3ddee436fb50c6ebc9b44f1e5",
+      "input_text": "Auction on Saturday? We'll get you the report the same day we inspect, or your money back. There's no cooling-off at a Victorian auction. Once the hammer falls, it's yours, cracks and all. Four point nine stars from five hundred and twenty-nine Google reviews. Book before Thursday, and you'll bid knowing exactly what you're buying. Tap below."}
+  }]
+}
