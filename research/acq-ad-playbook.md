@@ -138,3 +138,23 @@ Book's one-line summary: *promise a result, make it fast, likely and easy; curio
 - No prize or "bribe" promotions without checking ACL and Meta rules.
 - No dollar claims, defect statistics or "every defect" claims unless David has verified them.
 - Never "VBA". BPC DBU-66182. No builder names, logos or signage. No personal-attribute targeting language.
+
+## 6. Jeremy's ruling on how the handbook fits his scoring (2026-10-12)
+- **One referee.** The handbook is a build checklist that feeds Jeremy's rubric; it is not a second rubric. Mapping:
+  - the four comparisons → **Directness**
+  - proof points and "show the floor" → **Proof**
+  - prospect call-out and reason why → **Hook placement** (first 5 seconds)
+  - movement, captions, real scarcity and numbers-first already sit inside his existing dimensions
+- **Reel dosage** (20–25s local-service ads):
+  - **2–3 proof points maximum.**
+  - Use only the **1–2 comparisons the hook implies** (A2 = certainty vs risk; B2 = cost of delay). The landing page carries the rest.
+- **Overrides for our markets:**
+  - **Directness closes the click**, not curiosity. Curiosity hooks on a $550 inspection attract tyre-kickers and corrupt the Lead signal. The ad wins the click directly; the page converts the lead.
+  - **Presenter = the expert** (David, BPC registered), not a peer of the buyer. Real site B-roll supplies the movement.
+  - **"Floor" = price transparency + process clarity**: fixed price by size, and what happens after the click.
+  - **Highest-weighted handbook principle for us: show what happens after the click.** Screen-record the form in the CTA. At A$233 CPL, cutting post-click abandonment beats hook tweaks.
+  - **Anchor against the cost of NOT inspecting** (a verified five-figure defect after settlement), not against competitor fees.
+- **Testing:**
+  - A2, B2 and fixed A1 stay as the **control**. Don't rebuild ads that haven't spent; build handbook-style variants to test against them.
+  - Launch, collect 72h of signal, then run the Kaleidoscope: 80% variants of the winner, 20% new handbook concepts.
+  - **Variants need genuinely different messaging angles.** Near-identical clones get punished by Meta ranking and pile up rejections, which hurts account trust.
