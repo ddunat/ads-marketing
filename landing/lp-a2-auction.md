@@ -60,3 +60,13 @@ Visual reference: `lp-a2-auction.html` (also published as a claude.ai artifact).
 - Lead fires on both thank-you pages.
 - The sticky bar doesn't cover the submit button on steps 4–5.
 - PageSpeed mobile load under about 2.5s: compress images, remove unused sections from the clone.
+
+## Photos (Jeremy follow-up: 8.5 → est. 9.0–9.5 if mobile load stays under ~2.3s)
+Order: hero → form → Google proof card → how it works (defect photo at step 2, report-ready phone at step 3) → price → FAQ → final CTA.
+- **Hero:** small round still of David in the black shirt (`img/david.webp`, 2 KB), matching the ad. Small, so the form stays high on mobile. One avatar still only: more looks AI.
+- **Under the form:** Google proof card, 4.9 · 529 reviews + BPC DBU-66182 chip (pure CSS, no image).
+- **Step 2:** defect photo (`img/defect.webp`, from the Drive crack footage). **Swap for 2–3 real report page screenshots with annotated defects, address blurred**, once David supplies them.
+- **Step 3:** report-ready notification (`img/notif.webp`).
+- **Never:** stock photos, house clipart, smiling families.
+- **Speed:** WebP, `loading="lazy"` below the fold, width/height set. Test on a real phone on 4G before launch.
+- **Measure:** snapshot the conversion rate by source before the photos go live so the lift can be proved.
