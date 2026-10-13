@@ -1,7 +1,7 @@
 // DC Building Inspectors landing pages. Leads go to GHL (inbound webhook) and Meta CAPI.
 const http = require('http'), fs = require('fs'), path = require('path'), crypto = require('crypto');
 const PUB = path.join(__dirname, 'public');
-const { PORT = 3000, GHL_WEBHOOK_URL, LEAD_EMAIL_WEBHOOK_URL, META_PIXEL_ID, META_CAPI_TOKEN, GHL_BOOKING_URL, BOOKING_LINK = 'https://dcinspect.com.au/online-bookings', META_TEST_EVENT_CODE } = process.env;
+const { PORT = 3000, GHL_WEBHOOK_URL, LEAD_EMAIL_WEBHOOK_URL, META_PIXEL_ID, META_CAPI_TOKEN, GHL_BOOKING_URL, BOOKING_LINK = 'https://dcinspect.com.au/online-bookings', META_TEST_EVENT_CODE, BOOKING_TOKEN, GHL_BOOKING_WEBHOOK_URL } = process.env;
 // One entry per ad landing page. key = GHL tag + Meta content name; hot = stage answers routed to /thankyou-book.
 const LANDERS = {
   '/auction': { file: 'auction.html', key: 'lp-a2-auction', ad: 'A2 auction', service: 'pre-purchase', hot: /Auction|Signed/ },
@@ -69,12 +69,49 @@ async function handleLead(req, res) {
   send(res, 200, { ok: true, hot });
 }
 
+// GoDaddy Online Appointments "Booking Confirmed" email (relayed by Zapier from Gmail) -> Meta Schedule + GHL "booked".
+const grab = (t, re) => (t.match(re) || [])[1]?.trim() || '';
+function parseBooking(t) {
+  const name = grab(t, /Name:\s*\n\s*(.+)/), [fn, ...ln] = name.split(/\s+/);
+  const where = grab(t, /Where:\s*\n([\s\S]*?)\n\s*\n/);
+  return {
+    order: grab(t, /Order #\s*(C-[A-Z0-9]+)/), total: parseFloat(grab(t, /Order Total \$([\d,.]+)/).replace(/,/g, '')) || 0,
+    first_name: fn || '', last_name: ln.join(' '), phone: grab(t, /Phone:\s*\n\s*([+\d ]+)/).replace(/\s/g, ''), email: grab(t, /Email:\s*\n\s*(\S+@\S+)/),
+    service: grab(t, /What:\s*\n\s*(.+)/), when: grab(t, /When:\s*\n\s*(.+)/), payment: grab(t, /Payment status:\s*\n\s*(.+)/),
+    suburb: grab(where, /\n\s*(.+?)\s+VIC/i), postcode: grab(where, /VIC\s+(\d{4})/i),
+  };
+}
+async function handleBooking(req, res) {
+  if (!BOOKING_TOKEN || req.headers['x-booking-token'] !== BOOKING_TOKEN) return send(res, 401, { ok: false });
+  let raw = ''; for await (const c of req) { raw += c; if (raw.length > 100000) return send(res, 413, { ok: false }); }
+  let d; try { d = JSON.parse(raw); } catch { return send(res, 400, { ok: false }); }
+  if (!/Booking Confirmed/.test(d.subject || '')) return send(res, 200, { ok: true, skipped: 'not a booking' });
+  const b = parseBooking(String(d.body || ''));
+  if (!b.order || !(b.email || b.phone)) return send(res, 422, { ok: false });
+  const phone = b.phone.replace(/^0/, '+61'), jobs = [];
+  if (GHL_BOOKING_WEBHOOK_URL) jobs.push(post(GHL_BOOKING_WEBHOOK_URL, { ...b, phone, source: 'GoDaddy online booking' }));
+  if (META_PIXEL_ID && META_CAPI_TOKEN) {
+    const ev = { data: [{ event_name: 'Schedule', event_time: Math.floor(Date.now() / 1000), event_id: `booking-${b.order}`, action_source: 'website',
+      event_source_url: 'https://dcinspect.com.au/online-bookings',
+      user_data: { em: [sha(b.email)], ph: [sha(phone.replace('+', ''))], fn: [sha(b.first_name)], ln: [sha(b.last_name)],
+        ct: [sha(b.suburb.replace(/\s/g, ''))], zp: [sha(b.postcode)], country: [sha('au')] },
+      custom_data: { value: b.total, currency: 'AUD', content_name: b.service, order_id: b.order } }] };
+    if (META_TEST_EVENT_CODE) ev.test_event_code = META_TEST_EVENT_CODE;
+    jobs.push(post(`https://graph.facebook.com/v21.0/${META_PIXEL_ID}/events?access_token=${META_CAPI_TOKEN}`, ev));
+  }
+  const r = await Promise.allSettled(jobs);
+  r.filter(x => x.status === 'rejected').forEach(x => console.error('booking relay failed:', String(x.reason.message).replace(META_CAPI_TOKEN || '~', '***')));
+  console.log('booking', b.order, 'relayed', r.filter(x => x.status === 'fulfilled').length, '/', jobs.length);
+  send(res, 200, { ok: true, order: b.order });
+}
+
 function send(res, code, obj) { res.writeHead(code, { 'Content-Type': 'application/json' }); res.end(JSON.stringify(obj)); }
 
 http.createServer((req, res) => {
   const url = new URL(req.url, 'http://x');
   const p = url.pathname.replace(/\/+$/, '') || '/';
   if (req.method === 'POST' && p === '/api/lead') return handleLead(req, res).catch(e => { console.error(e); send(res, 500, { ok: false }); });
+  if (req.method === 'POST' && p === '/api/booking') return handleBooking(req, res).catch(e => { console.error(e); send(res, 500, { ok: false }); });
   if (p === '/health') return send(res, 200, { ok: true });
   if (p === '/') { res.writeHead(302, { Location: 'https://dcinspect.com.au' }); return res.end(); }
   if (PAGES[p]) { res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-cache' }); return res.end(page(PAGES[p])); }

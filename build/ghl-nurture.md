@@ -23,7 +23,7 @@ Applies to every Meta ad landing page on Railway (`sites/`). Each page posts its
 4. **If/else on `lead_temp`:**
    - hot → Hot sequence
    - else → Warm sequence
-5. **Internal notification** to the caller: SMS + app push with the name, suburb, stage and a tap-to-call link.
+5. **Assign and notify the callers.** Assign the contact round robin to **Annie, Kim and David** (GHL "Assign to user", split traffic evenly, only available users). Then send an internal SMS + app push to the assigned user with name, suburb, stage and a tap-to-call link. Hot leads also notify all three, so whoever is free calls first.
 
 ## Speed to lead
 - **Business hours:** a human call attempt within **5 minutes**. Saturday morning needs cover, because that's auction day.
@@ -31,7 +31,7 @@ Applies to every Meta ad landing page on Railway (`sites/`). Each page posts its
   - The instant SMS carries the booking link.
   - First call at **8:00 next business day**, with an SMS at 8:05.
   - Cooling-off leads that arrive late Friday can't wait until Tuesday, so the SMS has to do the selling.
-- **Open question for David:** who owns the 5-minute call (an admin, a VA, or David)?
+- **Callers:** Annie, Kim and David, round robin. Saturday-morning cover needs a roster across the three.
 
 ## Hot sequence (auction clock)
 Every SMS ends with "Reply STOP to opt out" (Spam Act). Keep the guarantee wording exact.
@@ -63,6 +63,15 @@ After 72 h the sequence stops. If the auction passes with no booking: Lost, Auct
 
 After 90 days the opportunity moves to Long Term Nurture.
 
+## Workflow 2: "Website booking in" (Inbound Webhook #2)
+Bookings are made on the GoDaddy site (dcinspect.com.au/online-bookings). Each booking sends a "Booking Confirmed" email; Zapier relays it to Railway `/api/booking`. Railway then sends Meta **Schedule** (CAPI, value = order total) and posts to this webhook:
+- **Payload:** `order, total, first_name, last_name, phone (+61…), email, service, when, payment, suburb, postcode, source`.
+- **Steps:**
+  1. Find or create the contact by email/phone.
+  2. If it has an open Meta Leads AU opportunity, move it to **Booked** (this fires the stop rule below). If not, create one at Booked with source "Website booking".
+  3. Add tag `booked-online`.
+- Report this second webhook URL back as well.
+
 ## Stop rules
 - **Appointment booked** (calendar event created): exit both sequences and move the opportunity to Booked.
 - **Contact replied:** pause the automation and assign the conversation to the caller. Never auto-answer a human.
@@ -72,7 +81,7 @@ After 90 days the opportunity moves to Long Term Nurture.
 
 ## Meta events (CAPI booked-job feed, pixel 821976388791436)
 - **Lead:** already sent by the Railway server (Pixel + CAPI, same `event_id`, de-duplicated). Do **not** also send Lead from GHL.
-- **Schedule:** when a calendar booking is created.
+- **Schedule:** sent by the Railway server from the GoDaddy booking email (via Zapier). Don't also send it from GHL.
 - **Purchase:** when the invoice is paid, with the actual amount as `value` (AUD).
 - Wire Schedule and Purchase last, after testing, so test data doesn't pollute the pixel. Details are in `build/booked-job-capi-feed.md`.
 
