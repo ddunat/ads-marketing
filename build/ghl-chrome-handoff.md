@@ -26,7 +26,7 @@ Do this in order, and tick each step off as you go:
    - Build Workflow 1 with an **Inbound Webhook** trigger, plus the hot and warm sequences and the stop rules. Save them as **draft**.
    - Create (or pick) the booking calendar for pre-purchase inspections.
    - Also build Workflow 2 "Website booking in" (a second Inbound Webhook).
-   - Report back to David: **both webhook URLs**. Callers are Annie, Kim and David, round robin. Claude sets these on Railway, then sends one test lead before publishing the workflow.
+   - Report back to David: **both webhook URLs**. Callers are Annie, Kim and David, broadcast to all three (first to call claims the lead). Claude sets these on Railway, then sends one test lead before publishing the workflow.
 1. **AU surveys:** apply the question tables in `au-lead-forms.md`, with custom fields created and mapped:
    - one question per screen, progress bar on
    - partial submits on

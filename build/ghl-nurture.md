@@ -23,7 +23,7 @@ Applies to every Meta ad landing page on Railway (`sites/`). Each page posts its
 4. **If/else on `lead_temp`:**
    - hot → Hot sequence
    - else → Warm sequence
-5. **Assign and notify the callers.** Assign the contact round robin to **Annie, Kim and David** (GHL "Assign to user", split traffic evenly, only available users). Then send an internal SMS + app push to the assigned user with name, suburb, stage and a tap-to-call link. Hot leads also notify all three, so whoever is free calls first.
+5. **Broadcast to the callers (Jeremy: no round robin, it waits its turn while the auction clock runs).** Send an internal SMS + app push to **Annie, Kim and David at the same time**, with name, suburb, stage and a tap-to-call link. Whoever calls first claims the lead: they assign themselves as contact owner and move the opportunity to Contact Attempted.
 
 ## Speed to lead
 - **Business hours:** a human call attempt within **5 minutes**. Saturday morning needs cover, because that's auction day.
@@ -31,7 +31,7 @@ Applies to every Meta ad landing page on Railway (`sites/`). Each page posts its
   - The instant SMS carries the booking link.
   - First call at **8:00 next business day**, with an SMS at 8:05.
   - Cooling-off leads that arrive late Friday can't wait until Tuesday, so the SMS has to do the selling.
-- **Callers:** Annie, Kim and David, round robin. Saturday-morning cover needs a roster across the three.
+- **Callers:** Annie, Kim and David, broadcast. First to call claims the lead. Saturday-morning cover needs a roster across the three.
 
 ## Hot sequence (auction clock)
 Every SMS ends with "Reply STOP to opt out" (Spam Act). Keep the guarantee wording exact.
