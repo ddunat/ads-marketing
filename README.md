@@ -12,3 +12,4 @@ Google Ads management for DC Building Inspectors (account 538-044-4374, campaign
 ## Change log
 - **7 Oct 2026** — Saturday removed from the ad schedule (Mon–Fri only, Friday −20%).
 - **9 Oct 2026** — negatives added (PHRASE): `first national`, `property evaluators`, `water leak detection`. All three verified live.
+- **13 Oct 2026** — negatives added (BROAD): `buywiseinspections` (competitor domain, $30.58 click) and `buywise`. A PHRASE `buywise` already existed but cannot block the one-word domain search — negatives match whole words. Both verified live.
