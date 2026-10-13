@@ -66,10 +66,20 @@ After 90 days the opportunity moves to Long Term Nurture.
 ## Workflow 2: "Website booking in" (Inbound Webhook #2)
 Bookings are made on the GoDaddy site (dcinspect.com.au/online-bookings). Each booking sends a "Booking Confirmed" email; Zapier relays it to Railway `/api/booking`. Railway then sends Meta **Schedule** (CAPI, value = order total) and posts to this webhook:
 - **Payload:** `order, total, first_name, last_name, phone (+61…), email, service, when, payment, suburb, postcode, source`.
-- **Steps:**
+- **Steps (keep organic separate from Meta):**
   1. Find or create the contact by email/phone.
-  2. If it has an open Meta Leads AU opportunity, move it to **Booked** (this fires the stop rule below). If not, create one at Booked with source "Website booking".
-  3. Add tag `booked-online`.
+  2. **If the contact has tag `meta-lead`** (a Meta landing-page lead in the last 30 days):
+     - move its Meta Leads AU opportunity to **Booked** (this fires the stop rule)
+     - add tag `booked-meta`
+  3. **Else (organic or direct booking):**
+     - add tag `booked-organic`
+     - do **not** create or move anything in Meta Leads AU (use the existing organic pipeline if there is one)
+     - stop any nurture the contact is in
+- **Reporting:**
+  - True Meta cost per booking = Meta spend ÷ `booked-meta` count.
+  - Cross-check against Ads Manager "Schedule" results on **7-day click** attribution (never 1-day view).
+  - Meta gets every booking via CAPI. Organic ones don't match an ad click, so they aren't credited to ads.
+  - Known gap: an ad click that books on the website without filling our form shows as organic in GHL but is counted by Meta's 7-day click.
 - Report this second webhook URL back as well.
 
 ## Stop rules
