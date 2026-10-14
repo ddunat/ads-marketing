@@ -1,0 +1,6 @@
+{
+ "_note": "Reusable B-roll with checked safe windows (seconds). Download by Drive id with the Google Drive MCP (files <10 MB). Never use outside the safe windows: those cuts avoid number plates, house numbers, agency signs and faces.",
+ "house-exterior-redbrick": {"drive_id": "1J6QNe2CwBPLHshbBKpxklJnzyTcUPede", "market": "au", "tags": ["house", "exterior", "brick", "pre-purchase", "auction"], "safe": [[3.0, 5.8]], "avoid": "0-1.5s parked car with number plate; ~22s yellow agency 'Auction' board"},
+ "verandah-post-rot": {"drive_id": "1J6QNe2CwBPLHshbBKpxklJnzyTcUPede", "market": "au", "tags": ["timber", "rot", "timber pest", "verandah", "defect"], "safe": [[12.0, 16.4]]},
+ "brick-efflorescence-crack": {"drive_id": "10fwwDN9d-itvUX5LGTSke380FHWn0Ktn", "market": "au", "tags": ["brick", "crack", "damp", "efflorescence", "defect"], "safe": [[0.0, 4.4]], "avoid": "after 4.4s a wheelie bin with house number 32"}
+}
