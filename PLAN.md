@@ -128,3 +128,17 @@ The "40–50%" dream target needs a named stage (see open questions).
 - AU form qualifying questions, contact details required: `build/au-lead-forms.md`.
   - Hot buckets get the online-booking link on the thank-you page.
 - Jeremy: lead follow-up speed is the biggest lever. Hot leads get a call within 5 minutes.
+
+## Weekly ad factory (decided 2026-10-14)
+- **Weekly run:** Monday, built overnight and on the desks by 8am Melbourne. Recipe: `.claude/skills/make-ad/SKILL.md`.
+  - Tops up to 3 AU + 2 HR new ads, replacing what the daily check killed. Minimum 1 per account.
+  - Claude picks angles from the data: Kaleidoscope, 80% remixes of winners and 20% new; Jeremy vets the list.
+  - Every ad gets its own landing page, generated from a spec (`sites/landers/*.json` → `sites/build_landers.py`), with the headline matching the ad's promise word for word.
+  - Jeremy must pass both the ad and the page at ≥8. David reviews only the finished ad and its page on the Ad Desk.
+- **Video:** `creative/template/build_video.py` + a per-ad spec; B-roll only from `creative/library/broll.json` safe windows. HeyGen **v3** API from now on (v2 shuts off 31 Oct).
+- **Daily check:** `.claude/skills/ad-ops/SKILL.md`.
+  - Pauses losers automatically (AU: ≥$150 with 0 bookings, or ≥$300 at >$100 per booking).
+  - Proposes +20% budget for winners (≥2 bookings at ≤$50, last 7 days) on the desk's **Budget** tab. David taps to apply.
+  - HR is report-only until David sets an HR target.
+- **Campaigns:** reuse existing ones (David's choice). AU new ads go into "Building Inspections - Construction & Pre Purchase" (paused since 5 Apr 2026; David switches it on and sets the budget). HR new ads go into its best active ad set.
+- **HR pages:** go.dcinspect.eu, same server, `hr` market in `sites/landers/markets.json`. Blocked until the TODO facts there are filled (rating/reviews, director label, footer), plus a DNS record, the HR GHL webhook (`GHL_WEBHOOK_URL_HR`) and the HR pixel (`META_PIXEL_ID_HR`). David is the native Croatian check at desk review.
