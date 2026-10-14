@@ -22,7 +22,7 @@ A2 (auction, AU) is the reference build. Every new ad should be as good as A2 v6
   - HR: 2 new ads, in the HR account (Meta `1386746812476820`).
   - Never mix the two accounts.
 - **Batch size:**
-  - Count the ads the ops routine killed in the last 7 days, per account.
+  - Count the ads the ops routine killed in the last 7 days, per account. Read them from the desk db `stats/<YYYY-WW>`, written by the daily `ad-ops` routine, or count cards with `status: "paused"` and a `paused_reason` from this week.
   - Build that many replacements, capped at the target.
   - Always build at least 1 per account.
   - If nothing was killed and the account already runs ≥ 6 ads in test, build 1.
