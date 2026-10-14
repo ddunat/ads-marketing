@@ -23,3 +23,7 @@
 **Left for challengers:** the open loop, the 4:5 feed cut, and statics. Exception: a Google proof-card static should be made now (80% video / 20% image).
 
 **Still blocking launch:** the GHL page fix. It must say 529 reviews at 4.9★, with a headline matching the guarantee line word for word.
+
+## A2 v6 (2026-10-14): compliance fix
+- The proof-card chip changed from "BPC REGISTERED INSPECTOR · DBU-66182" to **"BPC REGISTERED INSPECTORS"**. Inspections are done by BPC registered subcontractors; DBU-66182 is David's own registration and is only shown next to his name (CLAUDE.md).
+- Everything else is identical to v5. Render: `renders/A2-control-v6.mp4` (gitignored). This is the version to upload, not v5.
