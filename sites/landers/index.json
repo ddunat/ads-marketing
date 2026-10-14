@@ -1,0 +1,11 @@
+[
+ {
+  "market": "au",
+  "path": "/auction",
+  "file": "au/auction.html",
+  "key": "lp-a2-auction",
+  "ad": "A2 auction",
+  "service": "pre-purchase",
+  "hot": "Auction|Signed"
+ }
+]

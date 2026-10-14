@@ -1,0 +1,40 @@
+{
+  "au": {
+    "host": "go.dcinspect.com.au",
+    "lang": "en-AU",
+    "currency": "AUD",
+    "country": "au",
+    "phone_re": "^(\\+?61|0)4\\d{8}$",
+    "phone_prefix": "+61",
+    "director_label": "David Dunat, Director",
+    "cred_lines": ["<span><span class=\"stars\">★</span> 4.9 · 529 Google reviews</span>", "<span>BPC registered inspectors &amp; qualified trades</span>"],
+    "proof_card": "<div class=\"gcard\"><b>4.9</b><div><span class=\"st\">★★★★★</span><small>529 Google reviews · Melbourne</small><span class=\"chip\">BPC REGISTERED INSPECTORS</span></div></div>",
+    "footer": "DC Building Inspectors · Inspections by BPC registered building inspectors and qualified trades · Director David Dunat, BPC registered building inspector (DBU-66182)",
+    "ui": {
+      "step": "STEP", "of": "OF", "next": "Next", "submit": "Check this week’s times", "sending": "Sending…",
+      "err_name": "Please add your first name.", "err_mobile": "Please enter an Australian mobile, e.g. 0412 345 678.",
+      "err_email": "Please check your email address.", "err_required": "Please fill this in.", "err_send": "Something went wrong. Please try again or call us on 0483 936 872.",
+      "privacy": "We only use your details to arrange your inspection.", "ty": "/thankyou", "ty_hot": "/thankyou-book"
+    },
+    "contact_step": {"q": "Where should we send your times?", "input": [["text","fname","First name","given-name"],["tel","mobile","Mobile","tel"],["email","email","Email","email"]], "last": true}
+  },
+  "hr": {
+    "host": "go.dcinspect.eu",
+    "lang": "hr",
+    "currency": "EUR",
+    "country": "hr",
+    "phone_re": "^(\\+?385|0)9\\d{7,8}$",
+    "phone_prefix": "+385",
+    "director_label": "TODO: HR director label (Croatian)",
+    "cred_lines": ["TODO: HR rating + review count line", "TODO: HR qualification line"],
+    "proof_card": "TODO: HR Google proof card",
+    "footer": "TODO: HR footer (company name, OIB/registration as appropriate)",
+    "ui": {
+      "step": "KORAK", "of": "OD", "next": "Dalje", "submit": "Pošaljite upit", "sending": "Šaljem…",
+      "err_name": "Upišite svoje ime.", "err_mobile": "Upišite hrvatski broj mobitela, npr. 091 234 5678.",
+      "err_email": "Provjerite e-mail adresu.", "err_required": "Ispunite ovo polje.", "err_send": "Nešto nije u redu. Pokušajte ponovno ili nas nazovite.",
+      "privacy": "Vaše podatke koristimo samo za dogovor termina.", "ty": "/hvala", "ty_hot": "/hvala-termin"
+    },
+    "contact_step": {"q": "Kamo da vam javimo termin?", "input": [["text","fname","Ime","given-name"],["tel","mobile","Mobitel","tel"],["email","email","E-mail","email"]], "last": true}
+  }
+}

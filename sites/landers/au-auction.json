@@ -1,0 +1,38 @@
+{
+ "market": "au",
+ "path": "/auction",
+ "key": "lp-a2-auction",
+ "ad": "A2 auction",
+ "service": "pre-purchase",
+ "hot": "Auction|Signed",
+ "title": "Same-Day Building Inspection Before Auction | DC Building Inspectors",
+ "meta_description": "Bidding at auction this week? Building and timber pest inspection with your report the same day we inspect, or your money back.",
+ "eyebrow": "BIDDING AT AUCTION THIS WEEK?",
+ "h1": "Your report the same day we inspect, or your money back.",
+ "sub": "No cooling-off at a Victorian auction. Inspect first, then bid knowing exactly what you're buying.",
+ "steps": [
+  {"k": "property_type", "q": "What are you buying?", "o": ["House", "Apartment or unit", "Townhouse"]},
+  {"k": "bedrooms", "q": "How many bedrooms?", "o": ["1–2", "3", "4", "5+"]},
+  {"k": "stage", "q": "Where are you up to?", "o": ["Auction date set", "Signed, cooling-off running", "Making an offer this week", "Just looking for now"]},
+  {"k": "suburb", "q": "Property suburb", "input": [["text", "suburb", "e.g. Brunswick", "address-level2"]]}
+ ],
+ "vsl": {"title": "Before you bid: 48 seconds", "poster": "/img/vsl-thumb.webp", "src": "/img/a2-vsl.mp4", "label": "David Dunat, director, explains what to check before you bid at auction"},
+ "how": {"title": "How it works", "items": [
+  {"n": 1, "title": "Book.", "text": "Pick your property and time."},
+  {"n": 2, "title": "We inspect.", "text": "Building & timber pest. Every defect photographed and itemised."},
+  {"figure": {"images": [{"src": "/img/report-level.webp", "w": 480, "h": 360, "alt": "Brickwork measured out of level during an inspection"}, {"src": "/img/report-gap.webp", "w": 480, "h": 360, "alt": "Gap in brickwork being measured during an inspection"}], "caption": "From one of our reports. Defects are photographed, measured and itemised."}},
+  {"n": 3, "title": "Report the same day.", "text": "In your inbox the day we inspect, or your money back."},
+  {"figure": {"images": [{"src": "/img/notif.webp", "w": 300, "h": 649, "alt": "Inspection report ready notification on a phone", "max_w": 150}], "caption": "Your report, the same day we inspect."}}
+ ]},
+ "price": {"title": "Fixed price by property size", "anchor": "One defect found after settlement costs more than every inspection on this page.",
+  "rows": [["1–2 bed apartment", "$550"], ["3 bed", "$605"], ["4 bed", "$649"], ["5 bed", "$847"], ["House on stumps", "$726"]],
+  "note": "Building & timber pest included. ★ 4.9 from 529 Google reviews."},
+ "faq": [
+  ["What if the report isn't same day?", "You get a full refund."],
+  ["Can you inspect before Saturday?", "Yes, where availability allows. Book now and you'll see this week's remaining slots. Auction-week inspections go first."],
+  ["Is pest included?", "Yes. Building and timber pest in one inspection and one report."]
+ ],
+ "bottom_cta": "Inspect first: check this week's times",
+ "sticky_text": "Same-day report or your money back",
+ "sticky_cta": "Check times"
+}

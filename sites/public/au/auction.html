@@ -82,8 +82,7 @@ footer{margin:30px 0;color:var(--muted);font-size:13px;text-align:center}
     <h2>Fixed price by property size</h2>
     <p class="anchor">One defect found after settlement costs more than every inspection on this page.</p>
     <table>
-      <tr><td>1–2 bed apartment</td><td>$550</td></tr><tr><td>3 bed</td><td>$605</td></tr><tr><td>4 bed</td><td>$649</td></tr>
-      <tr><td>5 bed</td><td>$847</td></tr><tr><td>House on stumps</td><td>$726</td></tr>
+      <tr><td>1–2 bed apartment</td><td>$550</td></tr><tr><td>3 bed</td><td>$605</td></tr><tr><td>4 bed</td><td>$649</td></tr><tr><td>5 bed</td><td>$847</td></tr><tr><td>House on stumps</td><td>$726</td></tr>
     </table>
     <p class="small">Building &amp; timber pest included. ★ 4.9 from 529 Google reviews.</p>
   </section>
@@ -98,12 +97,8 @@ footer{margin:30px 0;color:var(--muted);font-size:13px;text-align:center}
 </div>
 <div class="sticky hide" id="sticky"><span>Same-day report or your money back</span><a href="#form">Check times</a></div>
 <script>
-const steps=[
- {k:"property_type",q:"What are you buying?",o:["House","Apartment or unit","Townhouse"]},
- {k:"bedrooms",q:"How many bedrooms?",o:["1–2","3","4","5+"]},
- {k:"stage",q:"Where are you up to?",o:["Auction date set","Signed, cooling-off running","Making an offer this week","Just looking for now"]},
- {k:"suburb",q:"Property suburb",input:[["text","suburb","e.g. Brunswick","address-level2"]]},
- {k:"contact",q:"Where should we send your times?",input:[["text","fname","First name","given-name"],["tel","mobile","Mobile","tel"],["email","email","Email","email"]],last:true}];
+const steps=[{"k": "property_type", "q": "What are you buying?", "o": ["House", "Apartment or unit", "Townhouse"]}, {"k": "bedrooms", "q": "How many bedrooms?", "o": ["1–2", "3", "4", "5+"]}, {"k": "stage", "q": "Where are you up to?", "o": ["Auction date set", "Signed, cooling-off running", "Making an offer this week", "Just looking for now"]}, {"k": "suburb", "q": "Property suburb", "input": [["text", "suburb", "e.g. Brunswick", "address-level2"]]}, {"q": "Where should we send your times?", "input": [["text", "fname", "First name", "given-name"], ["tel", "mobile", "Mobile", "tel"], ["email", "email", "Email", "email"]], "last": true}];
+const M={"step": "STEP", "of": "OF", "next": "Next", "submit": "Check this week’s times", "sending": "Sending…", "err_name": "Please add your first name.", "err_mobile": "Please enter an Australian mobile, e.g. 0412 345 678.", "err_email": "Please check your email address.", "err_required": "Please fill this in.", "err_send": "Something went wrong. Please try again or call us on 0483 936 872.", "privacy": "We only use your details to arrange your inspection.", "ty": "/thankyou", "ty_hot": "/thankyou-book", "phone_re": "^(\\+?61|0)4\\d{8}$"};
 let i=0;const a={},f=document.getElementById('form');
 const qs=new URLSearchParams(location.search);
 const ck=n=>(document.cookie.match('(^|; )'+n+'=([^;]*)')||[])[2]||'';
@@ -111,26 +106,26 @@ function err(m){let e=f.querySelector('.err');if(!e){e=document.createElement('p
 async function submit(btn){
   const v=id=>document.getElementById(id).value.trim();
   const fname=v('fname'),mobile=v('mobile').replace(/[\s()-]/g,''),email=v('email');
-  if(!fname)return err('Please add your first name.');
-  if(!/^(\+?61|0)4\d{8}$/.test(mobile))return err('Please enter an Australian mobile, e.g. 0412 345 678.');
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email))return err('Please check your email address.');
-  btn.disabled=true;btn.textContent='Sending…';
+  if(!fname)return err(M.err_name);
+  if(!new RegExp(M.phone_re).test(mobile))return err(M.err_mobile);
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email))return err(M.err_email);
+  btn.disabled=true;btn.textContent=M.sending;
   const event_id='lead-'+Date.now()+'-'+Math.random().toString(36).slice(2,8);
   const body={...a,first_name:fname,mobile,email,event_id,page:location.pathname,
     utm_source:qs.get('utm_source')||'',utm_medium:qs.get('utm_medium')||'',utm_campaign:qs.get('utm_campaign')||'',utm_content:qs.get('utm_content')||'',
     fbclid:qs.get('fbclid')||'',fbp:ck('_fbp'),fbc:ck('_fbc')};
   try{const r=await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
     const j=await r.json();if(!r.ok||!j.ok)throw 0;
-    location.href=(j.hot?'/thankyou-book':'/thankyou')+'?e='+encodeURIComponent(event_id);
-  }catch(e){btn.disabled=false;btn.textContent='Check this week’s times';err('Something went wrong. Please try again or call us.')}
+    location.href=(j.hot?M.ty_hot:M.ty)+'?e='+encodeURIComponent(event_id);
+  }catch(e){btn.disabled=false;btn.textContent=M.submit;err(M.err_send)}
 }
 function render(){
-  const s=steps[i];let h=`<div class="bar"><i style="width:${(i+1)*20}%"></i></div><div class="step">STEP ${i+1} OF 5</div><p class="q">${s.q}</p>`;
+  const s=steps[i];let h=`<div class="bar"><i style="width:${Math.round((i+1)*100/steps.length)}%"></i></div><div class="step">${M.step} ${i+1} ${M.of} ${steps.length}</div><p class="q">${s.q}</p>`;
   if(s.o)h+=s.o.map(o=>`<button class="opt" data-v="${o}">${o}</button>`).join('');
-  else{h+=s.input.map(([t,id,p,ac])=>`<input type="${t}" id="${id}" placeholder="${p}" autocomplete="${ac}" required aria-label="${p}">`).join('')+`<button class="go" id="next">${s.last?'Check this week’s times':'Next'}</button>`+(s.last?'<p class="small">We only use your details to arrange your inspection.</p>':'')}
+  else{h+=s.input.map(([t,id,p,ac])=>`<input type="${t}" id="${id}" placeholder="${p}" autocomplete="${ac}" required aria-label="${p}">`).join('')+`<button class="go" id="next">${s.last?M.submit:M.next}</button>`+(s.last?'<p class="small">'+M.privacy+'</p>':'')}
   f.innerHTML=h;
   f.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{a[s.k]=b.dataset.v;i++;render()});
-  const n=document.getElementById('next');if(n)n.onclick=e=>{e.preventDefault();if(s.last)return submit(n);const sv=document.getElementById('suburb').value.trim();if(!sv)return err('Please add the suburb.');a.suburb=sv;i++;render()};
+  const n=document.getElementById('next');if(n)n.onclick=e=>{e.preventDefault();if(s.last)return submit(n);for(const [t,id] of s.input){const v=document.getElementById(id).value.trim();if(!v)return err(M.err_required);a[id]=v}i++;render()};
 }
 render();
 // sticky bar only once the form is off-screen (Jeremy: never cover the survey's last steps)
