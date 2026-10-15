@@ -1,0 +1,29 @@
+{
+ "hr-a1-bez-plocica": {
+  "title": "HR A1 · Curenje bez razbijanja pločica",
+  "hook_text": "CURENJE BEZ\\N{RAZBIJANJA PLOČICA?}",
+  "primary_text": "Voda tamo gdje ne bi trebala biti? 💧\n\nPronalazimo točan izvor curenja bez razbijanja pločica.\nTermovizija, akustična detekcija i plin za praćenje.\n\n✅ Ako ne pronađemo izvor curenja vode, detekciju ne plaćate.\n⚡ Hitno curenje? Dolazimo isti dan.\n⭐ 25+ godina iskustva · 13 ocjena s 5 zvjezdica na Googleu\n\nZatražite besplatnu ponudu 👇",
+  "headline": "Pronađite curenje bez razbijanja pločica",
+  "description": "Ne pronađemo izvor? Detekciju ne plaćate.",
+  "cta": "GET_QUOTE",
+  "form_note": "Instant form 2898956873609451. Jeremy's suggested form intro: \"Zatražite besplatnu ponudu za detekciju curenja\"; qualifier: where is the water appearing and when did you first notice it."
+ },
+ "hr-b1-racun-za-vodu": {
+  "title": "HR B1 · Račun za vodu raste",
+  "hook_text": "RAČUN ZA VODU RASTE,\\N{A KAPLJICE NIGDJE?}",
+  "primary_text": "Skriveno curenje košta vas svaki dan, čak i kad ga ne vidite. 💸\n\nMrlja na stropu. Voda kod susjeda ispod. Račun koji raste.\n\nAkustičnom detekcijom i plinom za praćenje lociramo točno mjesto, bez razbijanja zidova i pločica.\n\n✅ Ako ne pronađemo izvor curenja vode, detekciju ne plaćate.\n📄 Pisani izvještaj isti dan.\n\nZatražite besplatnu ponudu 👇",
+  "headline": "Skriveno curenje košta vas svaki dan",
+  "description": "Ne pronađemo izvor? Detekciju ne plaćate.",
+  "cta": "GET_QUOTE",
+  "form_note": "Jeremy's form intro: \"Zatražite besplatnu ponudu za lociranje skrivenog curenja\"; qualifier: where do you see the damage, and is the water bill higher than usual."
+ },
+ "hr-c1-plijesan": {
+  "title": "HR C1 · Plijesan se vraća",
+  "hook_text": "PLIJESAN SE\\N{UVIJEK VRAĆA?}",
+  "primary_text": "Plijesan se vraća jer izvor vlage nije riješen.\nČišćenje mrlje ne rješava problem. 🧽\n\nTermovizijom pronalazimo točno odakle vlaga dolazi, prije nego što išta otvorimo, i problem rješavamo do kraja, uključujući sanaciju.\n\n⭐ 25+ godina iskustva · 13 ocjena s 5 zvjezdica na Googleu\n📄 Pisani izvještaj isti dan.\n\nZatražite besplatnu ponudu 👇",
+  "headline": "Plijesan se vraća? Pronađite izvor vlage",
+  "description": "Termovizija · pisani izvještaj isti dan",
+  "cta": "GET_QUOTE",
+  "form_note": "Jeremy's form intro: \"Zatražite besplatnu ponudu za otkrivanje izvora vlage\"; qualifiers: which room, how long has the smell or stain been there."
+ }
+}

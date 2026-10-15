@@ -1,0 +1,14 @@
+{
+ "avatar": "../renders/hr-b1-plain.mp4",
+ "srt": "../renders/hr-b1.srt",
+ "hflip": true,
+ "hook": {"box": "RAČUN ZA VODU RASTE,", "sub": "A KAPLJICE NIGDJE?", "until": 2.95},
+ "highlight": ["Skriveno curenje", "širi.", "točno", "bez razbijanja", "pločica."],
+ "caption_top": [[10.3, 17.0]],
+ "punches": [{"start": 17.35, "end": 21.4, "pos": "top", "text": "NE PRONAĐEMO IZVOR?\\N{DETEKCIJU NE PLAĆATE}"}],
+ "overlays": [
+  {"type": "broll", "clip": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/broll/14eG9VaHrTOmysGg4eCnmAhyiDRQ218eu.mp4", "from": 1.5, "to": 3.4, "at": 10.3, "speed": 1.0, "zoom": true},
+  {"type": "image", "src": "../assets/thermal-overlay.png", "at": 12.2, "until": 16.95}
+ ],
+ "out": "../renders/hr-b1-final.mp4"
+}

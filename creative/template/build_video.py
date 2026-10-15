@@ -114,7 +114,7 @@ def run(spec_path):
     dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", rel(spec["avatar"])]).decode())
 
     inputs, chains = ["-i", rel(spec["avatar"])], []
-    chains.append(f"[0:v]{'hflip,' if spec.get('hflip', True) else ''}setsar=1[v0]")
+    chains.append(f"[0:v]{'hflip,' if spec.get('hflip', True) else ''}scale=1080:1920,setsar=1[v0]")
     cur, n = "v0", 1
     for i, o in enumerate(spec.get("overlays", [])):
         lab = f"o{i}"

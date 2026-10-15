@@ -1,0 +1,15 @@
+{
+ "avatar": "../renders/hr-a1-plain.mp4",
+ "srt": "../renders/hr-a1.srt",
+ "hflip": true,
+ "hook": {"box": "CURENJE BEZ", "sub": "RAZBIJANJA PLOČICA?", "until": 2.4, "then": "Voda tamo gdje\\N{ne bi trebala biti?}"},
+ "highlight": ["bez", "razbijanja", "termovizija", "13", "5 zvjezdica", "detekciju ne", "plaćate.", "isti dan."],
+ "replace": {"dvadeset pet": "25", "trinaest": "13", "s pet zvjezdica": "s 5 zvjezdica", "pet zvjezdica": "5 zvjezdica"},
+ "caption_top": [[6.5, 12.0]],
+ "punches": [{"start": 18.5, "end": 22.05, "pos": "top", "text": "NE PRONAĐEMO IZVOR?\\N{DETEKCIJU NE PLAĆATE}"}],
+ "overlays": [
+  {"type": "broll", "clip": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/broll/14eG9VaHrTOmysGg4eCnmAhyiDRQ218eu.mp4", "from": 1.5, "to": 3.4, "at": 6.5, "speed": 1.0, "zoom": true},
+  {"type": "image", "src": "../assets/thermal-overlay.png", "at": 8.4, "until": 11.9}
+ ],
+ "out": "../renders/hr-a1-final.mp4"
+}

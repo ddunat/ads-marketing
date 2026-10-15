@@ -1,0 +1,14 @@
+{
+ "avatar": "../renders/hr-c1-plain.mp4",
+ "srt": "../renders/hr-c1.srt",
+ "hflip": true,
+ "hook": {"box": "OPET PLIJESAN", "sub": "NA ZIDU?", "until": 1.85, "then": "Problem je {iza njega.}"},
+ "highlight": ["izvor vlage.", "Termovizijom", "iza zida", "sanaciju.", "isti dan."],
+ "caption_top": [[3.4, 11.1]],
+ "punches": [{"start": 15.25, "end": 19.1, "pos": "top", "text": "13 GOOGLE RECENZIJA\\N{SVE S 5 ZVJEZDICA}"}],
+ "overlays": [
+  {"type": "broll", "clip": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/broll/14eG9VaHrTOmysGg4eCnmAhyiDRQ218eu.mp4", "from": 1.5, "to": 3.4, "at": 3.4, "speed": 1.0, "zoom": true},
+  {"type": "image", "src": "../assets/thermal-overlay.png", "at": 6.1, "until": 11.05}
+ ],
+ "out": "../renders/hr-c1-final.mp4"
+}
