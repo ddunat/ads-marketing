@@ -44,3 +44,9 @@ Copy is in `copy.json`; spoken scripts in `scripts.json`.
 | hr-a1-bez-plocica | 2151669585386810 | 120254265466600195 |
 | hr-b1-racun-za-vodu | 1322515779905037 | 120254265467940195 |
 | hr-c1-plijesan | 1104090375540864 | 120254265471460195 |
+| hr-d1-kapilarna-vlaga (carousel ×5) | n/a | 120254265547920195 |
+
+## D1: rising damp carousel (David: "static carousel for rising damp… besplatna ponuda")
+- Jeremy 7 → 8.5: card 1 leads with the pain ("Boja se ljušti uz pod?"), not the category; "besplatna ponuda" is the closer (card 5, headline, primary text), not the hook. Keep card text under ~20% of the area.
+- Cards built with `creative/template/build_carousel.py` from `hr-d1-kapilarna-vlaga/carousel.json`. Images hosted at go.dcinspect.com.au/img/hr-d1-card{1..5}.jpg; the ad uses `link_data.child_attachments[].picture` + the lead form on each card.
+- Photos: meter at the skirting + meter close-up (frames of Drive `14eG9V…`), thermal (`themral.jpg`), detection kit (Drive `IMG_6352.HEIC`).
