@@ -57,3 +57,7 @@ Copy is in `copy.json`; spoken scripts in `scripts.json`.
 - Jeremy: E1 "3 greške" (regret: already painted/re-plastered) 8.5; E3 "što se događa nakon klika" (process transparency, expected to bring the best-qualified leads) 8.5.
 - **Parked: E2 "znakovi" checklist (7/10).** Needs a real salt-line / peeling-skirting photo shot on site; without it the sign cards don't show the sign. Build it when David sends that photo.
 - Dropped from Jeremy's E3 draft: "Traje 2 minute" (unverified form length) and "Sanacija uključena u rješenje" (could read as free repair).
+
+## E1/E3 images replaced with Arcads AI images (David: "don't use same photos, use Arcads")
+- Generated with nano-banana-2-1 (`img-ai/`): zid-ljustenje, farbanje-preko-vlage, nova-zbuka-vlaga, mjerac-ruka (E1); dnevni-boravak-vlaga, termokamera-ruke (E3, cropped so no face shows).
+- Swapped into the paused Meta ads with `update_ad_creative` per card (images `hr-e1-v2-card*`, `hr-e3-v2-card*`). E3 card 3 was fetched from the railway.app domain after Meta failed twice on go.dcinspect.com.au.
