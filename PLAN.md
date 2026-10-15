@@ -142,3 +142,7 @@ The "40–50%" dream target needs a named stage (see open questions).
   - HR is report-only until David sets an HR target.
 - **Campaigns:** reuse existing ones (David's choice). AU new ads go into "Building Inspections - Construction & Pre Purchase" (paused since 5 Apr 2026; daily budget $100 AUD; switched on 2026-10-15 after David approved A2 on the desk). Its old "Construction Stages" ads are paused/archived and must stay off: only desk-approved ads run (David, 2026-10-15). HR setup: `build/cowork-hr-setup-prompt.md`. HR new ads go into its best active ad set.
 - **HR pages:** go.dcinspect.eu, same server, `hr` market in `sites/landers/markets.json`. Blocked until the TODO facts there are filled (rating/reviews, director label, footer), plus a DNS record, the HR GHL webhook (`GHL_WEBHOOK_URL_HR`) and the HR pixel (`META_PIXEL_ID_HR`). David is the native Croatian check at desk review.
+
+## Ad scheduling (Jeremy, 2026-10-15)
+- **No dayparting for now.** Run 24/7 on the $100/day daily budget. Meta's ad scheduling needs a lifetime budget, and with no conversion history any schedule is guesswork. Speed-to-lead after hours is an ops fix (rotation or an after-hours auto-text offering a morning call), not a reason to cut delivery. No manual Wed–Fri budget tilt either.
+- **Revisit** after 2–4 weeks or ~100 page leads, ideally with CAPI live. Break down the booked-inspection rate by AEST day of week and hour (GHL lead created time). Block hours (e.g. midnight–6am) only if those leads book at a fraction of the daytime rate and the team can't cover them.
