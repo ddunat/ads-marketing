@@ -139,9 +139,9 @@ The "40–50%" dream target needs a named stage (see open questions).
 - **Daily check:** `.claude/skills/ad-ops/SKILL.md`.
   - Pauses losers automatically (AU: ≥$150 with 0 bookings, or ≥$300 at >$100 per booking).
   - Proposes +20% budget for winners (≥2 bookings at ≤$50, last 7 days) on the desk's **Budget** tab. David taps to apply.
-  - HR is report-only until David sets an HR target.
+  - HR target (David, 2026-10-15): €15–20 per booked job. Rules in `.claude/skills/ad-ops/SKILL.md` (judged against €20).
 - **Campaigns:** reuse existing ones (David's choice). AU new ads go into "Building Inspections - Construction & Pre Purchase" (paused since 5 Apr 2026; daily budget $100 AUD; switched on 2026-10-15 after David approved A2 on the desk). Its old "Construction Stages" ads are paused/archived and must stay off: only desk-approved ads run (David, 2026-10-15). HR setup: `build/cowork-hr-setup-prompt.md`. HR new ads go into its best active ad set.
-- **HR pages:** go.dcinspect.eu, same server, `hr` market in `sites/landers/markets.json`. Blocked until the TODO facts there are filled (rating/reviews, director label, footer), plus a DNS record, the HR GHL webhook (`GHL_WEBHOOK_URL_HR`) and the HR pixel (`META_PIXEL_ID_HR`). David is the native Croatian check at desk review.
+- **HR pages:** go.dcinspect.eu, same server, `hr` market in `sites/landers/markets.json`. DNS, certificate, `GHL_WEBHOOK_URL_HR` and `META_PIXEL_ID_HR` are done (2026-10-15). Still blocked on the TODO facts there (rating/reviews, director label, footer) and David publishing the GHL workflow "Meta LP lead in HR". David is the native Croatian check at desk review.
 
 ## Ad scheduling (Jeremy, 2026-10-15)
 - **No dayparting for now.** Run 24/7 on the $100/day daily budget. Meta's ad scheduling needs a lifetime budget, and with no conversion history any schedule is guesswork. Speed-to-lead after hours is an ops fix (rotation or an after-hours auto-text offering a morning call), not a reason to cut delivery. No manual Wed–Fri budget tilt either.

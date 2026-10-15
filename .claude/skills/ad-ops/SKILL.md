@@ -35,10 +35,15 @@ David approved: **pause losers automatically; scaling is only ever proposed** (A
 - **Never edit a live winner's creative while scaling.**
 - **Only desk-approved ads run.** If you find an active ad in either account with no desk card (e.g. an old pre-desk ad someone switched back on), pause it and say so in the summary.
 
-## Rules, HR
-- No booking target is set yet (`build/cost-per-booking-plan.md` covers AU only).
-- Until David sets one, only report HR numbers. Don't pause or propose.
-- Ask once in the summary for the HR target (EUR per booked job).
+## Rules, HR (target €15–20 per booked job, David 2026-10-15; judge against €20)
+Same logic as AU, in EUR, scaled to the HR target:
+- **Too early to judge:** live < 72 hours, or lifetime spend < €40. Do nothing.
+- **Kill, i.e. pause automatically:**
+  - lifetime spend ≥ €60 with 0 bookings; or
+  - lifetime spend ≥ €120 and cost per booking > €40.
+  - Same steps as AU: re-read state, `pause_ad`, update the HR desk card with `paused_reason` in plain English with the numbers.
+- **Scale, i.e. propose only:** last 7 days ≥ 2 bookings at ≤ €20 each, live ≥ 72 hours. `target_type` `adset` unless the HR campaign uses campaign budget. Same proposal format, `currency` EUR, written to the HR desk.
+- HR bookings come from the HR GHL sub-account (`fSPTLOI7MAzy9VUHFa2k`). Until HR booking tags (`booked-meta`) are flowing, fall back to CPL against the account's 30-day median and say so.
 
 ## Output
 - **A short summary in the session:** per account, the ads checked, paused (with reason), proposed, and too-early-to-judge, plus anything that needs David.
