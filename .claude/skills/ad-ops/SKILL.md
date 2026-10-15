@@ -33,6 +33,7 @@ David approved: **pause losers automatically; scaling is only ever proposed** (A
   - One open proposal per campaign/ad set at a time. If one is still pending, update its numbers instead of adding another.
   - Don't propose again within 48 hours of an applied change (Jeremy: let it settle).
 - **Never edit a live winner's creative while scaling.**
+- **Only desk-approved ads run.** If you find an active ad in either account with no desk card (e.g. an old pre-desk ad someone switched back on), pause it and say so in the summary.
 
 ## Rules, HR
 - No booking target is set yet (`build/cost-per-booking-plan.md` covers AU only).
