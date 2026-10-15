@@ -1,0 +1,59 @@
+{
+ "out_dir": "../renders/hr-e3",
+ "cards": [
+  {
+   "photo": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/broll/thermal.jpg",
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "headline": "Kapilarna vlaga?|Evo kako je rješavamo.",
+   "sub": "",
+   "pos": "top",
+   "size": 68
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "badge": "KORAK 1",
+   "headline": "Ispunite|kratki obrazac",
+   "lines": [
+    "Par pitanja o vašem zidu"
+   ],
+   "sub": "Javljamo se brzo"
+  },
+  {
+   "photo": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/photos/meter-skirting.jpg",
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "headline": "Korak 2:|dolazimo i mjerimo",
+   "sub": "Termovizija · mjerač vlage · bez razbijanja",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "badge": "KORAK 3",
+   "headline": "Pisani izvještaj|isti dan",
+   "lines": [
+    "Točno gdje je vlaga",
+    "i što je potrebno"
+   ],
+   "sub": "Bez nagađanja"
+  },
+  {
+   "cta": true,
+   "badge": "KORAK 4",
+   "headline": "Zatražite|besplatnu ponudu",
+   "lines": [
+    "Rješavamo i sanaciju",
+    "25+ godina iskustva",
+    "13 Google ocjena, sve 5 zvjezdica"
+   ],
+   "sub": "Kratki obrazac · javljamo se brzo"
+  }
+ ]
+}

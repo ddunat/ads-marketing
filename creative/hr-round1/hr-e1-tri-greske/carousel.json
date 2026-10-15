@@ -1,0 +1,63 @@
+{
+ "out_dir": "../renders/hr-e1",
+ "cards": [
+  {
+   "photo": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/photos/meter-0.2.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "headline": "Vlaga se uvijek vrati?|Evo zašto.",
+   "sub": "3 greške koje skupo koštaju.",
+   "pos": "top",
+   "size": 70
+  },
+  {
+   "photo": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/photos/meter-1.8.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "headline": "Greška 1:|boja preko vlage",
+   "sub": "Zatvara problem, ne rješava ga.",
+   "pos": "top",
+   "size": 66,
+   "badge": "1/3"
+  },
+  {
+   "photo": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/broll/thermal.jpg",
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "headline": "Greška 2:|nova žbuka",
+   "sub": "Izvor vlage ostaje u zidu.",
+   "pos": "top",
+   "size": 66,
+   "badge": "2/3"
+  },
+  {
+   "photo": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/photos/meter-close.jpg",
+   "focus": [
+    0.56,
+    0.72
+   ],
+   "zoom": 2.0,
+   "headline": "Greška 3:|sanacija bez mjerenja",
+   "sub": "Mi prvo mjerimo.",
+   "pos": "bottom",
+   "size": 62,
+   "badge": "3/3"
+  },
+  {
+   "cta": true,
+   "headline": "Zatražite|besplatnu ponudu",
+   "lines": [
+    "Prvo mjerimo, onda saniramo",
+    "Pisani izvještaj isti dan",
+    "25+ godina iskustva"
+   ],
+   "sub": "Kratki obrazac · javljamo se brzo"
+  }
+ ]
+}

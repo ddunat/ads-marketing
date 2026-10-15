@@ -73,7 +73,7 @@ def photo_card(c):
     im = Image.composite(Image.new("RGB", (S, S), (0, 0, 0)), im, grad.resize((S, S)))
     d = ImageDraw.Draw(im)
     hf, sf = font(800, c.get("size", 78)), font(600, 44)
-    hl = wrap(d, c["headline"], hf, S - 160)
+    hl = [x for part in c["headline"].split("|") for x in wrap(d, part.strip(), hf, S - 160)]
     sl = [x for part in c.get("sub", "").split("|") for x in wrap(d, part.strip(), sf, S - 140)] if c.get("sub") else []
     if bottom:
         sub_h = stack_h(d, sl, sf, 18) if sl else 0
@@ -82,7 +82,7 @@ def photo_card(c):
         boxed(d, hl, hf, y_top, BLUE, WHITE)
         if sl: boxed(d, sl, sf, y + 14, INK, WHITE, pad=18)
     else:
-        y = boxed(d, hl, hf, 70, BLUE, WHITE)
+        y = boxed(d, hl, hf, 150 if c.get("badge") else 70, BLUE, WHITE)
         if sl: boxed(d, sl, sf, y + 4, INK, WHITE, pad=18)
     if c.get("badge"):
         bf = font(800, 38); tw = d.textlength(c["badge"], font=bf)
@@ -92,10 +92,15 @@ def photo_card(c):
 
 
 def cta_card(c):
-    im = Image.new("RGB", (S, S), BLUE); d = ImageDraw.Draw(im)
+    bg = {"blue": BLUE, "ink": INK}[c.get("bg", "blue")]
+    im = Image.new("RGB", (S, S), bg); d = ImageDraw.Draw(im)
+    if c.get("badge"):
+        bf = font(800, 38); tw = d.textlength(c["badge"], font=bf)
+        d.rounded_rectangle(((S - tw) / 2 - 30, 70, (S + tw) / 2 + 30, 136), 33, fill=CYAN)
+        d.text(((S - tw) / 2, 80), c["badge"], font=bf, fill=INK)
     hf, sf, lf = font(800, 92), font(600, 46), font(800, 50)
     y = 170
-    for l in wrap(d, c["headline"], hf, S - 160):
+    for l in [x for part in c["headline"].split("|") for x in wrap(d, part.strip(), hf, S - 160)]:
         d.text(((S - d.textlength(l, font=hf)) / 2, y), l, font=hf, fill=WHITE); y += 112
     y += 30
     for l in c.get("lines", []):
@@ -105,7 +110,7 @@ def cta_card(c):
     if c.get("sub"):
         bw = d.textlength(c["sub"], font=sf)
         d.rounded_rectangle(((S - bw) / 2 - 40, S - 230, (S + bw) / 2 + 40, S - 130), 50, fill=WHITE)
-        d.text(((S - bw) / 2, S - 212), c["sub"], font=sf, fill=BLUE)
+        d.text(((S - bw) / 2, S - 212), c["sub"], font=sf, fill=bg)
     return im
 
 
