@@ -44,9 +44,16 @@ Copy is in `copy.json`; spoken scripts in `scripts.json`.
 | hr-a1-bez-plocica | 2151669585386810 | 120254265466600195 |
 | hr-b1-racun-za-vodu | 1322515779905037 | 120254265467940195 |
 | hr-c1-plijesan | 1104090375540864 | 120254265471460195 |
-| hr-d1-kapilarna-vlaga (carousel ×5) | n/a | 120254265547920195 |
+| hr-d1-kapilarna-vlaga (carousel ×5) | n/a | 120254265547920195 (LIVE 2026-10-15) |
+| hr-e1-tri-greske (carousel ×5) | n/a | 120254265669630195 |
+| hr-e3-nakon-klika (carousel ×5) | n/a | 120254265670730195 |
 
 ## D1: rising damp carousel (David: "static carousel for rising damp… besplatna ponuda")
 - Jeremy 7 → 8.5: card 1 leads with the pain ("Boja se ljušti uz pod?"), not the category; "besplatna ponuda" is the closer (card 5, headline, primary text), not the hook. Keep card text under ~20% of the area.
 - Cards built with `creative/template/build_carousel.py` from `hr-d1-kapilarna-vlaga/carousel.json`. Images hosted at go.dcinspect.com.au/img/hr-d1-card{1..5}.jpg; the ad uses `link_data.child_attachments[].picture` + the lead form on each card.
 - Photos: meter at the skirting + meter close-up (frames of Drive `14eG9V…`), thermal (`themral.jpg`), detection kit (Drive `IMG_6352.HEIC`).
+
+## E1 / E3: more rising damp carousels (David: "create more carousels to do with kapilarna vlaga")
+- Jeremy: E1 "3 greške" (regret: already painted/re-plastered) 8.5; E3 "što se događa nakon klika" (process transparency, expected to bring the best-qualified leads) 8.5.
+- **Parked: E2 "znakovi" checklist (7/10).** Needs a real salt-line / peeling-skirting photo shot on site; without it the sign cards don't show the sign. Build it when David sends that photo.
+- Dropped from Jeremy's E3 draft: "Traje 2 minute" (unverified form length) and "Sanacija uključena u rješenje" (could read as free repair).
