@@ -44,7 +44,11 @@ A2 (auction, AU) is the reference build. Every new ad should be as good as A2 v6
 - **HR:**
   - Write natural Croatian (not translated English), with HR facts from `sites/landers/markets.json` (`hr`).
   - Card notes must say David is the native-language check.
-  - **If `markets.json` `hr` still has TODO values, skip HR and list what's missing in the summary.**
+  - **HR ads use the Meta Instant Form, not a landing page** (David, 2026-10-15: "we have had great success with this"). Form `2898956873609451` on page `658374350686787`, ad set Adv Plus `120227138979370195`. `create_ad` with `creative.object_story_spec.video_data.call_to_action = {"type":"GET_QUOTE","value":{"lead_gen_form_id":"2898956873609451","link":"http://fb.me/"}}`. Skip section 4 for HR; the desk card's `landing` gate notes the form instead.
+  - HR facts (David, 2026-10-15): 13 five-star Google reviews; 25+ years combined experience; global leak detection and building consultancy experience; thermal imaging, moisture meters, CCTV drain cameras, pipe locators, tracer gas, acoustic detection; repairs of moisture problems. Croatia-wide; never mention the Zagreb base. No prices. Phone 099 208 0227. Offer: find leaks without breaking tiles; same-day visit for urgent leaks.
+  - HR guarantee (Jeremy, pending David's OK on the desk): "Ako ne pronađemo izvor curenja vode, detekciju ne plaćate." Active water leaks only; never on mould/damp/rising-damp ads (use the same-day written report there). No mould health claims.
+  - **Voice:** David's clone is an English voice. Send HeyGen the script with every `c` respelled `ts` (keep č/ć). Then transcribe the audio (Arcads `arcads_transcribe`, srt) and re-render any take with a misheard key word. HeyGen gives no Croatian captions: build the SRT from the script with the transcription's timing (`creative/template/srt_from_script.py`, or by hand).
+  - Reference build: `creative/hr-round1/`.
 
 ## 3. Video
 1. **HeyGen v3** (the proxy injects the key; v2 is shut off after 2026-10-31):

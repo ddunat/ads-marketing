@@ -37,3 +37,10 @@ Copy is in `copy.json`; spoken scripts in `scripts.json`.
 - HeyGen v3 returns no caption file for Croatian. Captions come from the script, timed with an Arcads (ElevenLabs) transcription.
 - David's cloned voice is an English voice. It said "kurenje" for "curenje". Scripts sent to HeyGen respell `c` as `ts` where needed; captions keep the correct spelling.
 - Proof shot: David's thermal photo (Drive "Construction Defect Photos/themral.jpg"). B-roll: moisture meter on a wall (Drive `14eG9VaHrTOmysGg4eCnmAhyiDRQ218eu`, 1.0–4.1s, checked: no faces, numbers or signage).
+
+## Meta (created paused 2026-10-15, on the HR desk for approval)
+| Key | Video id | Ad id |
+|---|---|---|
+| hr-a1-bez-plocica | 2151669585386810 | 120254265466600195 |
+| hr-b1-racun-za-vodu | 1322515779905037 | 120254265467940195 |
+| hr-c1-plijesan | 1104090375540864 | 120254265471460195 |
