@@ -2,10 +2,10 @@
  "out_dir": "../renders/hr-e3",
  "cards": [
   {
-   "photo": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/broll/thermal.jpg",
+   "photo": "../img-ai/dnevni-boravak-vlaga.jpg",
    "focus": [
     0.5,
-    0.62
+    0.5
    ],
    "headline": "Kapilarna vlaga?|Evo kako je rješavamo.",
    "sub": "",
@@ -23,15 +23,16 @@
    "sub": "Javljamo se brzo"
   },
   {
-   "photo": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/photos/meter-skirting.jpg",
+   "photo": "../img-ai/termokamera-ruke.jpg",
    "focus": [
-    0.5,
-    0.62
+    0.78,
+    0.56
    ],
    "headline": "Korak 2:|dolazimo i mjerimo",
    "sub": "Termovizija · mjerač vlage · bez razbijanja",
-   "pos": "top",
-   "size": 66
+   "pos": "bottom",
+   "size": 66,
+   "zoom": 1.6
   },
   {
    "cta": true,
