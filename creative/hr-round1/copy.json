@@ -25,5 +25,19 @@
   "description": "Termovizija · pisani izvještaj isti dan",
   "cta": "GET_QUOTE",
   "form_note": "Jeremy's form intro: \"Zatražite besplatnu ponudu za otkrivanje izvora vlage\"; qualifiers: which room, how long has the smell or stain been there."
+ },
+ "hr-d1-kapilarna-vlaga": {
+  "title": "HR D1 · Kapilarna vlaga (carousel)",
+  "primary_text": "Kapilarna vlaga se ne rješava bojom. 🧱\n\nPrvo treba izmjeriti koliko je visoko došla i odakle dolazi. Termovizijom i mjeračem vlage točno to utvrdimo, a zatim problem rješavamo do kraja, uključujući sanaciju.\n\n✅ Besplatna ponuda\n✅ Pisani izvještaj isti dan\n⭐ 25+ godina iskustva · 13 ocjena s 5 zvjezdica na Googleu\n\nZatražite besplatnu ponudu 👇",
+  "headline": "Besplatna ponuda za kapilarnu vlagu",
+  "description": "Termovizija · mjerač vlage · sanacija. Javljamo se brzo.",
+  "cards": [
+   "Boja se ljušti uz pod?",
+   "Vidimo je i iza zida",
+   "Mjerimo, ne nagađamo",
+   "Pisani izvještaj isti dan",
+   "Zatražite besplatnu ponudu"
+  ],
+  "cta": "GET_QUOTE"
  }
 }

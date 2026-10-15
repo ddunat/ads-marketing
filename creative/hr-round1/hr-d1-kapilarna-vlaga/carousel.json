@@ -1,0 +1,60 @@
+{
+ "out_dir": "../renders/hr-d1",
+ "cards": [
+  {
+   "photo": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/photos/meter-skirting.jpg",
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "headline": "Boja se ljušti uz pod?",
+   "sub": "Vlaga se ne rješava bojom.",
+   "pos": "top",
+   "size": 70
+  },
+  {
+   "photo": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/broll/thermal.jpg",
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "headline": "Vidimo je i iza zida",
+   "sub": "Termovizija, bez razbijanja.",
+   "pos": "top",
+   "size": 70
+  },
+  {
+   "photo": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/photos/meter-close.jpg",
+   "focus": [
+    0.56,
+    0.72
+   ],
+   "headline": "Mjerimo, ne nagađamo",
+   "sub": "Mjerač vlage pokazuje točno dokle je došla.",
+   "pos": "bottom",
+   "size": 70,
+   "zoom": 2.0
+  },
+  {
+   "photo": "/tmp/claude-0/-home-user-ads-marketing/f8215a1b-57af-58a3-be3a-ca0000abced8/scratchpad/photos/14N5NQGG9KxNa650ypK4_ZmJnRQ2evHUj.jpg",
+   "focus": [
+    0.5,
+    0.62
+   ],
+   "headline": "Pisani izvještaj isti dan",
+   "sub": "25+ godina iskustva | 13 Google ocjena, sve s 5 zvjezdica",
+   "pos": "top",
+   "size": 70
+  },
+  {
+   "cta": true,
+   "headline": "Zatražite besplatnu ponudu",
+   "lines": [
+    "Termovizija i mjerač vlage",
+    "Pisani izvještaj isti dan",
+    "Rješavamo i sanaciju"
+   ],
+   "sub": "Kratki obrazac · javljamo se brzo"
+  }
+ ]
+}
