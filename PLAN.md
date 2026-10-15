@@ -139,7 +139,7 @@ The "40–50%" dream target needs a named stage (see open questions).
 - **Daily check:** `.claude/skills/ad-ops/SKILL.md`.
   - Pauses losers automatically (AU: ≥$150 with 0 bookings, or ≥$300 at >$100 per booking).
   - Proposes +20% budget for winners (≥2 bookings at ≤$50, last 7 days) on the desk's **Budget** tab. David taps to apply.
-  - HR target (David, 2026-10-15): €15–20 per booked job. Rules in `.claude/skills/ad-ops/SKILL.md` (judged against €20).
+  - HR target (David, 2026-10-15): "€15–20". Read as cost per lead (matches HR's ~€16.50 CPL; cost per booked job is ~€336) until David confirms. Rules in `.claude/skills/ad-ops/SKILL.md`.
 - **Campaigns:** reuse existing ones (David's choice). AU new ads go into "Building Inspections - Construction & Pre Purchase" (paused since 5 Apr 2026; daily budget $100 AUD; switched on 2026-10-15 after David approved A2 on the desk). Its old "Construction Stages" ads are paused/archived and must stay off: only desk-approved ads run (David, 2026-10-15). HR setup: `build/cowork-hr-setup-prompt.md`. HR new ads go into its best active ad set.
 - **HR pages:** go.dcinspect.eu, same server, `hr` market in `sites/landers/markets.json`. DNS, certificate, `GHL_WEBHOOK_URL_HR` and `META_PIXEL_ID_HR` are done (2026-10-15). Still blocked on the TODO facts there (rating/reviews, director label, footer) and David publishing the GHL workflow "Meta LP lead in HR". David is the native Croatian check at desk review.
 

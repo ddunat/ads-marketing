@@ -58,6 +58,6 @@ Do this:
 
 Hard rules:
 - Never raise a budget, enable an ad or create anything in Meta.
-- HR uses its own EUR rules (target €15–20 per booked job) from the ad-ops skill.
+- HR uses its own EUR rules from the ad-ops skill (judged on cost per lead for now).
 
 Finish with a 5-line summary: paused (with reasons), proposed, too early to judge, and anything David must do.

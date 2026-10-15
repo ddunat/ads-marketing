@@ -33,17 +33,18 @@ David approved: **pause losers automatically; scaling is only ever proposed** (A
   - One open proposal per campaign/ad set at a time. If one is still pending, update its numbers instead of adding another.
   - Don't propose again within 48 hours of an applied change (Jeremy: let it settle).
 - **Never edit a live winner's creative while scaling.**
-- **Only desk-approved ads run.** If you find an active ad in either account with no desk card (e.g. an old pre-desk ad someone switched back on), pause it and say so in the summary.
+- **AU: only desk-approved ads run.** If you find an active AU ad with no desk card (e.g. an old pre-desk ad someone switched back on), pause it and say so in the summary.
 
-## Rules, HR (target €15–20 per booked job, David 2026-10-15; judge against €20)
-Same logic as AU, in EUR, scaled to the HR target:
+## Rules, HR (David said "€15–20", 2026-10-15; read as cost per LEAD until he confirms)
+The HR account's history is ~€16.50 per lead and ~€336 per booked job (`research/meta-audit-2026-10-12.md`), so €15–20 matches CPL, not cost per booking. Judging per booking at €20 would kill every ad. Until David confirms, judge HR desk ads on CPL against €20:
 - **Too early to judge:** live < 72 hours, or lifetime spend < €40. Do nothing.
 - **Kill, i.e. pause automatically:**
-  - lifetime spend ≥ €60 with 0 bookings; or
-  - lifetime spend ≥ €120 and cost per booking > €40.
+  - lifetime spend ≥ €60 with 0 leads; or
+  - lifetime spend ≥ €120 and CPL > €40.
   - Same steps as AU: re-read state, `pause_ad`, update the HR desk card with `paused_reason` in plain English with the numbers.
-- **Scale, i.e. propose only:** last 7 days ≥ 2 bookings at ≤ €20 each, live ≥ 72 hours. `target_type` `adset` unless the HR campaign uses campaign budget. Same proposal format, `currency` EUR, written to the HR desk.
-- HR bookings come from the HR GHL sub-account (`fSPTLOI7MAzy9VUHFa2k`). Until HR booking tags (`booked-meta`) are flowing, fall back to CPL against the account's 30-day median and say so.
+- **Scale, i.e. propose only:** last 7 days ≥ 5 leads at ≤ €20 CPL, live ≥ 72 hours. `target_type` `adset` unless the HR campaign uses campaign budget. Same proposal format, `currency` EUR, written to the HR desk.
+- Also report cost per booked job where GHL HR (`fSPTLOI7MAzy9VUHFa2k`) has `booked-meta` tags, so David can see it.
+- **HR: only judge ads that have an HR desk card.** The existing pre-desk HR ads keep running untouched (they carry the €250/day account); report their totals only.
 
 ## Output
 - **A short summary in the session:** per account, the ads checked, paused (with reason), proposed, and too-early-to-judge, plus anything that needs David.
