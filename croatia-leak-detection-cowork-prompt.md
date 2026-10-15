@@ -1,0 +1,223 @@
+# Croatia leak detection — Priorities 0–3 — Cowork prompt
+
+Paste everything below the line into a new **Claude Cowork** session. It needs **Claude in Chrome**
+signed in to David's GoDaddy account (the site is built in GoDaddy Website Builder). The
+**Search Atlas** connector is optional; the prompt uses it for schema if dcinspect.eu is set up there.
+
+What a live check of dcinspect.eu showed on 15 Oct 2026 (the prompt builds on this):
+
+- `/detekcija-curenja-vode` and `/detekcija-curenja-zagreb` **already exist**, so Priority 0 is an
+  upgrade, not a new page. The Zagreb page uses a different slug from the plan
+  (`-zagreb`, not `-vode-zagreb`). The prompt keeps that URL and uses the same pattern for new cities.
+- **Click-to-call is broken on the leak pages:** they link `tel:+1992080227` (US code). The homepage
+  links `tel:+3850992080227`, which keeps the trunk 0 and is also wrong. Correct: `tel:+385992080227`.
+- The site declares `<html lang="en-AU">`. The homepage title is "DC Building Inspectors" and its
+  meta description is in English.
+- No page has JSON-LD, and there's no WhatsApp or Viber link.
+
+---
+
+You are working on **dcinspect.eu**, the Croatian site of DC Building Inspectors (David Dunat). It's
+built in **GoDaddy Website Builder** and you'll edit it through Claude in Chrome. Phone:
+**099 2080 227**, international **+385 99 208 0227**. Goal: rank for leak-detection searches in
+Croatia (detekcija / lociranje / otkrivanje curenja vode). Today the site mostly talks about vlaga
+and termovizija. People with a burst pipe or a high water bill search for *curenje vode*.
+
+All page copy goes in **natural Croatian (ijekavica, standard hrvatski)** with correct diacritics
+(č, ć, š, ž, đ). Don't write Serbian forms or machine-translated phrasing. Address readers as *Vi*.
+
+## Ground rules: read before touching anything
+
+1. **Don't invent facts.** Before publishing, ask David to confirm every item on this list in one
+   message, and leave a visible `[POTVRDITI]` placeholder until he does:
+   - Google rating and review count (check the Google Business Profile; only show "5,0" if it is
+     exactly that, with the real count)
+   - working hours, and whether he really does same-day or emergency call-outs (decides the
+     `EmergencyService` type and the "Hitne intervencije" wording)
+   - payment methods accepted
+   - response time per region (Zagreb, Rijeka, Split, Istra), and whether he actually serves each one
+   - which equipment he really owns (acoustic geophone, tracer gas / forming gas, thermal camera
+     model, CCTV pipe camera, moisture meter). Only describe methods he really uses.
+   - insurance: **don't** say reports are "accepted by" Croatia osiguranje, Allianz, Generali or Wiener
+     unless David has had claims paid with them. The safe wording is that the report is made so it
+     can be attached to an insurance claim (*za prijavu štete osiguravatelju*).
+   - real local jobs and photos for each city page. If none exist for a city, the page goes up
+     without a case section rather than with a made-up one.
+   - the "više od 100 intervencija" claim already on the Zagreb page. Keep it only if it's true.
+   - starting price, or what drives the price (needed for the FAQ answer on cost)
+2. **Don't change existing URLs.** `/detekcija-curenja-vode` and `/detekcija-curenja-zagreb` stay
+   where they are. Don't delete or rename any page without asking.
+3. **Work in GoDaddy's editor and preview first.** Publish once per priority, after David has seen the
+   preview link or screenshots and said go. Publishing is the outward step, so confirm it each time.
+4. Before each publish, check the page at phone width (most leak searches are on mobile). The
+   call button must be visible without scrolling.
+5. Keep a running log in this chat: page, URL, what changed, what is waiting on David.
+
+## Priority 0: upgrade the pillar page `/detekcija-curenja-vode`
+
+Targets: **detekcija curenja vode**, **lociranje curenja vode**, **otkrivanje curenja vode** (put
+all three naturally into the H1/H2s and the first 100 words; don't stuff them).
+
+- **SEO title** (≤60 chars): `Detekcija i lociranje curenja vode bez razbijanja | DC Inspect`
+- **Meta description** (≤155): mention bez razbijanja, the methods, pisano izvješće za osiguranje,
+  and the phone number.
+- **H1:** `Detekcija i Lociranje Curenja Vode bez Razbijanja`
+- **Hero:** one-line subhead; trust bar `★ [ocjena] na Googleu • Ovlašteni inspektori • Bez
+  razbijanja pločica i zidova` (rating per rule 1); primary button **"Hitne intervencije: Nazovite
+  odmah"** linking `tel:+385992080227`.
+- **Sticky mobile call bar:** a call button fixed to the bottom on mobile. If GoDaddy's built-in
+  options can't make it sticky, use the closest native option (header call button / "Click to call"
+  setting) and tell David what you used.
+- **Fix every `tel:` link** on this page, the Zagreb page and the homepage to `tel:+385992080227`.
+  Tap-test it in mobile preview.
+- **Sections (H2):**
+  1. *Znakovi skrivenog curenja vode*: keep and tighten the existing list (vodomjer se vrti,
+     veći račun, pad tlaka u bojleru/podnom grijanju, mrlje, plijesan).
+  2. *Kako lociramo curenje bez razbijanja*: one short block per method David confirmed
+     (akustičko lociranje geofonom, plin za praćenje / tracer gas, termovizijska kamera, mjerenje
+     vlage, CCTV kamera za odvode). Each block links to its Priority 1 sub-page once that exists.
+  3. *Izvješće za osiguranje i povrat troškova*: what's in the report (uzrok, točna lokacija,
+     fotografije i termogrami, preporuka sanacije) and how it helps a claim (wording per rule 1).
+  4. *Postupak u 4 koraka*: poziv → dolazak → lociranje i označavanje → pisano izvješće.
+  5. *Područje rada*: links to each city page (Priority 2).
+  6. *Česta pitanja*: see Priority 3.
+  7. A closing CTA: call button plus the existing online booking link (`/rezerviraj-termin-online`).
+- Internal links **into** this page: from the homepage "Kada Imate Curenja" area and from
+  `/uzroke-vlage` and `/troškovi-s-vlagom`, with anchors like *detekcija curenja vode* and
+  *lociranje curenja vode*.
+
+## Priority 1: five sub-service pages
+
+Create each as a new page, in this URL order, under the nav item "Detekcija curenja vode" (dropdown).
+Each page: unique SEO title and meta description, one H1, a 300–700 word body, the same call
+button/sticky bar, a link back to the pillar page, links to 1–2 sibling sub-pages, and 3–4 FAQ
+questions specific to that page. Only build a page for a method David has confirmed he offers. Skip
+the rest and say so.
+
+| URL | H1 (suggested) | Target terms | Focus |
+|---|---|---|---|
+| `/detekcija-curenja-podnog-grijanja` | Detekcija curenja podnog grijanja | pad tlaka u bojleru, curenje cijevi podnog grijanja | finding pinhole leaks in floor-heating loops without lifting parket or pločice |
+| `/akusticko-lociranje-kvarova-geofon` | Akustičko lociranje puknuća cijevi geofonom | geofon detekcija, elektroakustično lociranje | pressurised supply-line leaks under ground and in concrete slabs |
+| `/snimanje-odvodnih-i-kanalizacijskih-cijevi` | Snimanje odvodnih i kanalizacijskih cijevi kamerom | snimanje odvodnih cijevi kamerom, inspekcija kanalizacije | CCTV for roots, cracked PVC, blockages, failed joints |
+| `/ispitivanje-vlage-i-termografija` | Ispitivanje vlage i termovizijsko snimanje | termovizijsko snimanje instalacija, mjerenje vlage u estrihu i zidovima | finding moisture paths behind walls before mould shows |
+| `/izvjestaj-za-osiguranje-steta-od-vode` | Izvješće o uzroku štete od vode za osiguranje | zapisnik o uzroku puknuća cijevi, šteta od vode osiguranje | a complete technical report for the claim; show a redacted sample page if David has one |
+
+`/ispitivanje-vlage-i-termografija` overlaps the existing vlaga content. Link `/uzroke-vlage`
+to it and give it the leak/installation angle, so the two pages don't compete for the same query.
+
+## Priority 2: city pages
+
+Keep `/detekcija-curenja-zagreb` (upgrade it in place) and create, **only for regions David confirms
+he serves**:
+
+- `/detekcija-curenja-rijeka`
+- `/detekcija-curenja-split`
+- `/detekcija-curenja-istra`
+
+(The plan said `/detekcija-curenja-vode-{grad}`. Use `/detekcija-curenja-{grad}` to match the
+Zagreb page that's already live. If David prefers the plan's slugs, use those for the new pages
+and leave Zagreb as it is.)
+
+Each city page needs at least 60% of its text unique to that city. Don't swap the city name into
+a template. Include:
+
+- an H1 like `Detekcija curenja vode Rijeka`, plus neighbourhoods or towns served (e.g. Zagreb:
+  Novi Zagreb, Trešnjevka, Dubrava, Podsljeme, Velika Gorica, Samobor)
+- **estimated response time** for that region (David's figure)
+- local factors worth mentioning, if accurate: older building stock and old pipes in city centres,
+  limescale on the coast, holiday apartments in Istria and Dalmatia where leaks go unnoticed while
+  owners are away
+- a **real local case summary with photos** if David supplies one (rule 1). Otherwise, no case
+  section.
+- an **embedded Google Map** of the service area (GoDaddy "Map" section, centred on the city)
+- the call button, links to the pillar and sub-service pages, 3 city-specific FAQs
+- add each city page to the nav under "Detekcija curenja vode" or a footer "Područje rada" list,
+  and link to all of them from the pillar page
+
+## Priority 3: technical SEO and structured data
+
+**Site-wide fixes (GoDaddy Settings → SEO / Site settings):**
+
+- Site language → **Croatian (hr)**, so `<html lang>` stops saying `en-AU`. After publishing,
+  confirm with view-source.
+- Homepage SEO title and meta description → Croatian (currently "DC Building Inspectors" and an
+  English description).
+- Check that every new page is set to visible to search engines and appears in `/sitemap.xml`.
+  Submit the sitemap in Google Search Console if David has the property (Search Atlas
+  `gsc_get_sites` can show it).
+
+**Structured data.** GoDaddy Website Builder can't add per-page `<head>` code, and its HTML section
+renders in an iframe, so JSON-LD placed there may not count. Use this order:
+
+1. Search Atlas: `otto_find_project_by_hostname` for `dcinspect.eu`. If there's a project, deploy the
+   schema per page with `otto_generate_page_schema` / `otto_edit_page_schema` /
+   `otto_deploy_schema`, after David says go.
+2. If there isn't one: put the business schema in GoDaddy's site-wide head code (Settings → Site-wide
+   code / Header HTML, if the plan allows it). Tell David the FAQ schema can't go per-page without
+   OTTO or a similar injector.
+
+**Business schema** (site-wide). Fill every `[...]` from David's answers and leave out any field
+he hasn't confirmed:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "EmergencyService"],
+  "@id": "https://dcinspect.eu/#business",
+  "name": "DC Building Inspectors",
+  "url": "https://dcinspect.eu/",
+  "telephone": "+385992080227",
+  "image": "[logo URL]",
+  "priceRange": "[€€]",
+  "address": { "@type": "PostalAddress", "addressLocality": "[grad]", "addressCountry": "HR" },
+  "geo": { "@type": "GeoCoordinates", "latitude": [lat], "longitude": [lng] },
+  "areaServed": ["Zagreb", "Rijeka", "Split", "Istra"],
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "[08:00]", "closes": "[18:00]" }],
+  "paymentAccepted": "[Gotovina, kartice, bankovni prijenos]",
+  "currenciesAccepted": "EUR",
+  "knowsAbout": ["Detekcija curenja vode", "Lociranje puknuća cijevi", "Termovizijska inspekcija"],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "serviceType": "Detekcija curenja vode", "url": "https://dcinspect.eu/detekcija-curenja-vode" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "serviceType": "Lociranje puknuća cijevi", "url": "https://dcinspect.eu/akusticko-lociranje-kvarova-geofon" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "serviceType": "Termovizijska inspekcija", "url": "https://dcinspect.eu/ispitivanje-vlage-i-termografija" } }
+  ],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "[5.0]", "reviewCount": "[n]" }
+}
+```
+
+- Use `EmergencyService` only if David confirms emergency or same-day call-outs; otherwise use plain
+  `LocalBusiness`. **Drop `aggregateRating`** unless the reviews are shown on the site itself;
+  Google treats self-served ratings for a LocalBusiness as ineligible and they can draw a manual
+  action.
+- Only list a sub-service URL in `makesOffer` once that page is live.
+- Add a `BreadcrumbList` on sub-service and city pages if the deploy route allows it.
+
+**FAQ section and `FAQPage` schema** on `/detekcija-curenja-vode`: a collapsible FAQ (GoDaddy's FAQ
+section). The JSON-LD must match the visible text word for word:
+
+- Kako pronaći curenje vode u zidu bez rušenja?
+- Koliko košta detekcija curenja vode u Hrvatskoj?  *(answer with David's starting price or the
+  cost drivers: stan vs. obiteljska kuća vs. vanjski cjevovod, broj sustava, hitnost)*
+- Priznaje li osiguranje trošak detekcije curenja?  *(answer per rule 1; say it depends on the policy)*
+- Koliko traje postupak lociranja puknuća?
+
+Tell David plainly: since 2023 Google shows FAQ rich results almost only for government and health
+sites, so the FAQ won't produce dropdowns in Google. It's still worth adding because it answers
+real queries on the page and helps AI answers cite it.
+
+**Validate:** run each live page through Google's Rich Results Test and the Schema.org validator,
+then fix every error. Warnings for optional fields are fine.
+
+## Finish
+
+Reply with:
+
+1. A table: page | URL | status (live / preview / blocked) | what's waiting on David.
+2. Each `tel:` link before and after.
+3. Validator results per page.
+4. The questions still open from rule 1, as one list David can answer in a single reply.
+
+Don't start Priority 4 (equipment carousel, pricing framework, WhatsApp/Viber button) or Priority 5
+(directories, PR, backlinks). List them under "next" at the end.
