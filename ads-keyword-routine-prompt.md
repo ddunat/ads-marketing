@@ -120,3 +120,9 @@ excluded · `google_ads` returns `{result:[...]}`, `gohighlevel` returns `{data:
 ## Open decisions to re-raise while unresolved
 - `concrete inspector` — held back as David's call because DC does pre-slab work.
 - The $9,959 of non-Google marketing spend in September — the largest unexamined number in the business.
+
+## Bidding (confirmed 21 Oct)
+Bid strategy is Maximise conversions with a $70 target CPA (`campaign_maximize_conversions_target_cpa_micros` = 70000000).
+Budget is not the constraint: budget-lost impression share is 0% while ~71–79% is lost to rank. Do not recommend raising the
+budget; the lever is the target CPA. David approved (21 Oct) a one-week test at $80 from Mon 26 Oct, applied only if Wed–Fri
+21–23 Oct each spend under $150. Compare the $80 week against 19–23 Oct at $70.
