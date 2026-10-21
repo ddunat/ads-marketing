@@ -1,0 +1,37 @@
+name: Reddit — find threads and draft replies
+
+on:
+  schedule:
+    - cron: "37 20 * * *"   # 07:37 Melbourne (AEDT); 06:37 in winter
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reddit-bot
+  cancel-in-progress: false
+
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r reddit/requirements.txt
+      - run: python reddit/bot.py find
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+      - name: Commit new drafts
+        run: |
+          git config user.name "reddit-bot"
+          git config user.email "reddit-bot@users.noreply.github.com"
+          git add reddit/queue reddit/state.json
+          git diff --cached --quiet || git commit -m "Reddit: new reply drafts for review"
+          git pull --rebase && git push

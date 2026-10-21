@@ -1,0 +1,64 @@
+# Reddit outreach settings for DC Building Inspectors.
+# Edit freely; the bot reads this file on every run.
+
+# Subreddits to watch. Check each one's sidebar rules before enabling it:
+# several ban business accounts or any link to your own site.
+subreddits:
+  - AusProperty
+  - FirstHomeBuyersAustralia
+  - AusRenovation
+  - AusPropertyChat
+  - melbourne
+  - AusRealEstate
+
+# A thread is considered only if its title or body contains one of these
+# (case-insensitive). Claude then decides whether a reply would help.
+keywords:
+  - building inspection
+  - building and pest
+  - building & pest
+  - pest inspection
+  - pre-purchase
+  - pre purchase
+  - building inspector
+  - termite
+  - rising damp
+  - subsidence
+  - cracks
+  - structural
+  - section 32
+  - cooling off
+  - auction
+  - first home
+  - buying a house
+  - buying an apartment
+  - defects
+  - handover inspection
+  - stage inspection
+
+# Only reply to threads newer than this. Late replies sit at the bottom and
+# are rarely read by people or picked up by search.
+max_thread_age_hours: 48
+
+# How many new posts to scan per subreddit each run.
+scan_limit: 75
+
+# Most drafts Claude writes per run (keeps API cost and review effort small).
+max_drafts_per_run: 5
+
+# Posting limits. Reddit removes and shadowbans accounts that post too much,
+# and a removed comment does nothing for search or AI answers.
+limits:
+  max_replies_per_day: 3
+  max_replies_per_subreddit_per_week: 2
+  # Only 1 in this many replies may contain a link to dcinspect.com.au.
+  link_every_n_replies: 5
+
+# Added to every reply. Reddit's rules and Australian Consumer Law both
+# expect you to say when you are promoting your own business.
+disclosure: "(Disclosure: I'm a building inspector at DC Building Inspectors in Melbourne.)"
+
+website: https://dcinspect.com.au
+
+# Claude model used to judge threads and draft replies.
+model: claude-opus-5-5

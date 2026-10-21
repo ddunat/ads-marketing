@@ -7,6 +7,7 @@ Google Ads management for DC Building Inspectors (account 538-044-4374, campaign
 | File | What it is |
 |---|---|
 | `ads-keyword-routine-prompt.md` | The daily 07:49 Melbourne keyword review: performance, search-term negatives, verification traps, keyword rules. The source of truth for the routine's prompt. |
+| `reddit/` | Reddit outreach bot: finds Melbourne property threads daily, Claude drafts disclosed expert replies, David approves each one before it posts. Aimed at being cited in AI answers. See `reddit/README.md`. |
 | `ads-dashboard.html` | Scale-or-hold dashboard (LTGP : CAC ≥ 3:1 gate), published as a claude.ai Artifact with live Windsor.ai data. Omits the `<!doctype>` skeleton, which the Artifact platform supplies. |
 
 ## Change log
