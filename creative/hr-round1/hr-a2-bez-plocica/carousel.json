@@ -1,0 +1,59 @@
+{
+ "out_dir": "../renders/a2-bez-plocica",
+ "cards": [
+  {
+   "photo": "../img-ai/a2-plocice-mrlja.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Voda curi, a ne|znate odakle?",
+   "sub": "Ne razbijajte pločice naslijepo.",
+   "pos": "top",
+   "size": 70
+  },
+  {
+   "photo": "../img-ai/a2-termokamera-kupaonica.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Termovizija pokazuje|vlagu u zidu",
+   "sub": "Bez otvaranja, bez nagađanja.",
+   "pos": "bottom",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/a2-akusticki-senzor.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Akustika i|trag plina",
+   "sub": "Slušamo cijev i pratimo plin do točnog mjesta curenja.",
+   "pos": "top",
+   "size": 62
+  },
+  {
+   "photo": "../img-ai/a2-jedna-plocica.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Otvaramo samo|tamo gdje treba",
+   "sub": "Cijela kupaonica ostaje netaknuta.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "cta": true,
+   "headline": "Zatražite|besplatnu ponudu",
+   "lines": [
+    "Ne nađemo izvor? Ne plaćate.",
+    "Hitno curenje? Dolazimo isti dan.",
+    "25+ godina iskustva"
+   ],
+   "sub": "Kratki obrazac · javljamo se brzo"
+  }
+ ]
+}

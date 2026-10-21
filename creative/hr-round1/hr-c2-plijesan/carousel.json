@@ -1,0 +1,59 @@
+{
+ "out_dir": "../renders/c2-plijesan",
+ "cards": [
+  {
+   "photo": "../img-ai/c2-plijesan-kut.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Plijesan se|uvijek vraća?",
+   "sub": "Problem nije na površini.",
+   "pos": "bottom",
+   "size": 72
+  },
+  {
+   "photo": "../img-ai/c2-ciscenje-spuzva.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Čišćenje briše|mrlju, ne izvor",
+   "sub": "Za par tjedana opet je tu.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/c2-vlaga-radijator.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Izvor je|iza zida",
+   "sub": "Curenje, kapilarna vlaga ili kondenzacija.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/c2-termokamera-kut.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Termovizijom nalazimo|izvor vlage",
+   "sub": "Prije nego što išta otvorimo.",
+   "pos": "top",
+   "size": 60
+  },
+  {
+   "cta": true,
+   "headline": "Zatražite|besplatnu ponudu",
+   "lines": [
+    "Pisani izvještaj isti dan",
+    "Rješavamo do kraja, sa sanacijom",
+    "25+ godina iskustva"
+   ],
+   "sub": "Kratki obrazac · javljamo se brzo"
+  }
+ ]
+}
