@@ -61,3 +61,16 @@ Copy is in `copy.json`; spoken scripts in `scripts.json`.
 ## E1/E3 images replaced with Arcads AI images (David: "don't use same photos, use Arcads")
 - Generated with nano-banana-2-1 (`img-ai/`): zid-ljustenje, farbanje-preko-vlage, nova-zbuka-vlaga, mjerac-ruka (E1); dnevni-boravak-vlaga, termokamera-ruke (E3, cropped so no face shows).
 - Swapped into the paused Meta ads with `update_ad_creative` per card (images `hr-e1-v2-card*`, `hr-e3-v2-card*`). E3 card 3 was fetched from the railway.app domain after Meta failed twice on go.dcinspect.com.au.
+
+## A2 / B2 / C2: carousels replacing the A1/B1/C1 videos (2026-10-21)
+David: "for the HR ads, don't use HeyGen… create more carousels based off my current winning ads… replace the existing three vids." **HR ads are carousels from now on, no HeyGen.**
+- Jeremy (conversation c78fdefb): A2 7.9 → 8.5 after his three card fixes (applied), B2 8.6, C2 8.4 (his optional card-4 polish applied). He asks David to confirm "Dolazimo isti dan" is operationally true.
+- 12 new Arcads images (`img-ai/a2-*`, `b2-*`, `c2-*`), cards in `hr-*2-*/carousel.json`. The CTA-card guarantee line is shortened to "Ne nađemo izvor? Ne plaćate." to fit; the full guarantee stays in the primary text.
+- Railway didn't deploy the push (and this session can't reach go.dcinspect.com.au), so the card images were given to Meta from Arcads signed URLs. Meta copies the image at creation, so the ads don't depend on those URLs. The files are also in `sites/public/img/hr-*2-card*.jpg`.
+- The old video cards are marked rejected on the HR desk ("replaced by carousel"). Their Meta ads stay paused and were never live.
+
+| Key | Ad id (created paused, waiting on the HR desk) |
+|---|---|
+| hr-a2-bez-plocica | 120254363485170195 |
+| hr-b2-racun-za-vodu | 120254374850340195 |
+| hr-c2-plijesan | 120254375371700195 |
