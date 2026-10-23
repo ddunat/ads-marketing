@@ -74,3 +74,10 @@ David: "for the HR ads, don't use HeyGen… create more carousels based off my c
 | hr-a2-bez-plocica | 120254363485170195 |
 | hr-b2-racun-za-vodu | 120254374850340195 |
 | hr-c2-plijesan | 120254375371700195 |
+
+## F1: LIE framework carousel (2026-10-22)
+David sent a reel (instagram.com/reel/DecLfuoMoLq): "villainize the category", the LIE framework. L = what everyone accepts as normal that sucks. I = a believable reason the category gets it wrong. E = the one thing we do differently. Her claim: it works well on cold traffic because people already know the category.
+- HR version: the villain is "Moramo razbiti da vidimo" (break it open to find the leak). Insight: water travels through screed, so people break in the wrong place (the real 12 m Istra job). Exit: we locate first, then open one point.
+- Jeremy 8.4. His fixes are applied: card 3, card 4 "pa tek onda", the primary-text line "Prije termovizije i akustike, razbijanje je bilo jedina opcija" (attack the era, not tradesmen), and the full guarantee meaning on the CTA card.
+- Ad 120254397527130195, created paused and waiting on the HR desk. Jeremy's test: F1 (method as villain) vs A2 (straight pain). If F1 wins on cost per qualified lead, build the next HR carousels on the LIE structure.
+- The CTA guarantee line is now "Bez izvora? Detekciju ne plaćate." on A2, B2 and F1. Jeremy flagged that "Ne plaćate" alone overstated the guarantee. A2 and B2 were already live (David approved them 21 Oct), so card 5 was swapped on the live ads.

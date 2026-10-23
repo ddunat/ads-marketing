@@ -1,0 +1,59 @@
+{
+ "out_dir": "../renders/f1-moramo-razbiti",
+ "cards": [
+  {
+   "photo": "../img-ai/f1-razbijena-kupaonica.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "„Moramo razbiti|da vidimo.”",
+   "sub": "Najskuplja rečenica u kupaonici.",
+   "pos": "top",
+   "size": 70
+  },
+  {
+   "photo": "../img-ai/f1-mrlja-hodnik.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Voda ne izlazi|tamo gdje curi",
+   "sub": "Putuje kroz estrih, nekad i metrima dalje.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/f1-rupe-kuhinja.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Zato se razbija|na krivom mjestu",
+   "sub": "Plaćate rušenje, popravak i ponovno traženje.",
+   "pos": "top",
+   "size": 62
+  },
+  {
+   "photo": "../img-ai/f1-plin-sonda.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Mi prvo lociramo,|pa tek onda otvaramo",
+   "sub": "Termovizija, akustika i plin. Jedna točka, ne cijeli pod.",
+   "pos": "top",
+   "size": 58
+  },
+  {
+   "cta": true,
+   "headline": "Zatražite|besplatnu ponudu",
+   "lines": [
+    "Bez izvora? Detekciju ne plaćate.",
+    "Pisani izvještaj isti dan",
+    "25+ godina iskustva"
+   ],
+   "sub": "Kratki obrazac · javljamo se brzo"
+  }
+ ]
+}
