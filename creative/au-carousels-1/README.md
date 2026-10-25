@@ -5,6 +5,7 @@ David asked for static carousel ads built the same way as the HR ones, using the
 - Copy and Jeremy scores are in `copy.json` (conversation 4efb7880). Card specs are in `au-*/carousel.json`, the 40 Arcads images in `img-ai/`, and the review strips in `strips/`.
 - Card images for Meta are in `sites/public/img/au-*-card{1..5}.jpg`. Meta fetched them from raw.githubusercontent.com at commit d0322dd, because Windsor file upload and Railway weren't reachable from this session. Meta keeps its own copy once the ad is created.
 - Structure (Jeremy): one ad per ad set, so every angle gets spend, and construction in its own campaign. Every ad set is A$10/day, Melbourne 50 km, ages 25–65, FB + IG feeds/stories/reels, no Audience Network. Campaigns and ad sets are active; the ads are paused, so nothing spends until David approves a card on the AU desk.
+- **Lead angle: auction (David, 25 Oct).** The P3 ad set is A$20/day; the others stay at A$10. If all 10 are approved, the total is A$110/day.
 - Form: the existing AU form `753250670189751` ("Lead Form").
 - **Gap: AU GHL has no Facebook lead-form connection.** Leads stay in Meta Leads Center until David connects it in GHL, or until a Zapier relay is built.
 - **GST:** if $3,095 is ex GST, the construction ads have to show $3,404.50.
