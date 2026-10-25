@@ -81,3 +81,11 @@ David sent a reel (instagram.com/reel/DecLfuoMoLq): "villainize the category", t
 - Jeremy 8.4. His fixes are applied: card 3, card 4 "pa tek onda", the primary-text line "Prije termovizije i akustike, razbijanje je bilo jedina opcija" (attack the era, not tradesmen), and the full guarantee meaning on the CTA card.
 - Ad 120254397527130195, created paused and waiting on the HR desk. Jeremy's test: F1 (method as villain) vs A2 (straight pain). If F1 wins on cost per qualified lead, build the next HR carousels on the LIE structure.
 - The CTA guarantee line is now "Bez izvora? Detekciju ne plaćate." on A2, B2 and F1. Jeremy flagged that "Ne plaćate" alone overstated the guarantee. A2 and B2 were already live (David approved them 21 Oct), so card 5 was swapped on the live ads.
+
+## G1: leak process carousel (weekly run, 2026-10-25)
+- Kaleidoscope remix: E3's "što se događa nakon klika" structure (best CPL on volume, €11.74) with A2's leak topic.
+- Jeremy (conversation 6b2ddcb2): 8 → 9. His fix: the guarantee gets its own card (5), scoped "Za aktivno curenje vode", and the CTA moves to card 6. Card 2 now reads "Pokažite nam gdje curi".
+- 3 new Arcads images (`img-ai/g1-*`): a stain above the tiles, gloved hands with an acoustic sensor, one opened tile. Cards are in `hr-g1-curenje-nakon-klika/carousel.json`; the copy and a scrubbed Meta payload are in `copy.json`.
+- Card images went to Meta from Arcads signed URLs. Meta failed to fetch card 6 once; it worked on retry with a fresh URL.
+- Ad 120254442808760195, created paused and waiting on the HR desk.
+- Jeremy for next week: build 2–3 E3-skeleton remixes with different leak scenarios, not one.
