@@ -125,4 +125,6 @@ excluded · `google_ads` returns `{result:[...]}`, `gohighlevel` returns `{data:
 Bid strategy is Maximise conversions with a $70 target CPA (`campaign_maximize_conversions_target_cpa_micros` = 70000000).
 Budget is not the constraint: budget-lost impression share is 0% while ~71–79% is lost to rank. Do not recommend raising the
 budget; the lever is the target CPA. David approved (21 Oct) a one-week test at $80 from Mon 26 Oct, applied only if Wed–Fri
-21–23 Oct each spend under $150. Compare the $80 week against 19–23 Oct at $70.
+21–23 Oct each spend under $150. **Applied and verified 26 Oct: target is now $80** — judge daily CPA against $80
+this week. Compare 26–30 Oct against 19–23 Oct at $70 ($763.45, 85 clicks, 12 conversions, $63.62 each), then ask David
+whether to keep $80, step to $90, or revert. Judge on leads that close, not cost per conversion alone.
