@@ -147,3 +147,6 @@ The "40–50%" dream target needs a named stage (see open questions).
 ## Ad scheduling (Jeremy, 2026-10-15)
 - **No dayparting for now.** Run 24/7 on the $100/day daily budget. Meta's ad scheduling needs a lifetime budget, and with no conversion history any schedule is guesswork. Speed-to-lead after hours is an ops fix (rotation or an after-hours auto-text offering a morning call), not a reason to cut delivery. No manual Wed–Fri budget tilt either.
 - **Revisit** after 2–4 weeks or ~100 page leads, ideally with CAPI live. Break down the booked-inspection rate by AEST day of week and hour (GHL lead created time). Block hours (e.g. midnight–6am) only if those leads book at a fraction of the daytime rate and the team can't cover them.
+
+## AU cost-per-lead target (David, 2026-10-25)
+- **Strict: no more than A$30 per lead.** The daily check pauses AU ads at $60 with no lead, or $90+ spent above $30 a lead (`.claude/skills/ad-ops/SKILL.md`). Context: past AU Meta campaigns ran at ~$354 per lead (Frame Stage Collapse 2: $7,088 / 20 leads).

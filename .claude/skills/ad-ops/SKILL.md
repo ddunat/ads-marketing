@@ -15,21 +15,22 @@ David approved: **pause losers automatically; scaling is only ever proposed** (A
   - Only ads with their own landing page can be judged on bookings. Others fall back to CPL against the account's 30-day median.
 - **The desk cards** (`cards` collection on the account's Ad Desk) map `ad_id` to the card.
 
-## Rules, AU (target $50 per booked inspection, `build/cost-per-booking-plan.md`)
-- **Too early to judge:** live < 72 hours, or lifetime spend < $100. Do nothing.
+## Rules, AU — STRICT target: cost per lead ≤ A$30 (David, 2026-10-25)
+Judge every AU desk ad on CPL first. Bookings (target $50 per booked inspection, `build/cost-per-booking-plan.md`) are reported alongside but don't save an ad that misses the $30 CPL.
+- **Too early to judge:** live < 48 hours, or lifetime spend < $45. Do nothing.
 - **Kill, i.e. pause automatically:**
-  - lifetime spend ≥ $150 with 0 bookings; or
-  - lifetime spend ≥ $300 and cost per booking > $100.
+  - lifetime spend ≥ $60 with 0 leads; or
+  - lifetime spend ≥ $90 and CPL > $30.
   - Before pausing, re-read the ad's current state. Pause with Windsor `pause_ad`.
-  - Then update its desk card: `status: "paused"`, `paused_at`, and `paused_reason` (one plain sentence with the numbers, e.g. "Spent $162 with no bookings (rule: cut at $150 with none)").
+  - Then update its desk card: `status: "paused"`, `paused_at`, and `paused_reason` (one plain sentence with the numbers, e.g. "Spent $94 for 2 leads, $47 each (rule: cut above $30 a lead)").
   - If the card is missing, still pause and say so in the summary.
 - **Scale, i.e. propose only:**
-  - Trigger: last 7 days ≥ 2 bookings at ≤ $50 each, and the ad has been live ≥ 72 hours.
+  - Trigger: last 7 days ≥ 5 leads at ≤ $25 each, live ≥ 72 hours.
   - Write `proposals/<date>-<ad_id>` on the desk with:
-    - `account`, `title` ("Scale A2: $41 per booking")
+    - `account`, `title` ("Scale A3: $21 per lead")
     - `target_type` `campaign` if the campaign uses campaign budget (AU does), else `adset`; plus `target_id` and `target_name`
     - `current_amount` and `proposed_amount` in cents: +20%, rounded to whole dollars, at most +30%
-    - `currency`, `reason`, `metrics: {spend, bookings, cost_per_booking}`, `status: "pending"`, `created_at`
+    - `currency`, `reason`, `metrics: {spend, leads, cpl, bookings}`, `status: "pending"`, `created_at`
   - One open proposal per campaign/ad set at a time. If one is still pending, update its numbers instead of adding another.
   - Don't propose again within 48 hours of an applied change (Jeremy: let it settle).
 - **Never edit a live winner's creative while scaling.**
