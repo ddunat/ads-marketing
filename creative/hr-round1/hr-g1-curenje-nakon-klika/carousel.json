@@ -1,0 +1,70 @@
+{
+ "out_dir": "../renders/hr-g1",
+ "cards": [
+  {
+   "photo": "../img-ai/g1-mrlja-iznad-plocica.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Curenje vode?|Evo što slijedi nakon klika.",
+   "sub": "",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "badge": "KORAK 1",
+   "headline": "Ispunite|kratki obrazac",
+   "lines": [
+    "Pokažite nam gdje curi"
+   ],
+   "sub": "Hitno? Dolazimo isti dan."
+  },
+  {
+   "photo": "../img-ai/g1-akusticki-mikrofon.jpg",
+   "focus": [
+    0.5,
+    0.6
+   ],
+   "headline": "Korak 2:|pronalazimo izvor",
+   "sub": "Termovizija · akustika · plin za praćenje",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/g1-jedna-plocica-cijev.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Korak 3:|otvaramo samo gdje treba",
+   "sub": "Bez razbijanja cijele kupaonice",
+   "pos": "bottom",
+   "size": 62
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "badge": "JAMSTVO",
+   "headline": "Ne pronađemo izvor?|Detekciju ne plaćate.",
+   "lines": [
+    "Za aktivno curenje vode",
+    "Pisani izvještaj isti dan"
+   ],
+   "sub": "",
+   "size": 60
+  },
+  {
+   "cta": true,
+   "badge": "KORAK 4",
+   "headline": "Zatražite|besplatnu ponudu",
+   "lines": [
+    "25+ godina iskustva",
+    "13 Google ocjena, sve 5 zvjezdica"
+   ],
+   "sub": "Kratki obrazac · javljamo se brzo"
+  }
+ ]
+}

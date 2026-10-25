@@ -1,0 +1,18 @@
+{
+  "avatar": "renders/a4-plain.mp4",
+  "srt": "renders/a4.srt",
+  "hflip": true,
+  "hook": {"box": "SIGNED ON A PRIVATE SALE?", "sub": "COOLING-OFF IS TICKING.", "until": 2.15},
+  "highlight": ["three business days", "every defect", "renegotiate"],
+  "replace": {"four point nine": "4.9"},
+  "caption_top": [[12.1, 15.5]],
+  "punches": [{"start": 2.2, "end": 5.7, "pos": "top", "text": "SAME-DAY REPORT\\N{OR YOUR MONEY BACK}"}],
+  "overlays": [
+    {"type": "notif", "at": 2.2, "until": 5.7},
+    {"type": "broll", "clip": "renders/brick.mp4", "from": 0.0, "to": 4.3, "at": 5.8, "speed": 1.0, "zoom": true},
+    {"type": "image", "src": "../../template/assets/proofcard-au.png", "at": 12.1, "until": 15.5},
+    {"type": "broll", "clip": "renders/house.mp4", "from": 12.0, "to": 15.9, "at": 15.7, "speed": 1.0}
+  ],
+  "endcard": "../../template/assets/endcard_rec.mp4",
+  "out": "renders/au-a4-cooling-off.mp4"
+}

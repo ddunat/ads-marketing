@@ -7,5 +7,14 @@
   "ad": "A2 auction",
   "service": "pre-purchase",
   "hot": "Auction|Signed"
+ },
+ {
+  "market": "au",
+  "path": "/cooling-off",
+  "file": "au/cooling-off.html",
+  "key": "lp-a4-cooling-off",
+  "ad": "A4 cooling-off",
+  "service": "pre-purchase",
+  "hot": "Signed|Auction"
  }
 ]

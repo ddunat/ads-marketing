@@ -1,3 +1,5 @@
 creative/*/renders/
 landing/img/*.mp4
 creative/hr-round1/assets/
+creative/**/renders/
+creative/**/meta-create.json

@@ -1,0 +1,117 @@
+{
+ "primary_text": "Curenje vode? Evo što se događa nakon klika. 👇\n\n1️⃣ Ispunite kratki obrazac. Hitno curenje? Dolazimo isti dan.\n2️⃣ Izvor tražimo termovizijom, akustičnom detekcijom i plinom za praćenje, bez razbijanja pločica.\n3️⃣ Otvaramo samo ondje gdje je kvar.\n4️⃣ Isti dan dobijete pisani izvještaj, a popravak rješavamo i mi.\n\n✅ Ako ne pronađemo izvor curenja vode, detekciju ne plaćate.\n⭐ 25+ godina iskustva · 13 ocjena s 5 zvjezdica na Googleu\n\nZatražite besplatnu ponudu 👇",
+ "headline": "Curenje vode? Evo što slijedi.",
+ "description": "Ne pronađemo izvor? Detekciju ne plaćate.",
+ "cta": "GET_QUOTE",
+ "cards": [
+  "Curenje vode? Evo što slijedi.",
+  "Korak 1: kratki obrazac",
+  "Korak 2: pronalazimo izvor",
+  "Korak 3: otvaramo samo gdje treba",
+  "Bez izvora? Detekciju ne plaćate.",
+  "Zatražite besplatnu ponudu"
+ ],
+ "meta_create": {
+  "adset_id": "120227138979370195",
+  "name": "HR G1 · Curenje: što slijedi nakon klika (carousel)",
+  "status": "paused",
+  "creative": {
+   "object_story_spec": {
+    "page_id": "658374350686787",
+    "link_data": {
+     "message": "Curenje vode? Evo što se događa nakon klika. 👇\n\n1️⃣ Ispunite kratki obrazac. Hitno curenje? Dolazimo isti dan.\n2️⃣ Izvor tražimo termovizijom, akustičnom detekcijom i plinom za praćenje, bez razbijanja pločica.\n3️⃣ Otvaramo samo ondje gdje je kvar.\n4️⃣ Isti dan dobijete pisani izvještaj, a popravak rješavamo i mi.\n\n✅ Ako ne pronađemo izvor curenja vode, detekciju ne plaćate.\n⭐ 25+ godina iskustva · 13 ocjena s 5 zvjezdica na Googleu\n\nZatražite besplatnu ponudu 👇",
+     "link": "http://fb.me/",
+     "child_attachments": [
+      {
+       "picture": "(arcads signed url)",
+       "name": "Curenje vode? Evo što slijedi.",
+       "description": "Ne pronađemo izvor? Detekciju ne plaćate.",
+       "link": "http://fb.me/",
+       "call_to_action": {
+        "type": "GET_QUOTE",
+        "value": {
+         "lead_gen_form_id": "2898956873609451",
+         "link": "http://fb.me/"
+        }
+       }
+      },
+      {
+       "picture": "(arcads signed url)",
+       "name": "Korak 1: kratki obrazac",
+       "description": "Ne pronađemo izvor? Detekciju ne plaćate.",
+       "link": "http://fb.me/",
+       "call_to_action": {
+        "type": "GET_QUOTE",
+        "value": {
+         "lead_gen_form_id": "2898956873609451",
+         "link": "http://fb.me/"
+        }
+       }
+      },
+      {
+       "picture": "(arcads signed url)",
+       "name": "Korak 2: pronalazimo izvor",
+       "description": "Ne pronađemo izvor? Detekciju ne plaćate.",
+       "link": "http://fb.me/",
+       "call_to_action": {
+        "type": "GET_QUOTE",
+        "value": {
+         "lead_gen_form_id": "2898956873609451",
+         "link": "http://fb.me/"
+        }
+       }
+      },
+      {
+       "picture": "(arcads signed url)",
+       "name": "Korak 3: otvaramo samo gdje treba",
+       "description": "Ne pronađemo izvor? Detekciju ne plaćate.",
+       "link": "http://fb.me/",
+       "call_to_action": {
+        "type": "GET_QUOTE",
+        "value": {
+         "lead_gen_form_id": "2898956873609451",
+         "link": "http://fb.me/"
+        }
+       }
+      },
+      {
+       "picture": "(arcads signed url)",
+       "name": "Bez izvora? Detekciju ne plaćate.",
+       "description": "Ne pronađemo izvor? Detekciju ne plaćate.",
+       "link": "http://fb.me/",
+       "call_to_action": {
+        "type": "GET_QUOTE",
+        "value": {
+         "lead_gen_form_id": "2898956873609451",
+         "link": "http://fb.me/"
+        }
+       }
+      },
+      {
+       "picture": "(arcads signed url)",
+       "name": "Zatražite besplatnu ponudu",
+       "description": "Ne pronađemo izvor? Detekciju ne plaćate.",
+       "link": "http://fb.me/",
+       "call_to_action": {
+        "type": "GET_QUOTE",
+        "value": {
+         "lead_gen_form_id": "2898956873609451",
+         "link": "http://fb.me/"
+        }
+       }
+      }
+     ],
+     "call_to_action": {
+      "type": "GET_QUOTE",
+      "value": {
+       "lead_gen_form_id": "2898956873609451",
+       "link": "http://fb.me/"
+      }
+     },
+     "multi_share_optimized": false,
+     "multi_share_end_card": false
+    }
+   }
+  }
+ }
+}

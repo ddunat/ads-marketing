@@ -25,7 +25,7 @@
   {"figure": {"images": [{"src": "/img/notif.webp", "w": 300, "h": 649, "alt": "Inspection report ready notification on a phone", "max_w": 150}], "caption": "Your report, the same day we inspect."}}
  ]},
  "price": {"title": "Fixed price by property size", "anchor": "One defect found after settlement costs more than every inspection on this page.",
-  "rows": [["1–2 bed apartment", "$550"], ["3 bed", "$605"], ["4 bed", "$649"], ["5 bed", "$847"], ["House on stumps", "$726"]],
+  "rows": [["1–2 bed apartment", "$550"], ["3 bed", "$605"], ["4 bed", "$649"], ["5 bed", "$847"], ["House on stumps", "$715"]],
   "note": "Building & timber pest included. ★ 4.9 from 529 Google reviews."},
  "faq": [
   ["What if the report isn't same day?", "You get a full refund."],

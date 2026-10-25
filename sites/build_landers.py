@@ -68,7 +68,7 @@ def build(spec_path):
     todo_check(m, spec["market"]); todo_check(spec, spec_path.name)
     if not re.fullmatch(r"/[a-z0-9-]+", spec["path"]): sys.exit(f"{spec_path.name}: bad path {spec['path']}")
     steps = spec["steps"] + [m["contact_step"]]
-    market_js = dict(m["ui"], phone_re=m["phone_re"])
+    market_js = dict(m["ui"], **spec.get("ui", {}), phone_re=m["phone_re"])
     fill = {
         "lang": m["lang"], "title": e(spec["title"]), "meta_description": e(spec["meta_description"]),
         "eyebrow": e(spec["eyebrow"]), "h1": e(spec["h1"]), "sub": e(spec["sub"]),
