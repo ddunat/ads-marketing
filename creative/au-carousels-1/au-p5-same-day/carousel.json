@@ -1,0 +1,63 @@
+{
+ "out_dir": "../renders/au-p5-same-day",
+ "cards": [
+  {
+   "photo": "../img-ai/p5c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "No waiting days|for a report.",
+   "sub": "Ours lands the same day we inspect.",
+   "pos": "bottom",
+   "size": 62
+  },
+  {
+   "photo": "../img-ai/p5c2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Same day|or your money back.",
+   "sub": "In writing. Every inspection.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/p5c3.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "We find it.|We photograph it.",
+   "sub": "Every issue in your report.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "headline": "529 Google reviews|4.9 stars",
+   "lines": [
+    "BPC registered building inspectors",
+    "and qualified trades"
+   ],
+   "sub": "Real reviews from Melbourne buyers."
+  },
+  {
+   "photo": "../img-ai/p5c5.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Inspected today.|Report today.",
+   "sub": "Get your quote today.",
+   "pos": "top",
+   "size": 66
+  }
+ ]
+}

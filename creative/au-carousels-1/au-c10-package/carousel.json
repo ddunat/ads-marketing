@@ -1,0 +1,63 @@
+{
+ "out_dir": "../renders/au-c10-package",
+ "cards": [
+  {
+   "photo": "../img-ai/c10c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "One defect bill|vs $3,095.",
+   "sub": "Guess which one you control.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/c10c2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Every stage.|One price.",
+   "sub": "$3,095, slab to handover.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/c10c3.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "After handover,|it's your fight.",
+   "sub": "Before handover, it's their fix.",
+   "pos": "bottom",
+   "size": 62
+  },
+  {
+   "photo": "../img-ai/c10c4.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Same-day reports.|Guaranteed.",
+   "sub": "Or your money back.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "headline": "529 Google reviews|4.9 stars",
+   "lines": [
+    "BPC registered building inspectors",
+    "and qualified trades"
+   ],
+   "sub": "Fixed price. All stages."
+  }
+ ]
+}

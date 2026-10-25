@@ -1,0 +1,63 @@
+{
+ "out_dir": "../renders/au-c7-frame",
+ "cards": [
+  {
+   "photo": "../img-ai/c7c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Frame stage hides|big mistakes.",
+   "sub": "Bracing and tie-downs matter most.",
+   "pos": "top",
+   "size": 62
+  },
+  {
+   "photo": "../img-ai/c7c2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "$3,095 covers|every stage.",
+   "sub": "Including the one that matters.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/c7c3.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Your builder's busy.|We're watching.",
+   "sub": "Independent eyes on structure.",
+   "pos": "bottom",
+   "size": 60
+  },
+  {
+   "photo": "../img-ai/c7c4.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Issues flagged|the same day.",
+   "sub": "Raised while it's still open.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "headline": "529 Google reviews|4.9 stars",
+   "lines": [
+    "BPC registered building inspectors",
+    "and qualified trades"
+   ],
+   "sub": "Construction stage inspections."
+  }
+ ]
+}

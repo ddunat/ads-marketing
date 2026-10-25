@@ -1,0 +1,63 @@
+{
+ "out_dir": "../renders/au-p1-first-home",
+ "cards": [
+  {
+   "photo": "../img-ai/p1c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Your first home.|Your only savings.",
+   "sub": "One hidden defect changes that.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/p1c2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "What's behind|fresh paint?",
+   "sub": "Our inspectors find out.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/p1c3.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Termites don't care|about deposits.",
+   "sub": "Timber pest check included.",
+   "pos": "bottom",
+   "size": 62
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "headline": "529 Google reviews|4.9 stars",
+   "lines": [
+    "BPC registered building inspectors",
+    "and qualified trades"
+   ],
+   "sub": "Real reviews from Melbourne buyers."
+  },
+  {
+   "photo": "../img-ai/p1c5.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Report same day|or your money back.",
+   "sub": "That's the deal. In writing.",
+   "pos": "top",
+   "size": 62
+  }
+ ]
+}

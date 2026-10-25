@@ -1,0 +1,63 @@
+{
+ "out_dir": "../renders/au-p4-cooling-off",
+ "cards": [
+  {
+   "photo": "../img-ai/p4c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "3 business days.|That's it.",
+   "sub": "Your cooling-off is already running.",
+   "pos": "bottom",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/p4c2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "We inspect inside|that window.",
+   "sub": "Report the same day we inspect.",
+   "pos": "top",
+   "size": 62
+  },
+  {
+   "photo": "../img-ai/p4c3.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Find it now|or fund it later.",
+   "sub": "Building and pest, one visit.",
+   "pos": "bottom",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/p4c4.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Signed the contract?|The clock's ticking.",
+   "sub": "Same-day report or your money back.",
+   "pos": "top",
+   "size": 60
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "headline": "529 Google reviews|4.9 stars",
+   "lines": [
+    "BPC registered building inspectors",
+    "and qualified trades"
+   ],
+   "sub": "Fast. Independent. Melbourne-wide."
+  }
+ ]
+}

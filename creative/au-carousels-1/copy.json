@@ -1,0 +1,702 @@
+{
+ "au-p1-first-home": {
+  "title": "AU P1 · First home buyers",
+  "svc": "Pre-purchase",
+  "angle": "First home: every dollar you've saved",
+  "cards": [
+   {
+    "photo": "img-ai/p1c1.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Your first home.|Your only savings.",
+    "sub": "One hidden defect changes that.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "photo": "img-ai/p1c2.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "What's behind|fresh paint?",
+    "sub": "Our inspectors find out.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "photo": "img-ai/p1c3.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Termites don't care|about deposits.",
+    "sub": "Timber pest check included.",
+    "pos": "bottom",
+    "size": 62
+   },
+   {
+    "cta": true,
+    "bg": "ink",
+    "headline": "529 Google reviews|4.9 stars",
+    "lines": [
+     "BPC registered building inspectors",
+     "and qualified trades"
+    ],
+    "sub": "Real reviews from Melbourne buyers."
+   },
+   {
+    "photo": "img-ai/p1c5.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Report same day|or your money back.",
+    "sub": "That's the deal. In writing.",
+    "pos": "top",
+    "size": 62
+   }
+  ],
+  "head": "First home? Read this first.",
+  "desc": "Building & timber pest · same-day report guarantee",
+  "text": "First home in Melbourne? 🏡\n\nIt's every dollar you've saved.\nOne hidden defect changes everything.\n\nBuilding and timber pest inspection by BPC registered building inspectors and qualified trades.\n\n✅ Your report the same day we inspect, or your money back.\n⭐ 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nGet your quote before you sign anything 👇",
+  "form": "Get your pre-purchase inspection quote",
+  "score": 9
+ },
+ "au-p2-investors": {
+  "title": "AU P2 · Investors",
+  "svc": "Pre-purchase",
+  "angle": "Investors: price the defects in",
+  "cards": [
+   {
+    "photo": "img-ai/p2c1.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Your yield maths is|missing one line.",
+    "sub": "Repair costs. We find them first.",
+    "pos": "top",
+    "size": 62
+   },
+   {
+    "photo": "img-ai/p2c2.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "One termite nest,|one reno budget.",
+    "sub": "Timber pest check included.",
+    "pos": "bottom",
+    "size": 62
+   },
+   {
+    "photo": "img-ai/p2c3.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Settle knowing,|not hoping.",
+    "sub": "Building and pest, one report.",
+    "pos": "bottom",
+    "size": 66
+   },
+   {
+    "cta": true,
+    "bg": "ink",
+    "headline": "529 Google reviews|4.9 stars",
+    "lines": [
+     "BPC registered building inspectors",
+     "and qualified trades"
+    ],
+    "sub": "Real reviews from Melbourne buyers."
+   },
+   {
+    "photo": "img-ai/p2c5.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Same-day report.|Or your money back.",
+    "sub": "Negotiate with facts.",
+    "pos": "top",
+    "size": 62
+   }
+  ],
+  "head": "Investors: price the defects in.",
+  "desc": "Building & pest, one report, same day",
+  "text": "Investing in Melbourne property? 📈\n\nThe deal is won at the purchase price.\nThe problem is what you can't see.\n\nBuilding and timber pest, one visit, one report.\n\n✅ Your report the same day we inspect, or your money back.\n⭐ 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nGet your quote 👇",
+  "form": "Investor inspection quote",
+  "score": 8.5
+ },
+ "au-p3-auction": {
+  "title": "AU P3 · Auction buyers",
+  "svc": "Pre-purchase",
+  "angle": "Auction: no cooling-off, inspect before you bid",
+  "cards": [
+   {
+    "photo": "img-ai/p3c1.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "At auction, there's|no undo button.",
+    "sub": "No cooling-off. None.",
+    "pos": "top",
+    "size": 62
+   },
+   {
+    "photo": "img-ai/p3c2.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Bid with the report|in your hand.",
+    "sub": "Book before auction day.",
+    "pos": "top",
+    "size": 62
+   },
+   {
+    "photo": "img-ai/p3c3.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "A pretty facade|can hide rot.",
+    "sub": "We check what bidders can't.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "photo": "img-ai/p3c4.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Same-day report|guarantee.",
+    "sub": "Or your money back. In writing.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "cta": true,
+    "bg": "ink",
+    "headline": "529 Google reviews|4.9 stars",
+    "lines": [
+     "BPC registered building inspectors",
+     "and qualified trades"
+    ],
+    "sub": "Pre-auction inspections, Melbourne-wide."
+   }
+  ],
+  "head": "Auction = no cooling-off. Inspect first.",
+  "desc": "Pre-auction building & pest inspections",
+  "text": "Buying at auction in Victoria? 🔨\n\nThe contract is unconditional. No cooling-off period.\nThe only time to find defects is before you raise your hand.\n\nBuilding and timber pest by BPC registered building inspectors and qualified trades.\n\n✅ Your report the same day we inspect, or your money back.\n⭐ 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nBook before auction day 👇",
+  "form": "Pre-auction inspection quote",
+  "score": 9
+ },
+ "au-p4-cooling-off": {
+  "title": "AU P4 · Private sale, cooling-off running",
+  "svc": "Pre-purchase",
+  "angle": "3 business days: speed is the product",
+  "cards": [
+   {
+    "photo": "img-ai/p4c1.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "3 business days.|That's it.",
+    "sub": "Your cooling-off is already running.",
+    "pos": "bottom",
+    "size": 66
+   },
+   {
+    "photo": "img-ai/p4c2.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "We inspect inside|that window.",
+    "sub": "Report the same day we inspect.",
+    "pos": "top",
+    "size": 62
+   },
+   {
+    "photo": "img-ai/p4c3.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Find it now|or fund it later.",
+    "sub": "Building and pest, one visit.",
+    "pos": "bottom",
+    "size": 66
+   },
+   {
+    "photo": "img-ai/p4c4.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Signed the contract?|The clock's ticking.",
+    "sub": "Same-day report or your money back.",
+    "pos": "top",
+    "size": 60
+   },
+   {
+    "cta": true,
+    "bg": "ink",
+    "headline": "529 Google reviews|4.9 stars",
+    "lines": [
+     "BPC registered building inspectors",
+     "and qualified trades"
+    ],
+    "sub": "Fast. Independent. Melbourne-wide."
+   }
+  ],
+  "head": "Cooling-off running? Move today.",
+  "desc": "Same-day report inside your 3-day window",
+  "text": "Signed a private sale contract? ⏱️\n\nYour 3 business day cooling-off started when you signed.\nThat window is your free exit.\n\nBuilding and timber pest inspection, report the same day.\n\n✅ Your report the same day we inspect, or your money back.\n⭐ 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nGet your quote today 👇",
+  "form": "Urgent inspection quote",
+  "score": 9
+ },
+ "au-p5-same-day": {
+  "title": "AU P5 · Same-day report guarantee",
+  "svc": "Pre-purchase",
+  "angle": "Speed with a money-back guarantee",
+  "cards": [
+   {
+    "photo": "img-ai/p5c1.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "No waiting days|for a report.",
+    "sub": "Ours lands the same day we inspect.",
+    "pos": "bottom",
+    "size": 62
+   },
+   {
+    "photo": "img-ai/p5c2.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Same day|or your money back.",
+    "sub": "In writing. Every inspection.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "photo": "img-ai/p5c3.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "We find it.|We photograph it.",
+    "sub": "Every issue in your report.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "cta": true,
+    "bg": "ink",
+    "headline": "529 Google reviews|4.9 stars",
+    "lines": [
+     "BPC registered building inspectors",
+     "and qualified trades"
+    ],
+    "sub": "Real reviews from Melbourne buyers."
+   },
+   {
+    "photo": "img-ai/p5c5.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Inspected today.|Report today.",
+    "sub": "Get your quote today.",
+    "pos": "top",
+    "size": 66
+   }
+  ],
+  "head": "Report same day. Guaranteed.",
+  "desc": "Or your money back · building & pest",
+  "text": "Waiting days for an inspection report? ⏳\n\nYour report the same day we inspect, or your money back.\n\nBuilding and timber pest by BPC registered building inspectors and qualified trades.\n⭐ 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nGet your quote 👇",
+  "form": "Same-day inspection quote",
+  "score": 9
+ },
+ "au-c6-pre-plaster": {
+  "title": "AU C6 · Pre-plaster is your last look",
+  "svc": "Construction",
+  "angle": "Irreversibility: walls close at plaster",
+  "cards": [
+   {
+    "photo": "img-ai/c6c1.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "After plaster,|walls keep secrets.",
+    "sub": "Pre-plaster is your last look.",
+    "pos": "top",
+    "size": 62
+   },
+   {
+    "photo": "img-ai/c6c2.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "$3,095.|Every stage inspected.",
+    "sub": "Slab to handover.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "photo": "img-ai/c6c3.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Find it now,|not at handover.",
+    "sub": "Behind plaster is harder to fix.",
+    "pos": "bottom",
+    "size": 62
+   },
+   {
+    "photo": "img-ai/c6c4.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Independent.|Not the builder's.",
+    "sub": "We work for you only.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "cta": true,
+    "bg": "ink",
+    "headline": "529 Google reviews|4.9 stars",
+    "lines": [
+     "BPC registered building inspectors",
+     "and qualified trades"
+    ],
+    "sub": "Construction stage inspections."
+   }
+  ],
+  "head": "Pre-plaster: your last look.",
+  "desc": "All-stages package, $3,095",
+  "text": "Building a new home in Melbourne? 🏗️\n\nOnce the plasterboard goes up, your walls are closed.\nWhatever is wrong behind them is your problem at handover.\nPre-plaster is the last look you get.\n\nAll-stages package: $3,095, slab to handover.\n\n✅ Your report the same day we inspect, or your money back.\n⭐ BPC registered building inspectors · 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nGet your quote 👇",
+  "form": "Construction stage package quote",
+  "score": 9
+ },
+ "au-c7-frame": {
+  "title": "AU C7 · Frame stage",
+  "svc": "Construction",
+  "angle": "Structure gets locked in at frame",
+  "cards": [
+   {
+    "photo": "img-ai/c7c1.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Frame stage hides|big mistakes.",
+    "sub": "Bracing and tie-downs matter most.",
+    "pos": "top",
+    "size": 62
+   },
+   {
+    "photo": "img-ai/c7c2.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "$3,095 covers|every stage.",
+    "sub": "Including the one that matters.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "photo": "img-ai/c7c3.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Your builder's busy.|We're watching.",
+    "sub": "Independent eyes on structure.",
+    "pos": "bottom",
+    "size": 60
+   },
+   {
+    "photo": "img-ai/c7c4.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Issues flagged|the same day.",
+    "sub": "Raised while it's still open.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "cta": true,
+    "bg": "ink",
+    "headline": "529 Google reviews|4.9 stars",
+    "lines": [
+     "BPC registered building inspectors",
+     "and qualified trades"
+    ],
+    "sub": "Construction stage inspections."
+   }
+  ],
+  "head": "Frame stage: check it now.",
+  "desc": "All-stages package, $3,095",
+  "text": "Your new home is at frame stage? 🪵\n\nThis is where structural mistakes get locked in.\nBracing, tie-downs, trusses: once the linings go on, none of it is visible again.\n\nAll-stages package: $3,095, every stage of your build.\n\n✅ Your report the same day we inspect, or your money back.\n⭐ BPC registered building inspectors · 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nGet your quote 👇",
+  "form": "Stage inspection package quote",
+  "score": 8.5
+ },
+ "au-c8-handover": {
+  "title": "AU C8 · Handover / PCI defect list",
+  "svc": "Construction",
+  "angle": "Leverage at PCI: a documented defect list",
+  "cards": [
+   {
+    "photo": "img-ai/c8c1.jpg",
+    "focus": [
+     0.62,
+     0.72
+    ],
+    "zoom": 1.6,
+    "headline": "Don't do your PCI|with a notepad.",
+    "sub": "Walk in with a defect list.",
+    "pos": "top",
+    "size": 62
+   },
+   {
+    "photo": "img-ai/c8c2.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "$3,095. Every stage.|One team.",
+    "sub": "Including handover and PCI.",
+    "pos": "bottom",
+    "size": 60
+   },
+   {
+    "photo": "img-ai/c8c3.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Your list beats|their memory.",
+    "sub": "Documented. Photo-backed. Same day.",
+    "pos": "top",
+    "size": 62
+   },
+   {
+    "photo": "img-ai/c8c4.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Independent from|day one.",
+    "sub": "We only answer to you.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "cta": true,
+    "bg": "ink",
+    "headline": "529 Google reviews|4.9 stars",
+    "lines": [
+     "BPC registered building inspectors",
+     "and qualified trades"
+    ],
+    "sub": "Handover and PCI inspections."
+   }
+  ],
+  "head": "PCI with a real defect list.",
+  "desc": "All-stages package, $3,095",
+  "text": "Handover coming up on your new build? 🔑\n\nHandover day is not the day to find out what got missed.\nWalk into your PCI with a documented, photo-backed defect list.\n\nAll-stages package: $3,095, slab through to handover.\n\n✅ Your report the same day we inspect, or your money back.\n⭐ BPC registered building inspectors · 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nGet your quote 👇",
+  "form": "Handover inspection quote",
+  "score": 9
+ },
+ "au-c9-independent": {
+  "title": "AU C9 · Independent checks",
+  "svc": "Construction",
+  "angle": "The builder's checks work for the builder",
+  "cards": [
+   {
+    "photo": "img-ai/c9c1.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Who checks your|new home for you?",
+    "sub": "Make sure someone works for you.",
+    "pos": "top",
+    "size": 62
+   },
+   {
+    "photo": "img-ai/c9c2.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "The builder's checks|work for the builder.",
+    "sub": "Ours answer only to you.",
+    "pos": "bottom",
+    "size": 60
+   },
+   {
+    "photo": "img-ai/c9c3.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "$3,095 buys|independence.",
+    "sub": "Every stage, our own report.",
+    "pos": "bottom",
+    "size": 66
+   },
+   {
+    "photo": "img-ai/c9c4.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Same-day reports,|every stage.",
+    "sub": "Or your money back.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "cta": true,
+    "bg": "ink",
+    "headline": "529 Google reviews|4.9 stars",
+    "lines": [
+     "BPC registered building inspectors",
+     "and qualified trades"
+    ],
+    "sub": "Independent Melbourne inspections."
+   }
+  ],
+  "head": "Who checks your build for you?",
+  "desc": "Independent stage inspections, $3,095",
+  "text": "Building in Melbourne? 🏠\n\nNothing shady about it. It's just how it works.\nThe builder's own quality checks are done for the builder.\nAn independent inspector works for you and nobody else.\n\nAll-stages package: $3,095.\n\n✅ Your report the same day we inspect, or your money back.\n⭐ BPC registered building inspectors · 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nGet your quote 👇",
+  "form": "Independent stage inspection quote",
+  "score": 9
+ },
+ "au-c10-package": {
+  "title": "AU C10 · Package vs the defect bill",
+  "svc": "Construction",
+  "angle": "Cost of inaction (no invented figures)",
+  "cards": [
+   {
+    "photo": "img-ai/c10c1.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "One defect bill|vs $3,095.",
+    "sub": "Guess which one you control.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "photo": "img-ai/c10c2.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Every stage.|One price.",
+    "sub": "$3,095, slab to handover.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "photo": "img-ai/c10c3.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "After handover,|it's your fight.",
+    "sub": "Before handover, it's their fix.",
+    "pos": "bottom",
+    "size": 62
+   },
+   {
+    "photo": "img-ai/c10c4.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "zoom": 1.0,
+    "headline": "Same-day reports.|Guaranteed.",
+    "sub": "Or your money back.",
+    "pos": "top",
+    "size": 66
+   },
+   {
+    "cta": true,
+    "bg": "ink",
+    "headline": "529 Google reviews|4.9 stars",
+    "lines": [
+     "BPC registered building inspectors",
+     "and qualified trades"
+    ],
+    "sub": "Fixed price. All stages."
+   }
+  ],
+  "head": "One defect bill vs $3,095.",
+  "desc": "All-stages package · fixed price",
+  "text": "Here's the maths nobody shows you at the display centre. 🧮\n\nA defect found during the build is the builder's to fix.\nThe same defect found after handover becomes your fight.\n\nAll-stages package: $3,095, every stage of your build.\n\n✅ Your report the same day we inspect, or your money back.\n⭐ BPC registered building inspectors · 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nGet your quote 👇",
+  "form": "All-stages package quote",
+  "score": 8.5
+ }
+}

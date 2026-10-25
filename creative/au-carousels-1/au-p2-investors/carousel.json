@@ -1,0 +1,63 @@
+{
+ "out_dir": "../renders/au-p2-investors",
+ "cards": [
+  {
+   "photo": "../img-ai/p2c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Your yield maths is|missing one line.",
+   "sub": "Repair costs. We find them first.",
+   "pos": "top",
+   "size": 62
+  },
+  {
+   "photo": "../img-ai/p2c2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "One termite nest,|one reno budget.",
+   "sub": "Timber pest check included.",
+   "pos": "bottom",
+   "size": 62
+  },
+  {
+   "photo": "../img-ai/p2c3.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Settle knowing,|not hoping.",
+   "sub": "Building and pest, one report.",
+   "pos": "bottom",
+   "size": 66
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "headline": "529 Google reviews|4.9 stars",
+   "lines": [
+    "BPC registered building inspectors",
+    "and qualified trades"
+   ],
+   "sub": "Real reviews from Melbourne buyers."
+  },
+  {
+   "photo": "../img-ai/p2c5.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Same-day report.|Or your money back.",
+   "sub": "Negotiate with facts.",
+   "pos": "top",
+   "size": 62
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "out_dir": "../renders/au-c8-handover",
+ "cards": [
+  {
+   "photo": "../img-ai/c8c1.jpg",
+   "focus": [
+    0.62,
+    0.72
+   ],
+   "zoom": 1.6,
+   "headline": "Don't do your PCI|with a notepad.",
+   "sub": "Walk in with a defect list.",
+   "pos": "top",
+   "size": 62
+  },
+  {
+   "photo": "../img-ai/c8c2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "$3,095. Every stage.|One team.",
+   "sub": "Including handover and PCI.",
+   "pos": "bottom",
+   "size": 60
+  },
+  {
+   "photo": "../img-ai/c8c3.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Your list beats|their memory.",
+   "sub": "Documented. Photo-backed. Same day.",
+   "pos": "top",
+   "size": 62
+  },
+  {
+   "photo": "../img-ai/c8c4.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Independent from|day one.",
+   "sub": "We only answer to you.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "headline": "529 Google reviews|4.9 stars",
+   "lines": [
+    "BPC registered building inspectors",
+    "and qualified trades"
+   ],
+   "sub": "Handover and PCI inspections."
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "out_dir": "../renders/au-p3-auction",
+ "cards": [
+  {
+   "photo": "../img-ai/p3c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "At auction, there's|no undo button.",
+   "sub": "No cooling-off. None.",
+   "pos": "top",
+   "size": 62
+  },
+  {
+   "photo": "../img-ai/p3c2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Bid with the report|in your hand.",
+   "sub": "Book before auction day.",
+   "pos": "top",
+   "size": 62
+  },
+  {
+   "photo": "../img-ai/p3c3.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "A pretty facade|can hide rot.",
+   "sub": "We check what bidders can't.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/p3c4.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "zoom": 1.0,
+   "headline": "Same-day report|guarantee.",
+   "sub": "Or your money back. In writing.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "headline": "529 Google reviews|4.9 stars",
+   "lines": [
+    "BPC registered building inspectors",
+    "and qualified trades"
+   ],
+   "sub": "Pre-auction inspections, Melbourne-wide."
+  }
+ ]
+}
