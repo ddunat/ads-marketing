@@ -1,0 +1,18 @@
+{
+  "avatar": "renders/a5-plain.mp4",
+  "srt": "renders/a5.srt",
+  "hflip": true,
+  "hook": {"box": "BUYING YOUR FIRST HOME?", "sub": "SEE WHAT FRESH PAINT HIDES.", "until": 1.7},
+  "highlight": ["termite damage", "every defect", "renegotiate"],
+  "replace": {"four point nine": "4.9"},
+  "caption_top": [[9.8, 12.7]],
+  "punches": [{"start": 1.72, "end": 5.1, "pos": "top", "text": "SAME-DAY REPORT\\N{OR YOUR MONEY BACK}"}],
+  "overlays": [
+    {"type": "notif", "at": 1.72, "until": 5.1},
+    {"type": "broll", "clip": "renders/brick.mp4", "from": 0.0, "to": 4.3, "at": 5.2, "speed": 1.0, "zoom": true},
+    {"type": "image", "src": "../../template/assets/proofcard-au.png", "at": 9.8, "until": 12.7},
+    {"type": "broll", "clip": "renders/house.mp4", "from": 12.0, "to": 15.9, "at": 13.9, "speed": 1.0}
+  ],
+  "endcard": "../../template/assets/endcard_rec.mp4",
+  "out": "renders/au-a5-first-home.mp4"
+}

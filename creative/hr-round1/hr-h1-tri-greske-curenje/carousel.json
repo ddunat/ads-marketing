@@ -1,0 +1,85 @@
+{
+ "out_dir": "../renders/hr-h1",
+ "cards": [
+  {
+   "photo": "../img-ai/h1-mrlja-zid.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Curi voda?|Ove 3 greške skupo koštaju.",
+   "sub": "Treću radi većina ljudi.",
+   "pos": "top",
+   "size": 64
+  },
+  {
+   "photo": "../img-ai/h1-strop-kanta.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Greška 1:|čekati da se osuši",
+   "sub": "Voda ne staje. Šteta raste u zidu.",
+   "pos": "bottom",
+   "size": 50,
+   "badge": "1/3"
+  },
+  {
+   "photo": "../img-ai/h1-valjak.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Greška 2:|prebojati mrlju",
+   "sub": "Mrlja nestane. Curenje ostaje.",
+   "pos": "top",
+   "size": 66,
+   "badge": "2/3"
+  },
+  {
+   "photo": "../img-ai/h1-razbijene-plocice.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Greška 3:|razbijati pločice nasumice",
+   "sub": "Pola kupaonice za jednu cijev.",
+   "pos": "top",
+   "size": 60,
+   "badge": "3/3"
+  },
+  {
+   "photo": "../img-ai/h1-akusticki-senzor.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Pronađemo izvor|bez razbijanja pločica",
+   "sub": "Termovizija · akustika · plin za praćenje",
+   "pos": "top",
+   "size": 62
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "badge": "JAMSTVO",
+   "headline": "Ne pronađemo izvor?|Detekciju ne plaćate.",
+   "lines": [
+    "Za aktivno curenje vode",
+    "Otvaramo samo gdje je kvar"
+   ],
+   "sub": "",
+   "size": 60
+  },
+  {
+   "cta": true,
+   "headline": "Zatražite|besplatnu ponudu",
+   "lines": [
+    "Hitno curenje? Dolazimo isti dan.",
+    "25+ godina iskustva",
+    "Google ocjene: sve 5 zvjezdica"
+   ],
+   "sub": "Kratki obrazac"
+  }
+ ]
+}

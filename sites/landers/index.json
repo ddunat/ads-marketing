@@ -16,5 +16,14 @@
   "ad": "A4 cooling-off",
   "service": "pre-purchase",
   "hot": "Signed|Auction"
+ },
+ {
+  "market": "au",
+  "path": "/first-home",
+  "file": "au/first-home.html",
+  "key": "lp-a5-first-home",
+  "ad": "A5 first home",
+  "service": "pre-purchase",
+  "hot": "Signed|Auction|offer this week"
  }
 ]
