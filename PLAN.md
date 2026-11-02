@@ -150,3 +150,11 @@ The "40–50%" dream target needs a named stage (see open questions).
 
 ## AU cost-per-lead target (David, 2026-10-25)
 - **Strict: no more than A$30 per lead.** The daily check pauses AU ads at $60 with no lead, or $90+ spent above $30 a lead (`.claude/skills/ad-ops/SKILL.md`). Context: past AU Meta campaigns ran at ~$354 per lead (Frame Stage Collapse 2: $7,088 / 20 leads).
+
+## Junk-lead filters (Jeremy, 2026-11-02)
+- **Landing pages, batch one (live):** hidden honeypot field, at least 6 seconds on the page before a submit counts, disposable email domains refused, nonsense first names refused (asdf, test, single letters, digits, links). Bots get a quiet 200 with nothing delivered and no CAPI/pixel Lead; people who mistype get told which field to fix. Server logs `junk dropped #n`.
+- **Batch two (next weekly run, after a before/after look):** "Just looking for now" goes to a thank-you page with no Lead event (still delivered to GHL as cold, nurture only).
+- **Batch three (only if junk survives):** SMS OTP on the mobile field.
+- **Instant Form:** rebuild as Higher intent with a "Just starting to look" exit; spec in `build/au-instant-form-spec.md`. David builds it (no tool can create Instant Forms); Claude swaps it into the ads.
+- Judge on cost per booked inspection, not CPL; give each change a few days of real spend.
+- Smoke tests must send `ms` ≥ 6000 in the `/api/lead` body or the test lead is dropped as junk.

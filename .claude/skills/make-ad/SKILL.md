@@ -90,7 +90,7 @@ A2 (auction, AU) is the reference build. Every new ad should be as good as A2 v6
 4. Commit and push to `master`. Railway (`dc-landing-pages`/`landing-au`) deploys on push. Check the deploy with Railway `list-deployments` and `get-logs`, which should show `listening on 3000`.
 5. **Smoke test the live page:**
    - Use the private Zapier workflow `test-lp-lead-once` (`01a1367d-c691-70c9-9ec5-16a1820f38d0`).
-   - Update its draft to GET the new page and POST a TEST lead (name "TEST delete", email `test+<key>@dcinspect.com.au`, mobile 0400000000), then `run_workflow_draft`.
+   - Update its draft to GET the new page and POST a TEST lead (include `"ms": 20000` or the junk filter drops it; name "TEST delete", email `test+<key>@dcinspect.com.au`, mobile 0400000000), then `run_workflow_draft`.
    - Pass = page 200 with form + pixel, and `/api/lead` returns `{"ok":true}`.
    - This cloud session can't reach go.dcinspect.* directly; Zapier can.
 

@@ -95,7 +95,7 @@ footer{margin:30px 0;color:var(--muted);font-size:13px;text-align:center}
 <script>
 const steps=[{"k": "property_type", "q": "What are you buying?", "o": ["House", "Apartment or unit", "Townhouse"]}, {"k": "bedrooms", "q": "How many bedrooms?", "o": ["1–2", "3", "4", "5+"]}, {"k": "stage", "q": "Where are you up to?", "o": ["Signed, cooling-off running", "Making an offer this week", "Auction date set", "Just looking for now"]}, {"k": "suburb", "q": "Property suburb", "input": [["text", "suburb", "e.g. Brunswick", "address-level2"]]}, {"q": "Where should we send your times?", "input": [["text", "fname", "First name", "given-name"], ["tel", "mobile", "Mobile", "tel"], ["email", "email", "Email", "email"]], "last": true}];
 const M={"step": "STEP", "of": "OF", "next": "Next", "submit": "Get my same-day inspection times", "sending": "Sending…", "err_name": "Please add your first name.", "err_mobile": "Please enter an Australian mobile, e.g. 0412 345 678.", "err_email": "Please check your email address.", "err_required": "Please fill this in.", "err_send": "Something went wrong. Please try again or call us on 0483 936 872.", "privacy": "We only use your details to arrange your inspection.", "ty": "/thankyou", "ty_hot": "/thankyou-book", "phone_re": "^(\\+?61|0)4\\d{8}$"};
-let i=0;const a={},f=document.getElementById('form');
+let i=0;const a={},f=document.getElementById('form'),t0=Date.now();
 const qs=new URLSearchParams(location.search);
 const ck=n=>(document.cookie.match('(^|; )'+n+'=([^;]*)')||[])[2]||'';
 function err(m){let e=f.querySelector('.err');if(!e){e=document.createElement('p');e.className='small err';e.style.color='#C62828';f.appendChild(e)}e.textContent=m}
@@ -109,16 +109,19 @@ async function submit(btn){
   const event_id='lead-'+Date.now()+'-'+Math.random().toString(36).slice(2,8);
   const body={...a,first_name:fname,mobile,email,event_id,page:location.pathname,
     utm_source:qs.get('utm_source')||'',utm_medium:qs.get('utm_medium')||'',utm_campaign:qs.get('utm_campaign')||'',utm_content:qs.get('utm_content')||'',
-    fbclid:qs.get('fbclid')||'',fbp:ck('_fbp'),fbc:ck('_fbc')};
+    fbclid:qs.get('fbclid')||'',fbp:ck('_fbp'),fbc:ck('_fbc'),
+    hp:(document.getElementById('hp_co')||{}).value||'',ms:Date.now()-t0};
   try{const r=await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
-    const j=await r.json();if(!r.ok||!j.ok)throw 0;
-    location.href=(j.hot?M.ty_hot:M.ty)+'?e='+encodeURIComponent(event_id);
+    const j=await r.json().catch(()=>({}));
+    if(j.field){btn.disabled=false;btn.textContent=M.submit;return err(j.field==='name'?M.err_name:M.err_email)}
+    if(!r.ok||!j.ok)throw 0;
+    location.href=(j.hot?M.ty_hot:M.ty)+(j.x?'':'?e='+encodeURIComponent(event_id));
   }catch(e){btn.disabled=false;btn.textContent=M.submit;err(M.err_send)}
 }
 function render(){
   const s=steps[i];let h=`<div class="bar"><i style="width:${Math.round((i+1)*100/steps.length)}%"></i></div><div class="step">${M.step} ${i+1} ${M.of} ${steps.length}</div><p class="q">${s.q}</p>`;
   if(s.o)h+=s.o.map(o=>`<button class="opt" data-v="${o}">${o}</button>`).join('');
-  else{h+=s.input.map(([t,id,p,ac])=>`<input type="${t}" id="${id}" placeholder="${p}" autocomplete="${ac}" required aria-label="${p}">`).join('')+`<button class="go" id="next">${s.last?M.submit:M.next}</button>`+(s.last?'<p class="small">'+M.privacy+'</p>':'')}
+  else{h+=s.input.map(([t,id,p,ac])=>`<input type="${t}" id="${id}" placeholder="${p}" autocomplete="${ac}" required aria-label="${p}">`).join('')+(s.last?'<input type="text" id="hp_co" name="zx_ref" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">':'')+`<button class="go" id="next">${s.last?M.submit:M.next}</button>`+(s.last?'<p class="small">'+M.privacy+'</p>':'')}
   f.innerHTML=h;
   f.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{a[s.k]=b.dataset.v;i++;render()});
   const n=document.getElementById('next');if(n)n.onclick=e=>{e.preventDefault();if(s.last)return submit(n);for(const [t,id] of s.input){const v=document.getElementById(id).value.trim();if(!v)return err(M.err_required);a[id]=v}i++;render()};

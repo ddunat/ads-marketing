@@ -31,6 +31,17 @@ function page(mk, file) {
 }
 const sha = v => v ? crypto.createHash('sha256').update(String(v).trim().toLowerCase()).digest('hex') : undefined;
 const clean = v => String(v ?? '').slice(0, 200);
+// Junk filters (Jeremy, 2026-11-02, batch one): honeypot, minimum time on page, disposable email, nonsense names.
+const MIN_MS = 6000;
+const TEMP_MAIL = /@(mailinator|guerrillamail|guerrillamailblock|sharklasers|grr|10minutemail|10minemail|tempmail|temp-mail|tempmailo|tempr|throwawaymail|trashmail|yopmail|getnada|nada|dispostable|maildrop|mailnesia|mintemail|mohmal|fakeinbox|fakemail|emailondeck|spamgourmet|mailcatch|burnermail|inboxkitten|tmail|tmpmail|moakt|emailfake|crazymailing|mytemp|tempinbox|discard|spambox)\.[a-z.]+$/i;
+const FAKE_NAME = /^(test|testing|asdf\w*|qwe\w*|zxc\w*|abc|aaa+|xxx+|fake|none|na|n\/a|no|nil|null|name|first name|bot|spam|hello|hi|ok|jkl\w*|sdf\w*)$/i;
+function nameOk(n) {
+  const t = n.trim();
+  if (t.length < 2 || !/\p{L}/u.test(t) || /\d/.test(t) || /https?:|www\.|@/.test(t)) return false;
+  if (FAKE_NAME.test(t) || /(.)\1{3,}/i.test(t)) return false;
+  return true;
+}
+let junkCount = 0;
 
 async function post(url, body) {
   const r = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
@@ -46,6 +57,11 @@ async function handleLead(req, res) {
   if (!first_name || !new RegExp(M.phone_re).test(mobile) || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return send(res, 422, { ok: false });
   const lander = LANDERS[mk + clean(d.page)];
   if (!lander) return send(res, 400, { ok: false });
+  // Bots: answer 200 so they move on, but deliver nothing and send no CAPI event.
+  if (clean(d.hp) || !(Number(d.ms) >= MIN_MS)) { console.log(`junk dropped #${++junkCount} (${clean(d.hp) ? 'honeypot' : 'too fast'}) ${lander.key}`); return send(res, 200, { ok: true, hot: false, x: 1 }); }
+  // People who typed something wrong: tell them which field to fix.
+  if (!nameOk(first_name)) return send(res, 422, { ok: false, field: 'name' });
+  if (TEMP_MAIL.test(email)) return send(res, 422, { ok: false, field: 'email' });
   const hot = lander.hot.test(clean(d.stage));
   const lead = {
     first_name, phone: mobile.replace(/^0/, M.phone_prefix).replace(/^(\d)/, '+$1'), email, market: mk,
