@@ -1,0 +1,422 @@
+{
+ "au-p1-first-home": {
+  "adset_id": "120253185693600220",
+  "name": "AU P1 · First home buyers (carousel → LP /first-home, desk)",
+  "status": "paused",
+  "creative": {
+   "object_story_spec": {
+    "page_id": "100943435016413",
+    "link_data": {
+     "message": "First home in Melbourne? 🏡\n\nIt's every dollar you've saved.\nOne hidden defect changes everything.\n\nBuilding and timber pest inspection by BPC registered building inspectors and qualified trades.\n\n✅ Your report the same day we inspect, or your money back.\n⭐ 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nGet your quote before you sign anything 👇",
+     "link": "https://go.dcinspect.com.au/first-home?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p1-first-home-lp",
+     "child_attachments": [
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p1-first-home-card1.jpg",
+       "name": "Your first home. Your only savings.",
+       "description": "Building & timber pest · same-day report guarantee",
+       "link": "https://go.dcinspect.com.au/first-home?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p1-first-home-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/first-home?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p1-first-home-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p1-first-home-card2.jpg",
+       "name": "What's behind fresh paint?",
+       "description": "Building & timber pest · same-day report guarantee",
+       "link": "https://go.dcinspect.com.au/first-home?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p1-first-home-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/first-home?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p1-first-home-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p1-first-home-card3.jpg",
+       "name": "Termites don't care about deposits.",
+       "description": "Building & timber pest · same-day report guarantee",
+       "link": "https://go.dcinspect.com.au/first-home?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p1-first-home-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/first-home?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p1-first-home-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p1-first-home-card4.jpg",
+       "name": "529 Google reviews 4.9 stars",
+       "description": "Building & timber pest · same-day report guarantee",
+       "link": "https://go.dcinspect.com.au/first-home?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p1-first-home-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/first-home?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p1-first-home-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p1-first-home-card5.jpg",
+       "name": "Report same day or your money back.",
+       "description": "Building & timber pest · same-day report guarantee",
+       "link": "https://go.dcinspect.com.au/first-home?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p1-first-home-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/first-home?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p1-first-home-lp"
+        }
+       }
+      }
+     ],
+     "call_to_action": {
+      "type": "LEARN_MORE",
+      "value": {
+       "link": "https://go.dcinspect.com.au/first-home?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p1-first-home-lp"
+      }
+     },
+     "multi_share_optimized": false,
+     "multi_share_end_card": false
+    }
+   }
+  }
+ },
+ "au-p2-investors": {
+  "adset_id": "120253185705850220",
+  "name": "AU P2 · Investors (carousel → LP /investors, desk)",
+  "status": "paused",
+  "creative": {
+   "object_story_spec": {
+    "page_id": "100943435016413",
+    "link_data": {
+     "message": "Investing in Melbourne property? 📈\n\nThe deal is won at the purchase price.\nThe problem is what you can't see.\n\nBuilding and timber pest, one visit, one report.\n\n✅ Your report the same day we inspect, or your money back.\n⭐ 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nGet your quote 👇",
+     "link": "https://go.dcinspect.com.au/investors?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p2-investors-lp",
+     "child_attachments": [
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p2-investors-card1.jpg",
+       "name": "Your yield maths is missing one line.",
+       "description": "Building & pest, one report, same day",
+       "link": "https://go.dcinspect.com.au/investors?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p2-investors-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/investors?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p2-investors-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p2-investors-card2.jpg",
+       "name": "One termite nest, one reno budget.",
+       "description": "Building & pest, one report, same day",
+       "link": "https://go.dcinspect.com.au/investors?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p2-investors-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/investors?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p2-investors-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p2-investors-card3.jpg",
+       "name": "Settle knowing, not hoping.",
+       "description": "Building & pest, one report, same day",
+       "link": "https://go.dcinspect.com.au/investors?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p2-investors-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/investors?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p2-investors-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p2-investors-card4.jpg",
+       "name": "529 Google reviews 4.9 stars",
+       "description": "Building & pest, one report, same day",
+       "link": "https://go.dcinspect.com.au/investors?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p2-investors-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/investors?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p2-investors-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p2-investors-card5.jpg",
+       "name": "Same-day report. Or your money back.",
+       "description": "Building & pest, one report, same day",
+       "link": "https://go.dcinspect.com.au/investors?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p2-investors-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/investors?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p2-investors-lp"
+        }
+       }
+      }
+     ],
+     "call_to_action": {
+      "type": "LEARN_MORE",
+      "value": {
+       "link": "https://go.dcinspect.com.au/investors?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p2-investors-lp"
+      }
+     },
+     "multi_share_optimized": false,
+     "multi_share_end_card": false
+    }
+   }
+  }
+ },
+ "au-p3-auction": {
+  "adset_id": "120253185707690220",
+  "name": "AU P3 · Auction buyers (carousel → LP /auction, desk)",
+  "status": "paused",
+  "creative": {
+   "object_story_spec": {
+    "page_id": "100943435016413",
+    "link_data": {
+     "message": "Buying at auction in Victoria? 🔨\n\nThe contract is unconditional. No cooling-off period.\nThe only time to find defects is before you raise your hand.\n\nBuilding and timber pest by BPC registered building inspectors and qualified trades.\n\n✅ Your report the same day we inspect, or your money back.\n⭐ 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nBook before auction day 👇",
+     "link": "https://go.dcinspect.com.au/auction?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p3-auction-lp",
+     "child_attachments": [
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p3-auction-card1.jpg",
+       "name": "At auction, there's no undo button.",
+       "description": "Pre-auction building & pest inspections",
+       "link": "https://go.dcinspect.com.au/auction?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p3-auction-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/auction?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p3-auction-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p3-auction-card2.jpg",
+       "name": "Bid with the report in your hand.",
+       "description": "Pre-auction building & pest inspections",
+       "link": "https://go.dcinspect.com.au/auction?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p3-auction-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/auction?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p3-auction-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p3-auction-card3.jpg",
+       "name": "A pretty facade can hide rot.",
+       "description": "Pre-auction building & pest inspections",
+       "link": "https://go.dcinspect.com.au/auction?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p3-auction-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/auction?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p3-auction-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p3-auction-card4.jpg",
+       "name": "Same-day report guarantee.",
+       "description": "Pre-auction building & pest inspections",
+       "link": "https://go.dcinspect.com.au/auction?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p3-auction-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/auction?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p3-auction-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p3-auction-card5.jpg",
+       "name": "529 Google reviews 4.9 stars",
+       "description": "Pre-auction building & pest inspections",
+       "link": "https://go.dcinspect.com.au/auction?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p3-auction-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/auction?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p3-auction-lp"
+        }
+       }
+      }
+     ],
+     "call_to_action": {
+      "type": "LEARN_MORE",
+      "value": {
+       "link": "https://go.dcinspect.com.au/auction?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p3-auction-lp"
+      }
+     },
+     "multi_share_optimized": false,
+     "multi_share_end_card": false
+    }
+   }
+  }
+ },
+ "au-p4-cooling-off": {
+  "adset_id": "120253185709220220",
+  "name": "AU P4 · Private sale, cooling-off running (carousel → LP /cooling-off, desk)",
+  "status": "paused",
+  "creative": {
+   "object_story_spec": {
+    "page_id": "100943435016413",
+    "link_data": {
+     "message": "Signed a private sale contract? ⏱️\n\nYour 3 business day cooling-off started when you signed.\nThat window is your free exit.\n\nBuilding and timber pest inspection, report the same day.\n\n✅ Your report the same day we inspect, or your money back.\n⭐ 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nGet your quote today 👇",
+     "link": "https://go.dcinspect.com.au/cooling-off?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p4-cooling-off-lp",
+     "child_attachments": [
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p4-cooling-off-card1.jpg",
+       "name": "3 business days. That's it.",
+       "description": "Same-day report inside your 3-day window",
+       "link": "https://go.dcinspect.com.au/cooling-off?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p4-cooling-off-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/cooling-off?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p4-cooling-off-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p4-cooling-off-card2.jpg",
+       "name": "We inspect inside that window.",
+       "description": "Same-day report inside your 3-day window",
+       "link": "https://go.dcinspect.com.au/cooling-off?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p4-cooling-off-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/cooling-off?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p4-cooling-off-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p4-cooling-off-card3.jpg",
+       "name": "Find it now or fund it later.",
+       "description": "Same-day report inside your 3-day window",
+       "link": "https://go.dcinspect.com.au/cooling-off?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p4-cooling-off-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/cooling-off?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p4-cooling-off-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p4-cooling-off-card4.jpg",
+       "name": "Signed the contract? The clock's ticking.",
+       "description": "Same-day report inside your 3-day window",
+       "link": "https://go.dcinspect.com.au/cooling-off?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p4-cooling-off-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/cooling-off?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p4-cooling-off-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p4-cooling-off-card5.jpg",
+       "name": "529 Google reviews 4.9 stars",
+       "description": "Same-day report inside your 3-day window",
+       "link": "https://go.dcinspect.com.au/cooling-off?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p4-cooling-off-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/cooling-off?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p4-cooling-off-lp"
+        }
+       }
+      }
+     ],
+     "call_to_action": {
+      "type": "LEARN_MORE",
+      "value": {
+       "link": "https://go.dcinspect.com.au/cooling-off?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p4-cooling-off-lp"
+      }
+     },
+     "multi_share_optimized": false,
+     "multi_share_end_card": false
+    }
+   }
+  }
+ },
+ "au-p5-same-day": {
+  "adset_id": "120253185710630220",
+  "name": "AU P5 · Same-day report guarantee (carousel → LP /same-day, desk)",
+  "status": "paused",
+  "creative": {
+   "object_story_spec": {
+    "page_id": "100943435016413",
+    "link_data": {
+     "message": "Waiting days for an inspection report? ⏳\n\nYour report the same day we inspect, or your money back.\n\nBuilding and timber pest by BPC registered building inspectors and qualified trades.\n⭐ 529 Google reviews, 4.9 stars\n\nDavid Dunat, Director · DBU-66182\n\nGet your quote 👇",
+     "link": "https://go.dcinspect.com.au/same-day?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p5-same-day-lp",
+     "child_attachments": [
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p5-same-day-card1.jpg",
+       "name": "No waiting days for a report.",
+       "description": "Or your money back · building & pest",
+       "link": "https://go.dcinspect.com.au/same-day?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p5-same-day-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/same-day?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p5-same-day-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p5-same-day-card2.jpg",
+       "name": "Same day or your money back.",
+       "description": "Or your money back · building & pest",
+       "link": "https://go.dcinspect.com.au/same-day?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p5-same-day-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/same-day?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p5-same-day-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p5-same-day-card3.jpg",
+       "name": "We find it. We photograph it.",
+       "description": "Or your money back · building & pest",
+       "link": "https://go.dcinspect.com.au/same-day?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p5-same-day-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/same-day?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p5-same-day-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p5-same-day-card4.jpg",
+       "name": "529 Google reviews 4.9 stars",
+       "description": "Or your money back · building & pest",
+       "link": "https://go.dcinspect.com.au/same-day?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p5-same-day-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/same-day?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p5-same-day-lp"
+        }
+       }
+      },
+      {
+       "picture": "https://go.dcinspect.com.au/img/au-p5-same-day-card5.jpg",
+       "name": "Inspected today. Report today.",
+       "description": "Or your money back · building & pest",
+       "link": "https://go.dcinspect.com.au/same-day?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p5-same-day-lp",
+       "call_to_action": {
+        "type": "LEARN_MORE",
+        "value": {
+         "link": "https://go.dcinspect.com.au/same-day?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p5-same-day-lp"
+        }
+       }
+      }
+     ],
+     "call_to_action": {
+      "type": "LEARN_MORE",
+      "value": {
+       "link": "https://go.dcinspect.com.au/same-day?utm_source=meta&utm_medium=paid&utm_campaign=au-prepurchase-carousels-lp&utm_content=au-p5-same-day-lp"
+      }
+     },
+     "multi_share_optimized": false,
+     "multi_share_end_card": false
+    }
+   }
+  }
+ }
+}

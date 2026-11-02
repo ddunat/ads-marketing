@@ -22,3 +22,14 @@ David asked for static carousel ads built the same way as the HR ones, using the
 | au-c8-handover | 〃 | 120253063961110220 | 120253063995780220 | 9 |
 | au-c9-independent | 〃 | 120253063962110220 | 120253064000390220 | 9 |
 | au-c10-package | 〃 | 120253063962540220 | 120253064004930220 | 8.5 |
+
+## Switch to landing pages (2026-11-02)
+David: every AU Instant Form lead was unusable. Jeremy: stop using the Instant Form for AU (park it, don't delete) and send the carousels to the landing pages, which have the junk filters and deliver into GHL.
+- New paused website ad sets in the Pre-purchase campaign (same targeting and budgets as the old lead-form ad sets; optimise for pixel Lead):
+  - P1 → /first-home: ad set 120253185693600220, ad 120253185738500220
+  - P2 → /investors (new page, Jeremy 8.5): ad set 120253185705850220, ad 120253186126490220
+  - P3 → /auction: ad set 120253185707690220 (A$20/day like the old P3)
+  - P4 → /cooling-off: ad set 120253185709220220
+  - P5 → /same-day (new page, Jeremy 8.5): ad set 120253185710630220
+- Payloads: `lp-switch-create.json`. Old Instant Form ads stay paused.
+- C-series waits for a construction-stage page (needs David: is $3,095 incl. or ex GST?).
