@@ -6,3 +6,5 @@
 - **Video:** HeyGen v3 `ab6f80e3d91cdbe1167c9923aed2fd6e` (720x1280, 24.1s), built to 28.1s with the end card. Captions: script words with the Arcads transcription's timing (it misheard "Your report" as "You report" again). B-roll: the same safe windows A4 used (brick efflorescence, verandah rot).
 - **Page:** `sites/landers/au-first-home.json` → go.dcinspect.com.au/first-home (key `lp-a5-first-home`, hot = Signed|Auction|offer this week).
 - **Meta:** video `2245232202732116`, uploaded from an Arcads signed URL. Ad `120253185381990220`, created **paused** in "Warm Leads - Facebook + Instagram" (`120240471624270220`). That campaign is paused.
+- **Smoke test (Zapier, 2 Nov):** /first-home 200 with form, pixel, H1, eyebrow and submit label; video served (206); `/api/lead` returned `{"ok":true,"hot":true}`. The test lead "TEST delete" (test+lp-a5-first-home@dcinspect.com.au) is in GHL AU and should be deleted.
+- **Desk:** card `au-a5-first-home`, status review.

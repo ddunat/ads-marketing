@@ -95,3 +95,4 @@ David sent a reel (instagram.com/reel/DecLfuoMoLq): "villainize the category", t
 - Jeremy (conversation 9db2a3b0): 8 → 9. Fixes applied: "na sreću" → "nasumice" (David to confirm phrasing); card 5 carries A2's promise ("Pronađemo izvor bez razbijanja pločica"); descriptions vary per card so the guarantee only shows on cards 6–7; proof line leads with "sve Google ocjene 5 zvjezdica"; dropped "javljamo se brzo".
 - 5 new Arcads images (`img-ai/h1-*`): stain above tiles, ceiling stain + bucket (regenerated so the text clears the bucket), paint roller over a stain, tiles smashed at random, gloved hands with an acoustic sensor. No faces, readings or text.
 - Ad 120254567685590195, created paused in Adv Plus 120227138979370195 (Instant Form 2898956873609451). The first attempt failed because the Arcads links had expired overnight; it worked with fresh links.
+- Desk: card `hr-h1-tri-greske-curenje`, status review.
