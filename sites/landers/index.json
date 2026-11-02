@@ -25,5 +25,23 @@
   "ad": "A5 first home",
   "service": "pre-purchase",
   "hot": "Signed|Auction|offer this week"
+ },
+ {
+  "market": "au",
+  "path": "/investors",
+  "file": "au/investors.html",
+  "key": "lp-p2-investors",
+  "ad": "P2 investors",
+  "service": "pre-purchase",
+  "hot": "Signed|Auction|offer this week"
+ },
+ {
+  "market": "au",
+  "path": "/same-day",
+  "file": "au/same-day.html",
+  "key": "lp-p5-same-day",
+  "ad": "P5 same-day",
+  "service": "pre-purchase",
+  "hot": "Signed|Auction|offer this week"
  }
 ]
