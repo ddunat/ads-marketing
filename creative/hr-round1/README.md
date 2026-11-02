@@ -89,3 +89,9 @@ David sent a reel (instagram.com/reel/DecLfuoMoLq): "villainize the category", t
 - Card images went to Meta from Arcads signed URLs. Meta failed to fetch card 6 once; it worked on retry with a fresh URL.
 - Ad 120254442808760195, created paused and waiting on the HR desk.
 - Jeremy for next week: build 2–3 E3-skeleton remixes with different leak scenarios, not one.
+
+## H1: leak mistakes carousel (weekly run, 2026-11-01)
+- Kaleidoscope remix: E1's "3 greške" skeleton (lowest 7-day CPL, €10.04) on A2's leak topic (no tile breaking). Jeremy vetted the angle and asked for 2–3 E3-style leak remixes next.
+- Jeremy (conversation 9db2a3b0): 8 → 9. Fixes applied: "na sreću" → "nasumice" (David to confirm phrasing); card 5 carries A2's promise ("Pronađemo izvor bez razbijanja pločica"); descriptions vary per card so the guarantee only shows on cards 6–7; proof line leads with "sve Google ocjene 5 zvjezdica"; dropped "javljamo se brzo".
+- 5 new Arcads images (`img-ai/h1-*`): stain above tiles, ceiling stain + bucket (regenerated so the text clears the bucket), paint roller over a stain, tiles smashed at random, gloved hands with an acoustic sensor. No faces, readings or text.
+- Ad 120254567685590195, created paused in Adv Plus 120227138979370195 (Instant Form 2898956873609451). The first attempt failed because the Arcads links had expired overnight; it worked with fresh links.

@@ -1,0 +1,140 @@
+{
+ "primary_text": "Curi voda, a ne znate odakle? 👇\n\nOve 3 greške najviše koštaju:\n❌ čekati da se mrlja osuši\n❌ prebojati je\n❌ razbijati pločice nasumice\n\n✅ Mi prvo pronađemo izvor, bez razbijanja pločica: termovizijom, akustičnom detekcijom i plinom za praćenje. Otvaramo samo ondje gdje je kvar.\n✅ Ako ne pronađemo izvor curenja vode, detekciju ne plaćate.\n🚨 Hitno curenje? Dolazimo isti dan.\n⭐ 25+ godina iskustva · sve Google ocjene 5 zvjezdica\n\nZatražite besplatnu ponudu 👇",
+ "headline": "Curi voda? Ove 3 greške skupo koštaju.",
+ "description": "Curenje vode: 3 skupe greške",
+ "cta": "GET_QUOTE",
+ "cards": [
+  "Curi voda? Ove 3 greške skupo koštaju.",
+  "Greška 1: čekati da se osuši",
+  "Greška 2: prebojati mrlju",
+  "Greška 3: razbijati pločice nasumice",
+  "Pronađemo izvor bez razbijanja pločica",
+  "Ne pronađemo izvor? Detekciju ne plaćate.",
+  "Zatražite besplatnu ponudu"
+ ],
+ "descriptions": [
+  "Curenje vode: 3 skupe greške",
+  "Šteta raste dok čekate",
+  "Boja ne zaustavlja curenje",
+  "Bez razbijanja cijele kupaonice",
+  "Otvaramo samo gdje je kvar",
+  "Ne pronađemo izvor? Detekciju ne plaćate.",
+  "Ne pronađemo izvor? Detekciju ne plaćate."
+ ],
+ "meta_create": {
+  "adset_id": "120227138979370195",
+  "name": "HR H1 · Curenje: 3 greške (carousel)",
+  "status": "paused",
+  "creative": {
+   "object_story_spec": {
+    "page_id": "658374350686787",
+    "link_data": {
+     "message": "Curi voda, a ne znate odakle? 👇\n\nOve 3 greške najviše koštaju:\n❌ čekati da se mrlja osuši\n❌ prebojati je\n❌ razbijati pločice nasumice\n\n✅ Mi prvo pronađemo izvor, bez razbijanja pločica: termovizijom, akustičnom detekcijom i plinom za praćenje. Otvaramo samo ondje gdje je kvar.\n✅ Ako ne pronađemo izvor curenja vode, detekciju ne plaćate.\n🚨 Hitno curenje? Dolazimo isti dan.\n⭐ 25+ godina iskustva · sve Google ocjene 5 zvjezdica\n\nZatražite besplatnu ponudu 👇",
+     "link": "http://fb.me/",
+     "child_attachments": [
+      {
+       "picture": "(arcads signed url)",
+       "name": "Curi voda? Ove 3 greške skupo koštaju.",
+       "description": "Curenje vode: 3 skupe greške",
+       "link": "http://fb.me/",
+       "call_to_action": {
+        "type": "GET_QUOTE",
+        "value": {
+         "lead_gen_form_id": "2898956873609451",
+         "link": "http://fb.me/"
+        }
+       }
+      },
+      {
+       "picture": "(arcads signed url)",
+       "name": "Greška 1: čekati da se osuši",
+       "description": "Šteta raste dok čekate",
+       "link": "http://fb.me/",
+       "call_to_action": {
+        "type": "GET_QUOTE",
+        "value": {
+         "lead_gen_form_id": "2898956873609451",
+         "link": "http://fb.me/"
+        }
+       }
+      },
+      {
+       "picture": "(arcads signed url)",
+       "name": "Greška 2: prebojati mrlju",
+       "description": "Boja ne zaustavlja curenje",
+       "link": "http://fb.me/",
+       "call_to_action": {
+        "type": "GET_QUOTE",
+        "value": {
+         "lead_gen_form_id": "2898956873609451",
+         "link": "http://fb.me/"
+        }
+       }
+      },
+      {
+       "picture": "(arcads signed url)",
+       "name": "Greška 3: razbijati pločice nasumice",
+       "description": "Bez razbijanja cijele kupaonice",
+       "link": "http://fb.me/",
+       "call_to_action": {
+        "type": "GET_QUOTE",
+        "value": {
+         "lead_gen_form_id": "2898956873609451",
+         "link": "http://fb.me/"
+        }
+       }
+      },
+      {
+       "picture": "(arcads signed url)",
+       "name": "Pronađemo izvor bez razbijanja pločica",
+       "description": "Otvaramo samo gdje je kvar",
+       "link": "http://fb.me/",
+       "call_to_action": {
+        "type": "GET_QUOTE",
+        "value": {
+         "lead_gen_form_id": "2898956873609451",
+         "link": "http://fb.me/"
+        }
+       }
+      },
+      {
+       "picture": "(arcads signed url)",
+       "name": "Ne pronađemo izvor? Detekciju ne plaćate.",
+       "description": "Ne pronađemo izvor? Detekciju ne plaćate.",
+       "link": "http://fb.me/",
+       "call_to_action": {
+        "type": "GET_QUOTE",
+        "value": {
+         "lead_gen_form_id": "2898956873609451",
+         "link": "http://fb.me/"
+        }
+       }
+      },
+      {
+       "picture": "(arcads signed url)",
+       "name": "Zatražite besplatnu ponudu",
+       "description": "Ne pronađemo izvor? Detekciju ne plaćate.",
+       "link": "http://fb.me/",
+       "call_to_action": {
+        "type": "GET_QUOTE",
+        "value": {
+         "lead_gen_form_id": "2898956873609451",
+         "link": "http://fb.me/"
+        }
+       }
+      }
+     ],
+     "call_to_action": {
+      "type": "GET_QUOTE",
+      "value": {
+       "lead_gen_form_id": "2898956873609451",
+       "link": "http://fb.me/"
+      }
+     },
+     "multi_share_optimized": false,
+     "multi_share_end_card": false
+    }
+   }
+  }
+ }
+}
