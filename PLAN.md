@@ -132,7 +132,7 @@ The "40–50%" dream target needs a named stage (see open questions).
 ## Weekly ad factory (decided 2026-10-14)
 - **Weekly run:** Monday, built overnight and on the desks by 8am Melbourne. Recipe: `.claude/skills/make-ad/SKILL.md`.
   - Tops up to 3 AU + 2 HR new ads, replacing what the daily check killed. Minimum 1 per account.
-  - Claude picks angles from the data: Kaleidoscope, 80% remixes of winners and 20% new; Jeremy vets the list.
+  - Claude picks angles from the Angle Matrix (`research/angle-matrix.md`, adopted 2026-11-05): 8 desires × 5 awareness stages. Each batch opens at least one new cell per account; each new angle gets its own paused ad set with 3 versions; remixes of winners are versions, not new angles. Jeremy vets the list.
   - Every ad gets its own landing page, generated from a spec (`sites/landers/*.json` → `sites/build_landers.py`), with the headline matching the ad's promise word for word.
   - Jeremy must pass both the ad and the page at ≥8. David reviews only the finished ad and its page on the Ad Desk.
 - **Video:** `creative/template/build_video.py` + a per-ad spec; B-roll only from `creative/library/broll.json` safe windows. HeyGen **v3** API from now on (v2 shuts off 31 Oct).

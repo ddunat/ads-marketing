@@ -27,7 +27,12 @@ A2 (auction, AU) is the reference build. Every new ad should be as good as A2 v6
   - Always build at least 1 per account.
   - If nothing was killed and the account already runs ≥ 6 ads in test, build 1.
 - **Data:** Windsor `facebook` per ad, last 14 and 30 days: spend, leads, CPL. GHL bookings by `landing_page` tag and `booked-meta` (Windsor `gohighlevel`). Rank live ads by cost per booked inspection, falling back to CPL when bookings < 2.
-- **Kaleidoscope rule:** ~80% remixes of the current winner (new hook, new opening, new B-roll, same promise), ~20% new angles from the playbook frameworks. Before scripting, ask Jeremy to vet the angle list (one message for the whole batch).
+- **Angle Matrix rule (David, 2026-11-05; replaces the old 80/20 Kaleidoscope rule):** read `research/angle-matrix.md`.
+  - An angle = one reason to buy × one kind of person × one awareness stage. A new hook, edit or image on the same pitch is a *version*, not a new angle.
+  - Every batch must open **at least one new matrix cell per account**. Take it from the top of that account's "Next angles queue", then update the grid and queue in the file.
+  - Remixes of a winner are versions. Put them in the winner's own angle ad set, never sold as a new angle.
+  - **Each new angle gets its own ad set with 3 versions** (different hooks/openers, same reason, person and stage), created paused with the same targeting as the current test ad set. Never pile new ads into one crowded ad set: Meta only spends on 3–4.
+  - Before scripting, ask Jeremy to vet the angle list (one message for the whole batch).
 - Don't repeat an angle that was killed in the last 30 days unless the hook is materially different.
 
 ## 2. Script and copy (per ad)
