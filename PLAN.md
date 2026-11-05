@@ -25,7 +25,7 @@ The two accounts never share a desk, a card, an ad set or a publish call.
   - Condition (David, 2026-10-12): whatever day the inspection happens, the report is sent that same day, or the client gets their money back.
   - Ad wording: "Your report the same day we inspect, or your money back."
   - Full refund, no exclusions (David, 2026-10-12).
-- 529 Google reviews, 4.9★. BPC registered building inspector, DBU-66182 (never say "VBA registered").
+- 529 Google reviews, 4.9★. Real review snippets may be quoted word for word in ads (David, 2026-11-05): first name or initial only, no surnames, addresses or job details. BPC registered building inspector, DBU-66182 (never say "VBA registered").
 - Tagline: "Inspect Confidently, Build Fearlessly"
 
 ## Offer & proof (HR)

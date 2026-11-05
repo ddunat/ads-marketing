@@ -72,7 +72,7 @@ These are new cells, not new versions. The weekly run takes them from the top.
 1. **Product aware × Safety: proof.**
    - "4.9 from 529 Google reviews. Here's what they keep saying."
    - Built from real review themes (same-day report, plain-English report), with no reviewer names.
-   - Needs: David's OK to quote review snippets, or paraphrase only.
+   - David OK'd quoting real Google review snippets (2026-11-05). Quote word for word from the public review, first name or initial only, never a surname, address or job details.
 2. **Unaware × Family: story.**
    - "The house looked perfect at the open. Here's what the report found."
    - A story ad about a typical hidden defect.
