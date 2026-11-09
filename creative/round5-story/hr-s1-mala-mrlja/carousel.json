@@ -1,0 +1,60 @@
+{
+ "out_dir": "../renders/hr-s1-mala-mrlja",
+ "cards": [
+  {
+   "photo": "../img-ai/hr-s1c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Tako obično počne:|mala mrlja na stropu.",
+   "sub": "Izgleda bezazleno.",
+   "pos": "top",
+   "size": 60
+  },
+  {
+   "photo": "../img-ai/hr-s1c2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Tri mjeseca kasnije…",
+   "sub": "Voda ne staje sama. Šteta raste u zidu.",
+   "pos": "bottom",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/hr-s1c3.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Zato prvo|tražimo izvor",
+   "sub": "Termovizija · akustika · plin za praćenje",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "badge": "JAMSTVO",
+   "headline": "Ne pronađemo izvor?|Detekciju ne plaćate.",
+   "lines": [
+    "Za aktivno curenje vode",
+    "Otvaramo samo gdje je kvar"
+   ],
+   "sub": "",
+   "size": 60
+  },
+  {
+   "cta": true,
+   "headline": "Zatražite|besplatnu ponudu",
+   "lines": [
+    "Hitno curenje? Dolazimo isti dan.",
+    "25+ godina iskustva",
+    "Google ocjene: sve 5 zvjezdica"
+   ],
+   "sub": "Kratki obrazac"
+  }
+ ]
+}

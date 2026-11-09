@@ -1,0 +1,60 @@
+{
+ "out_dir": "../renders/hr-s2-kapljica",
+ "cards": [
+  {
+   "photo": "../img-ai/hr-s2c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Curenje rijetko|počne poplavom.",
+   "sub": "Počne kapljicom koju ne primijetite.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/hr-s2c2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Pa nabubri parket.",
+   "sub": "Ili se ljušti boja uz pod.",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "photo": "../img-ai/hr-s2c3.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Pronađemo je prije|nego postane skupa",
+   "sub": "Termovizija · akustika · plin za praćenje",
+   "pos": "top",
+   "size": 60
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "badge": "JAMSTVO",
+   "headline": "Ne pronađemo izvor?|Detekciju ne plaćate.",
+   "lines": [
+    "Za aktivno curenje vode",
+    "Otvaramo samo gdje je kvar"
+   ],
+   "sub": "",
+   "size": 60
+  },
+  {
+   "cta": true,
+   "headline": "Zatražite|besplatnu ponudu",
+   "lines": [
+    "Hitno curenje? Dolazimo isti dan.",
+    "25+ godina iskustva",
+    "Google ocjene: sve 5 zvjezdica"
+   ],
+   "sub": "Kratki obrazac"
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "out_dir": "../renders/hr-s3-miris",
+ "cards": [
+  {
+   "photo": "../img-ai/hr-s3c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Prvo osjetite|miris vlage.",
+   "sub": "A ne vidite odakle dolazi.",
+   "pos": "top",
+   "size": 76
+  },
+  {
+   "photo": "../img-ai/hr-s3c2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Onda se pojave|mjehurići na boji.",
+   "sub": "Voda je već u zidu.",
+   "pos": "top",
+   "size": 62
+  },
+  {
+   "photo": "../img-ai/hr-s3c3.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Izvor nađemo|bez razbijanja",
+   "sub": "Termovizija · akustika · plin za praćenje",
+   "pos": "top",
+   "size": 66
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "badge": "JAMSTVO",
+   "headline": "Ne pronađemo izvor?|Detekciju ne plaćate.",
+   "lines": [
+    "Za aktivno curenje vode",
+    "Otvaramo samo gdje je kvar"
+   ],
+   "sub": "",
+   "size": 60
+  },
+  {
+   "cta": true,
+   "headline": "Zatražite|besplatnu ponudu",
+   "lines": [
+    "Hitno curenje? Dolazimo isti dan.",
+    "25+ godina iskustva",
+    "Google ocjene: sve 5 zvjezdica"
+   ],
+   "sub": "Kratki obrazac"
+  }
+ ]
+}

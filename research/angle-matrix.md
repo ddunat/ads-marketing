@@ -54,7 +54,7 @@ Source: an Instagram reel David sent on 2026-11-05 ("Why your new ads keep losin
 | | Unaware | Problem aware | Solution aware | Product aware | Most aware |
 |---|---|---|---|---|---|
 | Safety (money/damage) | | B2 (water bill), H1 | **A2**, **F1** (no tile breaking) | | |
-| Comfort (home back to normal) | | C2 (mould returns), D1 | **E1** (3 mistakes) | | E3, G1 (what happens after you tap) |
+| Comfort (home back to normal) | **S1–S3 (R5, story)** | C2 (mould returns), D1 | **E1** (3 mistakes) | | E3, G1 (what happens after you tap) |
 | Approval (neighbours) | | **N1–N3 (R4, neighbour below)** | | | |
 | Family | | | | | |
 | Winning | | | | | |
@@ -93,7 +93,7 @@ These are new cells, not new versions. The weekly run takes them from the top.
    - Apartments are common in Croatia, and a leak into a neighbour's flat brings social and money pressure.
    - Offer: we find the source without breaking tiles.
    - Leak guarantee line applies.
-2. **Unaware × Comfort: story.**
+2. ~~**Unaware × Comfort: story.**~~ Built 9 Nov as HR S1–S3 (ad set 120254713162100195, paused, on the HR desk).
    - "Mrlja na stropu je bila mala. Prije 3 mjeseca." (The ceiling stain was small. 3 months ago.)
    - Story of a stain that grows; the moral is "find the source early".
    - Only generic facts; no claims about specific jobs.
