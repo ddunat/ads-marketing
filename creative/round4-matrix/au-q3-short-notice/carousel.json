@@ -1,0 +1,47 @@
+{
+ "out_dir": "../renders/au-q3-short-notice",
+ "cards": [
+  {
+   "photo": "../img-ai/au-q3c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "“Very quick from|enquiry to inspection.”",
+   "sub": "Dave S., Google review",
+   "pos": "top",
+   "size": 60
+  },
+  {
+   "cta": true,
+   "headline": "“They were also able to accommodate us at very short notice.”",
+   "lines": [],
+   "sub": "Emma P., Google review",
+   "size": 58,
+   "bg": "ink",
+   "hsize": 72,
+   "top": 190
+  },
+  {
+   "cta": true,
+   "headline": "“Thorough report and backed it up with a phone call explaining everything.”",
+   "lines": [],
+   "sub": "Alex N., Google review",
+   "size": 58,
+   "hsize": 72,
+   "top": 190
+  },
+  {
+   "cta": true,
+   "badge": "OUR GUARANTEE",
+   "headline": "Your report the same day we inspect, or your money back.",
+   "lines": [
+    "Rated 4.9 from 500+ Google reviews"
+   ],
+   "sub": "Tap below to check availability",
+   "size": 54,
+   "hsize": 80,
+   "top": 190
+  }
+ ]
+}

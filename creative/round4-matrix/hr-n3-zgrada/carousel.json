@@ -1,0 +1,60 @@
+{
+ "out_dir": "../renders/hr-n3-zgrada",
+ "cards": [
+  {
+   "photo": "../img-ai/hr-n3c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Curi u zgradi?|Svi gledaju u vaš stan.",
+   "sub": "Saznajte točno odakle curi.",
+   "pos": "bottom",
+   "size": 60
+  },
+  {
+   "photo": "../img-ai/hr-n3c2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Bez nagađanja",
+   "sub": "Termovizija · akustika · plin za praćenje",
+   "pos": "top",
+   "size": 70
+  },
+  {
+   "photo": "../img-ai/hr-n3c3.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Bez razbijanja|cijele kupaonice",
+   "sub": "Otvaramo samo gdje je kvar.",
+   "pos": "top",
+   "size": 62
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "badge": "JAMSTVO",
+   "headline": "Ne pronađemo izvor?|Detekciju ne plaćate.",
+   "lines": [
+    "Za aktivno curenje vode",
+    "Otvaramo samo gdje je kvar"
+   ],
+   "sub": "",
+   "size": 60
+  },
+  {
+   "cta": true,
+   "headline": "Zatražite|besplatnu ponudu",
+   "lines": [
+    "Hitno curenje? Dolazimo isti dan.",
+    "25+ godina iskustva",
+    "Google ocjene: sve 5 zvjezdica"
+   ],
+   "sub": "Kratki obrazac"
+  }
+ ]
+}

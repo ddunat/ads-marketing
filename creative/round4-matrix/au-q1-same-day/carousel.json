@@ -1,0 +1,47 @@
+{
+ "out_dir": "../renders/au-q1-same-day",
+ "cards": [
+  {
+   "photo": "../img-ai/au-q1c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "“I got the inspection|report on the same day.”",
+   "sub": "Coco X., Google review",
+   "pos": "top",
+   "size": 58
+  },
+  {
+   "cta": true,
+   "headline": "“Received a thorough report on the same day.”",
+   "lines": [],
+   "sub": "Nick D., Google review",
+   "size": 58,
+   "bg": "ink",
+   "hsize": 72,
+   "top": 190
+  },
+  {
+   "cta": true,
+   "headline": "“We received our report later that day.”",
+   "lines": [],
+   "sub": "Lesley R., Google review",
+   "size": 58,
+   "hsize": 84,
+   "top": 220
+  },
+  {
+   "cta": true,
+   "badge": "OUR GUARANTEE",
+   "headline": "Your report the same day we inspect, or your money back.",
+   "lines": [
+    "Rated 4.9 from 500+ Google reviews"
+   ],
+   "sub": "Tap below to check availability",
+   "size": 54,
+   "hsize": 80,
+   "top": 190
+  }
+ ]
+}

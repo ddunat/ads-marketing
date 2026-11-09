@@ -98,10 +98,11 @@ def cta_card(c):
         bf = font(800, 38); tw = d.textlength(c["badge"], font=bf)
         d.rounded_rectangle(((S - tw) / 2 - 30, 70, (S + tw) / 2 + 30, 136), 33, fill=CYAN)
         d.text(((S - tw) / 2, 80), c["badge"], font=bf, fill=INK)
-    hf, sf, lf = font(800, 92), font(600, 46), font(800, 50)
-    y = 170
+    hs = c.get("hsize", 92)  # optional: smaller headline for long quote cards
+    hf, sf, lf = font(800, hs), font(600, 46), font(800, 50)
+    y = c.get("top", 170)
     for l in [x for part in c["headline"].split("|") for x in wrap(d, part.strip(), hf, S - 160)]:
-        d.text(((S - d.textlength(l, font=hf)) / 2, y), l, font=hf, fill=WHITE); y += 112
+        d.text(((S - d.textlength(l, font=hf)) / 2, y), l, font=hf, fill=WHITE); y += int(hs * 1.22)
     y += 30
     for l in c.get("lines", []):
         x = (S - d.textlength(l, font=lf) - 64) / 2

@@ -1,0 +1,47 @@
+{
+ "out_dir": "../renders/au-q2-clarity",
+ "cards": [
+  {
+   "photo": "../img-ai/au-q2c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "“The clarity and comfort|needed for our purchase.”",
+   "sub": "Matthew S., Google review",
+   "pos": "top",
+   "size": 56
+  },
+  {
+   "cta": true,
+   "headline": "“Very helpful in identifying risks that came with purchasing a property.”",
+   "lines": [],
+   "sub": "Nicholas F., Google review",
+   "size": 58,
+   "bg": "ink",
+   "hsize": 72,
+   "top": 190
+  },
+  {
+   "cta": true,
+   "headline": "“Extremely thorough and professional, especially compared to other companies.”",
+   "lines": [],
+   "sub": "Yiannis K., Google review",
+   "size": 58,
+   "hsize": 72,
+   "top": 190
+  },
+  {
+   "cta": true,
+   "badge": "OUR GUARANTEE",
+   "headline": "Your report the same day we inspect, or your money back.",
+   "lines": [
+    "Rated 4.9 from 500+ Google reviews"
+   ],
+   "sub": "Tap below to check availability",
+   "size": 54,
+   "hsize": 80,
+   "top": 190
+  }
+ ]
+}

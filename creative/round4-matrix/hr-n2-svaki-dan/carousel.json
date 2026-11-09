@@ -1,0 +1,60 @@
+{
+ "out_dir": "../renders/hr-n2-svaki-dan",
+ "cards": [
+  {
+   "photo": "../img-ai/hr-n2c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Susjed kaže|da mu curi?",
+   "sub": "Svaki dan čekanja šteta raste. Kod oboje.",
+   "pos": "bottom",
+   "size": 70
+  },
+  {
+   "photo": "../img-ai/hr-n2c2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Čekati da se osuši?|Skupa greška.",
+   "sub": "Voda ne staje sama.",
+   "pos": "top",
+   "size": 60
+  },
+  {
+   "photo": "../img-ai/hr-n2c3.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Otvaramo samo|gdje je kvar",
+   "sub": "Ne cijelu kupaonicu.",
+   "pos": "bottom",
+   "size": 66
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "badge": "JAMSTVO",
+   "headline": "Ne pronađemo izvor?|Detekciju ne plaćate.",
+   "lines": [
+    "Za aktivno curenje vode",
+    "Otvaramo samo gdje je kvar"
+   ],
+   "sub": "",
+   "size": 60
+  },
+  {
+   "cta": true,
+   "headline": "Zatražite|besplatnu ponudu",
+   "lines": [
+    "Hitno curenje? Dolazimo isti dan.",
+    "25+ godina iskustva",
+    "Google ocjene: sve 5 zvjezdica"
+   ],
+   "sub": "Kratki obrazac"
+  }
+ ]
+}

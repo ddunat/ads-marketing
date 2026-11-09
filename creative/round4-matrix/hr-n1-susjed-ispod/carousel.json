@@ -1,0 +1,60 @@
+{
+ "out_dir": "../renders/hr-n1-susjed-ispod",
+ "cards": [
+  {
+   "photo": "../img-ai/hr-n1c1.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Curi susjedu|ispod vas?",
+   "sub": "Izvor je često u stanu iznad.",
+   "pos": "bottom",
+   "size": 70
+  },
+  {
+   "photo": "../img-ai/hr-n1c2.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Ne razbijajte|kupaonicu naslijepo",
+   "sub": "Prvo pronađemo izvor.",
+   "pos": "top",
+   "size": 62
+  },
+  {
+   "photo": "../img-ai/hr-n1c3.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "headline": "Pronađemo izvor|bez razbijanja pločica",
+   "sub": "Termovizija · akustika · plin za praćenje",
+   "pos": "top",
+   "size": 60
+  },
+  {
+   "cta": true,
+   "bg": "ink",
+   "badge": "JAMSTVO",
+   "headline": "Ne pronađemo izvor?|Detekciju ne plaćate.",
+   "lines": [
+    "Za aktivno curenje vode",
+    "Otvaramo samo gdje je kvar"
+   ],
+   "sub": "",
+   "size": 60
+  },
+  {
+   "cta": true,
+   "headline": "Zatražite|besplatnu ponudu",
+   "lines": [
+    "Hitno curenje? Dolazimo isti dan.",
+    "25+ godina iskustva",
+    "Google ocjene: sve 5 zvjezdica"
+   ],
+   "sub": "Kratki obrazac"
+  }
+ ]
+}

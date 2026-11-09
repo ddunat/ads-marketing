@@ -40,7 +40,7 @@ Source: an Instagram reel David sent on 2026-11-05 ("Why your new ads keep losin
 
 | | Unaware | Problem aware | Solution aware | Product aware | Most aware |
 |---|---|---|---|---|---|
-| Safety (money/defects) | | P1, A5, C6, C7, A4, P4, P3 | C9, C10 | | A2 (auction + guarantee) |
+| Safety (money/defects) | | P1, A5, C6, C7, A4, P4, P3 | C9, C10 | **Q1–Q3 (R4, review proof)** | A2 (auction + guarantee) |
 | Winning | | P2 (investor yield) | C8 (PCI defect list) | | |
 | Comfort (speed, certainty) | | | | | P5 (same-day) |
 | Family | | | | | |
@@ -55,7 +55,7 @@ Source: an Instagram reel David sent on 2026-11-05 ("Why your new ads keep losin
 |---|---|---|---|---|---|
 | Safety (money/damage) | | B2 (water bill), H1 | **A2**, **F1** (no tile breaking) | | |
 | Comfort (home back to normal) | | C2 (mould returns), D1 | **E1** (3 mistakes) | | E3, G1 (what happens after you tap) |
-| Approval (neighbours) | | | | | |
+| Approval (neighbours) | | **N1–N3 (R4, neighbour below)** | | | |
 | Family | | | | | |
 | Winning | | | | | |
 
@@ -69,7 +69,7 @@ These are new cells, not new versions. The weekly run takes them from the top.
 - If a cell needs a fact we don't have, skip it or ask David.
 
 ### AU
-1. **Product aware × Safety: proof.**
+1. ~~**Product aware × Safety: proof.**~~ Built 8–9 Nov as AU Q1–Q3 (ad set 120253333461670220).
    - "4.9 from 529 Google reviews. Here's what they keep saying."
    - Built from real review themes (same-day report, plain-English report), with no reviewer names.
    - David OK'd quoting real Google review snippets (2026-11-05). Quote word for word from the public review, first name or initial only, never a surname, address or job details.
@@ -88,7 +88,7 @@ These are new cells, not new versions. The weekly run takes them from the top.
    - For warm and retargeting audiences.
 
 ### HR
-1. **Problem aware × Approval/Safety: the neighbour below.**
+1. ~~**Problem aware × Approval/Safety: the neighbour below.**~~ Built 8–9 Nov as HR N1–N3 (ad set 120254709983390195).
    - "Curi susjedu ispod vas?" (Is it leaking into the flat below you?)
    - Apartments are common in Croatia, and a leak into a neighbour's flat brings social and money pressure.
    - Offer: we find the source without breaking tiles.
