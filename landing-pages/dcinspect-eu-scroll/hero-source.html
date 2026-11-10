@@ -147,7 +147,7 @@ html,body{margin:0;background:var(--bg)}
 /* scenes */
 #dci .sc{position:absolute;inset:0;opacity:0;visibility:hidden;isolation:isolate;z-index:0}
 #dci .sc.vis{visibility:visible}
-#dci .sc .cam{position:absolute;inset:-2%;will-change:transform;transform-origin:50% 50%;backface-visibility:hidden}
+#dci .sc .cam{position:absolute;inset:0;will-change:transform;transform-origin:50% 50%;backface-visibility:hidden}
 #dci .sc .a,#dci .sc .b{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat}
 #dci .sc .bw{position:absolute;inset:0;overflow:hidden;transform:translate3d(0,-100%,0);will-change:transform;backface-visibility:hidden}
 #dci .sc .b{transform:translate3d(0,100%,0);will-change:transform;backface-visibility:hidden}
@@ -248,6 +248,12 @@ html,body{margin:0;background:var(--bg)}
 #dci .tp .locs li.all{background:var(--grad);border-color:transparent}
 @media (max-width:520px){#dci .tp .locs li{font-size:10.5px;padding:4px 9px}#dci .tp .btns{flex-wrap:nowrap;gap:8px}#dci .tp .btns .btn{min-height:44px;padding:0 14px;font-size:14px;gap:7px}#dci .tp .btns .btn svg{width:17px;height:17px}#dci .tp h1{font-size:calc(34px * var(--k,1))}#dci .tp{gap:9px}}
 #dci .xp.short .tp{gap:10px}#dci .xp.short .tp .how{display:none}#dci .xp.tiny .tp:first-of-type .body{display:none}#dci .xp.short .xp-hint{display:none}
+#dci .xp.mob .sc{bottom:auto;height:var(--imgh)}
+#dci .xp.mob .sc::after{content:"";position:absolute;left:0;right:0;bottom:0;height:20%;background:linear-gradient(180deg,rgba(16,16,20,0),#101014);z-index:2;pointer-events:none}
+#dci .xp.mob .xp-scrim{background:linear-gradient(180deg,rgba(16,16,20,.7) 0%,rgba(16,16,20,0) 76px)}
+#dci .xp.mob .xp-hint{top:auto;bottom:calc(100% - var(--imgh) + 12px)}
+#dci .tp .btns .btn{white-space:nowrap}
+@media (max-width:380px){#dci .tp .btns .btn{padding:0 11px;font-size:13px;gap:6px}#dci .tp .btns .btn svg{width:15px;height:15px}}
 </style>
 <div id="dci">
 
@@ -488,7 +494,7 @@ html,body{margin:0;background:var(--bg)}
   var starts=[],lens=[],T=0, sumMin=0,sumMax=0;
   scenes.forEach(function(s){var l=+s.dataset.len||1.6; starts.push(T); lens.push(l); T+=l; sumMin+=(+s.dataset.min||0); sumMax+=(+s.dataset.max||0);});
   var FADE=0.3;
-  var H=720, W=0, cur=0, target=0, raf=0, lastT=0;
+  var IMGH=0, H=720, W=0, cur=0, target=0, raf=0, lastT=0;
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   var inFrame=(window.self!==window.top);
   var cache=new Map();
@@ -498,14 +504,16 @@ html,body{margin:0;background:var(--bg)}
   var parts=scenes.map(function(s){return {cam:s.querySelector('.cam'),bw:s.querySelector('.bw'),b:s.querySelector('.b'),bar:s.querySelector('.bar'),key:s.dataset.key};});
 
   function fit(){
-    var top=64, bottom=parseFloat(getComputedStyle(panels[0]).bottom)||76, avail=H-top-bottom;
+    var top=IMGH?IMGH-36:64, bottom=parseFloat(getComputedStyle(panels[0]).bottom)||76, avail=H-top-bottom;
     panels.forEach(function(p){ p.style.setProperty('--fit','1'); var h=p.offsetHeight; var k=h>avail?Math.max(0.5,avail/h):1; p.style.setProperty('--fit',k.toFixed(3)); });
   }
   function size(force){
     var w=root.clientWidth||window.innerWidth, vh=window.innerHeight;
-    var h = w<700 ? Math.round(clamp(w*1.85,600,780)) : Math.round(clamp(w*0.56,560,820));
-    if(!inFrame) h=Math.min(h,Math.round(vh*0.94));
-    else if(vh>=420 && vh<h-4) h=vh;           /* host frame is shorter than us: fit it, never scroll twice */
+    /* desktop: the photos' own 16:9 shape so the whole picture shows; phone: photo panel on top, text below */
+    var mob=w<700, imgh=Math.round(w*0.62);
+    var h = mob ? Math.round(clamp(imgh+400,580,800)) : Math.round(clamp(w*0.5625,520,860));
+    if(!inFrame) h=Math.min(h,Math.max(520,Math.round(vh*0.94)));
+    IMGH=mob?imgh:0; xp.style.setProperty('--imgh',imgh+'px'); xp.classList.toggle('mob',mob);
     if(!force && w===W && h===H) return;
     var keep=cur; W=w; H=h;
     xp.style.setProperty('--stage-h',H+'px');
@@ -531,8 +539,8 @@ html,body{margin:0;background:var(--bg)}
       if(!vis) continue;
       if(p.key!=='tally'){
         var k=clamp(u,-0.2,1.05);
-        var sc=1.03+0.11*ease(clamp((k+0.2)/1.25,0,1));
-        var dx=(p.key==='hero'?-1.5:0.8)*clamp(k,0,1), dy=-0.8*clamp(k,0,1);
+        var sc=1+0.06*ease(clamp(k,0,1));
+        var dx=(p.key==='hero'?-0.6:0.4)*clamp(k,0,1), dy=-0.3*clamp(k,0,1);
         setStyle(p.cam,'transform','translate3d('+dx.toFixed(3)+'%,'+dy.toFixed(3)+'%,0) scale('+sc.toFixed(4)+')');
       }
       if(p.bw){
