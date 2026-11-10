@@ -5,3 +5,6 @@
 - `source.html` is the same page with image placeholders (`__IMG_name__`). `walk/` holds the before/after image pairs, `img/` the older single images. `parts/` holds the walkthrough CSS/HTML/JS.
 - Repair costs: edit `data-min` / `data-max` on each `<div class="sc">` scene. Totals recalculate.
 - Costs are placeholder ranges. Replace with real figures before going live. Have a native speaker check the Croatian.
+
+## Hero only
+- `dcinspect-eu-hero-godaddy.html` is just the scroll-through-the-house viewer, to replace the site hero. `hero-source.html` is its editable source.
