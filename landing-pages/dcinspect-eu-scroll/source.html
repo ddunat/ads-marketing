@@ -1,0 +1,700 @@
+<!--
+  DC Building Inspectors — dcinspect.eu scroll section (HR / EN)
+  Paste this whole file into a GoDaddy "HTML" section.
+
+  EASY EDITS
+  - Repair costs: change data-min / data-max on each .cost element (euros). Totals update automatically.
+  - Phone / WhatsApp / Viber: search for 385992080227 and 099 208 0227.
+  - Text: every line has a Croatian <span lang="hr"> and an English <span lang="en"> next to each other.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: a walk down one house, roof to foundations. Each level is a full-width
+   evidence frame (photo + thermal scan) beside its finding and repair cost. */
+:root{
+  color-scheme:dark;
+  --ground:#0C1013;      /* iron-dark ground, slight cold bias */
+  --surface:#131A1F;
+  --surface-2:#1A232A;
+  --line:#25313A;
+  --ink:#ECEFF1;
+  --ink-2:#A6B2BC;
+  --ink-3:#71808C;
+  --hot:#FF6B2C;         /* thermal hot: costs, CTAs */
+  --hot-2:#FFB23F;
+  --cold:#4CB8DA;        /* thermal cold: water */
+  --cold-deep:#5B3FD1;
+  --wa:#25D366;
+  --f-display:'Archivo','Arial Narrow','Helvetica Neue',Arial,sans-serif;
+  --f-body:'IBM Plex Sans','Segoe UI',Roboto,Arial,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;
+}
+html,body{margin:0;background:var(--ground)}
+#dci{background:var(--ground);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#dci *,#dci *::before,#dci *::after{box-sizing:border-box}
+#dci:not(.is-en) [lang="en"]{display:none!important}
+#dci.is-en [lang="hr"]{display:none!important}
+#dci a{color:inherit}
+#dci p{margin:0}
+#dci h1,#dci h2,#dci h3{margin:0;font-family:var(--f-display);text-wrap:balance}
+#dci .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+#dci .mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+
+/* ---------- images (each defined once) ---------- */
+#dci .ph{background-size:cover;background-position:center;background-repeat:no-repeat;background-color:var(--surface-2)}
+#dci .ph-hero{background-image:url(__IMG_hero__)}
+#dci .ph-roof{background-image:url(__IMG_roof__)}
+#dci .ph-pipe{background-image:url(__IMG_pipe__)}
+#dci .ph-damp{background-image:url(__IMG_damp__)}
+#dci .ph-floor{background-image:url(__IMG_floor__)}
+#dci .ph-crack{background-image:url(__IMG_crack__)}
+#dci .ph-drain{background-image:url(__IMG_drain__)}
+#dci .ph-new{background-image:url(__IMG_newbuild__)}
+
+/* ---------- buttons ---------- */
+#dci .btns{display:flex;flex-wrap:wrap;gap:12px}
+#dci .btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:4px;font-family:var(--f-display);font-weight:700;font-size:16px;letter-spacing:.01em;text-decoration:none;border:1px solid transparent;transition:transform .15s ease,background .15s ease,border-color .15s ease}
+#dci .btn:hover{transform:translateY(-1px)}
+#dci .btn:focus-visible{outline:2px solid var(--hot-2);outline-offset:3px}
+#dci .btn svg{width:20px;height:20px;flex:none}
+#dci .btn-hot{background:var(--hot);color:#160700}
+#dci .btn-hot:hover{background:#ff8048}
+#dci .btn-wa{background:transparent;color:var(--ink);border-color:var(--wa)}
+#dci .btn-wa svg{color:var(--wa)}
+#dci .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+#dci .btn-ghost:hover{border-color:var(--ink-3)}
+
+/* ---------- language switch ---------- */
+#dci .lang{position:absolute;top:18px;right:max(16px,env(safe-area-inset-right,0px));z-index:5;display:flex;border:1px solid rgba(236,239,241,.28);border-radius:4px;overflow:hidden;background:rgba(12,16,19,.55);backdrop-filter:blur(6px)}
+#dci .lang button{appearance:none;border:0;background:transparent;color:var(--ink-2);font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;padding:8px 12px;cursor:pointer}
+#dci .lang button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+#dci .lang button:focus-visible{outline:2px solid var(--hot-2);outline-offset:-2px}
+
+/* ---------- hero ---------- */
+#dci .hero{position:relative;min-height:640px;display:flex;align-items:flex-end;isolation:isolate}
+#dci .hero .ph{position:absolute;inset:0;z-index:-2;background-position:62% center;animation:dci-push 18s ease-out both}
+#dci .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,16,19,.94) 0%,rgba(12,16,19,.78) 38%,rgba(12,16,19,.18) 70%,rgba(12,16,19,.35) 100%),linear-gradient(0deg,var(--ground) 0%,rgba(12,16,19,0) 34%)}
+#dci .hero .wrap{width:100%;padding-block:96px 64px}
+#dci .hero-copy{max-width:640px;display:flex;flex-direction:column;gap:22px}
+#dci .eyebrow{color:var(--hot-2)}
+#dci .hero h1{font-weight:850;font-stretch:72%;font-size:clamp(46px,7.4vw,92px);line-height:.92;letter-spacing:-.01em;text-transform:uppercase}
+#dci .hero h1 .l2{display:block;color:var(--hot)}
+#dci .hero .sub{font-size:clamp(17px,1.6vw,19px);color:var(--ink-2);max-width:56ch}
+#dci .trust{display:flex;flex-wrap:wrap;gap:8px 22px;color:var(--ink-2);font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em}
+#dci .trust b{color:var(--hot-2);font-weight:600}
+#dci .cue{display:flex;align-items:center;gap:12px;color:var(--ink-3);margin-top:10px}
+#dci .cue i{display:block;width:1px;height:38px;background:linear-gradient(var(--hot),transparent);animation:dci-drip 1.8s ease-in-out infinite}
+
+/* ---------- route (index of levels) ---------- */
+#dci .route{border-block:1px solid var(--line);background:var(--surface)}
+#dci .route ol{list-style:none;margin:0;padding:18px 0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;counter-reset:lv}
+#dci .route li{counter-increment:lv;display:flex;flex-direction:column;gap:4px;padding-left:12px;border-left:2px solid var(--line);transition:border-color .4s ease}
+#dci .route li.on{border-left-color:var(--hot)}
+#dci .route li::before{content:counter(lv,decimal-leading-zero);font-family:var(--f-mono);font-size:11px;color:var(--ink-3)}
+#dci .route li span{font-family:var(--f-display);font-weight:700;font-size:15px;font-stretch:85%}
+@media (max-width:700px){#dci .hero::before{background:linear-gradient(0deg,var(--ground) 0%,rgba(12,16,19,.88) 45%,rgba(12,16,19,.55) 100%)}#dci .hero .ph{background-position:70% top}}
+@media (max-width:760px){#dci .route ol{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:14px}}
+
+/* ---------- section intro ---------- */
+#dci .intro{padding-block:88px 24px}
+#dci .intro h2{font-weight:800;font-stretch:78%;font-size:clamp(34px,4.6vw,56px);line-height:1;text-transform:uppercase;max-width:18ch}
+#dci .intro p{margin-top:18px;color:var(--ink-2);max-width:60ch}
+
+/* ---------- defect blocks ---------- */
+#dci .defect{padding-block:56px}
+#dci .defect .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:48px;align-items:center}
+#dci .defect:nth-of-type(even) .frame{order:2}
+@media (max-width:900px){#dci .defect .wrap{grid-template-columns:minmax(0,1fr);gap:26px}#dci .defect:nth-of-type(even) .frame{order:0}}
+
+#dci .frame{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:3px;overflow:hidden;border:1px solid var(--line);background:var(--surface-2)}
+#dci .frame .ph{position:absolute;inset:0;transform:scale(1.07);filter:saturate(.75) brightness(.8);transition:transform 1.6s cubic-bezier(.2,.7,.2,1),filter 1.2s ease}
+#dci .frame::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(160deg,var(--cold-deep) 0%,var(--cold) 30%,#F2D23B 62%,var(--hot) 82%,#B3122E 100%);mix-blend-mode:color;opacity:.55;transition:opacity 1.4s ease .9s}
+#dci .frame .scan{position:absolute;left:0;right:0;top:0;height:22%;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(255,107,44,0) 0%,rgba(255,178,63,.28) 70%,rgba(255,240,200,.9) 100%);transform:translateY(-110%);opacity:0}
+#dci .frame .scan::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--hot-2);box-shadow:0 0 18px 2px var(--hot)}
+#dci .frame .hud{position:absolute;z-index:3;left:0;top:0;right:0;padding:12px 14px 22px;background:linear-gradient(180deg,rgba(8,11,13,.78),rgba(8,11,13,0));display:flex;justify-content:space-between;gap:10px;color:#fff;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.8)}
+#dci .frame .hud .rec::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--hot);margin-right:7px;vertical-align:1px;animation:dci-blink 1.2s steps(2) infinite}
+#dci .frame .read{position:absolute;z-index:3;right:14px;bottom:12px;padding:7px 10px;background:rgba(12,16,19,.78);border:1px solid rgba(255,178,63,.55);border-radius:2px;font-family:var(--f-mono);font-size:13px;font-weight:600;color:var(--hot-2);letter-spacing:.04em;font-variant-numeric:tabular-nums}
+#dci .frame.in .ph{transform:scale(1);filter:none}
+#dci .frame.in::before{opacity:0}
+#dci .frame.in .scan{animation:dci-scan 1.5s cubic-bezier(.45,.05,.4,1) .15s 1 both}
+
+#dci .find{display:flex;flex-direction:column;gap:18px;min-width:0}
+#dci .find .lvl{color:var(--cold)}
+#dci .find h3{font-weight:800;font-stretch:80%;font-size:clamp(30px,3.4vw,42px);line-height:1.02;text-transform:uppercase}
+#dci .find .body{color:var(--ink-2)}
+#dci .signs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+#dci .signs li{position:relative;padding-left:22px;font-size:15.5px;color:var(--ink)}
+#dci .signs li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--hot)}
+#dci .cost{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:6px 16px;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--hot);border-radius:3px}
+#dci .cost .k{color:var(--ink-3);font-size:11px}
+#dci .cost .v{grid-column:1/-1;font-family:var(--f-display);font-weight:800;font-stretch:80%;font-size:clamp(28px,3vw,36px);line-height:1;color:var(--hot);font-variant-numeric:tabular-nums}
+#dci .cost .run{grid-column:1/-1;display:flex;justify-content:space-between;gap:10px;padding-top:10px;margin-top:4px;border-top:1px dashed var(--line);font-family:var(--f-mono);font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+#dci .cost .run b{color:var(--ink);font-weight:600}
+#dci .how{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--ink-2)}
+#dci .how svg{flex:none;width:18px;height:18px;color:var(--cold);margin-top:3px}
+
+/* ---------- tally ---------- */
+#dci .tally{padding-block:72px}
+#dci .tally .box{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:0;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+#dci .tally .bad,#dci .tally .good{padding:34px clamp(20px,3vw,40px);display:flex;flex-direction:column;gap:10px}
+#dci .tally .bad{background:linear-gradient(135deg,rgba(255,107,44,.16),rgba(255,107,44,.03));}
+#dci .tally .good{background:var(--surface);border-left:1px solid var(--line)}
+#dci .tally .big{font-family:var(--f-display);font-weight:850;font-stretch:72%;font-size:clamp(44px,6.4vw,84px);line-height:.95;font-variant-numeric:tabular-nums}
+#dci .tally .bad .big{color:var(--hot)}
+#dci .tally .good .big{color:var(--cold)}
+#dci .tally .lbl{color:var(--ink-2)}
+#dci .tally .note{font-size:14px;color:var(--ink-3);max-width:46ch}
+@media (max-width:760px){#dci .tally .box{grid-template-columns:minmax(0,1fr)}#dci .tally .good{border-left:0;border-top:1px solid var(--line)}}
+
+/* ---------- new vs old ---------- */
+#dci .nvo{padding-block:88px 72px;background:linear-gradient(180deg,var(--ground),var(--surface) 30%,var(--ground))}
+#dci .nvo .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 48px;align-items:end;margin-bottom:40px}
+#dci .nvo h2{font-weight:850;font-stretch:72%;font-size:clamp(40px,6vw,76px);line-height:.94;text-transform:uppercase}
+#dci .nvo h2 span{color:var(--hot)}
+#dci .nvo .head p{color:var(--ink-2)}
+#dci .pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+#dci .card{position:relative;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--surface)}
+#dci .card .pic{position:relative;aspect-ratio:16/10;max-width:100%}
+#dci .card .pic .ph{position:absolute;inset:0}
+#dci .card .tag{position:absolute;left:14px;top:14px;z-index:2;padding:6px 10px;border-radius:2px;background:rgba(12,16,19,.82);font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+#dci .card .tag em{font-style:normal;color:var(--hot-2)}
+#dci .pin{position:absolute;z-index:2;transform:translate(-50%,-50%)}
+#dci .pin i{display:block;width:16px;height:16px;border-radius:50%;background:var(--hot);border:2px solid #fff;box-shadow:0 0 0 0 rgba(255,107,44,.7);animation:dci-ping 2.4s ease-out infinite}
+#dci .pin span{position:absolute;left:22px;top:50%;transform:translateY(-50%);white-space:nowrap;padding:4px 8px;background:rgba(12,16,19,.86);border-radius:2px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.04em;color:#fff}
+#dci .pin.left span{left:auto;right:22px}
+#dci .card ul{list-style:none;margin:0;padding:20px 22px 24px;display:grid;gap:8px}
+#dci .card li{position:relative;padding-left:22px;font-size:15.5px;color:var(--ink-2)}
+#dci .card li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--hot)}
+#dci .card h3{padding:20px 22px 0;font-weight:800;font-stretch:82%;font-size:22px;text-transform:uppercase}
+@media (max-width:860px){#dci .nvo .head,#dci .pair{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){#dci .pin span{font-size:10.5px}}
+
+/* ---------- services ---------- */
+#dci .svc{padding-block:72px}
+#dci .svc .head h2{font-weight:800;font-stretch:78%;font-size:clamp(34px,4.6vw,56px);line-height:1;text-transform:uppercase}
+#dci .svc .head p{margin-top:14px;color:var(--ink-2);max-width:60ch}
+#dci .offers{margin-top:36px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+#dci .offer{display:flex;flex-direction:column;gap:16px;padding:30px clamp(20px,2.6vw,34px);border:1px solid var(--line);border-radius:3px;background:var(--surface)}
+#dci .offer.leak{border-top:3px solid var(--cold)}
+#dci .offer.buy{border-top:3px solid var(--hot)}
+#dci .offer .q{color:var(--ink-3)}
+#dci .offer h3{font-weight:800;font-stretch:80%;font-size:clamp(26px,2.6vw,32px);line-height:1.05;text-transform:uppercase}
+#dci .offer .price{font-family:var(--f-mono);font-size:15px;color:var(--ink);font-variant-numeric:tabular-nums}
+#dci .offer .price b{font-family:var(--f-display);font-weight:800;font-stretch:80%;font-size:30px;margin-right:6px}
+#dci .offer.leak .price b{color:var(--cold)}
+#dci .offer.buy .price b{color:var(--hot)}
+#dci .offer ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;flex:1}
+#dci .offer li{position:relative;padding-left:26px;font-size:15.5px;color:var(--ink-2)}
+#dci .offer li::before{content:"";position:absolute;left:2px;top:.42em;width:12px;height:7px;border-left:2px solid var(--ink-3);border-bottom:2px solid var(--ink-3);transform:rotate(-45deg)}
+@media (max-width:860px){#dci .offers{grid-template-columns:minmax(0,1fr)}}
+
+#dci .proof{margin-top:28px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:3px;overflow:hidden}
+#dci .proof div{padding:18px 20px;display:flex;flex-direction:column;gap:4px;border-left:1px solid var(--line)}
+#dci .proof div:first-child{border-left:0}
+#dci .proof b{font-family:var(--f-display);font-weight:800;font-stretch:80%;font-size:24px;line-height:1.05}
+#dci .proof span{font-size:13.5px;color:var(--ink-3)}
+@media (max-width:860px){#dci .proof{grid-template-columns:repeat(2,minmax(0,1fr))}#dci .proof div:nth-child(3){border-left:0}#dci .proof div:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* ---------- final CTA ---------- */
+#dci .final{position:relative;padding-block:96px;isolation:isolate;overflow:hidden;border-top:1px solid var(--line)}
+#dci .final::before{content:"";position:absolute;inset:-20% -10%;z-index:-1;background:radial-gradient(60% 70% at 85% 30%,rgba(255,107,44,.22),transparent 60%),radial-gradient(50% 60% at 10% 90%,rgba(76,184,218,.16),transparent 60%)}
+#dci .final .wrap{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+#dci .final h2{font-weight:850;font-stretch:72%;font-size:clamp(44px,7vw,96px);line-height:.92;text-transform:uppercase;max-width:14ch}
+#dci .final p{color:var(--ink-2);max-width:56ch}
+#dci .num{font-family:var(--f-mono);font-size:15px;color:var(--ink-2);user-select:all}
+#dci .num b{color:var(--ink);font-weight:600}
+#dci .fine{padding-block:22px 30px;border-top:1px solid var(--line);color:var(--ink-3);font-size:12.5px}
+
+/* ---------- motion ---------- */
+@keyframes dci-scan{0%{transform:translateY(-110%);opacity:1}88%{opacity:1}100%{transform:translateY(560%);opacity:0}}
+@keyframes dci-push{from{transform:scale(1.08)}to{transform:scale(1)}}
+@keyframes dci-drip{0%{transform:scaleY(.2);transform-origin:top;opacity:0}40%{opacity:1}100%{transform:scaleY(1);transform-origin:top;opacity:0}}
+@keyframes dci-blink{to{opacity:0}}
+@keyframes dci-ping{0%{box-shadow:0 0 0 0 rgba(255,107,44,.7)}70%{box-shadow:0 0 0 14px rgba(255,107,44,0)}100%{box-shadow:0 0 0 0 rgba(255,107,44,0)}}
+@media (prefers-reduced-motion:reduce){
+  #dci *,#dci *::before,#dci *::after{animation:none!important;transition:none!important}
+  #dci .frame .ph{transform:none;filter:none}
+  #dci .frame::before{opacity:0}
+}
+</style>
+
+<div id="dci">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="ph ph-hero" role="img" aria-label="Obiteljska kuća u predgrađu Zagreba u sumrak"></div>
+    <div class="lang" role="group" aria-label="Jezik / Language">
+      <button type="button" data-lang="hr" aria-pressed="true">HR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow mono">
+          <span lang="hr">Detekcija curenja · Pregled prije kupnje · Zagreb i Dalmacija</span>
+          <span lang="en">Leak detection · Pre-purchase inspections · Zagreb &amp; Dalmatia</span>
+        </p>
+        <h1>
+          <span lang="hr">Kuća izgleda savršeno.<span class="l2">Pitanje je što skriva.</span></span>
+          <span lang="en">The house looks perfect.<span class="l2">The question is what it hides.</span></span>
+        </h1>
+        <p class="sub">
+          <span lang="hr">Prokišnjavanje krova, vlaga u zidovima, puknute cijevi i pukotine u konstrukciji rijetko se vide na razgledavanju. Mi ih pronalazimo termalnom kamerom i mjernom opremom, prije nego što potpišete ili prije nego što šteta naraste.</span>
+          <span lang="en">Leaking roofs, damp walls, burst pipes and structural cracks rarely show at a viewing. We find them with a thermal camera and moisture meters, before you sign or before the damage grows.</span>
+        </p>
+        <div class="btns">
+          <a class="btn btn-hot" href="tel:+385992080227" target="_top">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            <span lang="hr">Nazovite 099 208 0227</span><span lang="en">Call 099 208 0227</span>
+          </a>
+          <a class="btn btn-wa" href="https://wa.me/385992080227" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2m4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.2-.3-.2-.6-.4"/></svg>
+            WhatsApp
+          </a>
+        </div>
+        <p class="trust">
+          <span><b>5,0 ★</b> <span lang="hr">na Googleu</span><span lang="en">on Google</span></span>
+          <span lang="hr">Pisani izvještaj u 24 h</span><span lang="en">Written report in 24 h</span>
+          <span lang="hr">Bez rušenja</span><span lang="en">No demolition</span>
+        </p>
+        <p class="cue mono"><i aria-hidden="true"></i>
+          <span lang="hr">Skrolajte kroz kuću, od krova do temelja</span>
+          <span lang="en">Scroll through the house, roof to foundations</span>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ROUTE -->
+  <nav class="route" aria-label="Razine kuće">
+    <div class="wrap">
+      <ol>
+        <li data-route="roof"><span lang="hr">Krov</span><span lang="en">Roof</span></li>
+        <li data-route="pipe"><span lang="hr">Zidovi</span><span lang="en">Walls</span></li>
+        <li data-route="damp"><span lang="hr">Prizemlje</span><span lang="en">Ground floor</span></li>
+        <li data-route="floor"><span lang="hr">Podovi</span><span lang="en">Floors</span></li>
+        <li data-route="crack"><span lang="hr">Konstrukcija</span><span lang="en">Structure</span></li>
+        <li data-route="drain"><span lang="hr">Temelji</span><span lang="en">Foundations</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="intro">
+    <div class="wrap">
+      <h2>
+        <span lang="hr">Šest nedostataka koje najčešće pronalazimo</span>
+        <span lang="en">Six defects we find most often</span>
+      </h2>
+      <p>
+        <span lang="hr">Na svakoj razini kuće pokazujemo što tražimo, kako izgleda kad ga nađemo i koliko košta ako ga nitko ne nađe na vrijeme.</span>
+        <span lang="en">At every level of the house we show what we look for, what it looks like when we find it, and what it costs when nobody finds it in time.</span>
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <!-- 01 ROOF -->
+    <section class="defect" data-defect="roof">
+      <div class="wrap">
+        <figure class="frame" style="margin:0">
+          <div class="ph ph-roof" role="img" aria-label="Ravni krov s lokvom vode i oštećenom membranom, mrlja na stropu ispod"></div>
+          <div class="scan" aria-hidden="true"></div>
+          <div class="hud" aria-hidden="true"><span class="rec">01 · <span lang="hr">Krov</span><span lang="en">Roof</span></span><span>IR · 320×240</span></div>
+          <div class="read"><span lang="hr">Stajaća voda 4 cm</span><span lang="en">Ponding 4 cm</span></div>
+        </figure>
+        <div class="find">
+          <p class="lvl mono">01 / 06 · <span lang="hr">Ravni krov i terasa</span><span lang="en">Flat roof &amp; terrace</span></p>
+          <h3><span lang="hr">Ravni krov koji prokišnjava</span><span lang="en">A leaking flat roof</span></h3>
+          <p class="body">
+            <span lang="hr">Ravni krovovi i krovne terase na kućama iz 70-ih i 80-ih imaju hidroizolaciju staru 30 i više godina. Voda stoji, membrana puca uz atiku, a mrlja na stropu pojavi se tek kad je ploča već natopljena.</span>
+            <span lang="en">Flat roofs and roof terraces on houses from the 70s and 80s carry waterproofing that is 30 or more years old. Water ponds, the membrane splits at the parapet, and the ceiling stain only appears once the slab is already soaked.</span>
+          </p>
+          <ul class="signs">
+            <li><span lang="hr">Lokve koje stoje danima nakon kiše</span><span lang="en">Puddles that sit for days after rain</span></li>
+            <li><span lang="hr">Ispucala ili napuhnuta membrana uz rubove</span><span lang="en">Cracked or blistered membrane along the edges</span></li>
+            <li><span lang="hr">Mrlje i ljuštenje boje na stropu zadnjeg kata</span><span lang="en">Stains and peeling paint on the top-floor ceiling</span></li>
+          </ul>
+          <div class="cost" data-min="4000" data-max="15000">
+            <span class="k mono"><span lang="hr">Sanacija ako se ne otkrije na vrijeme</span><span lang="en">Repair if not caught in time</span></span>
+            <span class="v">€4.000 – 15.000</span>
+            <span class="run"><span lang="hr">Zbroj do sada</span><span lang="en">Running total</span><b class="sum">€4.000 – 15.000</b></span>
+          </div>
+          <p class="how"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M3 7V4h3M21 7V4h-3M3 17v3h3M21 17v3h-3"/></svg>
+            <span><span lang="hr">Termografija stropa i krova, mjerenje vlage ploče.</span><span lang="en">Thermal imaging of ceiling and roof, slab moisture readings.</span></span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 PIPE -->
+    <section class="defect" data-defect="pipe">
+      <div class="wrap">
+        <figure class="frame" style="margin:0">
+          <div class="ph ph-pipe" role="img" aria-label="Zid s pločicama i termalna snimka hladnog traga vode iza pločica"></div>
+          <div class="scan" aria-hidden="true"></div>
+          <div class="hud" aria-hidden="true"><span class="rec">02 · <span lang="hr">Zidovi</span><span lang="en">Walls</span></span><span>IR · 320×240</span></div>
+          <div class="read">ΔT −4,8 °C</div>
+        </figure>
+        <div class="find">
+          <p class="lvl mono">02 / 06 · <span lang="hr">Kupaonica i instalacije</span><span lang="en">Bathroom &amp; plumbing</span></p>
+          <h3><span lang="hr">Puknuta cijev u zidu</span><span lang="en">A burst pipe inside the wall</span></h3>
+          <p class="body">
+            <span lang="hr">Pločice izgledaju netaknuto, ali cijev iza njih curi mjesecima. Račun za vodu raste, fuge tamne, a vlaga putuje kroz zid u susjednu prostoriju ili u stan ispod.</span>
+            <span lang="en">The tiles look untouched, but the pipe behind them has been leaking for months. The water bill climbs, the grout darkens, and moisture travels through the wall into the next room or the flat below.</span>
+          </p>
+          <ul class="signs">
+            <li><span lang="hr">Neobjašnjivo visok račun za vodu</span><span lang="en">An unexplained jump in the water bill</span></li>
+            <li><span lang="hr">Tamne fuge i odignute pločice</span><span lang="en">Dark grout lines and lifting tiles</span></li>
+            <li><span lang="hr">Vodomjer se vrti kad je sve zatvoreno</span><span lang="en">The water meter turns with every tap closed</span></li>
+          </ul>
+          <div class="cost" data-min="2500" data-max="8000">
+            <span class="k mono"><span lang="hr">Sanacija ako se ne otkrije na vrijeme</span><span lang="en">Repair if not caught in time</span></span>
+            <span class="v">€2.500 – 8.000</span>
+            <span class="run"><span lang="hr">Zbroj do sada</span><span lang="en">Running total</span><b class="sum">€6.500 – 23.000</b></span>
+          </div>
+          <p class="how"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M3 7V4h3M21 7V4h-3M3 17v3h3M21 17v3h-3"/></svg>
+            <span><span lang="hr">Termalna kamera, test tlaka i akustična detekcija. Točno mjesto curenja, bez razbijanja pločica.</span><span lang="en">Thermal camera, pressure test and acoustic detection. The exact leak point, without breaking tiles.</span></span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 DAMP -->
+    <section class="defect" data-defect="damp">
+      <div class="wrap">
+        <figure class="frame" style="margin:0">
+          <div class="ph ph-damp" role="img" aria-label="Kapilarna vlaga pri dnu zida, soli i oštećena žbuka, mjerač vlage"></div>
+          <div class="scan" aria-hidden="true"></div>
+          <div class="hud" aria-hidden="true"><span class="rec">03 · <span lang="hr">Prizemlje</span><span lang="en">Ground floor</span></span><span>MC · %WME</span></div>
+          <div class="read"><span lang="hr">Vlažnost zida 24 %</span><span lang="en">Wall moisture 24%</span></div>
+        </figure>
+        <div class="find">
+          <p class="lvl mono">03 / 06 · <span lang="hr">Zidovi prizemlja</span><span lang="en">Ground-floor walls</span></p>
+          <h3><span lang="hr">Kapilarna vlaga</span><span lang="en">Rising damp</span></h3>
+          <p class="body">
+            <span lang="hr">Starije kuće od kamena i opeke često nemaju horizontalnu hidroizolaciju. Vlaga se iz tla diže kroz zid, nosi soli koje razaraju žbuku i stvara plijesan iza namještaja.</span>
+            <span lang="en">Older stone and brick houses often have no damp-proof course. Moisture rises from the ground through the wall, carrying salts that break down the plaster and growing mould behind the furniture.</span>
+          </p>
+          <ul class="signs">
+            <li><span lang="hr">Valovita linija vlage pri dnu zida</span><span lang="en">A wavy tide mark low on the wall</span></li>
+            <li><span lang="hr">Bijele soli i žbuka koja se mrvi</span><span lang="en">White salts and crumbling plaster</span></li>
+            <li><span lang="hr">Miris vlage i plijesan u kutovima</span><span lang="en">A musty smell and mould in the corners</span></li>
+          </ul>
+          <div class="cost" data-min="3000" data-max="12000">
+            <span class="k mono"><span lang="hr">Sanacija ako se ne otkrije na vrijeme</span><span lang="en">Repair if not caught in time</span></span>
+            <span class="v">€3.000 – 12.000</span>
+            <span class="run"><span lang="hr">Zbroj do sada</span><span lang="en">Running total</span><b class="sum">€9.500 – 35.000</b></span>
+          </div>
+          <p class="how"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M3 7V4h3M21 7V4h-3M3 17v3h3M21 17v3h-3"/></svg>
+            <span><span lang="hr">Mjerenje vlage po visini zida i termografija. Razlikujemo kapilarnu vlagu od curenja i kondenzacije.</span><span lang="en">Moisture readings up the wall and thermal imaging. We tell rising damp apart from leaks and condensation.</span></span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 FLOOR -->
+    <section class="defect" data-defect="floor">
+      <div class="wrap">
+        <figure class="frame" style="margin:0">
+          <div class="ph ph-floor" role="img" aria-label="Parket koji se spušta prema zidu, libela i laserska linija pokazuju odstupanje"></div>
+          <div class="scan" aria-hidden="true"></div>
+          <div class="hud" aria-hidden="true"><span class="rec">04 · <span lang="hr">Podovi</span><span lang="en">Floors</span></span><span>LASER · ±1 mm</span></div>
+          <div class="read"><span lang="hr">Odstupanje 18 mm / 2 m</span><span lang="en">18 mm out over 2 m</span></div>
+        </figure>
+        <div class="find">
+          <p class="lvl mono">04 / 06 · <span lang="hr">Podovi i ploča</span><span lang="en">Floors &amp; slab</span></p>
+          <h3><span lang="hr">Podovi koji nisu u ravnini</span><span lang="en">Floors that aren't level</span></h3>
+          <p class="body">
+            <span lang="hr">Parket koji se spušta prema zidu, vrata koja više ne zatvaraju i pukotine u pločicama znak su slijeganja, oštećene ploče ili lošeg estriha. To se ne popravlja novim podom.</span>
+            <span lang="en">Parquet that slopes toward a wall, doors that no longer close and cracked tiles point to settlement, a damaged slab or failing screed. A new floor won't fix it.</span>
+          </p>
+          <ul class="signs">
+            <li><span lang="hr">Vrata se sama otvaraju ili zapinju</span><span lang="en">Doors swing open by themselves or stick</span></li>
+            <li><span lang="hr">Razmak ispod lajsni</span><span lang="en">A gap opening under the skirting</span></li>
+            <li><span lang="hr">Pucanje pločica i odizanje parketa</span><span lang="en">Cracking tiles and lifting parquet</span></li>
+          </ul>
+          <div class="cost" data-min="3000" data-max="15000">
+            <span class="k mono"><span lang="hr">Sanacija ako se ne otkrije na vrijeme</span><span lang="en">Repair if not caught in time</span></span>
+            <span class="v">€3.000 – 15.000</span>
+            <span class="run"><span lang="hr">Zbroj do sada</span><span lang="en">Running total</span><b class="sum">€12.500 – 50.000</b></span>
+          </div>
+          <p class="how"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M3 7V4h3M21 7V4h-3M3 17v3h3M21 17v3h-3"/></svg>
+            <span><span lang="hr">Laserska nivelacija i mjerenje odstupanja po prostorijama, uz procjenu uzroka.</span><span lang="en">Laser levelling and room-by-room deviation readings, with an assessment of the cause.</span></span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 CRACK -->
+    <section class="defect" data-defect="crack">
+      <div class="wrap">
+        <figure class="frame" style="margin:0">
+          <div class="ph ph-crack" role="img" aria-label="Kosa pukotina na fasadi od kuta prozora, mjerna kartica za širinu pukotine"></div>
+          <div class="scan" aria-hidden="true"></div>
+          <div class="hud" aria-hidden="true"><span class="rec">05 · <span lang="hr">Konstrukcija</span><span lang="en">Structure</span></span><span>GAUGE · mm</span></div>
+          <div class="read"><span lang="hr">Pukotina 3,5 mm</span><span lang="en">Crack 3.5 mm</span></div>
+        </figure>
+        <div class="find">
+          <p class="lvl mono">05 / 06 · <span lang="hr">Nosivi zidovi i fasada</span><span lang="en">Load-bearing walls &amp; facade</span></p>
+          <h3><span lang="hr">Konstrukcijske pukotine</span><span lang="en">Structural cracks</span></h3>
+          <p class="body">
+            <span lang="hr">Kosa pukotina koja kreće iz kuta prozora nije estetski problem. Nakon potresa u Zagrebu i Petrinji mnoge kuće imaju oštećenja koja su samo prebojana. Prije kupnje treba znati je li pukotina stara, aktivna ili opasna.</span>
+            <span lang="en">A diagonal crack running from a window corner is not cosmetic. After the Zagreb and Petrinja earthquakes, many houses carry damage that has simply been painted over. Before you buy, you need to know whether a crack is old, active or dangerous.</span>
+          </p>
+          <ul class="signs">
+            <li><span lang="hr">Kose ili stepenaste pukotine od kutova otvora</span><span lang="en">Diagonal or stepped cracks from window and door corners</span></li>
+            <li><span lang="hr">Pukotine šire od 2 mm</span><span lang="en">Cracks wider than 2 mm</span></li>
+            <li><span lang="hr">Svježe prebojani dijelovi fasade</span><span lang="en">Freshly repainted patches on the facade</span></li>
+          </ul>
+          <div class="cost" data-min="5000" data-max="50000">
+            <span class="k mono"><span lang="hr">Sanacija ako se ne otkrije na vrijeme</span><span lang="en">Repair if not caught in time</span></span>
+            <span class="v">€5.000 – 50.000</span>
+            <span class="run"><span lang="hr">Zbroj do sada</span><span lang="en">Running total</span><b class="sum">€17.500 – 100.000</b></span>
+          </div>
+          <p class="how"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M3 7V4h3M21 7V4h-3M3 17v3h3M21 17v3h-3"/></svg>
+            <span><span lang="hr">Mjerenje i dokumentiranje pukotina, procjena uzroka i preporuka statičara kad je potrebno.</span><span lang="en">Crack measurement and documentation, an assessment of the cause, and a referral to a structural engineer when needed.</span></span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 DRAIN -->
+    <section class="defect" data-defect="drain">
+      <div class="wrap">
+        <figure class="frame" style="margin:0">
+          <div class="ph ph-drain" role="img" aria-label="Zgnječena odvodna cijev uz temelj kuće iz koje curi voda"></div>
+          <div class="scan" aria-hidden="true"></div>
+          <div class="hud" aria-hidden="true"><span class="rec">06 · <span lang="hr">Temelji</span><span lang="en">Foundations</span></span><span>MC · %WME</span></div>
+          <div class="read"><span lang="hr">Vlažnost temelja 29 %</span><span lang="en">Footing moisture 29%</span></div>
+        </figure>
+        <div class="find">
+          <p class="lvl mono">06 / 06 · <span lang="hr">Odvodnja ispod zemlje</span><span lang="en">Below-ground drainage</span></p>
+          <h3><span lang="hr">Zgnječene odvodne cijevi</span><span lang="en">Crushed drain pipes</span></h3>
+          <p class="body">
+            <span lang="hr">Oborinska odvodnja ispod zemlje pukne od korijenja, slijeganja ili teških vozila. Svaka kiša tada ide ravno u temelje: vlažan podrum, pukotine i slijeganje kuće.</span>
+            <span lang="en">Underground stormwater drains crack from tree roots, settlement or heavy vehicles. Every rainfall then goes straight into the foundations: a damp basement, cracks and a settling house.</span>
+          </p>
+          <ul class="signs">
+            <li><span lang="hr">Voda se zadržava uz temelje nakon kiše</span><span lang="en">Water pooling along the footings after rain</span></li>
+            <li><span lang="hr">Vlažan podrum ili mrlje pri dnu fasade</span><span lang="en">A damp basement or stains low on the facade</span></li>
+            <li><span lang="hr">Oluk koji se prelijeva ili odvod koji grglja</span><span lang="en">Overflowing gutters or gurgling drains</span></li>
+          </ul>
+          <div class="cost" data-min="3000" data-max="10000">
+            <span class="k mono"><span lang="hr">Sanacija ako se ne otkrije na vrijeme</span><span lang="en">Repair if not caught in time</span></span>
+            <span class="v">€3.000 – 10.000</span>
+            <span class="run"><span lang="hr">Zbroj do sada</span><span lang="en">Running total</span><b class="sum">€20.500 – 110.000</b></span>
+          </div>
+          <p class="how"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M3 7V4h3M21 7V4h-3M3 17v3h3M21 17v3h-3"/></svg>
+            <span><span lang="hr">Pregled odvodnje i oluka, mjerenje vlage temelja i preporuka za snimanje kamerom.</span><span lang="en">Drainage and gutter inspection, footing moisture readings and a recommendation for a drain camera survey.</span></span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- TALLY -->
+  <section class="tally">
+    <div class="wrap">
+      <div class="box">
+        <div class="bad">
+          <p class="mono lbl"><span lang="hr">Ukupno, ako nitko ništa ne pronađe</span><span lang="en">Total, if nobody finds anything</span></p>
+          <p class="big" id="dci-total">€20.500 – 110.000</p>
+          <p class="note"><span lang="hr">Zbroj šest nedostataka iznad. Jedan je dovoljan da kupnja ili renovacija postane noćna mora.</span><span lang="en">The six defects above, added up. One of them is enough to turn a purchase or a renovation into a nightmare.</span></p>
+        </div>
+        <div class="good">
+          <p class="mono lbl"><span lang="hr">Pregled s termalnom kamerom</span><span lang="en">Inspection with a thermal camera</span></p>
+          <p class="big"><span lang="hr">od 280 €</span><span lang="en">from €280</span></p>
+          <p class="note"><span lang="hr">Pisani izvještaj s fotografijama i termogramima u 24 sata.</span><span lang="en">A written report with photos and thermal images within 24 hours.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW VS OLD -->
+  <section class="nvo">
+    <div class="wrap">
+      <div class="head">
+        <h2><span lang="hr">Nova gradnja <span>nije jamstvo.</span></span><span lang="en">A new build <span>is no guarantee.</span></span></h2>
+        <p>
+          <span lang="hr">Novi stan ili kuća dolaze s garancijom izvođača, ali ona vrijedi samo ako nedostatke prijavite na vrijeme i s dokazima. Na novogradnjama redovito nalazimo ista curenja i pukotine kao na kućama starima 40 godina.</span>
+          <span lang="en">A new apartment or house comes with the builder's warranty, but it only helps if you report defects in time and with evidence. On new builds we regularly find the same leaks and cracks as on 40-year-old houses.</span>
+        </p>
+      </div>
+      <div class="pair">
+        <article class="card">
+          <div class="pic">
+            <div class="ph ph-new" role="img" aria-label="Nova moderna kuća na obali s terasom i bazenom"></div>
+            <p class="tag mono"><em>●</em> <span lang="hr">Nova gradnja · 2026.</span><span lang="en">New build · 2026</span></p>
+            <div class="pin left" style="left:79%;top:47%"><i></i><span lang="hr">Spoj terase i fasade</span><span lang="en">Terrace-to-wall junction</span></div>
+            <div class="pin left" style="left:91%;top:27%"><i></i><span lang="hr">Pukotina uz prozor</span><span lang="en">Crack at window corner</span></div>
+            <div class="pin" style="left:63%;top:78%"><i></i><span lang="hr">Terasa bez pada</span><span lang="en">Terrace with no fall</span></div>
+          </div>
+          <h3><span lang="hr">Što nalazimo na novogradnji</span><span lang="en">What we find on new builds</span></h3>
+          <ul>
+            <li><span lang="hr">Tuš i kupaonica bez ispravne hidroizolacije</span><span lang="en">Showers and bathrooms without proper waterproofing</span></li>
+            <li><span lang="hr">Terase i balkoni bez pada prema odvodu</span><span lang="en">Terraces and balconies with no fall to the drain</span></li>
+            <li><span lang="hr">Pukotine u estrihu i fasadi već u prvoj godini</span><span lang="en">Cracked screed and render within the first year</span></li>
+            <li><span lang="hr">Toplinski mostovi i kondenzacija uz prozore</span><span lang="en">Thermal bridges and condensation around windows</span></li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="pic">
+            <div class="ph ph-hero" role="img" aria-label="Starija obiteljska kuća u Zagrebu"></div>
+            <p class="tag mono"><em>●</em> <span lang="hr">Postojeća kuća · 1984.</span><span lang="en">Established house · 1984</span></p>
+            <div class="pin left" style="left:74%;top:22%"><i></i><span lang="hr">Krov star 40 godina</span><span lang="en">40-year-old roof</span></div>
+            <div class="pin left" style="left:83%;top:57%"><i></i><span lang="hr">Pukotina ispod prozora</span><span lang="en">Crack under window</span></div>
+            <div class="pin" style="left:60%;top:82%"><i></i><span lang="hr">Vlaga u podnožju zida</span><span lang="en">Damp at the wall base</span></div>
+          </div>
+          <h3><span lang="hr">Što nalazimo na starijoj kući</span><span lang="en">What we find on older houses</span></h3>
+          <ul>
+            <li><span lang="hr">Dotrajala hidroizolacija ravnog krova</span><span lang="en">Worn-out flat roof waterproofing</span></li>
+            <li><span lang="hr">Kapilarna vlaga i plijesan u prizemlju</span><span lang="en">Rising damp and mould on the ground floor</span></li>
+            <li><span lang="hr">Stare cijevi koje cure u zidu i podu</span><span lang="en">Old pipes leaking inside walls and floors</span></li>
+            <li><span lang="hr">Pukotine nakon potresa, prebojane prije prodaje</span><span lang="en">Earthquake cracks painted over before the sale</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="svc">
+    <div class="wrap">
+      <div class="head">
+        <h2><span lang="hr">Dvije usluge, jedan cilj</span><span lang="en">Two services, one goal</span></h2>
+        <p><span lang="hr">Da znate točno što je s objektom prije nego što platite, bilo kupnju ili sanaciju.</span><span lang="en">So you know exactly what's wrong with a property before you pay, whether for the purchase or the repair.</span></p>
+      </div>
+      <div class="offers">
+        <article class="offer leak">
+          <p class="q mono"><span lang="hr">Već vam negdje curi?</span><span lang="en">Already leaking?</span></p>
+          <h3><span lang="hr">Detekcija curenja vode</span><span lang="en">Water leak detection</span></h3>
+          <p class="price"><b>280 – 580 €</b><span lang="hr">+ PDV</span><span lang="en">+ VAT</span></p>
+          <ul>
+            <li><span lang="hr">Termalna kamera, mjerenje vlage i test tlaka</span><span lang="en">Thermal camera, moisture readings and pressure test</span></li>
+            <li><span lang="hr">Točno mjesto curenja, bez razbijanja pločica</span><span lang="en">The exact leak point, without breaking tiles</span></li>
+            <li><span lang="hr">Izvještaj s termogramima za osiguranje ili upravitelja zgrade</span><span lang="en">Report with thermal images for insurers or building managers</span></li>
+            <li><span lang="hr">Preporuka sanacije</span><span lang="en">Repair recommendation</span></li>
+          </ul>
+          <div class="btns">
+            <a class="btn btn-hot" href="tel:+385992080227" target="_top"><span lang="hr">Nazovite</span><span lang="en">Call</span></a>
+            <a class="btn btn-wa" href="https://wa.me/385992080227?text=Pozdrav%2C%20trebam%20detekciju%20curenja." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </article>
+        <article class="offer buy">
+          <p class="q mono"><span lang="hr">Kupujete ili preuzimate stan?</span><span lang="en">Buying or taking handover?</span></p>
+          <h3><span lang="hr">Pregled prije kupnje i primopredaje</span><span lang="en">Pre-purchase &amp; handover inspection</span></h3>
+          <p class="price"><b><span lang="hr">Na upit</span><span lang="en">On request</span></b><span lang="hr">prema veličini objekta</span><span lang="en">by property size</span></p>
+          <ul>
+            <li><span lang="hr">Krov, fasada, instalacije, vlaga, konstrukcija i podovi</span><span lang="en">Roof, facade, plumbing, damp, structure and floors</span></li>
+            <li><span lang="hr">Termografija cijelog objekta</span><span lang="en">Thermal imaging of the whole property</span></li>
+            <li><span lang="hr">Izvještaj s fotografijama i okvirnim troškovima sanacije</span><span lang="en">Report with photos and indicative repair costs</span></li>
+            <li><span lang="hr">Argumenti za pregovore o cijeni ili zapisnik za izvođača</span><span lang="en">Leverage for price talks, or a defect list for the builder</span></li>
+          </ul>
+          <div class="btns">
+            <a class="btn btn-hot" href="tel:+385992080227" target="_top"><span lang="hr">Nazovite</span><span lang="en">Call</span></a>
+            <a class="btn btn-wa" href="https://wa.me/385992080227?text=Pozdrav%2C%20zanima%20me%20pregled%20prije%20kupnje." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </article>
+      </div>
+      <div class="proof">
+        <div><b>5,0 ★</b><span lang="hr">ocjena na Googleu</span><span lang="en">rating on Google</span></div>
+        <div><b>12+</b><span lang="hr">godina procjene građevinskih nedostataka</span><span lang="en">years costing building defects</span></div>
+        <div><b>24 h</b><span lang="hr">do pisanog izvještaja</span><span lang="en">to a written report</span></div>
+        <div><b>HR</b><span lang="hr">Zagreb, Zadar, Šibenik, Split, Dubrovnik</span><span lang="en">Zagreb, Zadar, Šibenik, Split, Dubrovnik</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <div class="wrap">
+      <h2><span lang="hr">Saznajte prije nego što platite.</span><span lang="en">Find out before you pay.</span></h2>
+      <p><span lang="hr">Javite nam adresu i što vas brine. Odgovaramo isti dan.</span><span lang="en">Send us the address and what's worrying you. We reply the same day.</span></p>
+      <div class="btns">
+        <a class="btn btn-hot" href="tel:+385992080227" target="_top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          099 208 0227
+        </a>
+        <a class="btn btn-wa" href="https://wa.me/385992080227" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2m4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.2-.3-.2-.6-.4"/></svg>
+          WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="viber://chat?number=%2B385992080227" target="_top">Viber</a>
+      </div>
+      <p class="num"><span lang="hr">Telefon, WhatsApp i Viber:</span><span lang="en">Phone, WhatsApp and Viber:</span> <b>+385 99 208 0227</b></p>
+    </div>
+  </section>
+
+  <div class="fine">
+    <div class="wrap">
+      <span lang="hr">Prikazani troškovi sanacije su okvirni rasponi i ovise o veličini objekta, materijalima i opsegu štete. Fotografije su ilustrativne.</span>
+      <span lang="en">Repair costs shown are indicative ranges and depend on property size, materials and the extent of damage. Photos are illustrative.</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root=document.getElementById('dci'); if(!root) return;
+
+  /* language */
+  var KEY='dci-lang';
+  function setLang(l){
+    root.classList.toggle('is-en',l==='en');
+    root.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.lang===l));});
+    root.setAttribute('lang',l);
+    try{localStorage.setItem(KEY,l);}catch(e){}
+    postHeight();
+  }
+  root.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang);});});
+  var saved=null; try{saved=localStorage.getItem(KEY);}catch(e){}
+    setLang(saved==='en'?'en':'hr');
+
+  /* euro formatting and running totals */
+  function eur(n){return '€'+String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
+  function range(a,b){return eur(a)+' – '+String(b).replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
+  var lo=0,hi=0;
+  root.querySelectorAll('.cost').forEach(function(c){
+    var a=+c.dataset.min||0,b=+c.dataset.max||0; lo+=a; hi+=b;
+    c.querySelector('.v').textContent=range(a,b);
+    var s=c.querySelector('.sum'); if(s){s.textContent=range(lo,hi); s.dataset.lo=lo; s.dataset.hi=hi;}
+  });
+  var tot=document.getElementById('dci-total'); if(tot){tot.textContent=range(lo,hi); tot.dataset.lo=lo; tot.dataset.hi=hi;}
+
+  function countUp(el,a,b){
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce||!a&&!b){return;}
+    var t0=null,d=1100;
+    function step(t){ if(!t0)t0=t; var p=Math.min(1,(t-t0)/d), e=1-Math.pow(1-p,3);
+      el.textContent=range(Math.round(a*e/100)*100,Math.round(b*e/100)*100);
+      if(p<1)requestAnimationFrame(step); else el.textContent=range(a,b); }
+    requestAnimationFrame(step);
+  }
+
+  /* reveal on scroll */
+  var route={}; root.querySelectorAll('[data-route]').forEach(function(li){route[li.dataset.route]=li;});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        var el=en.target;
+        if(el.classList.contains('defect')){
+          var f=el.querySelector('.frame'); if(f) f.classList.add('in');
+          var v=el.querySelector('.cost .v'), c=el.querySelector('.cost');
+          if(v&&c) countUp(v,+c.dataset.min,+c.dataset.max);
+          var r=route[el.dataset.defect]; if(r) r.classList.add('on');
+        } else if(el.id==='dci-total'){
+          countUp(el,+el.dataset.lo,+el.dataset.hi);
+        }
+        io.unobserve(el);
+      });
+    },{threshold:0.35});
+    root.querySelectorAll('.defect').forEach(function(s){io.observe(s);});
+    if(tot) io.observe(tot);
+  } else {
+    root.querySelectorAll('.frame').forEach(function(f){f.classList.add('in');});
+  }
+
+  /* let the host page size the embed to its content, if it listens */
+  function postHeight(){
+    try{ if(window.parent&&window.parent!==window){ window.parent.postMessage({type:'dci-height',height:document.documentElement.scrollHeight},'*'); } }catch(e){}
+  }
+  window.addEventListener('load',postHeight);
+  window.addEventListener('resize',postHeight);
+})();
+</script>
