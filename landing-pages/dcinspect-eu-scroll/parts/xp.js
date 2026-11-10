@@ -34,8 +34,8 @@
   var lvlEl=xp.querySelector('.xp-lvl'), houseLbl=xp.querySelector('.xp-houselbl'), stepEl=xp.querySelector('.xp-step');
   var totalEl=xp.querySelector('.xp-total b'), bigEl=document.getElementById('dci-total');
   var prog=xp.querySelector('.xp-prog span'), hint=xp.querySelector('.xp-hint'), endEl=xp.querySelector('.xp-end');
-  var LV={hr:['Vanjski pregled','Krov','Kupaonica','Prizemlje','Podovi','Konstrukcija','Temelji','Ukupno','Novogradnja'],
-          en:['Exterior','Roof','Bathroom','Ground floor','Floors','Structure','Foundations','Total','New build']};
+  var LV={hr:['Vanjski pregled','Balkon','Krov','Kupaonica','Prizemlje','Podovi','Konstrukcija','Temelji','Ukupno','Novogradnja'],
+          en:['Exterior','Balcony','Roof','Bathroom','Ground floor','Floors','Structure','Foundations','Total','New build']};
 
   var starts=[],lens=[],T=0, sumMin=0,sumMax=0;
   scenes.forEach(function(s){var l=+s.dataset.len||1.6; starts.push(T); lens.push(l); T+=l; sumMin+=(+s.dataset.min||0); sumMax+=(+s.dataset.max||0);});
@@ -94,14 +94,14 @@
       if(pv) pv.textContent=range(r100(mn*f),r100(mx*f));
     }
     if(totalEl) totalEl.textContent='€'+dots(r100(runMin))+' – '+dots(r100(runMax));
-    if(bigEl){ var tf=ease(clamp((t-starts[7])/(lens[7]*0.55),0,1)); bigEl.textContent=range(r100(sumMin*Math.max(tf,0)),r100(sumMax*Math.max(tf,0))); }
+    if(bigEl){ var ti=scenes.findIndex(function(x){return x.dataset.key==='tally';}); var tf=ti<0?1:ease(clamp((t-starts[ti])/(lens[ti]*0.55),0,1)); bigEl.textContent=range(r100(sumMin*Math.max(tf,0)),r100(sumMax*Math.max(tf,0))); }
     /* panels, labels, house */
     panels.forEach(function(p,ix){p.classList.toggle('on',ix===active);});
     var lv=+scenes[active].dataset.level||0;
     if(lvlEl) lvlEl.textContent=LV[lang][lv];
     if(houseLbl) houseLbl.textContent=LV[lang][lv];
     marks.forEach(function(m){var mi=+m.dataset.m; m.classList.toggle('on',mi===lv); m.classList.toggle('done',mi>0&&mi<lv);});
-    if(stepEl) stepEl.textContent=(lv>=1&&lv<=6)?('0'+lv+' / 06'):(lv===0?(lang==='hr'?'Početak':'Start'):(lv===7?(lang==='hr'?'Zbroj':'Total'):(lang==='hr'?'Bonus':'Bonus')));
+    if(stepEl) stepEl.textContent=(lv>=1&&lv<=7)?('0'+lv+' / 07'):(lv===0?(lang==='hr'?'Početak':'Start'):(lv===8?(lang==='hr'?'Zbroj':'Total'):(lang==='hr'?'Bonus':'Bonus')));
     if(prog) prog.style.width=(t/T*100).toFixed(2)+'%';
     if(hint) hint.style.opacity=clamp(1-t/0.25,0,1);
     if(endEl) endEl.classList.toggle('on',t>T-0.35);

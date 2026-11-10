@@ -2,6 +2,8 @@
 /* ================= SCROLL-THROUGH-THE-HOUSE EXPERIENCE ================= */
 #dci .ph-heroA{background-image:url(__IMG_heroA__)}
 #dci .ph-heroB{background-image:url(__IMG_heroB__)}
+#dci .ph-balconyA{background-image:url(__IMG_balconyA__)}
+#dci .ph-balconyB{background-image:url(__IMG_balconyB__)}
 #dci .ph-roofA{background-image:url(__IMG_roofA__)}
 #dci .ph-roofB{background-image:url(__IMG_roofB__)}
 #dci .ph-pipeA{background-image:url(__IMG_pipeA__)}
@@ -26,7 +28,7 @@
 #dci .xp-stage{position:sticky;top:0;height:var(--stage-h);overflow:hidden;background:#101014}
 
 /* scenes */
-#dci .sc{position:absolute;inset:0;opacity:0;visibility:hidden}
+#dci .sc{position:absolute;inset:0;opacity:0;visibility:hidden;isolation:isolate;z-index:0}
 #dci .sc.vis{visibility:visible}
 #dci .sc .cam{position:absolute;inset:-2%;will-change:transform;transform-origin:50% 50%}
 #dci .sc .a,#dci .sc .b{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat}

@@ -119,6 +119,8 @@ html,body{margin:0;background:var(--bg)}
 /* ================= SCROLL-THROUGH-THE-HOUSE EXPERIENCE ================= */
 #dci .ph-heroA{background-image:url(__IMG_heroA__)}
 #dci .ph-heroB{background-image:url(__IMG_heroB__)}
+#dci .ph-balconyA{background-image:url(__IMG_balconyA__)}
+#dci .ph-balconyB{background-image:url(__IMG_balconyB__)}
 #dci .ph-roofA{background-image:url(__IMG_roofA__)}
 #dci .ph-roofB{background-image:url(__IMG_roofB__)}
 #dci .ph-pipeA{background-image:url(__IMG_pipeA__)}
@@ -143,7 +145,7 @@ html,body{margin:0;background:var(--bg)}
 #dci .xp-stage{position:sticky;top:0;height:var(--stage-h);overflow:hidden;background:#101014}
 
 /* scenes */
-#dci .sc{position:absolute;inset:0;opacity:0;visibility:hidden}
+#dci .sc{position:absolute;inset:0;opacity:0;visibility:hidden;isolation:isolate;z-index:0}
 #dci .sc.vis{visibility:visible}
 #dci .sc .cam{position:absolute;inset:-2%;will-change:transform;transform-origin:50% 50%}
 #dci .sc .a,#dci .sc .b{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat}
@@ -255,40 +257,45 @@ html,body{margin:0;background:var(--bg)}
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Termalni pregled fasade</span><span lang="en">Facade thermal scan</span></div>
           </div>
-          <div class="sc" data-key="roof" data-len="1.6" data-level="1" data-min="4000" data-max="15000">
+          <div class="sc" data-key="balcony" data-len="1.6" data-level="1" data-min="3000" data-max="9000">
+            <div class="cam"><div class="a ph-balconyA" role="img" aria-label="Balkon s cvijećem koji izgleda uredno"></div><div class="b ph-balconyB" role="img" aria-label="Isti balkon: natopljena ploča, hrđava armatura i otpali beton"></div></div>
+            <div class="bar" aria-hidden="true"></div>
+            <div class="read"><span lang="hr">Vlažnost ploče 31 %</span><span lang="en">Slab moisture 31%</span></div>
+          </div>
+          <div class="sc" data-key="roof" data-len="1.6" data-level="2" data-min="4000" data-max="15000">
             <div class="cam"><div class="a ph-roofA" role="img" aria-label="Krovna terasa koja izgleda uredno"></div><div class="b ph-roofB" role="img" aria-label="Ista terasa: stajaća voda i ispucala hidroizolacija"></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Stajaća voda 4 cm</span><span lang="en">Ponding 4 cm</span></div>
           </div>
-          <div class="sc" data-key="pipe" data-len="1.6" data-level="2" data-min="2500" data-max="8000">
+          <div class="sc" data-key="pipe" data-len="1.6" data-level="3" data-min="2500" data-max="8000">
             <div class="cam"><div class="a ph-pipeA" role="img" aria-label="Novo uređena kupaonica"></div><div class="b ph-pipeB" role="img" aria-label="Termalna snimka: hladni trag curenja iza pločica"></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read">ΔT −4,8 °C</div>
           </div>
-          <div class="sc" data-key="damp" data-len="1.6" data-level="3" data-min="3000" data-max="12000">
+          <div class="sc" data-key="damp" data-len="1.6" data-level="4" data-min="3000" data-max="12000">
             <div class="cam"><div class="a ph-dampA" role="img" aria-label="Svježe obojen dnevni boravak"></div><div class="b ph-dampB" role="img" aria-label="Isti boravak: kapilarna vlaga, soli i plijesan"></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Vlažnost zida 24 %</span><span lang="en">Wall moisture 24%</span></div>
           </div>
-          <div class="sc" data-key="floor" data-len="1.6" data-level="4" data-min="3000" data-max="15000">
+          <div class="sc" data-key="floor" data-len="1.6" data-level="5" data-min="3000" data-max="15000">
             <div class="cam"><div class="a ph-floorA" role="img" aria-label="Blagovaonica s parketom"></div><div class="b ph-floorB" role="img" aria-label="Laserska linija pokazuje da pod nije u ravnini"></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Odstupanje 18 mm / 2 m</span><span lang="en">18 mm out over 2 m</span></div>
           </div>
-          <div class="sc" data-key="crack" data-len="1.6" data-level="5" data-min="5000" data-max="50000">
+          <div class="sc" data-key="crack" data-len="1.6" data-level="6" data-min="5000" data-max="50000">
             <div class="cam"><div class="a ph-crackA" role="img" aria-label="Svježe obojena fasada ispod prozora"></div><div class="b ph-crackB" role="img" aria-label="Ista fasada: stepenasta konstrukcijska pukotina"></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Pukotina 3,5 mm</span><span lang="en">Crack 3.5 mm</span></div>
           </div>
-          <div class="sc" data-key="drain" data-len="1.6" data-level="6" data-min="3000" data-max="10000">
+          <div class="sc" data-key="drain" data-len="1.6" data-level="7" data-min="3000" data-max="10000">
             <div class="cam"><div class="a ph-drainA" role="img" aria-label="Podnožje kuće, oluk i travnjak"></div><div class="b ph-drainB" role="img" aria-label="Presjek tla: zgnječena odvodna cijev uz temelj"></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Vlažnost temelja 29 %</span><span lang="en">Footing moisture 29%</span></div>
           </div>
-          <div class="sc" data-key="tally" data-len="1.2" data-level="7" data-wipe="none">
+          <div class="sc" data-key="tally" data-len="1.2" data-level="8" data-wipe="none">
             <div class="cam"><div class="a ph-heroB" aria-hidden="true"></div></div>
           </div>
-          <div class="sc" data-key="new" data-len="1.9" data-level="8">
+          <div class="sc" data-key="new" data-len="1.9" data-level="9">
             <div class="cam"><div class="a ph-newA" role="img" aria-label="Nova kuća na obali"></div><div class="b ph-newB" role="img" aria-label="Ista novogradnja kroz termalnu kameru"></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Termalni pregled novogradnje</span><span lang="en">New-build thermal scan</span></div>
@@ -308,7 +315,15 @@ html,body{margin:0;background:var(--bg)}
           </article>
 
           <article class="tp">
-            <p class="k mono">01 / 06 · <span lang="hr">Krov</span><span lang="en">Roof</span></p>
+            <p class="k mono">01 / 07 · <span lang="hr">Balkon</span><span lang="en">Balcony</span></p>
+            <h2><span lang="hr">Balkon koji prokišnjava</span><span lang="en">A leaking balcony</span></h2>
+            <p class="body"><span lang="hr">Cvijeće i pločice izgledaju uredno. Ispod, voda godinama prodire kroz pukotine i loše spojeve, natapa ploču, armatura hrđa i beton otpada, a vlaga se širi u zid i stan ispod.</span><span lang="en">The flowers and tiles look neat. Underneath, water has been getting through cracked tiles and poor joints for years, soaking the slab, rusting the steel and breaking off concrete, while damp spreads into the wall and the room below.</span></p>
+            <div class="xcost"><span class="lab"><span lang="hr">Sanacija ako se ne otkrije</span><span lang="en">Repair if missed</span></span><span class="v">€0</span></div>
+            <p class="how"><span lang="hr">Termografija i mjerenje vlage ploče, provjera pada i hidroizolacije.</span><span lang="en">Thermal imaging and slab moisture readings, checks of the fall and the waterproofing.</span></p>
+          </article>
+
+          <article class="tp">
+            <p class="k mono">02 / 07 · <span lang="hr">Krov</span><span lang="en">Roof</span></p>
             <h2><span lang="hr">Ravni krov koji prokišnjava</span><span lang="en">A leaking flat roof</span></h2>
             <p class="body"><span lang="hr">Hidroizolacija stara 30 godina. Voda stoji, membrana puca uz atiku, a mrlja na stropu pojavi se tek kad je ploča već natopljena.</span><span lang="en">Thirty-year-old waterproofing. Water ponds, the membrane splits at the parapet, and the ceiling stain only shows once the slab is soaked.</span></p>
             <div class="xcost"><span class="lab"><span lang="hr">Sanacija ako se ne otkrije</span><span lang="en">Repair if missed</span></span><span class="v">€0</span></div>
@@ -316,7 +331,7 @@ html,body{margin:0;background:var(--bg)}
           </article>
 
           <article class="tp">
-            <p class="k mono">02 / 06 · <span lang="hr">Kupaonica</span><span lang="en">Bathroom</span></p>
+            <p class="k mono">03 / 07 · <span lang="hr">Kupaonica</span><span lang="en">Bathroom</span></p>
             <h2><span lang="hr">Puknuta cijev iza pločica</span><span lang="en">A burst pipe behind the tiles</span></h2>
             <p class="body"><span lang="hr">Kupaonica izgleda nova. Termalna kamera pokazuje hladan trag vode koji mjesecima teče iza pločica prema podu i susjednoj prostoriji.</span><span lang="en">The bathroom looks new. The thermal camera shows a cold trail of water running behind the tiles for months, toward the floor and the next room.</span></p>
             <div class="xcost"><span class="lab"><span lang="hr">Sanacija ako se ne otkrije</span><span lang="en">Repair if missed</span></span><span class="v">€0</span></div>
@@ -324,7 +339,7 @@ html,body{margin:0;background:var(--bg)}
           </article>
 
           <article class="tp">
-            <p class="k mono">03 / 06 · <span lang="hr">Prizemlje</span><span lang="en">Ground floor</span></p>
+            <p class="k mono">04 / 07 · <span lang="hr">Prizemlje</span><span lang="en">Ground floor</span></p>
             <h2><span lang="hr">Kapilarna vlaga ispod svježe boje</span><span lang="en">Rising damp under fresh paint</span></h2>
             <p class="body"><span lang="hr">Zidovi su obojeni za prodaju. Ispod boje vlaga se diže iz tla, nosi soli koje razaraju žbuku i stvara plijesan iza namještaja.</span><span lang="en">The walls were painted for the sale. Under the paint, moisture rises from the ground, carrying salts that break down the plaster and growing mould behind the furniture.</span></p>
             <div class="xcost"><span class="lab"><span lang="hr">Sanacija ako se ne otkrije</span><span lang="en">Repair if missed</span></span><span class="v">€0</span></div>
@@ -332,7 +347,7 @@ html,body{margin:0;background:var(--bg)}
           </article>
 
           <article class="tp">
-            <p class="k mono">04 / 06 · <span lang="hr">Podovi</span><span lang="en">Floors</span></p>
+            <p class="k mono">05 / 07 · <span lang="hr">Podovi</span><span lang="en">Floors</span></p>
             <h2><span lang="hr">Pod koji nije u ravnini</span><span lang="en">A floor that isn't level</span></h2>
             <p class="body"><span lang="hr">Parket je lijep, ali laserska linija pokazuje da se pod spušta prema zidu. Vrata zapinju, lajsne se odvajaju. Uzrok je slijeganje ili oštećena ploča.</span><span lang="en">The parquet is beautiful, but the laser line shows the floor dropping toward the wall. Doors stick and skirting pulls away. The cause is settlement or a damaged slab.</span></p>
             <div class="xcost"><span class="lab"><span lang="hr">Sanacija ako se ne otkrije</span><span lang="en">Repair if missed</span></span><span class="v">€0</span></div>
@@ -340,7 +355,7 @@ html,body{margin:0;background:var(--bg)}
           </article>
 
           <article class="tp">
-            <p class="k mono">05 / 06 · <span lang="hr">Konstrukcija</span><span lang="en">Structure</span></p>
+            <p class="k mono">06 / 07 · <span lang="hr">Konstrukcija</span><span lang="en">Structure</span></p>
             <h2><span lang="hr">Pukotina prebojana prije prodaje</span><span lang="en">A crack painted over before the sale</span></h2>
             <p class="body"><span lang="hr">Nakon potresa u Zagrebu i Petrinji mnoge kuće imaju konstrukcijske pukotine koje su samo prebojane. Prije kupnje treba znati je li pukotina aktivna.</span><span lang="en">After the Zagreb and Petrinja earthquakes, many houses carry structural cracks that were simply painted over. Before you buy, you need to know whether a crack is active.</span></p>
             <div class="xcost"><span class="lab"><span lang="hr">Sanacija ako se ne otkrije</span><span lang="en">Repair if missed</span></span><span class="v">€0</span></div>
@@ -348,7 +363,7 @@ html,body{margin:0;background:var(--bg)}
           </article>
 
           <article class="tp">
-            <p class="k mono">06 / 06 · <span lang="hr">Temelji</span><span lang="en">Foundations</span></p>
+            <p class="k mono">07 / 07 · <span lang="hr">Temelji</span><span lang="en">Foundations</span></p>
             <h2><span lang="hr">Zgnječena odvodna cijev</span><span lang="en">A crushed drain pipe</span></h2>
             <p class="body"><span lang="hr">Iznad zemlje sve je uredno. Ispod, oborinska cijev je zgnječena i svaka kiša odlazi ravno u temelje: vlažan podrum, pukotine, slijeganje.</span><span lang="en">Above ground it all looks tidy. Below, the stormwater pipe is crushed and every rainfall goes straight into the foundations: a damp basement, cracks, settlement.</span></p>
             <div class="xcost"><span class="lab"><span lang="hr">Sanacija ako se ne otkrije</span><span lang="en">Repair if missed</span></span><span class="v">€0</span></div>
@@ -382,14 +397,16 @@ html,body{margin:0;background:var(--bg)}
               <path class="hl" d="M14 40 H106 V150 H14 Z M14 95 H106 M10 40 H110"/>
               <path class="hl" d="M22 40 V28 H98 V40" style="stroke-width:1.2;opacity:.6"/>
               <path class="gl" d="M2 150 H118"/>
+              <path class="hl" d="M14 95 H4 V88" style="stroke-width:1.4;opacity:.6"/>
               <path class="hl" d="M100 150 V172 H118" style="stroke-width:1.4;opacity:.6"/>
               <g class="mk" data-m="0"><circle cx="60" cy="68" r="5"/><circle class="ring" cx="60" cy="68" r="5"/></g>
-              <g class="mk" data-m="1"><circle cx="60" cy="34" r="5"/><circle class="ring" cx="60" cy="34" r="5"/></g>
-              <g class="mk" data-m="2"><circle cx="36" cy="70" r="5"/><circle class="ring" cx="36" cy="70" r="5"/></g>
-              <g class="mk" data-m="3"><circle cx="40" cy="124" r="5"/><circle class="ring" cx="40" cy="124" r="5"/></g>
-              <g class="mk" data-m="4"><circle cx="80" cy="95" r="5"/><circle class="ring" cx="80" cy="95" r="5"/></g>
-              <g class="mk" data-m="5"><circle cx="106" cy="122" r="5"/><circle class="ring" cx="106" cy="122" r="5"/></g>
-              <g class="mk" data-m="6"><circle cx="108" cy="168" r="5"/><circle class="ring" cx="108" cy="168" r="5"/></g>
+              <g class="mk" data-m="1"><circle cx="18" cy="84" r="5"/><circle class="ring" cx="18" cy="84" r="5"/></g>
+              <g class="mk" data-m="2"><circle cx="60" cy="34" r="5"/><circle class="ring" cx="60" cy="34" r="5"/></g>
+              <g class="mk" data-m="3"><circle cx="36" cy="70" r="5"/><circle class="ring" cx="36" cy="70" r="5"/></g>
+              <g class="mk" data-m="4"><circle cx="40" cy="124" r="5"/><circle class="ring" cx="40" cy="124" r="5"/></g>
+              <g class="mk" data-m="5"><circle cx="80" cy="95" r="5"/><circle class="ring" cx="80" cy="95" r="5"/></g>
+              <g class="mk" data-m="6"><circle cx="106" cy="122" r="5"/><circle class="ring" cx="106" cy="122" r="5"/></g>
+              <g class="mk" data-m="7"><circle cx="108" cy="168" r="5"/><circle class="ring" cx="108" cy="168" r="5"/></g>
             </svg>
             <p class="xp-houselbl">—</p>
           </div>
@@ -454,8 +471,8 @@ html,body{margin:0;background:var(--bg)}
   var lvlEl=xp.querySelector('.xp-lvl'), houseLbl=xp.querySelector('.xp-houselbl'), stepEl=xp.querySelector('.xp-step');
   var totalEl=xp.querySelector('.xp-total b'), bigEl=document.getElementById('dci-total');
   var prog=xp.querySelector('.xp-prog span'), hint=xp.querySelector('.xp-hint'), endEl=xp.querySelector('.xp-end');
-  var LV={hr:['Vanjski pregled','Krov','Kupaonica','Prizemlje','Podovi','Konstrukcija','Temelji','Ukupno','Novogradnja'],
-          en:['Exterior','Roof','Bathroom','Ground floor','Floors','Structure','Foundations','Total','New build']};
+  var LV={hr:['Vanjski pregled','Balkon','Krov','Kupaonica','Prizemlje','Podovi','Konstrukcija','Temelji','Ukupno','Novogradnja'],
+          en:['Exterior','Balcony','Roof','Bathroom','Ground floor','Floors','Structure','Foundations','Total','New build']};
 
   var starts=[],lens=[],T=0, sumMin=0,sumMax=0;
   scenes.forEach(function(s){var l=+s.dataset.len||1.6; starts.push(T); lens.push(l); T+=l; sumMin+=(+s.dataset.min||0); sumMax+=(+s.dataset.max||0);});
@@ -514,14 +531,14 @@ html,body{margin:0;background:var(--bg)}
       if(pv) pv.textContent=range(r100(mn*f),r100(mx*f));
     }
     if(totalEl) totalEl.textContent='€'+dots(r100(runMin))+' – '+dots(r100(runMax));
-    if(bigEl){ var tf=ease(clamp((t-starts[7])/(lens[7]*0.55),0,1)); bigEl.textContent=range(r100(sumMin*Math.max(tf,0)),r100(sumMax*Math.max(tf,0))); }
+    if(bigEl){ var ti=scenes.findIndex(function(x){return x.dataset.key==='tally';}); var tf=ti<0?1:ease(clamp((t-starts[ti])/(lens[ti]*0.55),0,1)); bigEl.textContent=range(r100(sumMin*Math.max(tf,0)),r100(sumMax*Math.max(tf,0))); }
     /* panels, labels, house */
     panels.forEach(function(p,ix){p.classList.toggle('on',ix===active);});
     var lv=+scenes[active].dataset.level||0;
     if(lvlEl) lvlEl.textContent=LV[lang][lv];
     if(houseLbl) houseLbl.textContent=LV[lang][lv];
     marks.forEach(function(m){var mi=+m.dataset.m; m.classList.toggle('on',mi===lv); m.classList.toggle('done',mi>0&&mi<lv);});
-    if(stepEl) stepEl.textContent=(lv>=1&&lv<=6)?('0'+lv+' / 06'):(lv===0?(lang==='hr'?'Početak':'Start'):(lv===7?(lang==='hr'?'Zbroj':'Total'):(lang==='hr'?'Bonus':'Bonus')));
+    if(stepEl) stepEl.textContent=(lv>=1&&lv<=7)?('0'+lv+' / 07'):(lv===0?(lang==='hr'?'Početak':'Start'):(lv===8?(lang==='hr'?'Zbroj':'Total'):(lang==='hr'?'Bonus':'Bonus')));
     if(prog) prog.style.width=(t/T*100).toFixed(2)+'%';
     if(hint) hint.style.opacity=clamp(1-t/0.25,0,1);
     if(endEl) endEl.classList.toggle('on',t>T-0.35);
