@@ -13,3 +13,6 @@
 - `dcinspect-eu-hero-godaddy-lite.html` (~40k characters) is the one to paste into GoDaddy. Images load from jsDelivr, which serves this public repo's files, pinned to commit 292fec4.
 - Rebuild after edits: `python3 build_godaddy_lite.py <commit-with-the-images>`.
 - Keep this branch (or merge it) so the pinned commit stays on GitHub.
+
+## Google reviews carousel
+- `reviews-godaddy.html` (~22k characters) is a separate GoDaddy HTML section. Reviews are copied word for word from the Google Business Profile (10 Nov 2026); add new ones to the REVIEWS list in the script. Section height: about 880 px desktop, 770 px phone.
