@@ -73,7 +73,7 @@ html,body{margin:0;background:var(--bg)}
 #dci .btn-ghost:hover{border-color:#7360F2}
 
 /* ---------- language switch ---------- */
-#dci .lang{position:absolute;top:18px;right:max(16px,env(safe-area-inset-right,0px));z-index:5;display:flex;padding:3px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px)}
+#dci .lang{position:absolute;top:18px;right:max(16px,env(safe-area-inset-right,0px));z-index:5;display:flex;padding:3px;border-radius:999px;background:rgba(16,16,20,.55);border:1px solid rgba(255,255,255,.3);}
 #dci .lang button{appearance:none;border:0;background:transparent;color:#fff;font-family:var(--f);font-weight:700;font-size:12.5px;letter-spacing:.06em;padding:6px 13px;border-radius:999px;cursor:pointer}
 #dci .lang button[aria-pressed="true"]{background:#fff;color:var(--brand)}
 #dci .lang button:focus-visible{outline:2px solid var(--cyan);outline-offset:1px}
@@ -137,7 +137,7 @@ html,body{margin:0;background:var(--bg)}
 #dci .ph-newB{background-image:url(__IMG_newB__)}
 
 #dci .xp{position:relative;background:var(--phantom);color:#fff;--stage-h:720px}
-#dci .xp-scroller{position:relative;height:var(--stage-h);overflow-y:auto;overflow-x:hidden;scrollbar-width:none;outline:none;-webkit-overflow-scrolling:touch}
+#dci .xp-scroller{overscroll-behavior-y:auto;position:relative;height:var(--stage-h);overflow-y:auto;overflow-x:hidden;scrollbar-width:none;outline:none;-webkit-overflow-scrolling:touch}
 #dci .xp-scroller::-webkit-scrollbar{display:none}
 #dci .xp-scroller:focus-visible{box-shadow:inset 0 0 0 3px var(--cyan)}
 #dci .xp.page .xp-scroller{height:auto;overflow:visible}
@@ -147,12 +147,13 @@ html,body{margin:0;background:var(--bg)}
 /* scenes */
 #dci .sc{position:absolute;inset:0;opacity:0;visibility:hidden;isolation:isolate;z-index:0}
 #dci .sc.vis{visibility:visible}
-#dci .sc .cam{position:absolute;inset:-2%;will-change:transform;transform-origin:50% 50%}
+#dci .sc .cam{position:absolute;inset:-2%;will-change:transform;transform-origin:50% 50%;backface-visibility:hidden}
 #dci .sc .a,#dci .sc .b{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat}
-#dci .sc .b{clip-path:inset(0 0 100% 0);will-change:clip-path}
+#dci .sc .bw{position:absolute;inset:0;overflow:hidden;transform:translate3d(0,-100%,0);will-change:transform;backface-visibility:hidden}
+#dci .sc .b{transform:translate3d(0,100%,0);will-change:transform;backface-visibility:hidden}
 #dci .sc[data-key="hero"] .a,#dci .sc[data-key="hero"] .b{background-position:66% center}
-#dci .sc[data-key="tally"] .a{filter:blur(14px) brightness(.45) saturate(1.2);transform:scale(1.1)}
-#dci .sc .bar{position:absolute;left:0;right:0;top:0;height:0;opacity:0;pointer-events:none}
+#dci .sc[data-key="tally"] .a{opacity:.28;transform:scale(1.15)}
+#dci .sc .bar{position:absolute;left:0;right:0;top:0;height:100%;opacity:0;pointer-events:none;transform:translate3d(0,-100%,0);will-change:transform,opacity}
 #dci .sc .bar::before{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(180deg,rgba(34,195,255,0),rgba(34,195,255,.22))}
 #dci .sc .bar::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--grad);box-shadow:0 0 22px 5px rgba(34,195,255,.75)}
 #dci .sc .read{position:absolute;right:max(20px,env(safe-area-inset-right,0px));top:74px;z-index:3;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.95);color:var(--brand);font-size:13px;font-weight:800;font-variant-numeric:tabular-nums;box-shadow:0 6px 20px rgba(0,0,0,.35);opacity:0;transform:translateY(-6px);transition:opacity .35s ease,transform .35s ease}
@@ -170,7 +171,7 @@ html,body{margin:0;background:var(--bg)}
 #dci .xp-lvl{margin-left:6px;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 #dci .xp-tools{display:flex;align-items:center;gap:8px}
 #dci .xp .lang{position:static}
-#dci .xp-skip{white-space:nowrap;appearance:none;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);color:#fff;font-family:var(--f);font-weight:700;font-size:12.5px;padding:7px 13px;border-radius:999px;cursor:pointer;backdrop-filter:blur(6px)}
+#dci .xp-skip{white-space:nowrap;appearance:none;border:1px solid rgba(255,255,255,.3);background:rgba(16,16,20,.55);color:#fff;font-family:var(--f);font-weight:700;font-size:12.5px;padding:7px 13px;border-radius:999px;cursor:pointer;}
 #dci .xp-skip:hover{background:rgba(255,255,255,.18)}
 #dci .xp-skip:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 
@@ -196,7 +197,7 @@ html,body{margin:0;background:var(--bg)}
 #dci .tp li::before{content:"";position:absolute;left:0;top:.4em;width:14px;height:14px;border-radius:50%;box-shadow:inset 0 0 0 3px rgba(217,45,32,.35),inset 0 0 0 7px #FF5A4A}
 
 /* mini house */
-#dci .xp-house{position:absolute;z-index:4;right:max(24px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);width:128px;display:flex;flex-direction:column;align-items:center;gap:10px;padding:14px 10px 12px;border-radius:18px;background:rgba(16,16,20,.55);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(8px)}
+#dci .xp-house{position:absolute;z-index:4;right:max(24px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);width:128px;display:flex;flex-direction:column;align-items:center;gap:10px;padding:14px 10px 12px;border-radius:18px;background:rgba(16,16,20,.74);border:1px solid rgba(255,255,255,.14);}
 #dci .xp-house svg{width:100%;height:auto;display:block;overflow:visible}
 #dci .xp-house .hl{stroke:rgba(255,255,255,.55);stroke-width:2;fill:none}
 #dci .xp-house .gl{stroke:rgba(255,255,255,.35);stroke-width:1.5;stroke-dasharray:3 3}
@@ -211,10 +212,10 @@ html,body{margin:0;background:var(--bg)}
 /* bottom HUD */
 #dci .xp-bottom{position:absolute;z-index:5;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 max(20px,env(safe-area-inset-right,0px)) 18px max(20px,env(safe-area-inset-left,0px))}
 #dci .xp-step{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75);font-variant-numeric:tabular-nums}
-#dci .xp-total{display:flex;align-items:baseline;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(16,16,20,.6);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+#dci .xp-total{display:flex;align-items:baseline;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(16,16,20,.8);border:1px solid rgba(255,255,255,.18);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.7)}
 #dci .xp-total b{font-size:16px;letter-spacing:-.01em;text-transform:none;color:#FF7A6E;font-variant-numeric:tabular-nums}
 #dci .xp-prog{position:absolute;z-index:5;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.12)}
-#dci .xp-prog span{display:block;height:100%;width:0;background:var(--grad)}
+#dci .xp-prog span{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:0 50%;will-change:transform;background:var(--grad)}
 #dci .xp-hint{position:absolute;z-index:5;left:50%;bottom:64px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85);pointer-events:none;text-align:center}
 #dci .xp-hint .mouse{width:24px;height:38px;border:2px solid rgba(255,255,255,.8);border-radius:14px;position:relative}
 #dci .xp-hint .mouse::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--cyan);animation:dci-wheel 1.6s ease-in-out infinite}
@@ -229,7 +230,7 @@ html,body{margin:0;background:var(--bg)}
   #dci .xp-scrim{background:linear-gradient(0deg,rgba(16,16,20,.95) 0%,rgba(16,16,20,.75) 38%,rgba(16,16,20,0) 66%),linear-gradient(180deg,rgba(16,16,20,.65) 0%,rgba(16,16,20,0) 20%)}
   #dci .tp{left:16px;width:calc(100% - 32px);bottom:62px;gap:10px}
   #dci .tp .body{font-size:15px}
-  #dci .tp .how,#dci .tp ul li:nth-child(n+3){display:none}
+  #dci .tp .how,#dci .tp ul:not(.locs) li:nth-child(n+3){display:none}
   #dci .xp-brand span.nm{display:none}
   #dci .xp-hint{bottom:auto;top:62px;flex-direction:row;gap:10px}#dci .xp-hint .mouse{width:18px;height:28px}
 }
@@ -241,6 +242,11 @@ html,body{margin:0;background:var(--bg)}
 }
 
 #dci .sc:first-child{opacity:1;visibility:visible}
+#dci .tp .locs{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+#dci .tp .locs li{padding:5px 11px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(16,16,20,.45);color:#fff;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding-left:11px}
+#dci .tp .locs li::before{display:none}
+#dci .tp .locs li.all{background:var(--grad);border-color:transparent}
+@media (max-width:520px){#dci .tp .locs li{font-size:10.5px;padding:4px 9px}#dci .tp .btns{flex-wrap:nowrap;gap:8px}#dci .tp .btns .btn{min-height:44px;padding:0 14px;font-size:14px;gap:7px}#dci .tp .btns .btn svg{width:17px;height:17px}#dci .tp h1{font-size:34px}#dci .tp{gap:9px}}
 </style>
 <div id="dci">
 
@@ -253,42 +259,42 @@ html,body{margin:0;background:var(--bg)}
         <div class="xp-stage">
 
           <div class="sc" data-key="hero" data-len="1.7" data-level="0">
-            <div class="cam"><div class="a ph-heroA" role="img" aria-label="Obiteljska kuća u Zagrebu u sumrak"></div><div class="b ph-heroB" role="img" aria-label="Ista kuća kroz termalnu kameru"></div></div>
+            <div class="cam"><div class="a ph-heroA" role="img" aria-label="Obiteljska kuća u Zagrebu u sumrak"></div><div class="bw"><div class="b ph-heroB" role="img" aria-label="Ista kuća kroz termalnu kameru"></div></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Termalni pregled fasade</span><span lang="en">Facade thermal scan</span></div>
           </div>
           <div class="sc" data-key="balcony" data-len="1.6" data-level="1" data-min="3000" data-max="9000">
-            <div class="cam"><div class="a ph-balconyA" role="img" aria-label="Balkon s cvijećem koji izgleda uredno"></div><div class="b ph-balconyB" role="img" aria-label="Isti balkon: natopljena ploča, hrđava armatura i otpali beton"></div></div>
+            <div class="cam"><div class="a ph-balconyA" role="img" aria-label="Balkon s cvijećem koji izgleda uredno"></div><div class="bw"><div class="b ph-balconyB" role="img" aria-label="Isti balkon: natopljena ploča, hrđava armatura i otpali beton"></div></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Vlažnost ploče 31 %</span><span lang="en">Slab moisture 31%</span></div>
           </div>
           <div class="sc" data-key="roof" data-len="1.6" data-level="2" data-min="4000" data-max="15000">
-            <div class="cam"><div class="a ph-roofA" role="img" aria-label="Krovna terasa koja izgleda uredno"></div><div class="b ph-roofB" role="img" aria-label="Ista terasa: stajaća voda i ispucala hidroizolacija"></div></div>
+            <div class="cam"><div class="a ph-roofA" role="img" aria-label="Krovna terasa koja izgleda uredno"></div><div class="bw"><div class="b ph-roofB" role="img" aria-label="Ista terasa: stajaća voda i ispucala hidroizolacija"></div></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Stajaća voda 4 cm</span><span lang="en">Ponding 4 cm</span></div>
           </div>
           <div class="sc" data-key="pipe" data-len="1.6" data-level="3" data-min="2500" data-max="8000">
-            <div class="cam"><div class="a ph-pipeA" role="img" aria-label="Novo uređena kupaonica"></div><div class="b ph-pipeB" role="img" aria-label="Termalna snimka: hladni trag curenja iza pločica"></div></div>
+            <div class="cam"><div class="a ph-pipeA" role="img" aria-label="Novo uređena kupaonica"></div><div class="bw"><div class="b ph-pipeB" role="img" aria-label="Termalna snimka: hladni trag curenja iza pločica"></div></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read">ΔT −4,8 °C</div>
           </div>
           <div class="sc" data-key="damp" data-len="1.6" data-level="4" data-min="3000" data-max="12000">
-            <div class="cam"><div class="a ph-dampA" role="img" aria-label="Svježe obojen dnevni boravak"></div><div class="b ph-dampB" role="img" aria-label="Isti boravak: kapilarna vlaga, soli i plijesan"></div></div>
+            <div class="cam"><div class="a ph-dampA" role="img" aria-label="Svježe obojen dnevni boravak"></div><div class="bw"><div class="b ph-dampB" role="img" aria-label="Isti boravak: kapilarna vlaga, soli i plijesan"></div></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Vlažnost zida 24 %</span><span lang="en">Wall moisture 24%</span></div>
           </div>
           <div class="sc" data-key="floor" data-len="1.6" data-level="5" data-min="3000" data-max="15000">
-            <div class="cam"><div class="a ph-floorA" role="img" aria-label="Blagovaonica s parketom"></div><div class="b ph-floorB" role="img" aria-label="Laserska linija pokazuje da pod nije u ravnini"></div></div>
+            <div class="cam"><div class="a ph-floorA" role="img" aria-label="Blagovaonica s parketom"></div><div class="bw"><div class="b ph-floorB" role="img" aria-label="Laserska linija pokazuje da pod nije u ravnini"></div></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Odstupanje 18 mm / 2 m</span><span lang="en">18 mm out over 2 m</span></div>
           </div>
           <div class="sc" data-key="crack" data-len="1.6" data-level="6" data-min="5000" data-max="50000">
-            <div class="cam"><div class="a ph-crackA" role="img" aria-label="Svježe obojena fasada ispod prozora"></div><div class="b ph-crackB" role="img" aria-label="Ista fasada: stepenasta konstrukcijska pukotina"></div></div>
+            <div class="cam"><div class="a ph-crackA" role="img" aria-label="Svježe obojena fasada ispod prozora"></div><div class="bw"><div class="b ph-crackB" role="img" aria-label="Ista fasada: stepenasta konstrukcijska pukotina"></div></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Pukotina 3,5 mm</span><span lang="en">Crack 3.5 mm</span></div>
           </div>
           <div class="sc" data-key="drain" data-len="1.6" data-level="7" data-min="3000" data-max="10000">
-            <div class="cam"><div class="a ph-drainA" role="img" aria-label="Podnožje kuće, oluk i travnjak"></div><div class="b ph-drainB" role="img" aria-label="Presjek tla: zgnječena odvodna cijev uz temelj"></div></div>
+            <div class="cam"><div class="a ph-drainA" role="img" aria-label="Podnožje kuće, oluk i travnjak"></div><div class="bw"><div class="b ph-drainB" role="img" aria-label="Presjek tla: zgnječena odvodna cijev uz temelj"></div></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Vlažnost temelja 29 %</span><span lang="en">Footing moisture 29%</span></div>
           </div>
@@ -296,7 +302,7 @@ html,body{margin:0;background:var(--bg)}
             <div class="cam"><div class="a ph-heroB" aria-hidden="true"></div></div>
           </div>
           <div class="sc" data-key="new" data-len="1.9" data-level="9">
-            <div class="cam"><div class="a ph-newA" role="img" aria-label="Nova kuća na obali"></div><div class="b ph-newB" role="img" aria-label="Ista novogradnja kroz termalnu kameru"></div></div>
+            <div class="cam"><div class="a ph-newA" role="img" aria-label="Nova kuća na obali"></div><div class="bw"><div class="b ph-newB" role="img" aria-label="Ista novogradnja kroz termalnu kameru"></div></div></div>
             <div class="bar" aria-hidden="true"></div>
             <div class="read"><span lang="hr">Termalni pregled novogradnje</span><span lang="en">New-build thermal scan</span></div>
           </div>
@@ -305,13 +311,16 @@ html,body{margin:0;background:var(--bg)}
 
           <!-- text for each stop (same order as the scenes) -->
           <article class="tp on">
-            <p class="k mono"><span lang="hr">Detekcija curenja · Pregled prije kupnje · Zagreb i Dalmacija</span><span lang="en">Leak detection · Pre-purchase inspections · Zagreb &amp; Dalmatia</span></p>
+            <p class="k mono"><span lang="hr">Detekcija curenja · Pregled prije kupnje</span><span lang="en">Leak detection · Pre-purchase inspections</span></p>
             <h1><span lang="hr">Kuća izgleda savršeno.<span class="l2">Pitanje je što skriva.</span></span><span lang="en">The house looks perfect.<span class="l2">The question is what it hides.</span></span></h1>
             <p class="body"><span lang="hr">Skrolajte i uđite u kuću s našom termalnom kamerom. Pokazat ćemo vam što se krije u krovu, zidovima, podovima i ispod zemlje.</span><span lang="en">Scroll to walk into the house with our thermal camera. We'll show you what hides in the roof, the walls, the floors and under the ground.</span></p>
             <div class="btns">
               <a class="btn btn-hot" href="tel:+385992080227" target="_top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span lang="hr">Nazovite 099 208 0227</span><span lang="en">Call 099 208 0227</span></a>
               <a class="btn btn-wa" href="https://wa.me/385992080227" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2m4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.2-.3-.2-.6-.4"/></svg>WhatsApp</a>
             </div>
+          <ul class="locs" aria-label="Područja / Areas">
+              <li>Zagreb</li><li><span lang="hr">Dalmacija</span><span lang="en">Dalmatia</span></li><li><span lang="hr">Istra</span><span lang="en">Istria</span></li><li>Rijeka</li><li>Osijek</li><li class="all"><span lang="hr">i cijela Hrvatska</span><span lang="en">and all of Croatia</span></li>
+            </ul>
           </article>
 
           <article class="tp">
@@ -477,85 +486,94 @@ html,body{margin:0;background:var(--bg)}
   var starts=[],lens=[],T=0, sumMin=0,sumMax=0;
   scenes.forEach(function(s){var l=+s.dataset.len||1.6; starts.push(T); lens.push(l); T+=l; sumMin+=(+s.dataset.min||0); sumMax+=(+s.dataset.max||0);});
   var FADE=0.3;
-  var pageMode=(window.self===window.top);
-  if(pageMode) xp.classList.add('page');
-  var H=720;
+  var H=720, W=0, cur=0, target=0, raf=0, lastT=0;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var inFrame=(window.self!==window.top);
+  var cache=new Map();
+  function setText(el,v){ if(el && cache.get(el)!==v){ cache.set(el,v); el.textContent=v; } }
+  function setStyle(el,prop,v){ var key=prop; if(!el) return; var c=el.__c||(el.__c={}); if(c[key]!==v){ c[key]=v; el.style[prop]=v; } }
+  var tallyIdx=scenes.findIndex(function(x){return x.dataset.key==='tally';});
+  var parts=scenes.map(function(s){return {cam:s.querySelector('.cam'),bw:s.querySelector('.bw'),b:s.querySelector('.b'),bar:s.querySelector('.bar'),key:s.dataset.key};});
 
-  function size(){
-    var w=root.clientWidth||window.innerWidth;
-    if(pageMode){ H=window.innerHeight; }
-    else { H = w<700 ? Math.round(clamp(w*1.85,600,780)) : Math.round(clamp(w*0.56,560,820)); }
+  function size(force){
+    var w=root.clientWidth||window.innerWidth, vh=window.innerHeight;
+    var h = w<700 ? Math.round(clamp(w*1.85,600,780)) : Math.round(clamp(w*0.56,560,820));
+    if(!inFrame) h=Math.min(h,Math.round(vh*0.94));
+    else if(vh>=420 && vh<h-4) h=vh;           /* host frame is shorter than us: fit it, never scroll twice */
+    if(!force && w===W && h===H) return;
+    var keep=cur; W=w; H=h;
     xp.style.setProperty('--stage-h',H+'px');
     xp.style.setProperty('--steps',(T+1).toFixed(3));
-    render(true);
-  }
-  function progress(){
-    if(pageMode){ var r=track.getBoundingClientRect(); return clamp(-r.top/H,0,T); }
-    return clamp(scroller.scrollTop/H,0,T);
+    scroller.scrollTop=keep*H; target=cur=keep;
+    render(cur,true); postHeight();
   }
 
-  var last=-1, ticking=false;
-  function render(force){
-    var t=progress(); if(!force && Math.abs(t-last)<0.0005) return; last=t;
+  var lastActive=-1, lastLv=-1, lastLang='';
+  function render(t,force){
     var lang=root.classList.contains('is-en')?'en':'hr';
     var active=0, runMin=0, runMax=0;
     for(var i=0;i<scenes.length;i++){
-      var s=scenes[i], u=(t-starts[i])/lens[i];
+      var s=scenes[i], p=parts[i], u=(t-starts[i])/lens[i];
       var op = i===0 ? 1 : clamp((t-starts[i]+FADE)/FADE,0,1);
       var next = i<scenes.length-1 ? clamp((t-starts[i+1]+FADE)/FADE,0,1) : 0;
       var vis = op>0 && next<1;
-      s.classList.toggle('vis',vis);
-      s.style.opacity=op;
       if(t>=starts[i]-FADE*0.5) active=i;
+      if(s.__vis!==vis){ s.__vis=vis; s.classList.toggle('vis',vis); }
+      setStyle(s,'opacity',op.toFixed(3));
       if(!vis) continue;
-      /* camera push-in */
-      var cam=s.firstElementChild, k=clamp(u,-0.2,1.05);
-      var sc=1.03+0.11*ease(clamp((k+0.2)/1.25,0,1));
-      var dx=(s.dataset.key==='hero'?-1.5:0.8)*clamp(k,0,1), dy=-0.8*clamp(k,0,1);
-      cam.style.transform='translate3d('+dx+'%,'+dy+'%,0) scale('+sc.toFixed(4)+')';
-      /* scanner wipe A -> B */
-      var b=s.querySelector('.b'), bar=s.querySelector('.bar');
-      if(b){
-        var w=clamp((u-0.18)/0.6,0,1), we=ease(w);
-        b.style.clipPath='inset(0 0 '+((1-we)*100).toFixed(2)+'% 0)';
-        if(bar){bar.style.height=(we*100).toFixed(2)+'%'; bar.style.opacity=(w>0&&w<1)?1:0;}
-        s.classList.toggle('revealed',w>=0.98);
+      if(p.key!=='tally'){
+        var k=clamp(u,-0.2,1.05);
+        var sc=1.03+0.11*ease(clamp((k+0.2)/1.25,0,1));
+        var dx=(p.key==='hero'?-1.5:0.8)*clamp(k,0,1), dy=-0.8*clamp(k,0,1);
+        setStyle(p.cam,'transform','translate3d('+dx.toFixed(3)+'%,'+dy.toFixed(3)+'%,0) scale('+sc.toFixed(4)+')');
+      }
+      if(p.bw){
+        var w=clamp((u-0.18)/0.6,0,1), we=ease(w), off=((1-we)*100).toFixed(3);
+        setStyle(p.bw,'transform','translate3d(0,-'+off+'%,0)');
+        setStyle(p.b,'transform','translate3d(0,'+off+'%,0)');
+        if(p.bar){ setStyle(p.bar,'transform','translate3d(0,-'+off+'%,0)'); setStyle(p.bar,'opacity',(w>0&&w<1)?'1':'0'); }
+        var rv=w>=0.98; if(s.__rv!==rv){ s.__rv=rv; s.classList.toggle('revealed',rv); }
       }
     }
-    /* running damage total: completed stops plus the one being revealed */
     for(var j=0;j<scenes.length;j++){
       var mn=+scenes[j].dataset.min||0, mx=+scenes[j].dataset.max||0; if(!mx) continue;
       var f=ease(clamp(((t-starts[j])/lens[j]-0.18)/0.6,0,1));
       runMin+=mn*f; runMax+=mx*f;
-      var pv=panels[j]&&panels[j].querySelector('.xcost .v');
-      if(pv) pv.textContent=range(r100(mn*f),r100(mx*f));
+      if(Math.abs(t-starts[j])<lens[j]+1) setText(panels[j]&&panels[j].querySelector('.xcost .v'),range(r100(mn*f),r100(mx*f)));
     }
-    if(totalEl) totalEl.textContent='€'+dots(r100(runMin))+' – '+dots(r100(runMax));
-    if(bigEl){ var ti=scenes.findIndex(function(x){return x.dataset.key==='tally';}); var tf=ti<0?1:ease(clamp((t-starts[ti])/(lens[ti]*0.55),0,1)); bigEl.textContent=range(r100(sumMin*Math.max(tf,0)),r100(sumMax*Math.max(tf,0))); }
-    /* panels, labels, house */
-    panels.forEach(function(p,ix){p.classList.toggle('on',ix===active);});
+    setText(totalEl,'€'+dots(r100(runMin))+' – '+dots(r100(runMax)));
+    if(bigEl && tallyIdx>=0){ var tf=ease(clamp((t-starts[tallyIdx])/(lens[tallyIdx]*0.55),0,1)); setText(bigEl,range(r100(sumMin*tf),r100(sumMax*tf))); }
     var lv=+scenes[active].dataset.level||0;
-    if(lvlEl) lvlEl.textContent=LV[lang][lv];
-    if(houseLbl) houseLbl.textContent=LV[lang][lv];
-    marks.forEach(function(m){var mi=+m.dataset.m; m.classList.toggle('on',mi===lv); m.classList.toggle('done',mi>0&&mi<lv);});
-    if(stepEl) stepEl.textContent=(lv>=1&&lv<=7)?('0'+lv+' / 07'):(lv===0?(lang==='hr'?'Početak':'Start'):(lv===8?(lang==='hr'?'Zbroj':'Total'):(lang==='hr'?'Bonus':'Bonus')));
-    if(prog) prog.style.width=(t/T*100).toFixed(2)+'%';
-    if(hint) hint.style.opacity=clamp(1-t/0.25,0,1);
-    if(endEl) endEl.classList.toggle('on',t>T-0.35);
+    if(force||active!==lastActive){ panels.forEach(function(p,ix){p.classList.toggle('on',ix===active);}); lastActive=active; }
+    if(force||lv!==lastLv||lang!==lastLang){
+      lastLv=lv; lastLang=lang;
+      setText(lvlEl,LV[lang][lv]); setText(houseLbl,LV[lang][lv]);
+      marks.forEach(function(m){var mi=+m.dataset.m; m.classList.toggle('on',mi===lv); m.classList.toggle('done',mi>0&&mi<lv);});
+      setText(stepEl,(lv>=1&&lv<=7)?('0'+lv+' / 07'):(lv===0?(lang==='hr'?'Početak':'Start'):(lv===8?(lang==='hr'?'Zbroj':'Total'):'Bonus')));
+    }
+    setStyle(prog,'transform','scaleX('+(t/T).toFixed(4)+')');
+    setStyle(hint,'opacity',clamp(1-t/0.25,0,1).toFixed(3));
+    var e=t>T-0.35; if(endEl && endEl.__on!==e){ endEl.__on=e; endEl.classList.toggle('on',e); }
   }
-  window.__dciRender=render;
+  window.__dciRender=function(){render(cur,true);};
 
-  function onScroll(){ if(!ticking){ticking=true; requestAnimationFrame(function(){ticking=false; render(false);});} }
-  if(pageMode) window.addEventListener('scroll',onScroll,{passive:true}); else scroller.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',function(){size(); postHeight();});
+  /* smooth the scroll: mouse wheels jump ~100px per notch, so ease toward the target */
+  function loop(now){
+    raf=0;
+    var dt=lastT?Math.min(64,now-lastT):16.7; lastT=now;
+    var d=target-cur;
+    if(reduce||Math.abs(d)<0.0006){ cur=target; }
+    else { cur+=d*(1-Math.pow(1-0.16,dt/16.7)); }
+    render(cur,false);
+    if(cur!==target) raf=requestAnimationFrame(loop); else lastT=0;
+  }
+  scroller.addEventListener('scroll',function(){ target=clamp(scroller.scrollTop/H,0,T); if(!raf) raf=requestAnimationFrame(loop); },{passive:true});
+  window.addEventListener('resize',function(){ size(false); });
 
-  xp.querySelector('.xp-skip').addEventListener('click',function(){
-    if(pageMode){ var r=track.getBoundingClientRect(); window.scrollTo({top:window.scrollY+r.bottom-H+2,behavior:'smooth'}); }
-    else scroller.scrollTo({top:scroller.scrollHeight,behavior:'smooth'});
-  });
+  xp.querySelector('.xp-skip').addEventListener('click',function(){ scroller.scrollTo({top:scroller.scrollHeight,behavior:'smooth'}); });
 
   setLang(saved==='en'?'en':'hr');
-  size();
+  size(true);
 
   /* let a listening host page size the embed */
   function postHeight(){ try{ if(window.parent&&window.parent!==window) window.parent.postMessage({type:'dci-height',height:document.documentElement.scrollHeight},'*'); }catch(e){} }
