@@ -20,4 +20,4 @@
 ## Homepage sections (Naše usluge, Što provjeravamo, Česta pitanja, Kontaktirajte nas)
 - `dcinspect-eu-sections-godaddy.html` (~37k characters): one GoDaddy HTML section replacing the four old ones. Keep GoDaddy's map section below it.
 - Every internal link from the old homepage is kept, as full https://dcinspect.eu/... URLs with target="_top". Edit `sections-source.html`, then `python3 build_godaddy_lite.py sections-source.html dcinspect-eu-sections-godaddy.html`.
-- The enquiry form opens WhatsApp or email with the message filled in (no server needed). Photos are attached in WhatsApp/email.
+- "Pošalji e-poštom" posts the enquiry (and an optional photo) to david@dcinspect.eu through FormSubmit (formsubmit.co). The very first submission triggers a one-time activation email to that address; click Activate once. "Pošalji na WhatsApp" opens a prefilled chat.
