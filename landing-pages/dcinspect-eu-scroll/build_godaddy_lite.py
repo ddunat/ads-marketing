@@ -1,9 +1,12 @@
-# Builds dcinspect-eu-hero-godaddy-lite.html: under GoDaddy's 51,200-character HTML limit.
+# Usage: python3 build_godaddy_lite.py [source] [output] [commit]
+# Builds a GoDaddy-ready file: under GoDaddy's 51,200-character HTML limit.
 # Images load from jsDelivr (public CDN for this public GitHub repo), pinned to a commit.
 import re,sys
-COMMIT=sys.argv[1] if len(sys.argv)>1 else '292fec433a0e66996dc7f677bc3ed37134afa8f5'
+SRC=sys.argv[1] if len(sys.argv)>1 else 'hero-source.html'
+OUT=sys.argv[2] if len(sys.argv)>2 else 'dcinspect-eu-hero-godaddy-lite.html'
+COMMIT=sys.argv[3] if len(sys.argv)>3 else '292fec433a0e66996dc7f677bc3ed37134afa8f5'
 BASE=f'https://cdn.jsdelivr.net/gh/ddunat/ads-marketing@{COMMIT}/landing-pages/dcinspect-eu-scroll/walk/'
-s=open('hero-source.html').read()
+s=open(SRC).read()
 s=re.sub(r'__IMG_(\w+)__',lambda m:BASE+m.group(1)+'.webp',s)
 # drop rules for images not used in the hero
 s=re.sub(r'#dci \.ph-(hero|roof|pipe|damp|floor|crack|drain|new)\{background-image:url\([^)]*\)\}\n','',s)
@@ -34,5 +37,5 @@ for p in parts:
     p=re.sub(r' {2,}',' ',p)
     out.append(p)
 s=''.join(out).strip()
-open('dcinspect-eu-hero-godaddy-lite.html','w').write(s)
+open(OUT,'w').write(s)
 print('characters:',len(s),'(limit 51200)')
