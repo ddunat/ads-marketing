@@ -8,3 +8,8 @@
 
 ## Hero only
 - `dcinspect-eu-hero-godaddy.html` is just the scroll-through-the-house viewer, to replace the site hero. `hero-source.html` is its editable source.
+
+## GoDaddy 51,200-character limit
+- `dcinspect-eu-hero-godaddy-lite.html` (~40k characters) is the one to paste into GoDaddy. Images load from jsDelivr, which serves this public repo's files, pinned to commit 292fec4.
+- Rebuild after edits: `python3 build_godaddy_lite.py <commit-with-the-images>`.
+- Keep this branch (or merge it) so the pinned commit stays on GitHub.
