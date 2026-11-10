@@ -145,7 +145,7 @@ html,body{margin:0;background:var(--bg)}
 #dci .xp-stage{position:sticky;top:0;height:var(--stage-h);overflow:hidden;background:#101014}
 
 /* scenes */
-#dci .sc{position:absolute;inset:0;opacity:0;visibility:hidden;isolation:isolate;z-index:0}
+#dci .sc{position:absolute;inset:0;opacity:0;visibility:hidden;isolation:isolate;z-index:0;overflow:hidden}
 #dci .sc.vis{visibility:visible}
 #dci .sc .cam{position:absolute;inset:0;will-change:transform;transform-origin:50% 50%;backface-visibility:hidden}
 #dci .sc .a,#dci .sc .b{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat}
@@ -254,6 +254,7 @@ html,body{margin:0;background:var(--bg)}
 #dci .xp.mob .xp-hint{top:auto;bottom:calc(100% - var(--imgh) + 12px)}
 #dci .tp .btns .btn{white-space:nowrap}
 @media (max-width:380px){#dci .tp .btns .btn{padding:0 11px;font-size:13px;gap:6px}#dci .tp .btns .btn svg{width:15px;height:15px}}
+#dci .xp.pin .xp-scroller{overflow:hidden}
 </style>
 <div id="dci">
 
@@ -507,8 +508,62 @@ html,body{margin:0;background:var(--bg)}
     var top=IMGH?IMGH-36:64, bottom=parseFloat(getComputedStyle(panels[0]).bottom)||76, avail=H-top-bottom;
     panels.forEach(function(p){ p.style.setProperty('--fit','1'); var h=p.offsetHeight; var k=h>avail?Math.max(0.5,avail/h):1; p.style.setProperty('--fit',k.toFixed(3)); });
   }
+  /* Pin mode: pin this frame to the host page's viewport and follow the page's own scroll.
+     Phones (iOS especially) cannot hand a scroll from a box inside a frame back to the page, so this avoids trapping the visitor. */
+  var PIN=null, PVH=0;
+  function setupPin(){
+    try{
+      var fe=window.frameElement, pw=window.parent, pd=pw.document;
+      if(!fe||!pd||!(window.CSS&&CSS.supports('overflow','clip'))) return null;
+      var box=fe.parentElement; while(box&&pw.getComputedStyle(box).display.indexOf('inline')===0) box=box.parentElement;
+      if(!box) return null;
+      for(var el=box; el&&el!==pd.body&&el!==pd.documentElement; el=el.parentElement){
+        var cs=pw.getComputedStyle(el);
+        if(/hidden|auto|scroll/.test(cs.overflowX+cs.overflowY)) el.style.overflow='clip';   /* clip still trims, but lets sticky work */
+      }
+      fe.style.position='sticky'; fe.style.top='0px'; fe.style.zIndex='2';
+      fe.style.transition='none';
+      box.style.background='#101014';
+      return {fe:fe,box:box,pw:pw,pd:pd,top:0,hdr:0};
+    }catch(e){ return null; }
+  }
+  var K=0.7;   /* scroll distance per stop in pin mode, as a share of the screen height */
+  /* GoDaddy's header turns sticky once the page scrolls: find it so the hero pins just below it */
+  function headerBottom(){
+    try{
+      var pw=PIN.pw, els=PIN.pd.elementsFromPoint(pw.innerWidth/2,2)||[], best=0;
+      for(var i=0;i<els.length;i++){
+        for(var el=els[i]; el&&el!==PIN.pd.body; el=el.parentElement){
+          if(el===PIN.fe||el===PIN.box) break;
+          var pos=pw.getComputedStyle(el).position;
+          if(pos==='fixed'||pos==='sticky'){ var r=el.getBoundingClientRect(); if(r.top<=2) best=Math.max(best,r.bottom); break; }
+        }
+      }
+      var sn=PIN.pd.querySelector('[id^="header_stickynav"]'); if(sn&&pw.getComputedStyle(sn).position==='fixed'){ var rs=sn.getBoundingClientRect(); if(rs.top<=2) best=Math.max(best,rs.bottom); }
+      var pvh=PIN.pd.documentElement.clientHeight||pw.innerHeight;
+      return Math.round(clamp(best,0,pvh*0.3));
+    }catch(e){ return 0; }
+  }
   function size(force){
     var w=root.clientWidth||window.innerWidth, vh=window.innerHeight;
+    if(PIN){
+      var pvh=PIN.pd.documentElement.clientHeight||PIN.pw.innerHeight;
+      if(!force && w===W && Math.abs(pvh-PVH)<120) return;   /* ignore the mobile toolbar showing/hiding */
+      PVH=pvh;
+      var mobP=w<700, imghP=Math.round(w*0.62);
+      var avail=pvh-PIN.hdr;
+      var hP = mobP ? Math.round(clamp(avail,480,940)) : Math.round(Math.min(avail,clamp(w*0.5625,480,860)));
+      IMGH=mobP?imghP:0; xp.style.setProperty('--imgh',imghP+'px'); xp.classList.toggle('mob',mobP);
+      var keepP=cur; W=w; H=hP;
+      PIN.top=PIN.hdr+Math.max(0,Math.round((avail-H)/2));
+      PIN.fe.style.top=PIN.top+'px'; PIN.fe.style.transition='none'; PIN.fe.style.height=H+'px';
+      PIN.box.style.height=Math.round((T*K+1)*H)+'px';
+      xp.style.setProperty('--stage-h',H+'px'); xp.style.setProperty('--steps','1');
+      xp.style.setProperty('--k',clamp(H/780,0.62,1).toFixed(3));
+      xp.classList.toggle('short',H<640); xp.classList.toggle('tiny',H<500);
+      target=cur=progress(); fit(); render(cur,true); postHeight();
+      return;
+    }
     /* desktop: the photos' own 16:9 shape so the whole picture shows; phone: photo panel on top, text below */
     var mob=w<700, imgh=Math.round(w*0.62);
     var h = mob ? Math.round(clamp(imgh+400,580,800)) : Math.round(clamp(w*0.5625,520,860));
@@ -577,19 +632,33 @@ html,body{margin:0;background:var(--bg)}
   window.addEventListener('load',fit);
 
   /* smooth the scroll: mouse wheels jump ~100px per notch, so ease toward the target */
+  function progress(){
+    if(PIN){ var r=PIN.box.getBoundingClientRect(); return clamp((PIN.top-r.top)/(H*K),0,T); }
+    return clamp(scroller.scrollTop/H,0,T);
+  }
+  var coarse=window.matchMedia&&matchMedia('(pointer: coarse)').matches;
   function loop(now){
     raf=0;
     var dt=lastT?Math.min(64,now-lastT):16.7; lastT=now;
     var d=target-cur;
     if(reduce||Math.abs(d)<0.0006){ cur=target; }
-    else { cur+=d*(1-Math.pow(1-0.16,dt/16.7)); }
+    else { cur+=d*(1-Math.pow(1-(coarse?0.45:0.16),dt/16.7)); }
     render(cur,false);
     if(cur!==target) raf=requestAnimationFrame(loop); else lastT=0;
   }
-  scroller.addEventListener('scroll',function(){ target=clamp(scroller.scrollTop/H,0,T); if(!raf) raf=requestAnimationFrame(loop); },{passive:true});
+  function onScroll(){
+    if(PIN){ var r=PIN.box.getBoundingClientRect(); if(r.top<PIN.hdr+260&&r.bottom>0){ var hb=headerBottom(); if(Math.abs(hb-PIN.hdr)>4){ PIN.hdr=hb; size(true); } } }
+    target=progress(); if(!raf) raf=requestAnimationFrame(loop);
+  }
+  PIN=inFrame?setupPin():null;
+  if(PIN){ xp.classList.add('pin'); PIN.pw.addEventListener('scroll',onScroll,{passive:true}); PIN.pw.addEventListener('resize',function(){ size(false); }); }
+  else scroller.addEventListener('scroll',onScroll,{passive:true});
   window.addEventListener('resize',function(){ size(false); });
 
-  xp.querySelector('.xp-skip').addEventListener('click',function(){ scroller.scrollTo({top:scroller.scrollHeight,behavior:'smooth'}); });
+  xp.querySelector('.xp-skip').addEventListener('click',function(){
+    if(PIN){ var r=PIN.box.getBoundingClientRect(); PIN.pw.scrollTo({top:PIN.pw.scrollY+r.bottom-PIN.top-H+2,behavior:'smooth'}); }
+    else scroller.scrollTo({top:scroller.scrollHeight,behavior:'smooth'});
+  });
 
   setLang(saved==='en'?'en':'hr');
   size(true);
