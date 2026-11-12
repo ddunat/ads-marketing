@@ -98,7 +98,7 @@ footer{margin:30px 0;color:var(--muted);font-size:13px;text-align:center}
 <div class="sticky hide" id="sticky"><span>Same-day report or your money back</span><a href="#form">Check times</a></div>
 <script>
 const steps=[{"k": "property_type", "q": "What are you buying?", "o": ["House", "Apartment or unit", "Townhouse"]}, {"k": "bedrooms", "q": "How many bedrooms?", "o": ["1–2", "3", "4", "5+"]}, {"k": "stage", "q": "Where are you up to?", "o": ["Auction date set", "Signed, cooling-off running", "Making an offer this week", "Just looking for now"]}, {"k": "suburb", "q": "Property suburb", "input": [["text", "suburb", "e.g. Brunswick", "address-level2"]]}, {"q": "Where should we send your times?", "input": [["text", "fname", "First name", "given-name"], ["tel", "mobile", "Mobile", "tel"], ["email", "email", "Email", "email"]], "last": true}];
-const M={"step": "STEP", "of": "OF", "next": "Next", "submit": "Check this week’s times", "sending": "Sending…", "err_name": "Please add your first name.", "err_mobile": "Please enter an Australian mobile, e.g. 0412 345 678.", "err_email": "Please check your email address.", "err_required": "Please fill this in.", "err_send": "Something went wrong. Please try again or call us on 0483 936 872.", "privacy": "We only use your details to arrange your inspection.", "ty": "/thankyou", "ty_hot": "/thankyou-book", "phone_re": "^(\\+?61|0)4\\d{8}$"};
+const M={"step": "STEP", "of": "OF", "next": "Next", "submit": "Check this week’s times", "sending": "Sending…", "err_name": "Please add your first name.", "err_mobile": "Please enter an Australian mobile, e.g. 0412 345 678.", "err_email": "Please check your email address.", "err_required": "Please fill this in.", "err_send": "Something went wrong. Please try again or call us on 0483 936 872.", "privacy": "We’ll call you from 0483 936 872 to confirm times. We only use your details to arrange your inspection.", "ty": "/thankyou", "ty_hot": "/thankyou-book", "phone_re": "^(\\+?61|0)4\\d{8}$"};
 let i=0;const a={},f=document.getElementById('form'),t0=Date.now();
 const qs=new URLSearchParams(location.search);
 const ck=n=>(document.cookie.match('(^|; )'+n+'=([^;]*)')||[])[2]||'';
@@ -117,7 +117,7 @@ async function submit(btn){
     hp:(document.getElementById('hp_co')||{}).value||'',ms:Date.now()-t0};
   try{const r=await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
     const j=await r.json().catch(()=>({}));
-    if(j.field){btn.disabled=false;btn.textContent=M.submit;return err(j.field==='name'?M.err_name:M.err_email)}
+    if(j.field){btn.disabled=false;btn.textContent=M.submit;return err(j.field==='name'?M.err_name:j.field==='mobile'?M.err_mobile:M.err_email)}
     if(!r.ok||!j.ok)throw 0;
     location.href=(j.hot?M.ty_hot:M.ty)+(j.x?'':'?e='+encodeURIComponent(event_id));
   }catch(e){btn.disabled=false;btn.textContent=M.submit;err(M.err_send)}

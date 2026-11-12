@@ -88,7 +88,7 @@ async function submit(btn){
     hp:(document.getElementById('hp_co')||{}).value||'',ms:Date.now()-t0};
   try{const r=await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
     const j=await r.json().catch(()=>({}));
-    if(j.field){btn.disabled=false;btn.textContent=M.submit;return err(j.field==='name'?M.err_name:M.err_email)}
+    if(j.field){btn.disabled=false;btn.textContent=M.submit;return err(j.field==='name'?M.err_name:j.field==='mobile'?M.err_mobile:M.err_email)}
     if(!r.ok||!j.ok)throw 0;
     location.href=(j.hot?M.ty_hot:M.ty)+(j.x?'':'?e='+encodeURIComponent(event_id));
   }catch(e){btn.disabled=false;btn.textContent=M.submit;err(M.err_send)}

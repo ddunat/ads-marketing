@@ -1,5 +1,5 @@
 // DC Building Inspectors landing pages. Leads go to GHL (inbound webhook) and Meta CAPI.
-const http = require('http'), fs = require('fs'), path = require('path'), crypto = require('crypto');
+const http = require('http'), fs = require('fs'), path = require('path'), crypto = require('crypto'), dns = require('dns').promises;
 const PUB = path.join(__dirname, 'public');
 const { PORT = 3000, LEAD_EMAIL_WEBHOOK_URL, META_TEST_EVENT_CODE, BOOKING_TOKEN, GHL_BOOKING_WEBHOOK_URL } = process.env;
 const MARKETS = JSON.parse(fs.readFileSync(path.join(__dirname, 'landers/markets.json'), 'utf8'));
@@ -41,6 +41,30 @@ function nameOk(n) {
   if (FAKE_NAME.test(t) || /(.)\1{3,}/i.test(t)) return false;
   return true;
 }
+// Batch two (2026-11-12, David: AU leads were fake numbers, browsers and no-answers).
+// Fake mobiles: one digit 6+ times in a row, or a run like 12345678. Our own test leads (@dcinspect.com.au) are let through.
+function mobileOk(m, email) {
+  if (/@dcinspect\.com\.au$/i.test(email)) return true;
+  const d = m.replace(/^(\+?61|\+?385|0)/, '');
+  if (/(\d)\1{5,}/.test(d)) return false;
+  if (/12345678|23456789|98765432|87654321/.test(d)) return false;
+  return true;
+}
+const COMMON_MAIL = /^(gmail|googlemail|outlook|hotmail|live|icloud|me|yahoo|bigpond|optusnet|iinet|tpg)\.(com|com\.au|net|net\.au)$/;
+// Email domains that can't receive mail (typos like gmial.com, made-up domains). Fails open if DNS is slow.
+async function emailDomainOk(email) {
+  const domain = email.split('@').pop().toLowerCase();
+  const timeout = new Promise(r => setTimeout(() => r('timeout'), 2500));
+  const look = async () => {
+    try { if ((await dns.resolveMx(domain)).length) return true; } catch (e) { if (!['ENOTFOUND', 'ENODATA'].includes(e.code)) return true; }
+    try { return (await dns.resolve4(domain)).length > 0; } catch (e) { return !['ENOTFOUND', 'ENODATA'].includes(e.code); }
+  };
+  if (COMMON_MAIL.test(domain)) return true;
+  const r = await Promise.race([look(), timeout]);
+  if (r !== false) return true;
+  // Only trust a "no such domain" answer if DNS can see gmail.com right now.
+  try { return !(await dns.resolveMx('gmail.com')).length; } catch { return true; }
+}
 let junkCount = 0;
 
 async function post(url, body) {
@@ -61,13 +85,14 @@ async function handleLead(req, res) {
   if (clean(d.hp) || !(Number(d.ms) >= MIN_MS)) { console.log(`junk dropped #${++junkCount} (${clean(d.hp) ? 'honeypot' : 'too fast'}) ${lander.key}`); return send(res, 200, { ok: true, hot: false, x: 1 }); }
   // People who typed something wrong: tell them which field to fix.
   if (!nameOk(first_name)) return send(res, 422, { ok: false, field: 'name' });
-  if (TEMP_MAIL.test(email)) return send(res, 422, { ok: false, field: 'email' });
+  if (TEMP_MAIL.test(email) || !(await emailDomainOk(email))) return send(res, 422, { ok: false, field: 'email' });
+  if (!mobileOk(mobile, email)) return send(res, 422, { ok: false, field: 'mobile' });
   const hot = lander.hot.test(clean(d.stage));
   const lead = {
     first_name, phone: mobile.replace(/^0/, M.phone_prefix).replace(/^(\d)/, '+$1'), email, market: mk,
     property_type: clean(d.property_type), bedrooms: clean(d.bedrooms), stage: clean(d.stage), suburb: clean(d.suburb),
     lead_temp: hot ? 'hot' : 'warm', service: lander.service, landing_page: lander.key,
-    tags: ['meta-lead', lander.key, lander.service, hot ? 'hot' : 'warm'],
+    tags: ['meta-lead', lander.key, lander.service, hot ? 'hot' : 'warm'].concat(hot ? [] : ['just-looking']),
     source: `Meta ad: ${lander.ad}`, page: clean(d.page), event_id: clean(d.event_id),
     utm_source: clean(d.utm_source), utm_medium: clean(d.utm_medium), utm_campaign: clean(d.utm_campaign), utm_content: clean(d.utm_content), fbclid: clean(d.fbclid),
     submitted_at: new Date().toISOString(),
@@ -81,7 +106,9 @@ async function handleLead(req, res) {
   results.filter(r => r.status === 'rejected').forEach(r => console.error('lead delivery failed:', r.reason.message));
   if (!delivered) { console.error('LEAD NOT DELIVERED', JSON.stringify({ ...lead, phone: '[redacted]', email: '[redacted]' })); return send(res, 502, { ok: false }); }
   const META_PIXEL_ID = env('META_PIXEL_ID', mk), META_CAPI_TOKEN = env('META_CAPI_TOKEN', mk);
-  if (META_PIXEL_ID && META_CAPI_TOKEN) {
+  // Only serious buyers count as a Lead for Meta, so it learns to find more of them.
+  // "Just looking" leads still go to GHL (warm nurture) but send no Lead event.
+  if (hot && META_PIXEL_ID && META_CAPI_TOKEN) {
     const ip = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket.remoteAddress;
     const ev = { data: [{ event_name: 'Lead', event_time: Math.floor(Date.now() / 1000), event_id: lead.event_id, action_source: 'website',
       event_source_url: `https://${req.headers.host}${lead.page}`,

@@ -153,7 +153,11 @@ The "40–50%" dream target needs a named stage (see open questions).
 
 ## Junk-lead filters (Jeremy, 2026-11-02)
 - **Landing pages, batch one (live):** hidden honeypot field, at least 6 seconds on the page before a submit counts, disposable email domains refused, nonsense first names refused (asdf, test, single letters, digits, links). Bots get a quiet 200 with nothing delivered and no CAPI/pixel Lead; people who mistype get told which field to fix. Server logs `junk dropped #n`.
-- **Batch two (next weekly run, after a before/after look):** "Just looking for now" goes to a thank-you page with no Lead event (still delivered to GHL as cold, nurture only).
+- **Batch two (live 2026-11-12, after David: "lead quality is shit", AU: fake details, not ready, never answer):**
+  - Meta only gets a Lead (pixel + CAPI) for serious buyers: making an offer, auction set or signed. "Just looking for now" still goes to GHL (warm nurture, tag `just-looking`) but sends no Lead, so Meta stops learning to find browsers. Expect fewer reported leads in Meta; judge on bookings.
+  - Fake mobiles refused (one digit 6+ times in a row, runs like 12345678). Our own test leads (@dcinspect.com.au) are let through.
+  - Email domains that can't receive mail are refused (DNS check; skipped if DNS is down, common providers skipped).
+  - Form now says "We'll call you from 0483 936 872 to confirm times", so people pick up.
 - **Batch three (only if junk survives):** SMS OTP on the mobile field.
 - **Instant Form:** rebuild as Higher intent with a "Just starting to look" exit; spec in `build/au-instant-form-spec.md`. David builds it (no tool can create Instant Forms); Claude swaps it into the ads.
 - Judge on cost per booked inspection, not CPL; give each change a few days of real spend.
